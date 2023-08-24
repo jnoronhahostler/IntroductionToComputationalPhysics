@@ -319,7 +319,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-logistics">Course Logistics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-tools-useful-links">Online Tools - <span class="xref myst">Useful Links</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-tools">Online Tools</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calendar">Calendar</a></li>
@@ -331,12 +331,13 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covid">Covid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attendance">Attendance</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-using-code-you-find-on-the-web">About using code you find on the web</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-large-langauge-models">About Large Langauge Models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#academic-integrity">Academic Integrity</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellany">Miscellany</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-python">Useful Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-course">Why this course?</a></li>
 </ul>
 </li>
@@ -356,14 +357,14 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="an-introduction-to-modern-computational-physics">
 <h1>An Introduction to Modern Computational Physics<a class="headerlink" href="#an-introduction-to-modern-computational-physics" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Physics 246, Fall 2021</p></li>
+<li><p>Physics 246, Fall 2023</p></li>
 <li><p>Thursday 4:00-5:50pm CST</p></li>
 <li><p>Room: Loomis 222</p></li>
 <li><p>2 credit hours</p></li>
 <li><p>Course Texts: This one!</p></li>
 </ul>
 <p>Welcome!  Computation is powerful. In this course, you are going to learn how to use computation to do amazing simulations: compute how general relativity changes the orbit of Mercury; simulate turbulence; compute the effect of predator and preys on an ecosystem; run a quantum algorithm; and more! We’ve searched and distilled from the world some of the coolest physics we know for you to learn to simulate. Our primary goal in this class will be to help you make these simulations.</p>
-<p>Here is an <a href="clark.physics.illinois.edu/classSummary/index.html">overview presentation</a> of what you will learn in this class.</p>
+<p>Here is an <a href="https://clark.physics.illinois.edu/classSummary/index.html">overview presentation</a> of what you will learn in this class.</p>
 <hr class="docutils" />
 <section id="course-logistics">
 <h2>Course Logistics<a class="headerlink" href="#course-logistics" title="Permalink to this heading">#</a></h2>
@@ -382,12 +383,11 @@ document.write(`
 </ul>
 </li>
 </ul>
-<section id="online-tools-useful-links">
-<h3>Online Tools - <span class="xref myst">Useful Links</span><a class="headerlink" href="#online-tools-useful-links" title="Permalink to this heading">#</a></h3>
-<p>See useful links for more information about how to use these tools</p>
+<section id="online-tools">
+<h3>Online Tools<a class="headerlink" href="#online-tools" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Campuswire</strong>:  We will use campuswire as a class forum;  a way to message the course staff and each other; and to submit your attendance question.</p></li>
-<li><p><strong>Google Colab</strong>: On <span class="xref myst">Google Colab</span>  you will be able to program your code in a jupyter notebook and submit it for us to grade. Please sign in to your Illinois account.  While working on the assignment, you will share each of your colab assignments with hte professor and the TA (but no one else).</p></li>
+<li><p><strong>Google Colab</strong>: On <span class="xref myst">Google Colab</span>  you will be able to program your code in a jupyter notebook and submit it for us to grade. Please sign in to your Illinois account.  While working on the assignment, you will share each of your colab assignments with hte professor and the TA (but no one else).  You can load things in google colab just by clicking on the relevant button in the notebook (looks like a shuttle).  You must then save to your google drive and it will e there later when you go to google colab!</p></li>
 <li><p><strong>my.physics gradebook</strong>: You will find your grades here and your returned assignments.</p></li>
 </ul>
 <hr class="docutils" />
@@ -458,6 +458,7 @@ document.write(`
 <li><p>Each assignment is due at the beginning of the next class unless otherwise noted. You may turn assignment in up to one week late for 50% credit (except that all assignments are strictly due the day before reading day).</p></li>
 <li><p>Solutions to the homeworks will not be given.</p></li>
 <li><p>The assignments consist of 95% of your grade.</p></li>
+<li><p>Partial credit exists but will be limited.</p></li>
 <li><p>You may collaborate on assignments but must submit your own work.</p></li>
 <li><p>Homework will be returned through the <a class="reference external" href="https://my.physics.illinois.edu/gradebook/set.asp?subj=PHYS&amp;crsnum=246&amp;term=120208">my physics gradebook</a></p></li>
 </ul>
@@ -511,19 +512,18 @@ All problem sets count for the same amount.  Unless otherwise noted, every exerc
 </section>
 <section id="policies">
 <h2>Policies<a class="headerlink" href="#policies" title="Permalink to this heading">#</a></h2>
-<section id="covid">
-<h3>Covid<a class="headerlink" href="#covid" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Masks must be worn in class at all times</p></li>
-<li><p>You must be approved to enter the building according to your app.  I will check this so please don’t come to class if you aren’t.</p></li>
-<li><p>Please don’t come to class if you are feeling sick.   There will be plenty of remote opportunity to catch up.</p></li>
-<li><p>While social distancing is not required at this time it continues to be recommended and encouraged when possible to do so.  Toward that end, please sit someplace that allows socially distanced access.</p></li>
-</ul>
+<section id="attendance">
+<h3>Attendance<a class="headerlink" href="#attendance" title="Permalink to this heading">#</a></h3>
+<p>There is no attendance required for class (although we believe that coming to class will be helpful!)  That said, <strong>please do not attend class if you are sick</strong>.  In such a case, we will work with you to make sure you get caught up.  No notes for sickness, etc are required.</p>
 </section>
 <section id="about-using-code-you-find-on-the-web">
 <h3>About using code you find on the web<a class="headerlink" href="#about-using-code-you-find-on-the-web" title="Permalink to this heading">#</a></h3>
 <p>The quickest way to deal with the arcana of programing is to ask Google for examples of what you are seeking to accomplish. But you will need to use your judgment in doing this: the Google search “how do I use color maps in python?” is fine, while “show me a script that calculates pi” is not. And you should always credit the original source of code that you paste into your own programs in a comment that includes the URL for the original code. If an author says that his/her code is not to be copied or incorporated into your programs, then DON’T.</p>
-<p>I have two principal goals in this course. I want all of you to become fearless coders with the confidence to walk up to baffling problems and pound them into submission. And I want you to develop numerical descriptions of cool systems normally thought to be too difficult for students at your level, whose analytic descriptions might obscure the underlying physics. For this to work, you’ll need to write your own code.</p>
+<p>The goal of this course is for you to deeply understand this material. For this to work, you’ll need to write your own code.</p>
+</section>
+<section id="about-large-langauge-models">
+<h3>About Large Langauge Models<a class="headerlink" href="#about-large-langauge-models" title="Permalink to this heading">#</a></h3>
+<p>In a similar vein, you aren’t allowed to use LLM for help.  This includes chatGPT, google bard, claude, etc.</p>
 </section>
 <section id="academic-integrity">
 <h3>Academic Integrity<a class="headerlink" href="#academic-integrity" title="Permalink to this heading">#</a></h3>
@@ -533,9 +533,16 @@ All problem sets count for the same amount.  Unless otherwise noted, every exerc
 <hr class="docutils" />
 </section>
 </section>
-<section id="miscellany">
-<h2>Miscellany<a class="headerlink" href="#miscellany" title="Permalink to this heading">#</a></h2>
+<section id="useful-python">
+<h2>Useful Python<a class="headerlink" href="#useful-python" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
+<li><p>Intro Python Jupyter Notebooks:</p>
+<ul>
+<li><p>[<a class="reference external" href="https://clark.phyiscs.illinois.edu/1-basic-python-demo">https://clark.phyiscs.illinois.edu/1-basic-python-demo</a>]</p></li>
+<li><p>[<a class="reference external" href="https://clark.phyiscs.illinois.edu/2-numpy-demo.ipynb">https://clark.phyiscs.illinois.edu/2-numpy-demo.ipynb</a>]</p></li>
+<li><p>[<a class="reference external" href="https://clark.phyiscs.illinois.edu/3-matplotlib-demo.ipynb">https://clark.phyiscs.illinois.edu/3-matplotlib-demo.ipynb</a>]</p></li>
+</ul>
+</li>
 <li><p><a class="reference external" href="https://wiki.python.org/moin/BeginnersGuide/Programmers">Python Programming Resources</a></p></li>
 <li><p><a class="reference external" href="https://developers.google.com/edu/python">Google’s Python Programming Class</a></p></li>
 </ul>
@@ -547,11 +554,7 @@ All problem sets count for the same amount.  Unless otherwise noted, every exerc
 <p>This course is a first step. From it, we expect that students will come away with a better grasp of complex phenomena and will be prepared to engage with research experiences that would otherwise have been inaccessible. This will bring to the department’s scientific efforts the collateral benefit of an enlarged pool of competent research assistants. If we are successful, our methods should generalize to other disciplines in science and engineering.</p>
 <p><strong>Background:</strong>
 The technical foundation for physics majors includes material in physics, mathematics, computer science, and chemistry. But though the courses taught outside the Physics Department provide an excellent introduction to important subjects, they are insufficiently dense in application to specific physics topics to stand on their own. We find this to be especially true in mathematics and computer science. Consequently, the Physics Department offers undergraduate and graduate courses on mathematical methods for physics, as well as a graduate course in computation.</p>
-<p>Recently we have now added two new undergraduate courses in computational physics: this course and 498CMP. By simulating physical systems and observing their (simulated) behaviors, students can more efficiently grasp concepts that might be otherwise obscured by mathematical equations. By developing their computational skills, students are better prepared to assist in data acquisition and analysis tasks in a research setting. In addition, about half of our graduating majors choose employment over graduate study; they often report that prospective employers are seeking to hire employees with computational skills.</p>
-<p><strong>Owls? 246?</strong>
-The previous course, Physics 298OWL, for obscure reasons requires us to append a three-letter code to the course number. Since the owl is the symbol of Athena—goddess of wisdom, inspiration, mathematics, strength, and other good things—“OWL” seemed like a sensible choice.
-This course has since evolved into Physics 246. And why 246? Because that’s the <a class="reference external" href="https://en.wikipedia.org/wiki/Vacuum_expectation_value">vacuum expectation value</a> of the <a class="reference external" href="https://en.wikipedia.org/wiki/Higgs_boson">Higgs field</a>.</p>
-<p><img alt="owl" src="owl.png" /></p>
+<p>Recently we have now added two new undergraduate courses in computational physics: this course and 446. By simulating physical systems and observing their (simulated) behaviors, students can more efficiently grasp concepts that might be otherwise obscured by mathematical equations. By developing their computational skills, students are better prepared to assist in data acquisition and analysis tasks in a research setting. In addition, about half of our graduating majors choose employment over graduate study; they often report that prospective employers are seeking to hire employees with computational skills.</p>
 </section>
 </section>
 <section id="acknowledgements">
@@ -562,7 +565,7 @@ This course has since evolved into Physics 246. And why 246? Because that’s th
 <h2>Related Courses<a class="headerlink" href="#related-courses" title="Permalink to this heading">#</a></h2>
 <p>Here are some number of related (but less exciting) courses which have similar goals.</p>
 <p>In <a class="reference external" href="http://theory.caltech.edu/~dsd/ph121ab/2019-2020/">Caltech</a> you write a smaller number of similar assignments (but with no guidance).</p>
-<p><a class="reference external" href="https://computationalthinking.mit.edu/Spring21/">MIT</a> runs a similar course in Julia with a nice assignment on climate-science.  You can do a more-from-scratch version of this assignment for your final if you want.</p>
+<p><a class="reference external" href="https://computationalthinking.mit.edu/Spring21/">MIT</a> runs a similar course in Julia.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -627,7 +630,7 @@ This course has since evolved into Physics 246. And why 246? Because that’s th
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-logistics">Course Logistics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-tools-useful-links">Online Tools - <span class="xref myst">Useful Links</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-tools">Online Tools</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calendar">Calendar</a></li>
@@ -639,12 +642,13 @@ This course has since evolved into Physics 246. And why 246? Because that’s th
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covid">Covid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attendance">Attendance</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-using-code-you-find-on-the-web">About using code you find on the web</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-large-langauge-models">About Large Langauge Models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#academic-integrity">Academic Integrity</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellany">Miscellany</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-python">Useful Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-course">Why this course?</a></li>
 </ul>
 </li>
