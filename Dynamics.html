@@ -384,9 +384,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-measuring-the-error">b. Measuring the error.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-higher-order-integrators-extra-credit-10-points-total-5-points-section">Exercise 4: Higher Order Integrators (Extra Credit: 10 points total - 5 points/section)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-higher-order-integrators-extra-credit-15-points-total-5-points-section">Exercise 4: Higher Order Integrators (Extra Credit: 15 points total - 5 points/section)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-runge-kutta-5-points">a. Runge-Kutta (5 points)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-scipy-ode-5-points">b. scipy ODE (5 points)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-symplectic-integrator-5-points">c. symplectic integrator (5 points)</a></li>
 </ul>
 </li>
 </ul>
@@ -1184,8 +1185,8 @@ dv &amp;= \frac{F(x_\textrm{midpoint},v_\textrm{midpoint},t_\textrm{midpoint})}{
 -->
 <p>Use initial conditions of <span class="math notranslate nohighlight">\(x_0=0,v_0=10\)</span> m/s. Be sure to include friction, as without friction the second order method will be exact (so you won’t see a trend.</p>
 <p>Unfortunately we don’t have a simple formula to get the exact result.  What we will do instead is measure the answer for a time step that is very small (<span class="math notranslate nohighlight">\(dt=0.00001\)</span>) and use that as our “exact” answer. Then we can compare it to larger time steps.</p>
-<p>In the end, we want to determine <span class="math notranslate nohighlight">\(\alpha\)</span> in the equation <span class="math notranslate nohighlight">\(\textrm{Error} \propto dt^\alpha\)</span>. To get the <span class="math notranslate nohighlight">\(\alpha\)</span> we will use the process described in the warmup.</p>
-<p>*You should have your plots here.  They should start with the dropping ball initial velocities.   You should show that you are getting error which is second order. *</p>
+<p>In the end, we want to determine <span class="math notranslate nohighlight">\(\alpha\)</span> in the equation <span class="math notranslate nohighlight">\(\textrm{Error} \propto dt^\alpha\)</span>. To get the <span class="math notranslate nohighlight">\(\alpha\)</span> we will use the process described in the warmup - i.e. plotting on a log-log plot and computing the slope.</p>
+<p><em>You should have your plots here.  They should start with the dropping ball initial velocities.   You should show that you are getting error which is second order.</em></p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWERE HERE</span>
@@ -1195,8 +1196,8 @@ dv &amp;= \frac{F(x_\textrm{midpoint},v_\textrm{midpoint},t_\textrm{midpoint})}{
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
-<section id="exercise-4-higher-order-integrators-extra-credit-10-points-total-5-points-section">
-<h2>Exercise 4: Higher Order Integrators (Extra Credit: 10 points total - 5 points/section)<a class="headerlink" href="#exercise-4-higher-order-integrators-extra-credit-10-points-total-5-points-section" title="Permalink to this heading">#</a></h2>
+<section id="exercise-4-higher-order-integrators-extra-credit-15-points-total-5-points-section">
+<h2>Exercise 4: Higher Order Integrators (Extra Credit: 15 points total - 5 points/section)<a class="headerlink" href="#exercise-4-higher-order-integrators-extra-credit-15-points-total-5-points-section" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
@@ -1208,6 +1209,10 @@ dv &amp;= \frac{F(x_\textrm{midpoint},v_\textrm{midpoint},t_\textrm{midpoint})}{
 <section id="b-scipy-ode-5-points">
 <h3>b. scipy ODE (5 points)<a class="headerlink" href="#b-scipy-ode-5-points" title="Permalink to this heading">#</a></h3>
 <p>🦉 Rewrite ThrowBall to use <code class="docutils literal notranslate"><span class="pre">scipy.integrate.ode</span></code>.</p>
+</section>
+<section id="c-symplectic-integrator-5-points">
+<h3>c. symplectic integrator (5 points)<a class="headerlink" href="#c-symplectic-integrator-5-points" title="Permalink to this heading">#</a></h3>
+<p>Implement a symplectic integrator at any order.  Show what order it works at and show that the energy stays close for a much longer period of time then Euler.</p>
 <hr class="docutils" />
 <ul class="simple">
 <li><p>Ex 1: George Gollin (original); Bryan Clark and Ryan Levy (modifications)</p></li>
@@ -1318,9 +1323,10 @@ dv &amp;= \frac{F(x_\textrm{midpoint},v_\textrm{midpoint},t_\textrm{midpoint})}{
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-measuring-the-error">b. Measuring the error.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-higher-order-integrators-extra-credit-10-points-total-5-points-section">Exercise 4: Higher Order Integrators (Extra Credit: 10 points total - 5 points/section)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-higher-order-integrators-extra-credit-15-points-total-5-points-section">Exercise 4: Higher Order Integrators (Extra Credit: 15 points total - 5 points/section)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-runge-kutta-5-points">a. Runge-Kutta (5 points)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-scipy-ode-5-points">b. scipy ODE (5 points)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-symplectic-integrator-5-points">c. symplectic integrator (5 points)</a></li>
 </ul>
 </li>
 </ul>
