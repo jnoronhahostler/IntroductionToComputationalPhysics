@@ -740,6 +740,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 <p>As our force, we will use gravity - i.e. <span class="math notranslate nohighlight">\(F_y=-9.8m\)</span> -  and choose a mass of m=1.
 🦉Write your <code class="docutils literal notranslate"><span class="pre">Step</span></code> function.  We are then going to call it five times after throwing a ball into the air and make sure you get the correct result.</p>
+<p><strong>The velocity you should use to update the position is not the new velocity.  It is the current velocity.</strong></p>
 <p><em>Put your code here including your <code class="docutils literal notranslate"><span class="pre">Step</span></code> function.</em></p>
 <p><em>You should use these initial parameters:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span>   <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># set the initial time. </span>
@@ -760,7 +761,6 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t should be 0.05,</span><span class="se">\t</span><span class="s2"> t=&quot;</span>      <span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pos should be 1.5902;</span><span class="se">\t</span><span class="s2"> pos=&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;vel should be 1.51,</span><span class="se">\t</span><span class="s2"> vel=&quot;</span>  <span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">vel</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <p><em>(You will also include your answer here for switching the 5 steps into a loop)</em></p>
@@ -773,7 +773,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p>If you have this working, you should just go ahead and replace the five steps <code class="docutils literal notranslate"><span class="pre">t,pos,vel=Step(t,pos,vel,dt)</span></code> with a loop that does the same thing.  Your loop should look something like</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">T</span><span class="o">=</span><span class="mf">0.05</span>
-<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">dt</span><span class="p">)):</span>
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">dt</span><span class="p">))):</span>
   <span class="c1"># do stuff</span>
 </pre></div>
 </div>
@@ -811,6 +811,8 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <p>🦉Rewrite your <code class="docutils literal notranslate"><span class="pre">Step</span></code> function to work in two-dimensions and try to avoid ever doing <code class="docutils literal notranslate"><span class="pre">vel[0]</span></code> or <code class="docutils literal notranslate"><span class="pre">pos[0]</span></code> to explicitly take a velocity or position in the x-direction.</p>
 <p><em>Put your code here.  You should use the following initial conditions</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span>   <span class="o">=</span> <span class="mi">0</span> <span class="c1"># set t0</span>
+<span class="n">dt</span>  <span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># time step </span>
+<span class="n">T</span><span class="o">=</span><span class="mf">0.5</span> <span class="c1"># total time to run to</span>
 <span class="n">vel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">10.</span><span class="p">])</span>  <span class="c1"># initial velocity in m/s</span>
 <span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">])</span>  <span class="c1"># m</span>
 </pre></div>
@@ -833,19 +835,20 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-a-full-simulation">
 <h3>c.  A full simulation<a class="headerlink" href="#c-a-full-simulation" title="Permalink to this heading">#</a></h3>
-<p>In this part we are going to write a full simulation and compute the path of a ball until it hits the ground. 🦉Write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">ThrowBall(initPos,initVel,dt)</span></code> which generates a path using your <code class="docutils literal notranslate"><span class="pre">Step</span></code> function.  Also, write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">Exact(initPos,initVel,ts)</span></code> that returns the exact positions and velocities for all times in the array <code class="docutils literal notranslate"><span class="pre">ts</span></code> (use what you know from 211).</p>
+<p>In this part we are going to write a full simulation and compute the path of a ball until it hits the ground. 🦉Write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">ThrowBall(initPos,initVel,dt)</span></code> which generates a path using your <code class="docutils literal notranslate"><span class="pre">Step</span></code> function and returns a numpy array of times (<code class="docutils literal notranslate"><span class="pre">np.array(ts)</span></code>), velocities (<code class="docutils literal notranslate"><span class="pre">np.array(vs)</span></code>) and positions (<code class="docutils literal notranslate"><span class="pre">np.array(positions)</span></code>)</p>
 <ul class="simple">
 <li><p>Initialize your time, height and velocity</p></li>
 <li><p>Intialize some lists to store your time, height and velocity at each step (i.e. <code class="docutils literal notranslate"><span class="pre">vs=[]</span></code>)</p></li>
 <li><p>Loop over time steps</p>
 <ul>
 <li><p>Take a step</p></li>
-<li><p>Put the velocity and height into a list (i.e. <code class="docutils literal notranslate"><span class="pre">velocities.append(v)</span></code>)</p></li>
+<li><p>Put the velocity and position into lists (i.e. <code class="docutils literal notranslate"><span class="pre">velocities.append(v)</span></code>)</p></li>
 <li><p>If the height is lower then zero, then <code class="docutils literal notranslate"><span class="pre">break</span></code> out of the loop (<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">y&lt;0:</span> <span class="pre">break</span></code>)</p></li>
 </ul>
 </li>
-<li><p>Return  lists of time and height and velocity</p></li>
+<li><p>Return  np.array of time and position and velocity</p></li>
 </ul>
+<p>Also, write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">Exact(initPos,initVel,ts)</span></code> that returns the exact positions and velocities for all times in the array <code class="docutils literal notranslate"><span class="pre">ts</span></code> (use what you know from 211).</p>
 <p>A good test is to run it for the same five time steps as above and make sure it produces the same answers as in (c) and puts them into the list.  Also, you can check that your exact and Euler Integration answers are close.</p>
 <p><em>Put your code here. Using the same initial conditions as above, print the position and velocities of five steps so we can check that you have the correct answer.</em></p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
@@ -948,11 +951,12 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <p>We’d like to figure out two things.  First, how does the error accumulate as a function of time (when we fix <span class="math notranslate nohighlight">\(dt\)</span>).</p>
 <p>Secondly, if we run a bunch of simulations to a total time <span class="math notranslate nohighlight">\(T=1.28\)</span> using different time-steps <span class="math notranslate nohighlight">\(dt\)</span>,  how does the error change with <span class="math notranslate nohighlight">\(dt\)</span>.</p>
 <p>We will only concern ourselves with the difference between the Euler-integrator <span class="math notranslate nohighlight">\(y\)</span> position and the exact <span class="math notranslate nohighlight">\(y\)</span> position (i.e. we will ignore the <span class="math notranslate nohighlight">\(x\)</span> position and velocity <span class="math notranslate nohighlight">\(v\)</span>).</p>
-<p>🦉To make the first plot, write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">PlotErrorWithTime(integratorY,exactY)</span></code> which plots the difference <span class="math notranslate nohighlight">\(y_\textrm{Euler}(t) - y_\textrm{exact}(t)\)</span> as a function of time <span class="math notranslate nohighlight">\(t\)</span>. Then run your integrator, compute the exact, and call your function.   What you will find is that the error grows linearly with <span class="math notranslate nohighlight">\(t\)</span>.  This makes sense because each step makes an error and so cumulatively the total amount of error grows linearly. That means the longer you run your system, the larger error that you get. This linear growth will be true for almost any integrator that we use (although something special will go on for symplectic integrators).</p>
+<p>For this problem, you can use the same initial conditions you’ve been using in the previous sections.</p>
+<p>🦉To make the first plot, write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">PlotErrorWithTime(ts,integratorY,exactY)</span></code> which plots the difference <span class="math notranslate nohighlight">\(y_\textrm{Euler}(t) - y_\textrm{exact}(t)\)</span> as a function of time <span class="math notranslate nohighlight">\(t\)</span>. Then run your integrator, compute the exact, and call your function.   What you will find is that the error grows linearly with <span class="math notranslate nohighlight">\(t\)</span>.  This makes sense because each step makes an error and so cumulatively the total amount of error grows linearly. That means the longer you run your system, the larger error that you get. This linear growth will be true for almost any integrator that we use (although something special will go on for symplectic integrators).</p>
 <p>🦉For your second plot, write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">PlotErrorWithdt()</span></code>.  This one will do all the running of your integrator inside of it.   To make the second plot, you need to figure out when your simulation hit <span class="math notranslate nohighlight">\(T=1.28\)</span>.  Write a function <code class="docutils literal notranslate"><span class="pre">FindIndex(targetT,ts)</span></code> which finds the index in the array <code class="docutils literal notranslate"><span class="pre">ts</span></code> which is closest to <code class="docutils literal notranslate"><span class="pre">targetT</span></code>.</p>
 <p>Then you can make the second plot by  plotting</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myIndex</span><span class="o">=</span><span class="n">FindIndex</span><span class="p">(</span><span class="mf">1.28</span><span class="p">,</span><span class="n">ts</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">dt</span><span class="p">],[</span><span class="n">positions</span><span class="p">[:,</span><span class="mi">1</span><span class="p">](</span><span class="n">myIndex</span><span class="p">)],</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">dt</span><span class="p">],[</span><span class="n">positions</span><span class="p">[:,</span><span class="mi">1</span><span class="p">][</span><span class="n">myIndex</span><span class="p">]],</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>for each value of <span class="math notranslate nohighlight">\(dt \in \{0.32,0.16,0.08,0.04,0.02,0.01,0.005\}\)</span></p>
@@ -972,6 +976,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <p>One of the things that should be true of the thrown ball is the energy should be constant. Recall that the energy should be</p>
 <div class="math notranslate nohighlight">
 \[ E = K + U = \frac{1}{2}mv^2 + mgy\]</div>
+<p>where <span class="math notranslate nohighlight">\(g=9.8\)</span></p>
 <p>🦉Write below a function that takes a list of positions and velocities and returns a list of energy. You can assume that <span class="math notranslate nohighlight">\(m=1.\)</span> Then plot the energy vs time of the ball thrown in the air with your integrator.</p>
 <p>What you should see is that the energy says largely constant over time.  If we were doing everything exactly right (had a perfect integrator), it would stay constant over time.  Because our approach is not perfect, there is a tiny bit of drift in the energy.</p>
 <p><em>Hint:</em>  the energy is around 50</p>
@@ -1006,7 +1011,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </pre></div>
 </div>
 <p>🦉Go ahead and modify your old code to work in this way.  In addition, modify the force to be of the form
-[<span class="math notranslate nohighlight">\(-bv_x,-bv_y-9.8\)</span>].</p>
+<code class="docutils literal notranslate"><span class="pre">np.array([-b*v_x,-b*v_y-9.8*m])</span></code>.</p>
 <p>Changes from previous code:</p>
 <ul class="simple">
 <li><p>Switch everything to use params</p></li>
@@ -1016,7 +1021,8 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <p><em>Put your new code here. You don’t have to produce any output (you will produce graphs below)</em></p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resetMe</span><span class="p">()</span>
+<span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
@@ -1029,7 +1035,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <li><p>y vs. time</p></li>
 <li><p>y vs x</p></li>
 </ul>
-<p>that includes (on the same plot) both the ball with air resistance and without air resistance. To label which is which you can do <code class="docutils literal notranslate"><span class="pre">plt.plot(x,y,label=&quot;Air</span> <span class="pre">Resistance&quot;)</span></code></p>
+<p>that includes (on the same plot) both the ball with air resistance and without air resistance. To label which is which you can do <code class="docutils literal notranslate"><span class="pre">plt.plot(x,y,label=&quot;Air</span> <span class="pre">Resistance&quot;)</span></code>   and then call <code class="docutils literal notranslate"><span class="pre">plt.legend(loc=0)</span></code></p>
 <p>Does it make any sense?  Does the ball with air resistance fly further or less far?</p>
 <p><em>Put here your two graphs (and the code to generate them) showing how the air resistance changes the flight of the ball.  You can write the dictionary of your initial parameters by doing</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">params</span> <span class="o">=</span><span class="p">{</span> <span class="c1">#another way of writing a dictionary</span>
@@ -1115,7 +1121,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>🦉Figure out how to tune the initial velocity so that the two balls collide.  Report your initial velocity and convince us that it actually worked.</p>
+<p>🦉Figure out how to tune the initial velocity so that the two balls collide <strong>in the air</strong>.  Report your initial velocity and convince us that it actually worked.</p>
 <p><em>Put your code and graph here.  This is a little tricky since both balls are flying.</em></p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
