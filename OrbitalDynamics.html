@@ -163,6 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Orbital Dynamics</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics2.html">Many Body Simulations</a></li>
@@ -261,23 +262,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       <li><a href="_sources/OrbitalDynamics.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Download notebook file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="_sources/OrbitalDynamics.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +271,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -390,14 +374,16 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-just-information-no-work-on-this-problem">Background (just information…no work on this problem)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-mercury-precision">Exercise 3: Mercury Precision</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-mercury-precession">Exercise 3: Mercury Precession</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-mercury-without-general-relativity">a.  Mercury without general relativity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-mercury-with-general-relativity">b.  Mercury with general relativity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-interpolating-to-find-the-precession">b. Interpolating to find the  precession</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-mercury-with-general-relativity">c.  Mercury with general relativity</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-transfer-orbits-extra-credit-10-points">Exercise 4. Transfer Orbits (Extra Credit: 10 points)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-black-holes">Exercise 5. Black Holes</a></li>
 </ul>
 
             </nav>
@@ -446,7 +432,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 9, 7, 5, 29, 39, 47063)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 9, 7, 5, 34, 34, 123337)
 </pre></div>
 </div>
 </div>
@@ -516,7 +502,7 @@ document.write(`
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-earth-orbiting-the-sun">
 <h3>b.  Earth Orbiting the Sun<a class="headerlink" href="#b-earth-orbiting-the-sun" title="Permalink to this heading">#</a></h3>
-<p>Write some code to set up the parameters of the Earth orbiting the sun and then plot it.  Use a dt of 3600 seconds.  This will involve calling your functions from above. You will want to build a dictionary of <code class="docutils literal notranslate"><span class="pre">params</span></code>  which involve things like your initial positions (use Earth’s orbital radius), your initial velocity, the time step <code class="docutils literal notranslate"><span class="pre">dt</span></code> (use one day), etc.  You should be able to plot it as <code class="docutils literal notranslate"><span class="pre">plt.plot(positions[:,0],positions[:,1])</span></code>
+<p>Write some code to set up the parameters of the Earth orbiting the sun and then plot it.  Use a dt of 3600 seconds.  This will involve calling your functions from above. You will want to build a dictionary of <code class="docutils literal notranslate"><span class="pre">params</span></code>  which involve things like your initial positions (use Earth’s orbital radius), your initial velocity, the time step <code class="docutils literal notranslate"><span class="pre">dt</span></code>, etc.  You should be able to plot it as <code class="docutils literal notranslate"><span class="pre">plt.plot(positions[:,0],positions[:,1])</span></code>
 `</p>
 <!--
 To draw the Earth, I recommend something like:
@@ -551,6 +537,51 @@ fig.gca().add_artist(earth_disk)
 <section id="c-animation">
 <h3>c. Animation<a class="headerlink" href="#c-animation" title="Permalink to this heading">#</a></h3>
 <p>Run the code below to plot an animation of your orbit.  Your coordinates have to be in positions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">animation</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="k">def</span> <span class="nf">animateMe</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="n">fullLine</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="c1"># First set up the figure, the axis, and the plot element we want to animate</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
+    <span class="n">x_min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">positions</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">x_max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">positions</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mf">1.1</span>
+    <span class="n">y_min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">positions</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">y_max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">positions</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="mf">1.1</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">));</span>
+    <span class="c1">#line, = ax.plot([], [], lw=2);</span>
+    <span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span><span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="c1"># initialization function: plot the background of each frame</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+        <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">([],</span> <span class="p">[])</span>
+        <span class="k">return</span> <span class="n">line</span><span class="p">,</span>
+
+    <span class="c1"># animation function.  This is called sequentially</span>
+    <span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">fullLine</span><span class="p">:</span>
+            <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">#        line.set_markersize(10)</span>
+        <span class="k">return</span> <span class="n">line</span><span class="p">,</span>
+
+    <span class="c1"># call the animator.  blit=True means only re-draw the parts that have changed.</span>
+    <span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span> <span class="n">init_func</span><span class="o">=</span><span class="n">init</span><span class="p">,</span>
+                                   <span class="n">frames</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                                   <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">anim</span>
+<span class="n">steps</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">pos</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">anim</span><span class="o">=</span><span class="n">animateMe</span><span class="p">(</span><span class="n">pos</span><span class="p">[::</span><span class="n">steps</span><span class="o">//</span><span class="mi">100</span><span class="p">],</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">anim</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
+
+</pre></div>
+</div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
@@ -596,7 +627,7 @@ $<span class="math notranslate nohighlight">\( v = \sqrt{\frac{GM}{r}} \)</span>
 </ul>
 <p>where <span class="math notranslate nohighlight">\(T_\textrm{orbit}\)</span> is the total time for an orbit.  Use Earth’s orbit to do this and a time-step of 1 hour.</p>
 <p>To compute the area, I summed a bunch of triangles that make up the points on the orbit.  Toward that end I found it useful to write a <code class="docutils literal notranslate"><span class="pre">TriangleArea</span></code> function.</p>
-<p>Here’s what my random orbit looks like (don’t worry about adding colors):</p>
+<p>Here is an example of the area sweeped out for 0.1T of an orbit at different times (<strong>but note that this is for a random orbit and not Earth’s orbit!</strong>):</p>
 <div><img src="https://clark.physics.illinois.edu/246img/KeplerSecond.png" width=600  alt="Kepler Second Law"></img><br></div><p>You should report what your two areas are.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -676,7 +707,7 @@ $<span class="math notranslate nohighlight">\(\frac{GM}{4\pi^2}\)</span>$</p>
 <p>The precession rate is small. During the course of one orbit of 87.969 days, the perihelion will shift by <span class="math notranslate nohighlight">\((5.022 \pm 0.005) \times 10^{-7}\)</span> radians due to general relativistic effects. This corresponds to a displacement in space of about 23 km for one orbit’s perihelion relative to the previous orbit’s, added to the much larger Newtonian perturbations from the other planets.</p>
 <p>In weak gravitational fields we can accommodate the effects of general relativity as a slight modification <span class="xref myst"><sup>3</sup></span> to the acceleration of a mass <span class="math notranslate nohighlight">\(m\)</span> in an almost-elliptical orbit around the sun:</p>
 <div class="math notranslate nohighlight">
-\[ \frac{F(r)}{m} = \frac{GM_\odot}{r^2} + \frac{3r_s\left(v_\textrm{perihelion}r_\textrm{perihelion}\right)^2}{2r^4}\]</div>
+\[ \frac{F(r)}{m} = -\frac{GM_\odot}{r^2} + -\frac{3r_s\left(v_\textrm{perihelion}r_\textrm{perihelion}\right)^2}{2r^4}\]</div>
 <p>where <span class="math notranslate nohighlight">\(M_\odot=1.98855 \times 10^{30}\)</span> kg is the mass of the sun.<span class="xref myst"><sup>4</sup></span>.  You may recall that the Schwarzschild radius <span class="math notranslate nohighlight">\(r_s\)</span> of an object of mass <span class="math notranslate nohighlight">\(M\)</span> is <span class="math notranslate nohighlight">\(2GM/c^2\)</span>, and that the sun’s <span class="math notranslate nohighlight">\(r_s\)</span> is 2,953.36 meters.  For Mercury <span class="math notranslate nohighlight">\(v_\textrm{perihelion}=58,980\)</span> m/s while <span class="math notranslate nohighlight">\(r_\textrm{perihelion} = 46,001,200\)</span> km.  (Note that the formula requires the perihelion radius to be expressed in meters.)<span class="xref myst"><sup>5</sup></span></p>
 <p>Just for your information, here is a table of contributions to the Newtonian precession of Mercury’s perihelion from the other planets. The largest come from Venus (because it is so close to Mercury) and Jupiter (because it is so massive). These are taken from the work of the 19th century astronomer Urban LeVerrier.<span class="xref myst"><sup>6</sup></span>.  I think they’re probably reasonable approximations to the exact values.</p>
 <table class="table">
@@ -730,8 +761,8 @@ $<span class="math notranslate nohighlight">\(\frac{GM}{4\pi^2}\)</span>$</p>
 </tbody>
 </table>
 </section>
-<section id="exercise-3-mercury-precision">
-<h2>Exercise 3: Mercury Precision<a class="headerlink" href="#exercise-3-mercury-precision" title="Permalink to this heading">#</a></h2>
+<section id="exercise-3-mercury-precession">
+<h2>Exercise 3: Mercury Precession<a class="headerlink" href="#exercise-3-mercury-precession" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
@@ -758,23 +789,19 @@ $<span class="math notranslate nohighlight">\(\frac{GM}{4\pi^2}\)</span>$</p>
 <p>For our first step, we will compute the precession when we don’t have the relativistic term on.  If our integration was perfect, we should get zero. As we recall from earlier assignments, we know that that there is some time-step errors associated with our integration.  So instead of getting zero, we would expect to get something very close to zero.</p>
 <p>You are going to base your Mercury perihelion code on your orbital code from previous units. Let’s start by setting up your code for simulating Mercury’s orbit:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(r_\textrm{min}=4.60012 \times 10^{10}\)</span> m</p></li>
+<li><p><span class="math notranslate nohighlight">\(r_\textrm{min}=4.60012 \times 10^{10}\)</span> m - i.e. <code class="docutils literal notranslate"><span class="pre">params[&quot;initPos&quot;]=np.array([0.0,4.60012e10])</span></code></p></li>
 <li><p><span class="math notranslate nohighlight">\(v=5.898 \times 10^{4}\)</span> m/s</p></li>
-<li><p><span class="math notranslate nohighlight">\(T=60 \times 60 \times 24 \times 88 *1.1\)</span> sec  (1.1 Mercury Years)</p></li>
+<li><p><span class="math notranslate nohighlight">\(T=60 \times 60 \times 24 \times 88 \times 1.1\)</span> sec  (1.1 Mercury Years)</p></li>
 <li><p><span class="math notranslate nohighlight">\(dt=60\)</span>  sec.</p></li>
 </ul>
-<p>🦉Plot the orbit of the eccentric Mercury and  report the closest (both with and without interpolation) and furthest distance your simulation gets from the sun as well as your precision.</p>
-<p>When you run, use <code class="docutils literal notranslate"><span class="pre">%time</span> <span class="pre">orbit.Run()</span></code> to measure how long it takes.</p>
-<p>I get that the run takes approximately 7 seconds and get</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">minimum</span> <span class="n">location</span> <span class="n">before</span> <span class="n">interpolation</span> <span class="ow">is</span>  <span class="mf">46001200000.51781079</span>
-<span class="n">The</span> <span class="n">minimum</span> <span class="n">location</span> <span class="n">after</span> <span class="n">interpolation</span> <span class="ow">is</span>  <span class="mf">46001199999.997996964</span>
-<span class="n">The</span> <span class="n">maximum</span> <span class="n">location</span> <span class="ow">is</span>  <span class="mf">2.2018129525667883981e+21</span>
-<span class="n">The</span> <span class="n">precision</span> <span class="n">angle</span> <span class="n">I</span> <span class="n">get</span> <span class="ow">is</span>  <span class="o">-</span><span class="mf">0.028552737845785832</span> <span class="n">radians</span>
+<p>You need to make sure that all of your parameters are long doubles.  To do this I do</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+  <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">longdouble</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>We will consider -0.03 microradians essentially zero.</p>
-<p><em>It is often very useful to make a plot of your zoomed in orbit and the interpolated line. If you aren’t getting the right answer, you should do this!</em></p>
-<p><strong>HINT:</strong> For this assignment you need to get 5 points around the closest distance (the second time around the orbit <em>not</em> where you start.  You should get</p>
+<p>Plot the orbit of the eccentric Mercury and  report the closest and furthest distance your simulation gets from the sun.
+You should find a minimum distance of 46001200000.517811935.</p>
+<p>Then find the closest distance and nearby 5 points the second time around the orbit <em>not</em> where you started.  You should get</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>                    <span class="n">y</span>                    <span class="n">r</span> 
 <span class="o">-</span><span class="mf">10087525.09595282</span> <span class="mf">46001199082.443085</span> <span class="mf">46001200188.48122315</span>
 <span class="o">-</span><span class="mf">6548725.141774705</span> <span class="mf">46001199613.28912</span> <span class="mf">46001200079.42697562</span>
@@ -784,7 +811,8 @@ $<span class="math notranslate nohighlight">\(\frac{GM}{4\pi^2}\)</span>$</p>
 <span class="mf">7606474.822704569</span> <span class="mf">46001199478.327866</span> <span class="mf">46001200107.20775908</span>
 </pre></div>
 </div>
-<p>If you’re not getting this, then you should check again.  Then you need to interpolate through this data (<code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">line=np.polyfit(x,y,2)</span></code>).  Finally, you should get that the nearest distance is (after interpolation) something very close to <code class="docutils literal notranslate"><span class="pre">46001199999.997996964</span></code>.</p>
+<p>If you’re not getting this, then you should check again.</p>
+<p>Make a separate plot of just these 5 points.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
@@ -793,14 +821,26 @@ $<span class="math notranslate nohighlight">\(\frac{GM}{4\pi^2}\)</span>$</p>
 </div>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
-<section id="b-mercury-with-general-relativity">
-<h3>b.  Mercury with general relativity<a class="headerlink" href="#b-mercury-with-general-relativity" title="Permalink to this heading">#</a></h3>
+<section id="b-interpolating-to-find-the-precession">
+<h3>b. Interpolating to find the  precession<a class="headerlink" href="#b-interpolating-to-find-the-precession" title="Permalink to this heading">#</a></h3>
+<p>Now we need to take our data of those 6 points above and interpolate between them.  (Use your actual orbital data not the copied numbers above - you need higher precision then is being printed out.)</p>
+<p>Put the 6 points in an array <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> respectively.  You may have to do something like  <code class="docutils literal notranslate"><span class="pre">x=np.float64(pos[closest_loc-3:closest_loc+3,0])</span></code> to get it to be low enough precision for the polyfit (next step) to work.</p>
+<p>Now interpolate between them using <code class="docutils literal notranslate"><span class="pre">line=np.polyfit(x,y,2)</span></code>.</p>
+<p>Now make a new <code class="docutils literal notranslate"><span class="pre">xs</span></code> array which has  100000 points between x[0] and x[-1].  This will be a very fine grid.  Then make a <code class="docutils literal notranslate"><span class="pre">ys</span></code> array that uses the quadratic fit in <code class="docutils literal notranslate"><span class="pre">line</span></code> and the <code class="docutils literal notranslate"><span class="pre">xs</span></code> array to give you the interpolated values.</p>
+<p>Plot both the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> array as points as well as the <code class="docutils literal notranslate"><span class="pre">xs</span></code> and <code class="docutils literal notranslate"><span class="pre">ys</span></code> array as lines.  This line should interpolate nicely through your points.</p>
+<p>Finally, using your new <code class="docutils literal notranslate"><span class="pre">xs</span></code> and <code class="docutils literal notranslate"><span class="pre">ys</span></code> array you should get that the nearest distance is something very close to <code class="docutils literal notranslate"><span class="pre">46001199999.997996964</span></code>.</p>
+<p>Now you should be able to get the actual coordinate of the closest point (the second time around).  Using this you can get the precession angle.
+I get that it is -0.017013797776581767923 radians (but because this is very sensitive to precision, anything less then 0.03 is fine.)</p>
+<p>We will consider anything less then 0.03 microradians in magnitude essentially zero.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="c-mercury-with-general-relativity">
+<h3>c.  Mercury with general relativity<a class="headerlink" href="#c-mercury-with-general-relativity" title="Permalink to this heading">#</a></h3>
 <p>Now turn on the effects of general relativity (by modifying your force) and do the same computation.</p>
 <p>The post-Newtonian modification to the gravitational acceleration experienced by Mercury adds an extra term after the inverse-square Newtonian term:
-$<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = \frac{GM_\odot}{r^2} + \frac{3r_s\left(v_\textrm{perihelion}r_\textrm{perihelion}\right)^2}{2r^4}\)</span>$</p>
+$<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = -\frac{GM_\odot}{r^2} - \frac{3r_s\left(v_\textrm{perihelion}r_\textrm{perihelion}\right)^2}{2r^4}\)</span>$</p>
 <p>The Schwarzschild radius of the sun is <span class="math notranslate nohighlight">\(r_S = 2,953.36\)</span> meters. Mercury’s speed at perihelion is
-<span class="math notranslate nohighlight">\(v_\textrm{perihelion} = 58,980\)</span> m/s while its <span class="math notranslate nohighlight">\(r_\textrm{perihelion} = 4.60012e10\)</span> m. Recall that you should start with <span class="math notranslate nohighlight">\(dt=0.1\)</span> and <span class="math notranslate nohighlight">\(M_{sun} = 1.98855e30\)</span></p>
-<p>🦉Please add the post-Newtonian term to the acceleration of gravity,</p>
+<span class="math notranslate nohighlight">\(v_\textrm{perihelion} = 58,980\)</span> m/s while its <span class="math notranslate nohighlight">\(r_\textrm{perihelion} = 4.60012e10\)</span> m.</p>
+<p>🦉Please add the post-Newtonian term to the acceleration of gravity and repeat parts (a) and (b)</p>
 <p>I now get (in 11 seconds)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">minimum</span> <span class="n">location</span> <span class="n">before</span> <span class="n">interpolation</span> <span class="ow">is</span>  <span class="mf">46001200000.654238053</span>
 <span class="n">The</span> <span class="n">minimum</span> <span class="n">location</span> <span class="n">after</span> <span class="n">interpolation</span> <span class="ow">is</span>  <span class="mf">46001199999.99801791</span>
@@ -809,7 +849,7 @@ $<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = \frac{GM_\odot}{
 </pre></div>
 </div>
 <p>Note that the actual value is 0.5022 microradians per orbit. That’s pretty good!</p>
-<p><strong>HINT:</strong> For this assignment you need to get 5 points around the closest distance (the second time around the orbit <em>not</em> where you start.  You should get</p>
+<p><strong>HINT:</strong> For this assignment you need to get points around the closest distance (the second time around the orbit <em>not</em> where you start.  You should get some of the close points as</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>                   <span class="n">y</span>                   <span class="n">r</span>
 <span class="o">-</span><span class="mf">9998967.016889445</span> <span class="mf">46001199099.338745</span> <span class="mf">46001200186.04237594</span>
 <span class="o">-</span><span class="mf">6460167.061694921</span> <span class="mf">46001199624.2306</span> <span class="mf">46001200077.84657632</span>
@@ -837,6 +877,10 @@ $<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = \frac{GM_\odot}{
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
 <p>If you are trying to get spacecraft around the solar system, an important thing to be able to do is to get a spacecraft from one point to another point in a time <span class="math notranslate nohighlight">\(T\)</span>.  To do this, the spacecraft will need to choose a particular velocity (speed and direction) to be heading in. Write a function <code class="docutils literal notranslate"><span class="pre">Transfer(pos1,pos2,T)</span></code> which determines the velocity to get the spacecraft from pos1 to pos2 in time T.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-5-black-holes">
+<h1>Exercise 5. Black Holes<a class="headerlink" href="#exercise-5-black-holes" title="Permalink to this heading">#</a></h1>
+<p>Here we have simulated a orbit around the Sun.  We got away with using a perturbative correction to get the correct equations of motion for GR because the gravity of the Sun was not that strong.  Now we would like to orbit a black hole.  Go ahead and simulate the equations of motion around a black hole.</p>
 <hr class="docutils" />
 <p>© Copyright 2020</p>
 <ul class="simple">
@@ -934,14 +978,16 @@ $<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = \frac{GM_\odot}{
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-just-information-no-work-on-this-problem">Background (just information…no work on this problem)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-mercury-precision">Exercise 3: Mercury Precision</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-mercury-precession">Exercise 3: Mercury Precession</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-mercury-without-general-relativity">a.  Mercury without general relativity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-mercury-with-general-relativity">b.  Mercury with general relativity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-interpolating-to-find-the-precession">b. Interpolating to find the  precession</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-mercury-with-general-relativity">c.  Mercury with general relativity</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-transfer-orbits-extra-credit-10-points">Exercise 4. Transfer Orbits (Extra Credit: 10 points)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-black-holes">Exercise 5. Black Holes</a></li>
 </ul>
 
   </nav></div>
