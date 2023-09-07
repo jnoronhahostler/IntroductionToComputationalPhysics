@@ -163,7 +163,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Orbital Dynamics</a></li>
 
-
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics2.html">Many Body Simulations</a></li>
@@ -380,9 +379,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-mercury-with-general-relativity">c.  Mercury with general relativity</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-transfer-orbits-extra-credit-10-points">Exercise 4. Transfer Orbits (Extra Credit: 10 points)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-transfer-orbits-extra-credit-10-points">Exercise 4. Transfer Orbits (Extra Credit: 10 points)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-black-holes">Exercise 5. Black Holes</a></li>
 </ul>
 
@@ -432,7 +431,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 9, 7, 5, 37, 33, 123711)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 9, 7, 5, 38, 51, 162412)
 </pre></div>
 </div>
 </div>
@@ -832,7 +831,14 @@ You should find a minimum distance of 46001200000.517811935.</p>
 <p>Now you should be able to get the actual coordinate of the closest point (the second time around).  Using this you can get the precession angle.
 I get that it is -0.017013797776581767923 radians (but because this is very sensitive to precision, anything less then 0.03 is fine.)</p>
 <p>We will consider anything less then 0.03 microradians in magnitude essentially zero.</p>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-mercury-with-general-relativity">
 <h3>c.  Mercury with general relativity<a class="headerlink" href="#c-mercury-with-general-relativity" title="Permalink to this heading">#</a></h3>
 <p>Now turn on the effects of general relativity (by modifying your force) and do the same computation.</p>
@@ -869,14 +875,14 @@ $<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = -\frac{GM_\odot}
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercise-4-transfer-orbits-extra-credit-10-points">
-<h1>Exercise 4. Transfer Orbits (Extra Credit: 10 points)<a class="headerlink" href="#exercise-4-transfer-orbits-extra-credit-10-points" title="Permalink to this heading">#</a></h1>
+<section id="exercise-4-transfer-orbits-extra-credit-10-points">
+<h2>Exercise 4. Transfer Orbits (Extra Credit: 10 points)<a class="headerlink" href="#exercise-4-transfer-orbits-extra-credit-10-points" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
 <p>If you are trying to get spacecraft around the solar system, an important thing to be able to do is to get a spacecraft from one point to another point in a time <span class="math notranslate nohighlight">\(T\)</span>.  To do this, the spacecraft will need to choose a particular velocity (speed and direction) to be heading in. Write a function <code class="docutils literal notranslate"><span class="pre">Transfer(pos1,pos2,T)</span></code> which determines the velocity to get the spacecraft from pos1 to pos2 in time T.</p>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercise-5-black-holes">
 <h1>Exercise 5. Black Holes<a class="headerlink" href="#exercise-5-black-holes" title="Permalink to this heading">#</a></h1>
@@ -984,9 +990,9 @@ $<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = -\frac{GM_\odot}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-mercury-with-general-relativity">c.  Mercury with general relativity</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-transfer-orbits-extra-credit-10-points">Exercise 4. Transfer Orbits (Extra Credit: 10 points)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-transfer-orbits-extra-credit-10-points">Exercise 4. Transfer Orbits (Extra Credit: 10 points)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-black-holes">Exercise 5. Black Holes</a></li>
 </ul>
 
