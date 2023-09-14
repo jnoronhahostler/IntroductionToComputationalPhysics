@@ -396,7 +396,42 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">from</span> <span class="nn">exo_helper</span> <span class="kn">import</span> <span class="n">get_planet_vxvy_barycentric</span>
+<span class="c1">#from exo_helper import get_planet_vxvy_barycentric</span>
+<span class="k">def</span> <span class="nf">get_planet_vxvy_barycentric</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+    <span class="c1"># take the average of the aphelion and perihelion as the distance</span>
+    <span class="c1"># between the sun and Jupiter.</span>
+    <span class="n">orbit_radius_jupiter</span> <span class="o">=</span> <span class="mf">778.295e9</span>
+
+    <span class="c1"># take the average of the aphelion and perihelion as the distance</span>
+    <span class="c1"># between the sun and Venus. https://en.wikipedia.org/wiki/Venus</span>
+    <span class="n">orbit_radius_venus</span> <span class="o">=</span> <span class="mf">108.208e9</span>
+
+    <span class="c1"># orbital period for Jupiter, from Wikipedia, is 4332.59 days.</span>
+    <span class="c1"># orbital period for Venus, from Wikipedia, is 224.701 days.</span>
+    <span class="n">orbit_period_jupiter</span> <span class="o">=</span> <span class="mf">4332.59</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">3600</span>
+    <span class="n">orbit_period_venus</span> <span class="o">=</span> <span class="mf">224.701</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">3600</span>
+    <span class="n">orbit_period</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">orbit_period_jupiter</span><span class="p">,</span> <span class="n">orbit_period_venus</span><span class="p">])</span>
+    <span class="c1"># create arrays for the vx, vy positions</span>
+    <span class="n">theta_now</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span> <span class="o">+</span> <span class="n">t</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">orbit_period</span>
+    <span class="c1"># array of orbital speeds for motion in a heliocentric system:</span>
+    <span class="n">orbit_speed_jupiter</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">orbit_radius_jupiter</span> <span class="o">/</span> <span class="n">orbit_period_jupiter</span>
+    <span class="n">orbit_speed_venus</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">orbit_radius_venus</span> <span class="o">/</span> <span class="n">orbit_period_venus</span>
+
+    <span class="n">orbit_speed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span><span class="n">orbit_speed_jupiter</span><span class="p">,</span><span class="n">orbit_speed_venus</span><span class="p">])</span>
+
+    <span class="c1"># now get the velocity components. i am assuming that orbits are circles.</span>
+    <span class="n">vxarray</span><span class="p">,</span> <span class="n">vyarray</span> <span class="o">=</span> <span class="o">-</span><span class="n">orbit_speed</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_now</span><span class="p">),</span> <span class="n">orbit_speed</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_now</span><span class="p">)</span>
+
+    <span class="c1"># now calculate center of mass velocities, then subtract that from all</span>
+    <span class="c1"># the objects</span>
+    <span class="n">vx_cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">vxarray</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">mass</span><span class="p">)</span>
+    <span class="n">vy_cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">vyarray</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">mass</span><span class="p">)</span>
+
+    <span class="c1"># now get the velocity components. i am assuming that orbits are circles.</span>
+    <span class="n">vxarray</span> <span class="o">=</span> <span class="n">vxarray</span> <span class="o">-</span> <span class="n">vx_cm</span>
+    <span class="n">vyarray</span> <span class="o">=</span> <span class="n">vyarray</span> <span class="o">-</span> <span class="n">vy_cm</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">vxarray</span><span class="p">,</span> <span class="n">vyarray</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
     <span class="n">keepList</span><span class="o">=</span><span class="n">keepList</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;resetMe&#39;</span><span class="p">,</span><span class="s1">&#39;np&#39;</span><span class="p">,</span><span class="s1">&#39;plt&#39;</span><span class="p">,</span><span class="s1">&#39;math&#39;</span><span class="p">,</span><span class="s1">&#39;get_planet_vxvy_barycentric&#39;</span><span class="p">]</span>
@@ -662,12 +697,12 @@ m_{\text{planet}}\sin i &amp;= \left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-09-09 20:02:49--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
-Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 130.126.151.14
-Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-09-14 21:06:12--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
+Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130.126.151.14
+Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... connected.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 200 OK
@@ -678,7 +713,7 @@ Saving to: ‘UID_0019921_RVC_002.tbl.txt’
           UID_00199   0%[                    ]       0  --.-KB/s               
 UID_0019921_RVC_002 100%[===================&gt;]   4.88K  --.-KB/s    in 0s      
 
-2023-09-09 20:02:49 (3.32 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
+2023-09-14 21:06:17 (2.02 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
 </pre></div>
 </div>
 </div>
