@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -78,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -314,10 +324,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -325,7 +335,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -391,6 +401,38 @@ document.write(`
 <li><p><strong>Date:</strong></p></li>
 <li><p><strong>Time spent on this assignment:</strong></p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>https://clark.physics.illinois.edu/exo_helper.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-09-21 18:43:39--  https://clark.physics.illinois.edu/exo_helper.py
+Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.220.149.166
+Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
+HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+Length: 1729 (1.7K)
+Saving to: ‘exo_helper.py.1’
+
+
+exo_helper.py.1       0%[                    ]       0  --.-KB/s               
+exo_helper.py.1     100%[===================&gt;]   1.69K  --.-KB/s    in 0s      
+
+2023-09-21 18:43:39 (785 MB/s) - ‘exo_helper.py.1’ saved [1729/1729]
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -520,9 +562,10 @@ To get our hands a little dirty and simulate the observed solar system radial ve
 <span class="c1"># See https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size</span>
 <span class="n">mass</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;SunMass&quot;</span><span class="p">],</span><span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;JupiterMass&quot;</span><span class="p">],</span><span class="mf">0.0</span><span class="p">])</span>
 <span class="c1"># get vx, vy for the sun + jupiter + venus.</span>
-<span class="n">vxList</span><span class="p">,</span> <span class="n">vyList</span> <span class="o">=</span> <span class="n">get_planet_vxvy_barycentric</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="n">get_planet_vxvy_barycentric</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>This will return the velocities for the three planets in the x and y direction at time t.</p>
 <p>🦉Please do the following. Generate a plot of the sun’s <span class="math notranslate nohighlight">\(x\)</span> component of velocity over a 25 year period, at 15 day intervals for just one planet (Jupiter). Please use 365.25 days as the length of one year.</p>
 <p>How much variation in wavelength would this induce in a 500 nm spectral line?</p>
 <p>Here is what I got:</p>
@@ -697,12 +740,15 @@ m_{\text{planet}}\sin i &amp;= \left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-09-14 21:06:12--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-09-21 18:43:40--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
 Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130.126.151.14
-Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... connected.
+Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 200 OK
@@ -713,7 +759,7 @@ Saving to: ‘UID_0019921_RVC_002.tbl.txt’
           UID_00199   0%[                    ]       0  --.-KB/s               
 UID_0019921_RVC_002 100%[===================&gt;]   4.88K  --.-KB/s    in 0s      
 
-2023-09-14 21:06:17 (2.02 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
+2023-09-21 18:43:40 (2.91 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
 </pre></div>
 </div>
 </div>
@@ -921,11 +967,10 @@ Ported to Jupyter and new material by BKC &amp; RL (2019)</p>
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="OrbitalDynamics.html"
@@ -945,10 +990,7 @@ Ported to Jupyter and new material by BKC &amp; RL (2019)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1031,8 +1073,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
