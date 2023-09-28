@@ -366,14 +366,25 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-plot-a-random-walk">a.  Plot a random walk</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-random-walk-averages">b. Random Walk Averages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-computing-average-distance">c. Computing average distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-the-full-distribution">d. The full distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-diffusion-equations">e. Diffusion Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-discrete-walks">f. Discrete Walks</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-random-walks-in-two-dimensions">Exercise 2: Random Walks in Two Dimensions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2d-walks">a. 2D Walks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-self-similarity">b. Self Similarity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-standard-deviation">c. Standard Deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-rotational-invariance">d. Rotational Invariance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-animation-extra-credit-5-points">e.  Animation (extra credit: 5 points)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-uniform-walks-ec-5-points">Exercise 3: Uniform walks (EC - 5 points)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-gaussian-random-walks-ec">Exercise 4: Gaussian Random Walks (EC)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-diffusion-limited-aggregation">Exercise 3: Diffusion Limited Aggregation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-dla-onto-a-core-point-at-the-origin">a. DLA onto a core point at the origin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-dla-onto-a-surface-extra-credit-5-points">b. DLA onto a surface (extra credit: 5 points)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-path-integral-monte-carlo-extra-credit">Exercise 4: Path Integral Monte Carlo (extra credit)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fixed-points">a. Fixed Points</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-connected-points">b.  Connected Points</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-fixed-region">c. Fixed Region</a></li>
@@ -440,8 +451,11 @@ generators:</p>
 <p>where <code class="docutils literal notranslate"><span class="pre">averageJumpDistance</span></code> is the typical distance the pollen particle jumps every 30 seconds, which I set to 6 <span class="math notranslate nohighlight">\(\mu m\)</span>. The <code class="docutils literal notranslate"><span class="pre">np.random.randn()</span></code> command generates a random number from the Gaussian (or Normal) distribution with mean zero and standard deviation one.</p>
 <section id="a-plot-a-random-walk">
 <h3>a.  Plot a random walk<a class="headerlink" href="#a-plot-a-random-walk" title="Permalink to this heading">#</a></h3>
-<p>🦉Generate your own random walk and plot it. Use the same parameters as in the above figure, i.e., simulate <span class="math notranslate nohighlight">\(6 \mu m\)</span> jumps every 30 seconds for 30,000 seconds, or 1,000 jumps.</p>
-<p>The first thing you will notice is that random walks can vary a lot. Yours will probably look very different than the one in the above figure. Generate another random walk using your code and notice that it too is different form your first walk. So what can we learn about how the pollen grain moves if every time the motion is random? Well, we can try simulating many random walks and looking at what happens on average.</p>
+<p>Generate your own random walk and plot it’s location as a function of time.  Use the same parameters as in the above figure, i.e., simulate <span class="math notranslate nohighlight">\(6 \mu m\)</span> jumps every 30 seconds for 30,000 seconds, or 1,000 jumps.</p>
+<p>The first thing you will notice is that random walks can vary a lot. Yours will probably look very different than the one in the above figure.</p>
+<p>Generate another random walk using your code and notice that it too is different form your first walk.</p>
+<p>On your plot, go ahead and generate 10 different random walks</p>
+<p>To accomplish this, it’s perfectly fine to go ahead and use a bunch of for loops.  If you are feeling fancy, it is possible to do this efficiently using <code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code> and <code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code>.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER ME</span>
@@ -452,7 +466,11 @@ generators:</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 <section id="b-random-walk-averages">
 <h3>b. Random Walk Averages<a class="headerlink" href="#b-random-walk-averages" title="Permalink to this heading">#</a></h3>
-<p>🦉Generate 2,000 random walks and write code to calculate, then graph the average position <span class="math notranslate nohighlight">\(\langle x_k \rangle\)</span> after the kth jump, for k running from 0 to 1,999. What do I mean by averaging over walks? For example, say that we have two random walks, each made of 1,000 steps. I store the positions of the random walks as two length 1,000 arrays walk1 and walk2. Averaging over the two walks, the average position after each jump is an array I can calculate as</p>
+<p>Since each random walk is different, we need to instead look at properties of the distribution of random walks to learn anything about them.  The simplest thing to look at is the average.</p>
+<p>Generate 2000 random walks and evaluate the average position
+<span class="math notranslate nohighlight">\(\langle x_k \rangle\)</span> after the <span class="math notranslate nohighlight">\(k'th\)</span> jump, for <span class="math notranslate nohighlight">\(k\)</span> running from 0 to 1000.</p>
+<p>Before you compute the average positions, think about what you expect. Once you see the result, does it agree with your expectations? Does it make sense to you?<em>Make sure you pay attention to the scale compared to the scale of a single random walk.</em></p>
+<p>What do I mean by averaging over walks? For example, say that we have two random walks, each made of 1,000 steps. I store the positions of the random walks as two length 1,000 arrays walk1 and walk2. Averaging over the two walks, the average position after each jump is an array I can calculate as</p>
 <p><code class="docutils literal notranslate"><span class="pre">average_array</span> <span class="pre">=</span> <span class="pre">(walk1</span> <span class="pre">+</span> <span class="pre">walk2)</span> <span class="pre">/</span> <span class="pre">2.0</span></code>.</p>
 <p>There’s a more graceful way to do this than storing all the arrays, then calculating the average at the end. Instead, add the position after each jump while generating a walk into a single accumulator array. After you are done generating walks divide each element in your accumulator array by the number of walks.
 Let me illustrate what I mean with a table of hypothetical data, for 2,000 random walks, each of 1,000 jumps.</p>
@@ -511,7 +529,7 @@ Let me illustrate what I mean with a table of hypothetical data, for 2,000 rando
 </tr>
 </tbody>
 </table>
-<p>Before you compute the average positions, think about what you expect. Once you see the result, does it agree with your expectations? Does it make sense to you? Here’s my plot:</p>
+<p>Here’s my plot:</p>
 <!--![image.png](attachment:image.png)-->
  <div><img src="https://clark.physics.illinois.edu/246img/RW3.png" width=450 alt="RW"></img><br></div> <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -520,25 +538,35 @@ Let me illustrate what I mean with a table of hypothetical data, for 2,000 rando
 </div>
 </div>
 </div>
- <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-computing-average-distance">
 <h3>c. Computing average distance<a class="headerlink" href="#c-computing-average-distance" title="Permalink to this heading">#</a></h3>
-<p>An interesting quantity to consider for random walks is the root-mean-square (RMS) displacement as a function of time. For the <span class="math notranslate nohighlight">\(k\)</span>’th jump the RMS tells us how much the pollen particle’s position will have tended to drift by the time it executes the <span class="math notranslate nohighlight">\(k\)</span>’th jump in a typical walk.</p>
-<p>Is is easy to calculate the RMS displacement for each bin without storing the position arrays of individual walks. Here’s how:</p>
+<p>As you should have noticed, the average is not telling you very much.  This is because you’re just as likely to move left as right.  Therefore, on average, you’re not going anywhere.</p>
+<p>We need to look at something else. In some sense, we want to know how far away you are from the origin.  One way that is conceptually nice to quantify this (although not necessarily the best) is to just plot the average absolute value of your location.  Go ahead and start by making this plot.</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER ME</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (End)"></img><br></div><p>A slightly better quantity to look at which answers a similar question is the standard deviation of your random walks</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align}
-RMS_{k^{th} jump} &amp;= \sqrt{\frac{1}{N}\sum_{j=0}^{j=N}\left(x_{k,walk\,j}-\langle x_k\rangle\right)^2}\\
-&amp;= \sqrt{\left( \frac{1}{N}\sum_{j=0}^{j=N}\left(x_{k,walk\,j}\right)^2\right)- \left(\sqrt{\frac{2}{N}\sum_{j=0}^{j=N} x_{k,walk\, j} \langle x_k \rangle} \right) + \left( \frac{1}{N}\sum_{j=0}^{j=N}\langle x_k \rangle^2\right)}\\
-&amp;= \sqrt{\langle x_k^2 \rangle - \left(\sqrt{2\langle x_k \rangle\frac{1}{N}\sum_{j=0}^{j=N} x_{k,walk\, j} } \right) + \left( \frac{\langle x_k \rangle^2}{N}\sum_{j=0}^{j=N}1 \right)}\\
-&amp;=\sqrt{\langle x_k^2\rangle -2\langle x_k\rangle\langle x_k\rangle+\langle x_k\rangle^2}\\
-&amp;=\sqrt{\langle x_k^2\rangle - \langle x_k\rangle^2}
-\end{align}
-\end{split}\]</div>
+\[ \sqrt{\frac{1}{N} \sum_{j=1}^N (x_k - \langle x_k\rangle)^2} \]</div>
+<div class="math notranslate nohighlight">
+\[=\sqrt{\langle x_k^2\rangle - \langle x_k\rangle^2}\]</div>
+<p>For the <span class="math notranslate nohighlight">\(k\)</span>’th jump the RMS tells us how much the pollen particle’s position will have tended to drift by the time it executes the <span class="math notranslate nohighlight">\(k\)</span>’th jump in a typical walk.</p>
 <p>All you need to do is calculate the average value of <span class="math notranslate nohighlight">\(x_k^2\)</span> and the average value of <span class="math notranslate nohighlight">\(x_k\)</span>. So each time you generate a walk, add the position of each jump into an accumulator array and the square of the position into another accumulator array. At the end, divide the contents of each bin in your accumulator arrays by the number of walks.</p>
-<p>🦉Write code to compute the RMS displacement as a function of time using 2,000 random walks and plot the result. You should get something similar to the following curve:</p>
+<p>Write code to compute the RMS displacement as a function of time using 2,000 random walks and plot the result. You should get something similar to the following curve:</p>
 <!--![image.png](attachment:image.png)-->
- <div><img src="https://clark.physics.illinois.edu/246img/RW4.png" width=450 alt="RW"></img><br></div><p>We see that, on average, there is a very clear trend for the pollen particle to drift farther away over time. If we ignore the small value of the average position <span class="math notranslate nohighlight">\(\langle x_k \rangle\)</span> we can write</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/RW4.png" width=450 alt="RW"></img><br></div> <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (Start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER ME</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (End)"></img><br></div><p>We see that, on average, there is a very clear trend for the pollen particle to drift farther away over time. If we ignore the small value of the average position <span class="math notranslate nohighlight">\(\langle x_k \rangle\)</span> which is zero we can write</p>
 <div class="math notranslate nohighlight">
 \[RMS_\textrm{kth jump} = \sqrt{\langle x_k^2\rangle - \langle x_k \rangle^2} \approx \sqrt{\langle x_k^2 \rangle} \propto \sqrt{t_k}\]</div>
 <p>The square root here is very important and characterizes all diffusive motion. Note that a free particle moving with constant velocity will have <span class="math notranslate nohighlight">\(x\propto t\)</span>. Such motion is sometimes called ballistic motion. The main takeaway is that diffusive motion is much slower than ballistic motion. Intuitively, this makes sense since, in diffusive motion, a particle is being severely slowed down by random bombardments from its environment.</p>
@@ -554,7 +582,78 @@ RMS_{k^{th} jump} &amp;= \sqrt{\frac{1}{N}\sum_{j=0}^{j=N}\left(x_{k,walk\,j}-\l
 </div>
 </div>
 </div>
- <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (End)"></img><br></div></section>
+<section id="d-the-full-distribution">
+<h3>d. The full distribution<a class="headerlink" href="#d-the-full-distribution" title="Permalink to this heading">#</a></h3>
+<p>So far we’ve been looking at some summary statistics as of the distribution.  These are good pieces of information to start figuring out what’s going on.  But, at some point it is helpful to look at the full distribution.</p>
+<p>Let’s focus here on what the distribution looks like after 2 steps, 10 steps, 100 steps, and 500 steps.</p>
+<p>To do this, you want to plot a histogram of your distribution - i.e. something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">locs</span><span class="p">[:,</span><span class="mi">100</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Plot all four histograms on the same plot.</p>
+<p>You should see the distribution always looks gaussian with the width of the gaussian growing as the number of steps grow.</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (Start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER ME</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (End)"></img><br></div></section>
+<section id="e-diffusion-equations">
+<h3>e. Diffusion Equations<a class="headerlink" href="#e-diffusion-equations" title="Permalink to this heading">#</a></h3>
+<p>Previously in this course, we’ve worked on diffusion equations.  Now we’ve move to stochastic random walks.  The diffusion equations we’ve worekd with are deterministic so obviously can’t match each stochastic walk.  But, the distribution as a function of time is something you might imagine could be correctly matched with differential equations. This is in fact the case - stochastic random walks are represented by the diffusion equation:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial \rho}{\partial t} = D \frac{\partial^2 \rho}{\partial x^2}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(D=a^2/2\)</span> is the diffusion constant where <span class="math notranslate nohighlight">\(a\)</span> is our step size (in this case 6).</p>
+<p>Write some code to simulate this diffusion equation from the initial conditions <span class="math notranslate nohighlight">\(\rho(0)=\exp[-x^2/2\sigma^2]\)</span> where <span class="math notranslate nohighlight">\(\sigma=6\)</span>.  This is where our random walks are after their first step.</p>
+<p>To simulate this differential equation, you are going to want to let <span class="math notranslate nohighlight">\(\rho\)</span> be a density of random walks represented by a vector.  I set up my <span class="math notranslate nohighlight">\(\rho\)</span> by doing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dx</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">points</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">size</span><span class="p">))</span>
+<span class="n">xs</span><span class="o">=</span><span class="n">dx</span><span class="o">*</span><span class="p">(</span><span class="n">points</span><span class="o">-</span><span class="n">size</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">rho</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">6</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>You can then plot it by doing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">rho</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(we scale it so that the integral of our density is 1.0).</p>
+<p>Having this as your initial condition now you want to time-step your density.  To do this, you should compute <span class="math notranslate nohighlight">\(\frac{\partial^2 \rho}{\partial x^2}\)</span> and then move forward the <span class="math notranslate nohighlight">\(\rho\)</span>.  Use a time step <span class="math notranslate nohighlight">\(dt=dx^2/100\)</span>.</p>
+<p>(It may or may not be helpful to use <code class="docutils literal notranslate"><span class="pre">np.roll(rho,1)</span></code> and <code class="docutils literal notranslate"><span class="pre">np.roll(rho,-1)</span></code>)</p>
+<p>Compare the distribution that you get at times <span class="math notranslate nohighlight">\(t=2.0, t=10.0, and t=30.0\)</span> against the histograms you got from the random walks (remembering to also scale the density of the random walks histograms like <code class="docutils literal notranslate"><span class="pre">plt.hist(locs[:,10],bins=50,density=True)</span></code>.</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (Start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER ME</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (End)"></img><br></div></section>
+<section id="f-discrete-walks">
+<h3>f. Discrete Walks<a class="headerlink" href="#f-discrete-walks" title="Permalink to this heading">#</a></h3>
+<p>So far we’ve been doing random walks with gaussian steps.  We would like to see what changes if instead we did discrete walks - i.e. at each step we are going to walk either left exactly 6 units or right exactly 6 units.</p>
+<p>Write code to do this random walk and then print the histogram on separate plots at</p>
+<ul class="simple">
+<li><p>2 steps (with the gaussian histogram on top of it)</p></li>
+<li><p>100 steps (with the gaussian histogram on top of it).</p></li>
+</ul>
+<p>i.e. for the 2 step histogram I wrote</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">locs_discrete</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">locs</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>For the 2 step histogram you should see a qualitative difference.  But once you get to 100 steps, it seems that there is no dependence on the distribution for either the discrete or gaussian steps.  This is a form of universality (and something we will see even more starkly in the two-dimensional case below).</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (Start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER ME</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (End)"></img><br></div></section>
 </section>
 <section id="exercise-2-random-walks-in-two-dimensions">
 <h2>Exercise 2: Random Walks in Two Dimensions<a class="headerlink" href="#exercise-2-random-walks-in-two-dimensions" title="Permalink to this heading">#</a></h2>
@@ -567,11 +666,8 @@ RMS_{k^{th} jump} &amp;= \sqrt{\frac{1}{N}\sum_{j=0}^{j=N}\left(x_{k,walk\,j}-\l
 <h3>a. 2D Walks<a class="headerlink" href="#a-2d-walks" title="Permalink to this heading">#</a></h3>
 <p>We mark the pollen grain’s initial position as   <span class="math notranslate nohighlight">\((x_0,y_0)=(0,0) \mu  m\)</span>. We measure every 30 seconds and see each component of the pollen particle’s position <span class="math notranslate nohighlight">\(x_k,y_k\)</span> jump from its previous
 position. We’ll expect the typical jump distance to be <span class="math notranslate nohighlight">\(\approx 6\sqrt{2}\)</span> <span class="math notranslate nohighlight">\(\mu m\)</span>.</p>
-<p>Write code that generates 2,000 two-dimensional random walks and plots the average radial displacement over time:</p>
-<div class="math notranslate nohighlight">
-\[\langle r \rangle = \langle \sqrt{x_k^2 + y_k^2}  \rangle\]</div>
-<p>You should obtain a similar curve to that obtained in the one-dimensional case, but increased somewhat in amplitude. Even in two-dimensions, the displacement goes with the square root of time. It turns out that you also see this behavior in three dimensions. In general, the RMS displacement always scales as the square root of time for any physical system undergoing diffusive motion.</p>
-<p>🦉Generate and plot the radial displacement vs time for 2,000 2D random walks. Also show it on a log-log plot and compute the slope.</p>
+<p>Write code that generates 2,000 two-dimensional <em>gaussian</em> random walks of 5000 steps.  Start by plotting y vs x of 10 such random walks.</p>
+<p>Do the same thing for 10 discrete (up,down,left,right) random walks.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER ME</span>
@@ -580,18 +676,104 @@ position. We’ll expect the typical jump distance to be <span class="math notra
 </div>
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
-</section>
-<section id="exercise-3-uniform-walks-ec-5-points">
-<h2>Exercise 3: Uniform walks (EC - 5 points)<a class="headerlink" href="#exercise-3-uniform-walks-ec-5-points" title="Permalink to this heading">#</a></h2>
-<p><em>(Extra credit: 5 points)</em></p>
+<section id="b-self-similarity">
+<h3>b. Self Similarity<a class="headerlink" href="#b-self-similarity" title="Permalink to this heading">#</a></h3>
+<p>Brownian random walks are self-similar. As you zoom into pieces of the figure, it looks qualitatively the same on all scales.
+Make a random walk of 128,000 steps.  Then plot (on separate plots)</p>
 <ul class="simple">
-<li><p><strong>List of collaborators:</strong></p></li>
-<li><p><strong>References you used in developing your code:</strong></p></li>
+<li><p>the random walk</p></li>
+<li><p>the first half of the random walk (multiplying the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> by 2)</p></li>
+<li><p>the first quarter of the random walk  (multiplying the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> by 4)</p></li>
+<li><p>the first eighth of the random walk  (multiplying the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> by 8)</p></li>
+<li><p>the first 1/16 of the random walk  (multiplying the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> by 16)</p></li>
+<li><p>the first 1/32 of the random walk  (multiplying the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> by 32)</p></li>
 </ul>
-<p>Do a similar analysis to the work above (in two dimensions) using walks that randomly make a step in one of four directions of unit length. Notice that this explicitly breaks the circular symmetry of the two-dimensional Gaussian random walks.  Show that these uniform walks still have a diffusive aspect at large distances and (at large distances) restore this symmetry (i.e. the two-dimensional density profile of being a distance <span class="math notranslate nohighlight">\(r\)</span> aways doesn’t differ for up vs up-right).  This restoration of symmetry is an aspect of universality.</p>
+<p>Notice that these plots all look qualitatively similar. This is what I get:</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/selfSimilar.png" width=500 alt="RW"></img><br></div> <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div> <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="c-standard-deviation">
+<h3>c. Standard Deviation<a class="headerlink" href="#c-standard-deviation" title="Permalink to this heading">#</a></h3>
+<p>Like in the 1D case, we expect the average <span class="math notranslate nohighlight">\(\langle x_k \rangle\)</span> to be zero.  Let’s just go ahead and plot
+$<span class="math notranslate nohighlight">\(\langle r \rangle = \langle \sqrt{x_k^2 + y_k^2}  \rangle\)</span>$
+<em>for 1000 copies of both the gaussian and discrete walk on the same plot</em></p>
+<p>You should obtain a similar curve to that obtained in the one-dimensional case, but increased somewhat in amplitude.Even in two-dimensions, the displacement goes with the square root of time. <strong>Show this by also plotting it on a log-log plot and fitting the slope</strong>.</p>
+<p>It turns out that you also see this behavior in three dimensions. In general, the RMS displacement always scales as the square root of time for any physical system undergoing diffusive motion.</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (Start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER ME</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (End)"></img><br></div></section>
+<section id="d-rotational-invariance">
+<h3>d. Rotational Invariance<a class="headerlink" href="#d-rotational-invariance" title="Permalink to this heading">#</a></h3>
+<p>Now we are going to show that in the 2D case, the discrete walks restore the rotational invariance of the gaussian walk.</p>
+<p>To do this, we want to put the location of the 2000 2d coordinates at t=1000 steps.</p>
+<p>Do this for both the discrete and guassian walks.</p>
+<p>You should see that
+(1) They look the same and
+(2) More interestingly, the discrete case looks rotationally invariant (like a circle) even though it can only go up, down, left, right.   This is an  emergent rotational symmetry.</p>
+  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER ME</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="e-animation-extra-credit-5-points">
+<h3>e.  Animation (extra credit: 5 points)<a class="headerlink" href="#e-animation-extra-credit-5-points" title="Permalink to this heading">#</a></h3>
+<p>Animate the two-dimensional random walk.  You may find the animation code from previous assignments helpful.</p>
 </section>
-<section id="exercise-4-gaussian-random-walks-ec">
-<h2>Exercise 4: Gaussian Random Walks (EC)<a class="headerlink" href="#exercise-4-gaussian-random-walks-ec" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="exercise-3-diffusion-limited-aggregation">
+<h2>Exercise 3: Diffusion Limited Aggregation<a class="headerlink" href="#exercise-3-diffusion-limited-aggregation" title="Permalink to this heading">#</a></h2>
+<p>In the previous exercises we learned some properties of random walks.  In this exercise, we will apply random walks to the application of deposition.  This will be done by modeling it with diffusion limited aggregation (DLA).</p>
+<section id="a-dla-onto-a-core-point-at-the-origin">
+<h3>a. DLA onto a core point at the origin<a class="headerlink" href="#a-dla-onto-a-core-point-at-the-origin" title="Permalink to this heading">#</a></h3>
+<p>In DLA, we do the following:</p>
+<ul class="simple">
+<li><p>Start with a particle at some fixed point (say the center of a box).</p></li>
+<li><p>Repeat the following:</p>
+<ul>
+<li><p>Add a new particle someplace on the boundary (anywhere on the four walls).</p></li>
+<li><p>Move this particle using a discrete random walk (left, right, up, down).  If it tries to move in the direction of one of the walls, it shouldn’t stick (but also shouldn’t go anywhere).</p></li>
+<li><p>Once it is touching (up or down or left or right) a currently stuck particle, it should stick.</p></li>
+</ul>
+</li>
+</ul>
+<p>To accomplish this, I kept a two-dimensional numpy array which kept track of the location of the stuck particles and the currently moving particle.</p>
+<p>At the end, you want to go ahead and plot the location of your stuck particles.  To do this, use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">A</span></code> is your numpy grid.</p>
+<p>Start with a box of size <span class="math notranslate nohighlight">\(100 \times 100\)</span>.<br />
+Use 1000 different particles.</p>
+<p>This simulation is a little slow.  On colab, it takes me approximately 2 minutes.  For testing you might want to turn down the number of different particles that you use.</p>
+<p>It also also interesting to see the picture when you have a larger box (<span class="math notranslate nohighlight">\(200 \times 200\)</span>) but this is much slower (and not required as part of the assignment).</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER ME</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="b-dla-onto-a-surface-extra-credit-5-points">
+<h3>b. DLA onto a surface (extra credit: 5 points)<a class="headerlink" href="#b-dla-onto-a-surface-extra-credit-5-points" title="Permalink to this heading">#</a></h3>
+<p>In the previous section you did DLA onto a core point.  If you are interested in understanding deposition onto a surface, you want to modify your DLA to come in at the top and stick either at the bottom or if they hit any previously stuck point.  Implement this.</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER ME</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+</section>
+<section id="exercise-4-path-integral-monte-carlo-extra-credit">
+<h2>Exercise 4: Path Integral Monte Carlo (extra credit)<a class="headerlink" href="#exercise-4-path-integral-monte-carlo-extra-credit" title="Permalink to this heading">#</a></h2>
 <p><em>(Extra credit: 20 points)</em></p>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
@@ -621,10 +803,12 @@ position. We’ll expect the typical jump distance to be <span class="math notra
 <p>Redo this for one dimension.</p>
 <p>**Acknowledgements:</p>
 <ul class="simple">
-<li><p>George Gollin and Ryan Levy and Eli Chertkov (original); Bryan Clark (modifications)</p></li>
+<li><p>Problems 1abc 2ac: George Gollin and Ryan Levy and Eli Chertkov (original); Bryan Clark (modifications)</p></li>
+<li><p>Problems 1de 2b: Bryan Clark (original)</p></li>
+<li><p>Problems 3,4: Bryan Clark (original)</p></li>
 </ul>
 <hr class="docutils" />
-<p>© Copyright 2021</p>
+<p>© Copyright 2023</p>
 </section>
 </section>
 </section>
@@ -696,14 +880,25 @@ position. We’ll expect the typical jump distance to be <span class="math notra
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-plot-a-random-walk">a.  Plot a random walk</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-random-walk-averages">b. Random Walk Averages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-computing-average-distance">c. Computing average distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-the-full-distribution">d. The full distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-diffusion-equations">e. Diffusion Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-discrete-walks">f. Discrete Walks</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-random-walks-in-two-dimensions">Exercise 2: Random Walks in Two Dimensions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2d-walks">a. 2D Walks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-self-similarity">b. Self Similarity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-standard-deviation">c. Standard Deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-rotational-invariance">d. Rotational Invariance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-animation-extra-credit-5-points">e.  Animation (extra credit: 5 points)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-uniform-walks-ec-5-points">Exercise 3: Uniform walks (EC - 5 points)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-gaussian-random-walks-ec">Exercise 4: Gaussian Random Walks (EC)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-diffusion-limited-aggregation">Exercise 3: Diffusion Limited Aggregation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-dla-onto-a-core-point-at-the-origin">a. DLA onto a core point at the origin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-dla-onto-a-surface-extra-credit-5-points">b. DLA onto a surface (extra credit: 5 points)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-path-integral-monte-carlo-extra-credit">Exercise 4: Path Integral Monte Carlo (extra credit)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fixed-points">a. Fixed Points</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-connected-points">b.  Connected Points</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-fixed-region">c. Fixed Region</a></li>
