@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'FluidDynamics';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Classifying Galaxies" href="MachineLearningGalaxies.html" />
+    <link rel="next" title="Many Body Simulations" href="OrbitalDynamics2.html" />
     <link rel="prev" title="Particle Physics" href="ParticlePhysics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -178,9 +178,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Markov%20Chains.html">Markov Chains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predator-Prey.html">Predator-Prey</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics2.html">Many Body Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ParticlePhysics.html">Particle Physics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Fluid Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics2.html">Many Body Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MachineLearningGalaxies.html">Classifying Galaxies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC1.html">Quantum Computing 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC2.html">Quantum Computing 2</a></li>
@@ -488,15 +488,21 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-10-12 19:49:57--  https://courses.physics.illinois.edu/phys246/fa2020/code/TestFiles.zip
-Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 130.126.151.14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-10-19 17:14:19--  https://courses.physics.illinois.edu/phys246/fa2020/code/TestFiles.zip
+Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130.126.151.14
 Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 200 OK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Length: 53041362 (51M) [application/x-zip-compressed]
 Saving to: ‘TestFiles.zip’
 
@@ -504,21 +510,33 @@ Saving to: ‘TestFiles.zip’
 TestFiles.zip         0%[                    ]       0  --.-KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         1%[                    ] 584.00K  2.75MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         0%[                    ] 168.00K   705KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         8%[&gt;                   ]   4.46M  10.8MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         1%[                    ] 632.00K  1.30MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        39%[======&gt;             ]  20.18M  32.4MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         4%[                    ]   2.49M  3.49MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        81%[===============&gt;    ]  41.35M  50.3MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        13%[=&gt;                  ]   6.87M  7.21MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip       100%[===================&gt;]  50.58M  55.8MB/s    in 0.9s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        30%[=====&gt;              ]  15.18M  12.7MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        47%[========&gt;           ]  24.12M  17.0MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        68%[============&gt;       ]  34.77M  21.0MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        91%[=================&gt;  ]  46.10M  24.3MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip       100%[===================&gt;]  50.58M  25.7MB/s    in 2.0s    
 
-2023-10-12 19:49:58 (55.8 MB/s) - ‘TestFiles.zip’ saved [53041362/53041362]
+2023-10-19 17:14:21 (25.7 MB/s) - ‘TestFiles.zip’ saved [53041362/53041362]
 
 Archive:  TestFiles.zip
   inflating: Microscopic_after_move.dat  
@@ -528,7 +546,9 @@ Archive:  TestFiles.zip
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: rho_after_Micro2Macro.dat  
-  inflating: Microscopic_after_bounce.dat  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: Microscopic_after_bounce.dat  
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: Microscopic2.dat        
@@ -1486,11 +1506,11 @@ a. <span class="math notranslate nohighlight">\(\omega\)</span> is the viscosity
       </div>
     </a>
     <a class="right-next"
-       href="MachineLearningGalaxies.html"
+       href="OrbitalDynamics2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Classifying Galaxies</p>
+        <p class="prev-next-title">Many Body Simulations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
