@@ -489,7 +489,7 @@ Wall time: 2.47 s
 <section id="a-note-on-the-data">
 <h3>A Note on the data<a class="headerlink" href="#a-note-on-the-data" title="Permalink to this heading">#</a></h3>
 <p>The original data has 3 channels - g,r,i bands - while this dataset has only 1 (g). This set also only includes a subset of labels.</p>
-<p>Why? Because we don’t want to overwelm the server with large storage for each student. You are welcome to redo this assignment on Google colab with the full channel set and see how well it does; you’ll need to download the full data we’ve provided:</p>
+<p>You are welcome to do this assignment with the full channel set and see how well it does; you’ll need to download the full data we’ve provided:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!wget https://courses.physics.illinois.edu/phys246/fa2020/code/data.pkl.zip
 !unzip data.pkl.zip
 (train_images_raw,train_labels,test_images_raw,test_labels) = pickle.load(open(&quot;data.pkl&quot;,&#39;rb&#39;))
@@ -601,14 +601,29 @@ where</p>
 <h3>c. A measure of goodness<a class="headerlink" href="#c-a-measure-of-goodness" title="Permalink to this heading">#</a></h3>
 <p>To quantify how good our neural network is, we will use two things:</p>
 <p>(1) <strong>Cross-entropy</strong>
-Let’s quantify how far off you are from the expected label (maybe it’s <code class="docutils literal notranslate"><span class="pre">[0,0,0,1,0]</span></code>) . A good way to quantify this is to use the cross entropy.  The cross-entropy is defined as
-$<span class="math notranslate nohighlight">\( \sum_i -y_i \log(a_i) - (1-y_i)\log(1-a_i)\)</span><span class="math notranslate nohighlight">\(
-where \)</span>y_i<span class="math notranslate nohighlight">\( is the \)</span>i’<span class="math notranslate nohighlight">\(th component of the exact label and \)</span>a_i<span class="math notranslate nohighlight">\( is the \)</span>i’$th component of the label you get as output from the neural network.</p>
+Let’s quantify how far off you are from the expected label (maybe it’s <code class="docutils literal notranslate"><span class="pre">[0,0,0,1,0]</span></code>) . A good way to quantify this is to use the cross entropy.  The cross-entropy is defined as</p>
+<div class="math notranslate nohighlight">
+\[ \sum_i -y_i \log(a_i) - (1-y_i)\log(1-a_i)\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_i\)</span> is the <span class="math notranslate nohighlight">\(i'\)</span>th component of the exact label and <span class="math notranslate nohighlight">\(a_i\)</span> is the <span class="math notranslate nohighlight">\(i'\)</span>th component of the label you get as output from the neural network.</p>
 <p>Write a function
 <code class="docutils literal notranslate"><span class="pre">loss(params,</span> <span class="pre">imageVector,</span> <span class="pre">correctLabel)</span></code> that takes the parameters and the <code class="docutils literal notranslate"><span class="pre">imageVector</span></code>, runs the neural network to get the output <code class="docutils literal notranslate"><span class="pre">a</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">a=net(params,imageVector)</span></code>) and then returns the cross entropy.  Check the cross entropy you are getting. Our goal will be to minimize this cross entropy (if we do this, then our network will do a better job of getting the correct galaxy classification)</p>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p>(2) <strong>Correct classification</strong>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p>(2) <strong>Correct classification</strong>
 In addition to the cross-entropy, we care whether the winning labelling is correct. We will say that we’ve labelled it correctly if in our length 10 vector, the maximum value is where the 1 should be.  Write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">fractionCorrect(params,images,labels)</span></code> that says what fraction you got correct. (<code class="docutils literal notranslate"><span class="pre">np.argmax</span></code> is probably useful here).  Run this on your test images and labels.</p>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p>You probably got about 30% correct with your random values of <code class="docutils literal notranslate"><span class="pre">w1,b1,w2,b2</span></code>. Now we have to do better.  We are going to work on getting our loss down (and this will get our fractionCorrect down).  Getting the loss down is easier because it depends continuously on the parameters).</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p>You probably got about 30% correct with your random values of <code class="docutils literal notranslate"><span class="pre">w1,b1,w2,b2</span></code>. Now we have to do better.  We are going to work on getting our loss down (and this will get our fractionCorrect down).  Getting the loss down is easier because it depends continuously on the parameters).</p>
 <p>To make an objective function better, what we should do is to step in a direction where it gets better.  To do this, we are going to want to get the gradient.  We can use jax to get the gradient as we have in earlier assignments.</p>
 <p>Let’s define the gradient of the loss as
 <code class="docutils literal notranslate"><span class="pre">loss_grad</span> <span class="pre">=</span> <span class="pre">jit(jax.grad(jit(loss)))</span></code>.  (The <code class="docutils literal notranslate"><span class="pre">jit</span></code> are there to make things faster.  This is morally just <code class="docutils literal notranslate"><span class="pre">jax.grad(loss)</span></code> and that would work albeit be slower).</p>
@@ -623,7 +638,14 @@ In addition to the cross-entropy, we care whether the winning labelling is corre
 </ul>
 <p>This will make your result on this image marginally better.</p>
 <p>Every 2000 steps you might want to check the fraction of your test set that is now correct. Print it out as well as push it to a list.  You should find that your accuracy rises from 30% beyond 66%.  Plot your accuracy as a function of step for at least 50*2000, and if patient out to 100*2000.</p>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p>Explore a couple images and see how the your neural network classifies it.  Also, it might be fun to go ahead and look at the ones that it classifies incorrectly whether its second choice was correct.  You can go ahead and explictily check this by looping over everything and collecting some statistics.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Explore a couple images and see how the your neural network classifies it.  Also, it might be fun to go ahead and look at the ones that it classifies incorrectly whether its second choice was correct.  You can go ahead and explictily check this by looping over everything and collecting some statistics.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p>We computed the gradient and took a step after every image.  It is better to average the gradient over some number (say ten) images and then take a step.  This is called a mini-batch.  Write some code to do mini-batches by just looping over ten images.  Then improve your code by figuring out to remove the extra loop and use <code class="docutils literal notranslate"><span class="pre">jax.vmap</span></code></p>
 </section>
 <section id="e-mini-batches-and-vmap-extra-credit-5-points">
