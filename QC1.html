@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Quantum Computing 2" href="QC2.html" />
-    <link rel="prev" title="Many Body Simulations" href="OrbitalDynamics2.html" />
+    <link rel="prev" title="Classifying Galaxies" href="MachineLearningGalaxies.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,9 +182,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ParticlePhysics.html">Particle Physics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FluidDynamics.html">Fluid Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MachineLearningGalaxies.html">Classifying Galaxies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics2.html">Many Body Simulations</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Quantum Computing 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC2.html">Quantum Computing 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics2.html">Many Body Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Projects.html">Cool Projects</a></li>
 </ul>
 
@@ -363,16 +363,30 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-a-single-qubit-33-points">Exercise 1: A Single Qubit (33 points)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-a-single-qubit-33-points">Exercise 1: A Single Qubit (33 points)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-a-one-qubit-state">a. A one qubit state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-one-qubit-gates">b. One qubit gates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-seeing-the-rotation">c.  Seeing the rotation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-measuring-the-state">d. Measuring the state</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-two-qubits-34-points">Exercise 2: Two qubits (34 points)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-control-not-gates">a. Control-not gates</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-build-an-epr-pair">b.  Build an EPR Pair</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-measuring-epr-pairs">c. Measuring EPR Pairs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-running-on-an-actual-quantum-computer">d. Running on an actual Quantum Computer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-entanglement">e. Entanglement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-entanglement-extra-credit-5-points">e. Entanglement (Extra Credit: 5 points)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-quantum-key-distribution-ec-20-points">Exercise 3 Quantum Key Distribution (EC - 20 points)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-grover-s-algorithm">Exercise 3:  Grover’s Algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-control-control-control-z">a. Control-Control-Control Z</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-all-hadamards">b. All Hadamards</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-flipallbutzero">c. FlipAllButZero</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-invert">d. Invert</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-running-grover-s-algorithm">e. Running Grover’s Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-quantum-key-distribution-ec-20-points">Exercise 4 Quantum Key Distribution (EC - 20 points)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-one-time-pads">a. One time pads</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-eve-s-arrival">b. Eve’s arrival</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-an-improved-protocol">c. An improved protocol</a></li>
@@ -380,7 +394,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-not-flipping-shared-coins">e.  Not flipping shared coins</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-building-up-tools-ec-10-points">Exercise 4: Building up tools (EC - 10 points)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-building-up-tools-ec-10-points">Exercise 5: Building up tools (EC - 10 points)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-initializing-a-binary-number">a. Initializing a binary number</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-a-sum-over-all-states">b. A sum over all states</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-angle-of-a-random-gate">c.  Angle of a random gate</a></li>
@@ -406,31 +420,553 @@ document.write(`
 <li><p><strong>Date:</strong></p></li>
 <li><p><strong>Time Spent on this Assignment:</strong></p></li>
 </ul>
-<p>To install qiskit, open a terminal and type (copy/paste):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=/software/Jupyterhub/jupyterhub-base-kernel/bin:$PATH
-export LD_LIBRARY_PATH=/software/Jupyterhub/jupyterhub-base-kernel/lib
-source ~/owl/bin/activate; pip install qiskit; exit
-</pre></div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qiskit</span>
-<span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">qiskit.visualization</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qiskit<span class="o">[</span>visualization<span class="o">]</span><span class="p">;</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qiskit_aer<span class="p">;</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qutip
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qiskit-ibmq-provider
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">qiskit</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;qiskit&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qiskit[visualization]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qiskit-0.45.0-py3-none-any.whl.metadata (12 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qiskit-terra==0.45.0 (from qiskit[visualization])
+  Downloading qiskit_terra-0.45.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting rustworkx&gt;=0.13.0 (from qiskit-terra==0.45.0-&gt;qiskit[visualization])
+  Downloading rustworkx-0.13.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (10 kB)
+Requirement already satisfied: numpy&lt;2,&gt;=1.17 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit[visualization]) (1.24.4)
+Collecting ply&gt;=3.10 (from qiskit-terra==0.45.0-&gt;qiskit[visualization])
+  Downloading ply-3.11-py2.py3-none-any.whl (49 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/49.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">49.6/49.6 kB</span> <span class=" -Color -Color-Red">4.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: psutil&gt;=5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit[visualization]) (5.9.6)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scipy&gt;=1.5 (from qiskit-terra==0.45.0-&gt;qiskit[visualization])
+  Downloading scipy-1.10.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.5 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/34.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.3/34.5 MB</span> <span class=" -Color -Color-Red">100.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">7.9/34.5 MB</span> <span class=" -Color -Color-Red">115.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.4/34.5 MB</span> <span class=" -Color -Color-Red">131.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">17.0/34.5 MB</span> <span class=" -Color -Color-Red">130.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">21.7/34.5 MB</span> <span class=" -Color -Color-Red">132.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━ <span class=" -Color -Color-Green">26.4/34.5 MB</span> <span class=" -Color -Color-Red">132.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━ <span class=" -Color -Color-Green">31.2/34.5 MB</span> <span class=" -Color -Color-Red">134.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.5/34.5 MB</span> <span class=" -Color -Color-Red">143.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.5/34.5 MB</span> <span class=" -Color -Color-Red">143.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">34.5/34.5 MB</span> <span class=" -Color -Color-Red">67.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting sympy&gt;=1.3 (from qiskit-terra==0.45.0-&gt;qiskit[visualization])
+  Downloading sympy-1.12-py3-none-any.whl (5.7 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/5.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">5.7/5.7 MB</span> <span class=" -Color -Color-Red">170.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.7/5.7 MB</span> <span class=" -Color -Color-Red">113.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting dill&gt;=0.3 (from qiskit-terra==0.45.0-&gt;qiskit[visualization])
+  Downloading dill-0.3.7-py3-none-any.whl.metadata (9.9 kB)
+Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit[visualization]) (2.8.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting stevedore&gt;=3.0.0 (from qiskit-terra==0.45.0-&gt;qiskit[visualization])
+  Downloading stevedore-5.1.0-py3-none-any.whl.metadata (2.2 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting symengine&lt;0.10,&gt;=0.9 (from qiskit-terra==0.45.0-&gt;qiskit[visualization])
+  Downloading symengine-0.9.2-cp38-cp38-manylinux2010_x86_64.whl (37.5 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/37.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.8/37.5 MB</span> <span class=" -Color -Color-Red">174.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.9/37.5 MB</span> <span class=" -Color -Color-Red">143.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">14.7/37.5 MB</span> <span class=" -Color -Color-Red">131.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">19.9/37.5 MB</span> <span class=" -Color -Color-Red">148.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━ <span class=" -Color -Color-Green">25.2/37.5 MB</span> <span class=" -Color -Color-Red">157.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━ <span class=" -Color -Color-Green">28.5/37.5 MB</span> <span class=" -Color -Color-Red">122.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━ <span class=" -Color -Color-Green">33.2/37.5 MB</span> <span class=" -Color -Color-Red">119.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">37.5/37.5 MB</span> <span class=" -Color -Color-Red">144.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">37.5/37.5 MB</span> <span class=" -Color -Color-Red">144.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">37.5/37.5 MB</span> <span class=" -Color -Color-Red">144.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">37.5/37.5 MB</span> <span class=" -Color -Color-Red">60.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit[visualization]) (4.8.0)
+Requirement already satisfied: matplotlib&gt;=3.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (3.7.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipywidgets&gt;=7.3.0 (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization])
+  Downloading ipywidgets-8.1.1-py3-none-any.whl.metadata (2.4 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pydot (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization])
+  Downloading pydot-1.4.2-py2.py3-none-any.whl (21 kB)
+Requirement already satisfied: pillow&gt;=4.2.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (10.1.0)
+Collecting pylatexenc&gt;=1.4 (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization])
+  Downloading pylatexenc-2.10.tar.gz (162 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/162.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">162.6/162.6 kB</span> <span class=" -Color -Color-Red">40.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25hCollecting seaborn&gt;=0.9.0 (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading seaborn-0.13.0-py3-none-any.whl.metadata (5.3 kB)
+Requirement already satisfied: pygments&gt;=2.4 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (2.16.1)
+Requirement already satisfied: comm&gt;=0.1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.2.0)
+Requirement already satisfied: ipython&gt;=6.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (8.12.3)
+Requirement already satisfied: traitlets&gt;=4.3.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (5.13.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting widgetsnbextension~=4.0.9 (from ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization])
+  Downloading widgetsnbextension-4.0.9-py3-none-any.whl.metadata (1.6 kB)
+Collecting jupyterlab-widgets~=3.0.9 (from ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading jupyterlab_widgets-3.0.9-py3-none-any.whl.metadata (4.1 kB)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (1.1.1)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (4.44.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (1.4.5)
+Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (23.2)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (3.1.1)
+Requirement already satisfied: importlib-resources&gt;=3.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (6.1.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit-terra==0.45.0-&gt;qiskit[visualization]) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandas&gt;=1.2 (from seaborn&gt;=0.9.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pandas-2.0.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+Collecting pbr!=2.1.0,&gt;=2.0.0 (from stevedore&gt;=3.0.0-&gt;qiskit-terra==0.45.0-&gt;qiskit[visualization])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pbr-6.0.0-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting mpmath&gt;=0.19 (from sympy&gt;=1.3-&gt;qiskit-terra==0.45.0-&gt;qiskit[visualization])
+  Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/536.2 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">536.2/536.2 kB</span> <span class=" -Color -Color-Red">60.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (3.17.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: backcall in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.2.0)
+Requirement already satisfied: decorator in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (5.1.1)
+Requirement already satisfied: jedi&gt;=0.16 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.19.1)
+Requirement already satisfied: matplotlib-inline in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.1.6)
+Requirement already satisfied: pickleshare in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.7.5)
+Requirement already satisfied: prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (3.0.39)
+Requirement already satisfied: stack-data in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.6.3)
+Requirement already satisfied: pexpect&gt;4.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (4.8.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (2023.3.post1)
+Collecting tzdata&gt;=2022.1 (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization])
+  Downloading tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/341.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">341.8/341.8 kB</span> <span class=" -Color -Color-Red">61.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.8.3)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.7.0)
+Requirement already satisfied: wcwidth in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.2.9)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: executing&gt;=1.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (2.0.1)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (2.4.1)
+Requirement already satisfied: pure-eval in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.2.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qiskit_terra-0.45.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.3 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/6.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━ <span class=" -Color -Color-Green">5.0/6.3 MB</span> <span class=" -Color -Color-Red">149.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.3/6.3 MB</span> <span class=" -Color -Color-Red">105.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading qiskit-0.45.0-py3-none-any.whl (9.6 kB)
+Downloading dill-0.3.7-py3-none-any.whl (115 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/115.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">115.3/115.3 kB</span> <span class=" -Color -Color-Red">20.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading ipywidgets-8.1.1-py3-none-any.whl (139 kB)
+?25l
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/139.4 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">139.4/139.4 kB</span> <span class=" -Color -Color-Red">36.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading rustworkx-0.13.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/2.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/2.0 MB</span> <span class=" -Color -Color-Red">103.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading seaborn-0.13.0-py3-none-any.whl (294 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/294.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">294.6/294.6 kB</span> <span class=" -Color -Color-Red">58.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading stevedore-5.1.0-py3-none-any.whl (49 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/49.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">49.6/49.6 kB</span> <span class=" -Color -Color-Red">11.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading jupyterlab_widgets-3.0.9-py3-none-any.whl (214 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/214.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">214.9/214.9 kB</span> <span class=" -Color -Color-Red">53.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading pandas-2.0.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.4 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/12.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.9/12.4 MB</span> <span class=" -Color -Color-Red">146.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">10.3/12.4 MB</span> <span class=" -Color -Color-Red">151.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">12.3/12.4 MB</span> <span class=" -Color -Color-Red">152.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.4/12.4 MB</span> <span class=" -Color -Color-Red">104.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading pbr-6.0.0-py2.py3-none-any.whl (107 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/107.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">107.5/107.5 kB</span> <span class=" -Color -Color-Red">15.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading widgetsnbextension-4.0.9-py3-none-any.whl (2.3 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/2.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.3/2.3 MB</span> <span class=" -Color -Color-Red">104.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Building wheels for collected packages: pylatexenc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for pylatexenc (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25h  Created wheel for pylatexenc: filename=pylatexenc-2.10-py3-none-any.whl size=136822 sha256=99852b49abcee30f4f5d89680cc3754acd4cf24044dea0b7a125d9b8808146d7
+  Stored in directory: /home/runner/.cache/pip/wheels/72/99/be/81d9bcdf5dd5ee5acd8119a9dd5bc07204c9ce205fd341b021
+Successfully built pylatexenc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: pylatexenc, ply, mpmath, widgetsnbextension, tzdata, sympy, symengine, scipy, rustworkx, pydot, pbr, jupyterlab-widgets, dill, stevedore, pandas, seaborn, qiskit-terra, qiskit, ipywidgets
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed dill-0.3.7 ipywidgets-8.1.1 jupyterlab-widgets-3.0.9 mpmath-1.3.0 pandas-2.0.3 pbr-6.0.0 ply-3.11 pydot-1.4.2 pylatexenc-2.10 qiskit-0.45.0 qiskit-terra-0.45.0 rustworkx-0.13.2 scipy-1.10.1 seaborn-0.13.0 stevedore-5.1.0 symengine-0.9.2 sympy-1.12 tzdata-2023.3 widgetsnbextension-4.0.9
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.3.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qiskit_aer
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qiskit_aer-0.13.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.0 kB)
+Requirement already satisfied: qiskit&gt;=0.44.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (0.45.0)
+Requirement already satisfied: numpy&gt;=1.16.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (1.24.4)
+Requirement already satisfied: scipy&gt;=1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (1.10.1)
+Requirement already satisfied: qiskit-terra==0.45.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=0.44.0-&gt;qiskit_aer) (0.45.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rustworkx&gt;=0.13.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (0.13.2)
+Requirement already satisfied: ply&gt;=3.10 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (3.11)
+Requirement already satisfied: psutil&gt;=5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (5.9.6)
+Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (1.12)
+Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (0.3.7)
+Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (2.8.2)
+Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (5.1.0)
+Requirement already satisfied: symengine&lt;0.10,&gt;=0.9 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (0.9.2)
+Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (4.8.0)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (1.16.0)
+Requirement already satisfied: pbr!=2.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (6.0.0)
+Requirement already satisfied: mpmath&gt;=0.19 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit-terra==0.45.0-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qiskit_aer-0.13.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.3 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/12.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.6/12.3 MB</span> <span class=" -Color -Color-Red">49.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">7.6/12.3 MB</span> <span class=" -Color -Color-Red">111.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">12.3/12.3 MB</span> <span class=" -Color -Color-Red">173.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.3/12.3 MB</span> <span class=" -Color -Color-Red">116.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: qiskit_aer
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed qiskit_aer-0.13.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.3.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qutip
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qutip-4.7.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+Requirement already satisfied: numpy&gt;=1.16.6 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (1.24.4)
+Requirement already satisfied: scipy&gt;=1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (1.10.1)
+Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (23.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qutip-4.7.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.7 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/16.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.0/16.7 MB</span> <span class=" -Color -Color-Red">37.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.0/16.7 MB</span> <span class=" -Color -Color-Red">37.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/16.7 MB</span> <span class=" -Color -Color-Red">19.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.1/16.7 MB</span> <span class=" -Color -Color-Red">19.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.1/16.7 MB</span> <span class=" -Color -Color-Red">19.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.1/16.7 MB</span> <span class=" -Color -Color-Red">19.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.2/16.7 MB</span> <span class=" -Color -Color-Red">17.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.3/16.7 MB</span> <span class=" -Color -Color-Red">24.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.3/16.7 MB</span> <span class=" -Color -Color-Red">24.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.4/16.7 MB</span> <span class=" -Color -Color-Red">24.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.4/16.7 MB</span> <span class=" -Color -Color-Red">24.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.5/16.7 MB</span> <span class=" -Color -Color-Red">20.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━ <span class=" -Color -Color-Green">13.6/16.7 MB</span> <span class=" -Color -Color-Red">48.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━ <span class=" -Color -Color-Green">13.6/16.7 MB</span> <span class=" -Color -Color-Red">48.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━ <span class=" -Color -Color-Green">14.1/16.7 MB</span> <span class=" -Color -Color-Red">36.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━ <span class=" -Color -Color-Green">14.7/16.7 MB</span> <span class=" -Color -Color-Red">37.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━ <span class=" -Color -Color-Green">14.7/16.7 MB</span> <span class=" -Color -Color-Red">37.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━ <span class=" -Color -Color-Green">15.7/16.7 MB</span> <span class=" -Color -Color-Red">29.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━ <span class=" -Color -Color-Green">15.7/16.7 MB</span> <span class=" -Color -Color-Red">29.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">16.7/16.7 MB</span> <span class=" -Color -Color-Red">29.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.7/16.7 MB</span> <span class=" -Color -Color-Red">26.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: qutip
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed qutip-4.7.3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.3.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qiskit-ibmq-provider
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qiskit_ibmq_provider-0.20.2-py3-none-any.whl (241 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/241.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">241.5/241.5 kB</span> <span class=" -Color -Color-Red">9.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: qiskit-terra&gt;=0.18.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (0.45.0)
+Requirement already satisfied: requests&gt;=2.19 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (2.31.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting requests-ntlm&lt;=1.1.0 (from qiskit-ibmq-provider)
+  Downloading requests_ntlm-1.1.0-py2.py3-none-any.whl (5.7 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&lt;1.24 (from qiskit-ibmq-provider)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.1 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/17.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.7/17.1 MB</span> <span class=" -Color -Color-Red">142.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.8/17.1 MB</span> <span class=" -Color -Color-Red">142.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━ <span class=" -Color -Color-Green">15.2/17.1 MB</span> <span class=" -Color -Color-Red">152.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">17.1/17.1 MB</span> <span class=" -Color -Color-Red">153.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">17.1/17.1 MB</span> <span class=" -Color -Color-Red">95.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: urllib3&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (2.0.7)
+Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (2.8.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting websocket-client&gt;=1.5.1 (from qiskit-ibmq-provider)
+  Downloading websocket_client-1.6.4-py3-none-any.whl.metadata (7.7 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting websockets&gt;=10.0 (from qiskit-ibmq-provider)
+  Downloading websockets-12.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit-ibmq-provider) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rustworkx&gt;=0.13.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (0.13.2)
+Requirement already satisfied: ply&gt;=3.10 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (3.11)
+Requirement already satisfied: psutil&gt;=5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (5.9.6)
+Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (1.10.1)
+Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (1.12)
+Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (0.3.7)
+Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (5.1.0)
+Requirement already satisfied: symengine&lt;0.10,&gt;=0.9 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (0.9.2)
+Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (4.8.0)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from requests&gt;=2.19-&gt;qiskit-ibmq-provider) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from requests&gt;=2.19-&gt;qiskit-ibmq-provider) (3.4)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from requests&gt;=2.19-&gt;qiskit-ibmq-provider) (2023.7.22)
+Collecting ntlm-auth&gt;=1.0.2 (from requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading ntlm_auth-1.5.0-py2.py3-none-any.whl (29 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cryptography&gt;=1.3 (from requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider)
+  Downloading cryptography-41.0.5-cp37-abi3-manylinux_2_28_x86_64.whl.metadata (5.2 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cffi&gt;=1.12 (from cryptography&gt;=1.3-&gt;requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider)
+  Downloading cffi-1.16.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pbr!=2.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (6.0.0)
+Requirement already satisfied: mpmath&gt;=0.19 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (1.3.0)
+Collecting pycparser (from cffi&gt;=1.12-&gt;cryptography&gt;=1.3-&gt;requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider)
+  Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/118.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">118.7/118.7 kB</span> <span class=" -Color -Color-Red">34.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading websocket_client-1.6.4-py3-none-any.whl (57 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/57.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">57.3/57.3 kB</span> <span class=" -Color -Color-Red">16.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading websockets-12.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/130.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">130.5/130.5 kB</span> <span class=" -Color -Color-Red">36.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading cryptography-41.0.5-cp37-abi3-manylinux_2_28_x86_64.whl (4.4 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/4.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">4.4/4.4 MB</span> <span class=" -Color -Color-Red">164.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.4/4.4 MB</span> <span class=" -Color -Color-Red">104.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading cffi-1.16.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (444 kB)
+?25l
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/444.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">444.7/444.7 kB</span> <span class=" -Color -Color-Red">70.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: websockets, websocket-client, pycparser, numpy, ntlm-auth, cffi, cryptography, requests-ntlm, qiskit-ibmq-provider
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: numpy
+    Found existing installation: numpy 1.24.4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling numpy-1.24.4:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Successfully uninstalled numpy-1.24.4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed cffi-1.16.0 cryptography-41.0.5 ntlm-auth-1.5.0 numpy-1.23.5 pycparser-2.21 qiskit-ibmq-provider-0.20.2 requests-ntlm-1.1.0 websocket-client-1.6.4 websockets-12.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.3.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">transpile</span>
+<span class="kn">from</span> <span class="nn">qiskit.providers.aer</span> <span class="kn">import</span> <span class="n">QasmSimulator</span>
+<span class="kn">from</span> <span class="nn">qiskit.visualization</span> <span class="kn">import</span> <span class="n">plot_histogram</span>
+<span class="kn">from</span> <span class="nn">qiskit.circuit.library.standard_gates</span> <span class="kn">import</span> <span class="n">ZGate</span><span class="p">,</span> <span class="n">XGate</span>
+<span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">IBMQ</span>
+<span class="kn">from</span> <span class="nn">qiskit.circuit.quantumregister</span> <span class="kn">import</span> <span class="n">AncillaRegister</span>
+<span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">qiskit.quantum_info</span> <span class="kn">import</span> <span class="n">Statevector</span><span class="p">,</span> <span class="n">partial_trace</span>
+<span class="kn">from</span> <span class="nn">qiskit_aer</span> <span class="kn">import</span> <span class="n">AerSimulator</span>
+<span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">transpile</span>
+<span class="kn">import</span> <span class="nn">qutip</span>
+<span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Aer</span><span class="p">,</span> <span class="n">execute</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -439,19 +975,128 @@ source ~/owl/bin/activate; pip install qiskit; exit
 <p>You will need to put your API key into the commented out section below so it will know to run your code on the quantum computer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first do IBMQ.save_account(&quot;your API Key&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IBMQ</span><span class="o">.</span><span class="n">save_account</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
 <span class="n">IBMQ</span><span class="o">.</span><span class="n">load_account</span><span class="p">()</span>
+<span class="n">provider</span> <span class="o">=</span> <span class="n">IBMQ</span><span class="o">.</span><span class="n">get_provider</span><span class="p">(</span><span class="n">hub</span><span class="o">=</span><span class="s1">&#39;ibm-q&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AccountProvider for IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2315/1612257047.py:1: DeprecationWarning: The package qiskit.providers.ibmq is being deprecated. Please see https://ibm.biz/provider_migration_guide to get instructions on how to migrate to qiskit-ibm-provider (https://github.com/Qiskit/qiskit-ibm-provider) and qiskit-ibm-runtime (https://github.com/Qiskit/qiskit-ibm-runtime).
+  IBMQ.save_account(&quot;..&quot;)
+/tmp/ipykernel_2315/1612257047.py:1: DeprecationWarning: The qiskit.IBMQ entrypoint and the qiskit-ibmq-provider package (accessible from &#39;qiskit.providers.ibmq`) are deprecated and will be removed in a future release. Instead you should use the qiskit-ibm-provider package which is accessible from &#39;qiskit_ibm_provider&#39;. You can install it with &#39;pip install qiskit_ibm_provider&#39;. Just replace &#39;qiskit.IBMQ&#39; with &#39;qiskit_ibm_provider.IBMProvider&#39;
+  IBMQ.save_account(&quot;..&quot;)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/session.py:278,</span> in <span class="ni">RetrySession.request</span><span class="nt">(self, method, url, bare, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="n">response</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">final_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">278</span>     <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="k">except</span> <span class="n">RequestException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="c1"># Wrap the requests exceptions into a IBM Q custom one, for</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="c1"># compatibility.</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/requests/models.py:1021,</span> in <span class="ni">Response.raise_for_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="k">if</span> <span class="n">http_error_msg</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1021</span>     <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">http_error_msg</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="ne">HTTPError</span>: 401 Client Error: Unauthorized for url: https://auth.quantum-computing.ibm.com/api/users/loginWithToken
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">RequestsApiError</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">IBMQ</span><span class="o">.</span><span class="n">save_account</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">IBMQ</span><span class="o">.</span><span class="n">load_account</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">provider</span> <span class="o">=</span> <span class="n">IBMQ</span><span class="o">.</span><span class="n">get_provider</span><span class="p">(</span><span class="n">hub</span><span class="o">=</span><span class="s1">&#39;ibm-q&#39;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/ibmqfactory.py:191,</span> in <span class="ni">IBMQFactory.load_account</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Credentials are already in use. The existing &#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>                    <span class="s1">&#39;account in the session will be replaced.&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">disable_account</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">191</span> <span class="bp">self</span><span class="o">.</span><span class="n">_initialize_providers</span><span class="p">(</span><span class="n">credentials</span><span class="p">,</span> <span class="n">preferences</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="c1"># Prevent edge case where no hubs are available.</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="n">providers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/ibmqfactory.py:456,</span> in <span class="ni">IBMQFactory._initialize_providers</span><span class="nt">(self, credentials, preferences)</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span> <span class="k">def</span> <span class="nf">_initialize_providers</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span>         <span class="bp">self</span><span class="p">,</span> <span class="n">credentials</span><span class="p">:</span> <span class="n">Credentials</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span>         <span class="n">preferences</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Authenticate against IBM Quantum and populate the providers.</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span><span class="sd">     Args:</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span><span class="sd">         credentials: Credentials for IBM Quantum.</span>
+<span class="g g-Whitespace">    </span><span class="mi">454</span><span class="sd">         preferences: Account preferences.</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">456</span>     <span class="n">auth_client</span> <span class="o">=</span> <span class="n">AuthClient</span><span class="p">(</span><span class="n">credentials</span><span class="o">.</span><span class="n">token</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">457</span>                              <span class="n">credentials</span><span class="o">.</span><span class="n">base_url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span>                              <span class="o">**</span><span class="n">credentials</span><span class="o">.</span><span class="n">connection_parameters</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">459</span>     <span class="n">service_urls</span> <span class="o">=</span> <span class="n">auth_client</span><span class="o">.</span><span class="n">current_service_urls</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span>     <span class="n">user_hubs</span> <span class="o">=</span> <span class="n">auth_client</span><span class="o">.</span><span class="n">user_hubs</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/clients/auth.py:41,</span> in <span class="ni">AuthClient.__init__</span><span class="nt">(self, api_token, auth_url, **request_kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="bp">self</span><span class="o">.</span><span class="n">_service_urls</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: ignore[var-annotated]</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth_api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">RetrySession</span><span class="p">(</span><span class="n">auth_url</span><span class="p">,</span> <span class="o">**</span><span class="n">request_kwargs</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">41</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_api</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_service_clients</span><span class="p">(</span><span class="o">**</span><span class="n">request_kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/clients/auth.py:53,</span> in <span class="ni">AuthClient._init_service_clients</span><span class="nt">(self, **request_kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Initialize the clients used for communicating with the API.</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span><span class="sd"> Args:</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span><span class="sd">     Client for the API server.</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="c1"># Request an access token.</span>
+<span class="ne">---&gt; </span><span class="mi">53</span> <span class="n">access_token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_request_access_token</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="c1"># Use the token for the next auth server requests.</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth_api</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">access_token</span> <span class="o">=</span> <span class="n">access_token</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/clients/auth.py:75,</span> in <span class="ni">AuthClient._request_access_token</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Request a new access token from the API authentication service.</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span><span class="sd"> Returns:</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd">     RequestsApiError: If the request failed.</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">75</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth_api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">api_token</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="k">except</span> <span class="n">RequestsApiError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>     <span class="c1"># Get the original exception that raised.</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/rest/root.py:125,</span> in <span class="ni">Api.login</span><span class="nt">(self, api_token)</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Login with token.</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span><span class="sd"> Args:</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span><span class="sd">     JSON response.</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span> <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">125</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;apiToken&#39;</span><span class="p">:</span> <span class="n">api_token</span><span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/requests/sessions.py:637,</span> in <span class="ni">Session.post</span><span class="nt">(self, url, data, json, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">626</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span><span class="w">     </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a POST request. Returns :class:`Response` object.</span>
+<span class="g g-Whitespace">    </span><span class="mi">628</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">629</span><span class="sd">     :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">634</span><span class="sd">     :rtype: requests.Response</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">637</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">json</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/session.py:300,</span> in <span class="ni">RetrySession.request</span><span class="nt">(self, method, url, bare, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>         <span class="c1"># Modify the original message on the chained exceptions.</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_modify_chained_exception_messages</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">300</span>     <span class="k">raise</span> <span class="n">RequestsApiError</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">status_code</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="ne">RequestsApiError</span>: &#39;401 Client Error: Unauthorized for url: https://auth.quantum-computing.ibm.com/api/users/loginWithToken. Login failed., Error code: 3446.&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Here is a link to the picture of the machine you will be running on:
-<a class="github reference external" href="https://github.com/Qiskit/ibmq-device-information/tree/master/backends/yorktown/V1">Qiskit/ibmq-device-information</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RunMe</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span><span class="n">num_shots</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
@@ -476,175 +1121,299 @@ source ~/owl/bin/activate; pip install qiskit; exit
     <span class="k">return</span> <span class="n">jobReal</span>
 
 
+<span class="k">def</span> <span class="nf">RunCircuit</span><span class="p">(</span><span class="n">circuit</span><span class="p">):</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">save_statevector</span><span class="p">()</span>
+  <span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+  <span class="n">out_state</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_statevector</span><span class="p">()</span>
+  <span class="k">return</span> <span class="n">out_state</span>
+
+
 <span class="k">def</span> <span class="nf">StateToBinary</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
     <span class="n">wires</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">))))</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">**</span><span class="n">wires</span><span class="p">):</span>
         <span class="n">myFormat</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">wires</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;b&quot;</span>
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39;|&#39;</span><span class="p">,</span><span class="nb">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">myFormat</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;&gt;&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">):</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">save_statevector</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;myStateVector&#39;</span><span class="p">)</span>
+  <span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
+  <span class="n">resultA</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+  <span class="n">numQubits</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">num_qubits</span>
+  <span class="n">forward</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">numQubits</span><span class="p">))</span>
+  <span class="n">reverse</span><span class="o">=</span><span class="n">forward</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">forward</span><span class="p">,</span><span class="n">reverse</span><span class="p">)</span>
+  <span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
+  <span class="n">resultB</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+  <span class="k">return</span> <span class="n">resultA</span><span class="o">.</span><span class="n">data</span><span class="p">()[</span><span class="s1">&#39;myStateVector&#39;</span><span class="p">],</span><span class="n">resultB</span><span class="o">.</span><span class="n">data</span><span class="p">()[</span><span class="s1">&#39;counts&#39;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">PrintDirac</span><span class="p">(</span><span class="n">out_state_a</span><span class="p">):</span>
+  <span class="n">out_state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">out_state_a</span><span class="p">)</span>
+  <span class="n">l</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">out_state</span><span class="p">)</span>
+  <span class="n">num_qubits</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">out_state</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">out_state</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">0</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_state</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;|&#39;</span><span class="o">+</span><span class="nb">bin</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">num_qubits</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; + &#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">()</span>
+
+
+
+<span class="k">def</span> <span class="nf">PlotState</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">plotAll</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">myTitle</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">plotAll</span><span class="p">:</span>
+    <span class="n">N</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">N</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">))</span><span class="o">//</span><span class="mi">2</span>
+  <span class="n">vv</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+  <span class="n">vv</span><span class="p">[:]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="p">]</span>
+  <span class="n">vv</span><span class="o">=</span><span class="n">vv</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">vv</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">idx</span><span class="p">)],[</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">i</span><span class="p">)],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">idx</span><span class="p">)],[</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">i</span><span class="p">)],</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">vv</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">idx</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span><span class="n">idx</span><span class="o">+</span><span class="mf">0.1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">i</span><span class="p">)],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">idx</span><span class="o">+</span><span class="mf">0.1</span><span class="p">],[</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">i</span><span class="p">)],</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+  <span class="n">avg</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">avg</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">myTitle</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">MakeState</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+  <span class="n">numWires</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))))</span>
+  <span class="n">qc1</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">numWires</span><span class="p">,</span><span class="n">numWires</span><span class="p">)</span>
+  <span class="n">qc1</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+  <span class="n">a</span><span class="p">,</span><span class="n">_</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">qc1</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">PlotBloch</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">bb</span><span class="p">):</span>
+  <span class="n">vv</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+  <span class="c1">#print(vv)</span>
+  <span class="n">a</span><span class="o">=</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">b</span><span class="o">=</span><span class="n">vv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+  <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">a</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
+  <span class="c1">#print(x,y,z)</span>
+  <span class="n">bb</span><span class="o">.</span><span class="n">add_vectors</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">])</span>
+  <span class="k">return</span>  <span class="c1">#plot_bloch_vector([x,y,z])</span>
+
+
+<span class="k">def</span> <span class="nf">Mark</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+  <span class="n">circuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">barrier</span><span class="p">()</span>
+
+
+  <span class="n">myString</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">binary_repr</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">N</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">myString</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">myString</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;0&#39;</span><span class="p">:</span>
+      <span class="n">circuit</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">barrier</span><span class="p">()</span>
+
+  <span class="n">circuit</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">mcx</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;noancilla&#39;</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">barrier</span><span class="p">()</span>
+
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">myString</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">myString</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;0&#39;</span><span class="p">:</span>
+      <span class="n">circuit</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">barrier</span><span class="p">()</span>
+  <span class="k">return</span> <span class="n">circuit</span>
+
+<span class="k">def</span> <span class="nf">InitializeCircuitRandom</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+  <span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">N</span><span class="p">)</span>
+  <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+  <span class="k">return</span> <span class="n">circuit</span>
+
+
+<span class="k">def</span> <span class="nf">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+  <span class="n">numQubits</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">num_qubits</span>
+  <span class="k">if</span> <span class="n">a</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+    <span class="n">numQubits</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">numQubits</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)</span>
+    <span class="n">initCircuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)</span>
+    <span class="n">initCircuit</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">=</span><span class="n">AddCircuits</span><span class="p">([</span><span class="n">initCircuit</span><span class="p">,</span><span class="n">circuit</span><span class="p">])</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">save_statevector</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;myStateVector&#39;</span><span class="p">)</span>
+  <span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
+  <span class="n">resultA</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+  <span class="n">forward</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">numQubits</span><span class="p">))</span>
+  <span class="n">reverse</span><span class="o">=</span><span class="n">forward</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">forward</span><span class="p">,</span><span class="n">reverse</span><span class="p">)</span>
+  <span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
+  <span class="n">resultB</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+  <span class="k">return</span> <span class="n">resultA</span><span class="o">.</span><span class="n">data</span><span class="p">()[</span><span class="s1">&#39;myStateVector&#39;</span><span class="p">],</span><span class="n">resultB</span><span class="o">.</span><span class="n">data</span><span class="p">()[</span><span class="s1">&#39;counts&#39;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">AddCircuits</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">):</span>
+  <span class="n">numQubits</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">num_qubits</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">theCircuits</span><span class="p">])</span>
+  <span class="n">numQubits</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">numQubits</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">numQubits</span><span class="p">,</span><span class="n">numQubits</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">)):</span>
+    <span class="n">circuit</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">qubits</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">theCircuits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)))</span>
+  <span class="k">return</span> <span class="n">circuit</span>
+
+
+<span class="k">def</span> <span class="nf">RunMeQC</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span><span class="n">num_shots</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
+    <span class="n">numQubits</span><span class="o">=</span><span class="n">qc</span><span class="o">.</span><span class="n">num_qubits</span>
+    <span class="n">forward</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">numQubits</span><span class="p">))</span>
+    <span class="n">reverse</span><span class="o">=</span><span class="n">forward</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">forward</span><span class="p">,</span><span class="n">reverse</span><span class="p">)</span>
+    <span class="n">backend</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;ibm_lagos&#39;</span><span class="p">)</span>
+    <span class="n">job</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span><span class="n">shots</span><span class="o">=</span><span class="n">num_shots</span><span class="p">)</span>
+    <span class="c1">#result = job.result()</span>
+    <span class="k">return</span> <span class="n">job</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="exercise-1-a-single-qubit-33-points">
 <h2>Exercise 1: A Single Qubit (33 points)<a class="headerlink" href="#exercise-1-a-single-qubit-33-points" title="Permalink to this heading">#</a></h2>
-<p>We are going to think about quantum computers today.  More specifically, we are going to think about quantum circuits.  Both quantum and classical circuits have wires and gates.  Quantum circuits have the added constraint that the total number of wires must be the same through the whole computation.</p>
+<section id="a-a-one-qubit-state">
+<h3>a. A one qubit state<a class="headerlink" href="#a-a-one-qubit-state" title="Permalink to this heading">#</a></h3>
+<p>A quantum state consists of a certain fraction of <span class="math notranslate nohighlight">\(|0\rangle\)</span> and a certain fraction of <span class="math notranslate nohighlight">\(|1\rangle\)</span> - i.e.  <span class="math notranslate nohighlight">\(\sqrt{0.3} |0\rangle - \sqrt{0.7} |1\rangle\)</span>.</p>
+<p>We can plot this state in a variety of ways.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)])</span>
+<span class="n">state</span><span class="o">=</span><span class="n">MakeState</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">PrintDirac</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="n">qutip</span><span class="o">.</span><span class="n">Bloch</span><span class="p">()</span>
+<span class="n">PlotBloch</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Go ahead and try it out</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)])</span>
+<span class="n">state</span><span class="o">=</span><span class="n">MakeState</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">PrintDirac</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="n">qutip</span><span class="o">.</span><span class="n">Bloch</span><span class="p">()</span>
+<span class="n">PlotBloch</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ae6dc44ef4de2b1ce750c72f46afb258090710045958f04a0d63ad5c9305b2fb.png" src="_images/ae6dc44ef4de2b1ce750c72f46afb258090710045958f04a0d63ad5c9305b2fb.png" />
-</div>
-</div>
-<p>We can think of classical circuit as one which takes a binary number as input (on,off,off,on) &lt;–&gt; (1,0,0,1) to a binary number as output.</p>
-<p>For example a wire with a not gate on it takes <span class="math notranslate nohighlight">\(0\rightarrow 1\)</span> and <span class="math notranslate nohighlight">\(1 \rightarrow 0\)</span></p>
-<p>Quantum circuits are similar.  They take binary numbers to other binary numbers.  A quantum <code class="docutils literal notranslate"><span class="pre">not</span></code> gate takes <span class="math notranslate nohighlight">\(0 \rightarrow 1\)</span> and <span class="math notranslate nohighlight">\(1 \rightarrow 0.\)</span></p>
-<p>Let’s start by drawing our first circuit.  This circuit has one quantum wire. We are going to put a “not” gate (called X here).  By default, the input to our circuits is always “0”.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quantumWires</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">quantumWires</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># this is a quantum NOT Gate.</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5477225575051661+0j)|0&gt; + (-0.8366600265340756+0j)|1&gt; + 
 </pre></div>
 </div>
+<img alt="_images/5d5b1c6430cc52dc9bcc21e0d90d4816b676342d61f4ac8eca8518589a861a05.png" src="_images/5d5b1c6430cc52dc9bcc21e0d90d4816b676342d61f4ac8eca8518589a861a05.png" />
+<img alt="_images/f326aa548cf19e1d2a69dcb32cf2ba3c2af5667a3078e6cf187746232c2f62b7.png" src="_images/f326aa548cf19e1d2a69dcb32cf2ba3c2af5667a3078e6cf187746232c2f62b7.png" />
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/e6c2ce604e328818f240a445137b24db01439252f4e50cc6221775df10c639fb.png" src="_images/e6c2ce604e328818f240a445137b24db01439252f4e50cc6221775df10c639fb.png" />
 </div>
-</div>
-<p>We are now going to run our circuit.  There are three ways we can run circuits:</p>
+<p>Let’s go ahead and plot these three states</p>
 <ul class="simple">
-<li><p>Run it on a real quantum computer -  <code class="docutils literal notranslate"><span class="pre">RunMeQC</span></code></p></li>
-<li><p>Run it on a simulated quantum computer - <code class="docutils literal notranslate"><span class="pre">RunMe</span></code></p></li>
-<li><p>Run it on a simulated quantum computer and cheat by looking what’s going on under the hood (you can’t do this in the real world but there are some advantages of a simulation).  - <code class="docutils literal notranslate"><span class="pre">RunMeState</span></code></p></li>
+<li><p><span class="math notranslate nohighlight">\(|0\rangle \equiv [1,0]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|1\rangle \equiv [0,1]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1/\sqrt{2} |0\rangle + 1/\sqrt{2} |1\rangle \equiv [1/\sqrt{2},1/\sqrt{2}]\)</span></p></li>
 </ul>
-<p>Let’s start by running our simulation (and looking under the hood).  Call <code class="docutils literal notranslate"><span class="pre">results=RunMeState(qc)</span></code> on our quantum circuit. We can then get the vector (look under the hood) by calling <code class="docutils literal notranslate"><span class="pre">StateToBinary(results.get_statevector())</span></code></p>
+<p>Pay special attention to where those three states are on the Bloch Sphere</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## add stuff here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Plot the three states here</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Modify your circuit now and put two <code class="docutils literal notranslate"><span class="pre">not</span></code> gates in a row.</p>
+</section>
+<section id="b-one-qubit-gates">
+<h3>b. One qubit gates<a class="headerlink" href="#b-one-qubit-gates" title="Permalink to this heading">#</a></h3>
+<p>Quantum circuits are made out of quantum gates. Let us start by considering 1-qubit gates.  The 1-qubit gate rotates states around the Bloch sphere.  Three special gates are <code class="docutils literal notranslate"><span class="pre">rx</span></code>, <code class="docutils literal notranslate"><span class="pre">ry</span></code>, and <code class="docutils literal notranslate"><span class="pre">rz</span></code> which respectively rotate around the X, Y, and Z axis. These gates take an angle and a wire - i.e. <code class="docutils literal notranslate"><span class="pre">rx(0.3*np.pi,0)</span></code> will rotate <span class="math notranslate nohighlight">\(1/3 \pi\)</span> around the X axis.</p>
+<p>To set up your circuit you can do</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#Build your circuit here</span>
+<span class="n">state</span><span class="p">,</span><span class="n">measure</span> <span class="o">=</span> <span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span> <span class="c1">#&lt;--- This runs the circuit</span>
+<span class="c1"># now you can plot the circuit</span>
+</pre></div>
+</div>
+<p>Go ahead and figure out how to use <code class="docutils literal notranslate"><span class="pre">rx</span></code> gate to move from a <span class="math notranslate nohighlight">\(|0\rangle\)</span> to a <span class="math notranslate nohighlight">\(|1\rangle\)</span> state.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###This should be your modified circuit</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1+0j) | 0 &gt;
-</pre></div>
-</div>
-<img alt="_images/9f3291eb14046ea38c4539a88a1ab61cbbb6455e5c23aa69ed8f9e2b6ef30c63.png" src="_images/9f3291eb14046ea38c4539a88a1ab61cbbb6455e5c23aa69ed8f9e2b6ef30c63.png" />
-</div>
-</div>
-<p>Now, what is particularly interesting about quantum gates is you can be in a situation where it can take <span class="math notranslate nohighlight">\(|0\rangle\)</span> and returns a state which is partially <span class="math notranslate nohighlight">\(|0\rangle\)</span> and partially <span class="math notranslate nohighlight">\(|1\rangle\)</span>.    For example, the Hadamard gate (<code class="docutils literal notranslate"><span class="pre">qc.h</span></code>), turns <span class="math notranslate nohighlight">\(|0\rangle\)</span> into “half” <span class="math notranslate nohighlight">\(|0\rangle\)</span> and “half” <span class="math notranslate nohighlight">\(|1\rangle\)</span>.  More concretely, you end up with the state
-<span class="math notranslate nohighlight">\(|0\rangle \rightarrow \frac{1}{\sqrt{2}} \left(|0\rangle + |1\rangle \right)\)</span>.  Look at the state after the Hadamard.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##Make a circuit with a Hadamard in it</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>So far we’ve been cheating by looking at the quantum state. In the real world, you can’t do that.  Instead you have to measure at the end of your circuit.  To add a measure you have to do two things. First, you need a classical wire. We will switch</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">qc=QuantumCircuit(1)</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">qc=QuantumCircuit(1,1)</span></code> # one classical wire and one quantum wire</p></li>
-<li><p>Then at the end we have to add a measurement: <code class="docutils literal notranslate"><span class="pre">qc.measure([0],[0])</span></code> (measure quantum wire “1” on classical wire “1”)</p></li>
-</ul>
-<p>Go ahead and draw the new circuit that has one Hadamard gate and a measure</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Make your circuit here</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">d515b797a2e6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;qc&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now, we can run it on a legitimate simulator by doing <code class="docutils literal notranslate"><span class="pre">results=RunMe(qc)</span></code>. Once we’ve run it, we are going to want to see the result of our measurement.  In practice, what <code class="docutils literal notranslate"><span class="pre">RunMe</span></code> is currently doing is running it 1024 times as each measurement is going to give you something random.  (You can look up to see what <code class="docutils literal notranslate"><span class="pre">RunMe</span></code> is doing).  Now, we should plot how many of the measurements is “0” and how many of the measurements is “1”.  To do this, we can do <code class="docutils literal notranslate"><span class="pre">plot_histogram(results.get_counts())</span></code>  You can just see the counts by doing <code class="docutils literal notranslate"><span class="pre">print(results.get_counts())</span></code> Produce plots for</p>
-<ul class="simple">
-<li><p>the circuit with one Hadamard wire.</p></li>
-<li><p>the circuit with one Not wire.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the circuit and plot the results here for EPR</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the circuit and plot the results here for Not gate</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/9bf092c506f2c7947ed35a5998e736c0956c0149a99cd5e03a27dc77bf5d038b.png" src="_images/9bf092c506f2c7947ed35a5998e736c0956c0149a99cd5e03a27dc77bf5d038b.png" />
-</div>
-</div>
-<p>You should see that the circuit with the “hadamard” gates gives half <span class="math notranslate nohighlight">\(|0\rangle\)</span> and half <span class="math notranslate nohighlight">\(|1\rangle\)</span> whereas the “not” gate always gives <span class="math notranslate nohighlight">\(|1\rangle\)</span></p>
+<p>Now we want to go ahead and use <code class="docutils literal notranslate"><span class="pre">rx</span></code> to go from <span class="math notranslate nohighlight">\(|0\rangle \rightarrow 1/\sqrt{2}|0\rangle + 1/\sqrt{2}|1\rangle\)</span>.  Write such a circuit.  Then check to see what your circuit does to the state <span class="math notranslate nohighlight">\(|1\rangle\)</span> (you can get this using your other circuit from above).</p>
 <p>So far we’ve seen we can get half <span class="math notranslate nohighlight">\(|0\rangle\)</span> and half <span class="math notranslate nohighlight">\(|1\rangle\)</span>.  We can also adjust states to get more of <span class="math notranslate nohighlight">\(|1\rangle\)</span> then <span class="math notranslate nohighlight">\(|0\rangle\)</span> (or visa versa).  Generically we can get a state
 <span class="math notranslate nohighlight">\(\cos(\theta) |0\rangle + \sin(\theta) e^{i\phi} |1\rangle\)</span>.</p>
 <p>If we had such a state, after measurement we get “0” with probability <span class="math notranslate nohighlight">\(\cos^2\theta\)</span> and “1” with probability <span class="math notranslate nohighlight">\(\sin^2\theta\)</span>.<br />
 Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\theta =1\)</span> so we either get “0” or “1”.</p>
-<p>To produce this state, we can use the gate <code class="docutils literal notranslate"><span class="pre">qc.rx(-2*theta,wire)</span></code> which takes <span class="math notranslate nohighlight">\(|0\rangle \rightarrow \cos \theta |0\rangle + \sin \theta |1\rangle\)</span></p>
+<p>To produce this state with <span class="math notranslate nohighlight">\(\phi=0\)</span>, we can use the gate <code class="docutils literal notranslate"><span class="pre">qc.rx(-2*theta,wire)</span></code> which takes <span class="math notranslate nohighlight">\(|0\rangle \rightarrow \cos \theta |0\rangle + \sin \theta |1\rangle\)</span></p>
 <ul class="simple">
-<li><p>Produce a histogram with <span class="math notranslate nohighlight">\(\theta=0.5\)</span> and check to make sure it gives you the right fraction of zero and one.</p></li>
-<li><p>Write a for loop which runs the circuit for 100 <span class="math notranslate nohighlight">\(\theta\)</span> between 0 and <span class="math notranslate nohighlight">\(\pi\)</span> and make sure the counts of “0” are approximately <span class="math notranslate nohighlight">\(1024 \times \cos^2\theta\)</span>.</p></li>
+<li><p>Produce some plots with <span class="math notranslate nohighlight">\(\theta=0.5\)</span> and check to make sure it gives you the right amplitudes.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Make the circuit and plot the measurements for the theta=0.5 . Check that it&#39;s correct</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7701511529340699 0.22984884706593015
+</div>
+<p>Now, make a circuit that rotates  <code class="docutils literal notranslate"><span class="pre">rx</span></code> and <code class="docutils literal notranslate"><span class="pre">rz</span></code> both by <span class="math notranslate nohighlight">\(0.3 \pi\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
 </pre></div>
 </div>
-<img alt="_images/c4c8c0da4a892a3f7949d0f589c0629a3e3f9d1674014f312e4ee80c5d6600c3.png" src="_images/c4c8c0da4a892a3f7949d0f589c0629a3e3f9d1674014f312e4ee80c5d6600c3.png" />
 </div>
+</div>
+<p>Notice that by smartly choosing the angles around <code class="docutils literal notranslate"><span class="pre">rx</span></code> and <code class="docutils literal notranslate"><span class="pre">rz</span></code> and then <code class="docutils literal notranslate"><span class="pre">rx</span></code> again you should be able to take <span class="math notranslate nohighlight">\(|0\rangle\)</span> to any state and <span class="math notranslate nohighlight">\(|1\rangle\)</span> to any state which is orthogonal to <span class="math notranslate nohighlight">\(|0\rangle\)</span>.</p>
+</section>
+<section id="c-seeing-the-rotation">
+<h3>c.  Seeing the rotation<a class="headerlink" href="#c-seeing-the-rotation" title="Permalink to this heading">#</a></h3>
+<p>We would like to plot the rotation around the bloch sphere.  We can do this as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="n">qutip</span><span class="o">.</span><span class="n">Bloch</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.1</span><span class="p">):</span>
+  <span class="n">quantumWires</span><span class="o">=</span><span class="mi">1</span>
+  <span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">quantumWires</span><span class="p">,</span><span class="n">quantumWires</span><span class="p">)</span>
+  <span class="c1"># rotate around the x-axis by angle theta</span>
+  <span class="n">vec</span><span class="p">,</span><span class="n">output</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
+  <span class="n">PlotBloch</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myData</span><span class="o">=</span><span class="p">[]</span>
-<span class="n">thetas</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">theta</span> <span class="ow">in</span> <span class="n">thetas</span><span class="p">:</span>
-  <span class="c1"># do stuff here</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thetas</span><span class="p">,</span><span class="mi">1024</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">thetas</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thetas</span><span class="p">,</span><span class="n">myData</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-5-657d144bcbb0&gt;&quot;</span><span class="gt">, line </span><span class="mi">5</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thetas</span><span class="p">,</span><span class="mi">1024</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">thetas</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-      <span class="o">^</span>
-<span class="ne">IndentationError</span>: expected an indented block
+<img alt="_images/09029cbc7485df00c9b7351599fc45c5d50239257d5db9baa507047aeafd08d7.png" src="_images/09029cbc7485df00c9b7351599fc45c5d50239257d5db9baa507047aeafd08d7.png" />
+</div>
+</div>
+</section>
+<section id="d-measuring-the-state">
+<h3>d. Measuring the state<a class="headerlink" href="#d-measuring-the-state" title="Permalink to this heading">#</a></h3>
+<p>So far we’ve been cheating by looking at the quantum state. In the real world, you can’t do that.  Instead you have to measure at the end of your circuit.  The RunMe circuit returns two parameters.  The second one is measurement outcomes - i.e.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="p">,</span><span class="n">measure</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>can then plot the measurement outcomes by doing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot_histgoram</span><span class="p">(</span><span class="n">measure</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Go ahead and measure the outcomes of a state rotated around the X axis by <span class="math notranslate nohighlight">\(0.3\pi\)</span>. See that it gives you the expected raction of 0 and 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="exercise-2-two-qubits-34-points">
 <h2>Exercise 2: Two qubits (34 points)<a class="headerlink" href="#exercise-2-two-qubits-34-points" title="Permalink to this heading">#</a></h2>
@@ -652,6 +1421,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 <section id="a-control-not-gates">
 <h3>a. Control-not gates<a class="headerlink" href="#a-control-not-gates" title="Permalink to this heading">#</a></h3>
 <p><em>The controlled-not gate:</em> The key gate for two qubits is the control-not gate (<code class="docutils literal notranslate"><span class="pre">qc.cx(0,1)</span></code>.  The key gate “nots” the second wire (wire 1) if the first wire is “1” (wire 0).  Let’s check it out.  Apply the “control-not” to a state <span class="math notranslate nohighlight">\(|00\rangle\)</span> and to a state <span class="math notranslate nohighlight">\(|10\rangle\)</span> and print out the state (i.e. <code class="docutils literal notranslate"><span class="pre">RunMeState</span></code>). Don’t put in a measurement.</p>
+<p>To apply a control-not gate you want to do <code class="docutils literal notranslate"><span class="pre">circuit.cx(wire)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Circuit here applying control-not to |00&gt;.  Print the state when you&#39;re done.</span>
@@ -679,16 +1449,16 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </section>
 <section id="b-build-an-epr-pair">
 <h3>b.  Build an EPR Pair<a class="headerlink" href="#b-build-an-epr-pair" title="Permalink to this heading">#</a></h3>
-<p>The most interesting two qubit state is an EPR pair, <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}\left(|00\rangle + |11\rangle\right)\)</span>.    You can build it with two gates that you have seen earlier in this assignment.  Go ahead and try different things and figure out how to build yourself an EPR pair.  You can start out with</p>
+<p>The most interesting two qubit state is an EPR pair, <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}\left(|00\rangle + |11\rangle\right)\)</span>.    You can build it with a Hadamard and a CNOT.  Go ahead and try different things and figure out how to build yourself an EPR pair.  You can start out with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quantumWires</span><span class="o">=</span><span class="mi">2</span>
 <span class="n">classicalWires</span><span class="o">=</span><span class="mi">2</span>
 <span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">quantumWires</span><span class="p">,</span><span class="n">classicalWires</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>to start out a quantum circuit with two quantum wires (and two classical wires that you can do measurements on later).</p>
+<p>to start out a quantum circuit with two wires.  You can’t plot this on the bloch sphere but you can still plot it with <code class="docutils literal notranslate"><span class="pre">PlotState</span></code>.  Go ahead and do this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Make an EPR Pair. It can be done with Hadamards and CNOTs.  Run it and look at the state when you&#39;re done. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Make an EPR Pair. It can be done with Hadamards and CNOTs.  Run it and look at the state when you&#39;re done.</span>
 </pre></div>
 </div>
 </div>
@@ -696,7 +1466,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </section>
 <section id="c-measuring-epr-pairs">
 <h3>c. Measuring EPR Pairs<a class="headerlink" href="#c-measuring-epr-pairs" title="Permalink to this heading">#</a></h3>
-<p>Let’s go ahead and measure your EPR circuit above by adding the measurement and plotting it below.</p>
+<p>Let’s go ahead and measure your EPR circuit above plotting the histogram of your measurements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Do the same thing with the EPR Pair but now look at the measurements.</span>
@@ -708,7 +1478,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </section>
 <section id="d-running-on-an-actual-quantum-computer">
 <h3>d. Running on an actual Quantum Computer<a class="headerlink" href="#d-running-on-an-actual-quantum-computer" title="Permalink to this heading">#</a></h3>
-<p>Now we are going to build an EPR pair on an actual quantum computer.  To do this you need to build your quantum circuit again (with measurement) for building an EPR pair and then call <code class="docutils literal notranslate"><span class="pre">job=RunQC(qc)</span></code></p>
+<p>Now we are going to build an EPR pair on an actual quantum computer.  To do this you need to build your quantum circuit again (with measurement) for building an EPR pair and then call <code class="docutils literal notranslate"><span class="pre">job=RunMeQC(qc)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Remake your circuit and run it on a real live quantum computer.</span>
@@ -730,7 +1500,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>JobStatus.INITIALIZING
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>JobStatus.QUEUED
 None
 </pre></div>
 </div>
@@ -747,8 +1517,8 @@ None
 </div>
 </div>
 </section>
-<section id="e-entanglement">
-<h3>e. Entanglement<a class="headerlink" href="#e-entanglement" title="Permalink to this heading">#</a></h3>
+<section id="e-entanglement-extra-credit-5-points">
+<h3>e. Entanglement (Extra Credit: 5 points)<a class="headerlink" href="#e-entanglement-extra-credit-5-points" title="Permalink to this heading">#</a></h3>
 <p>The EPR pair is called entangled.<br />
 <strong>Not entangled</strong> means<br />
 Pr(wires measures “00”)  = Pr(wire 0 measures “0”) <span class="math notranslate nohighlight">\(\times\)</span> Pr(wire 1 measures “0”)
@@ -774,6 +1544,14 @@ and demonstrate what you find.</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-8-9fe96e3ec3ad&gt;&quot;</span><span class="gt">, line </span><span class="mi">6</span>
+    <span class="k">elif</span> <span class="n">wire</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block after &#39;if&#39; statement on line 4
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -784,8 +1562,119 @@ and demonstrate what you find.</p></li>
 </div>
 </section>
 </section>
-<section id="exercise-3-quantum-key-distribution-ec-20-points">
-<h2>Exercise 3 Quantum Key Distribution (EC - 20 points)<a class="headerlink" href="#exercise-3-quantum-key-distribution-ec-20-points" title="Permalink to this heading">#</a></h2>
+<section id="exercise-3-grover-s-algorithm">
+<h2>Exercise 3:  Grover’s Algorithm<a class="headerlink" href="#exercise-3-grover-s-algorithm" title="Permalink to this heading">#</a></h2>
+<p>In this exercise, we are going to implement Grover’s algorithm.  Grover’s algorithm takes a unitary which marks an element <span class="math notranslate nohighlight">\(i\)</span> and uses that as a subroutine with more circuit elements so that, after measurementt, you sample the marked element <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>To do this we are going to need to put together a lot of different circuit elements.  Let’s start with the unitary which does the marking which we will give you:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Check Mark</span>
+<span class="n">circuit</span><span class="o">=</span><span class="n">InitializeCircuitRandom</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="n">myTitle</span><span class="o">=</span><span class="s2">&quot;Initial Random State&quot;</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">=</span><span class="n">Mark</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="n">myTitle</span><span class="o">=</span><span class="s2">&quot;Hopefully marked state&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Check Mark</span>
+<span class="n">circuit</span><span class="o">=</span><span class="n">InitializeCircuitRandom</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="n">myTitle</span><span class="o">=</span><span class="s2">&quot;Initial Random State&quot;</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">=</span><span class="n">Mark</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="n">myTitle</span><span class="o">=</span><span class="s2">&quot;Hopefully marked state&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0490fe40713058c376a3f17e8c0b9c72a815ea6563238cc7e0ea7474ecd2aec8.png" src="_images/0490fe40713058c376a3f17e8c0b9c72a815ea6563238cc7e0ea7474ecd2aec8.png" />
+<img alt="_images/91727f768e111243546cf05969e103880425050cdf2629e5ef537766b2716fd8.png" src="_images/91727f768e111243546cf05969e103880425050cdf2629e5ef537766b2716fd8.png" />
+</div>
+</div>
+<section id="a-control-control-control-z">
+<h3>a. Control-Control-Control Z<a class="headerlink" href="#a-control-control-control-z" title="Permalink to this heading">#</a></h3>
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">controlZ(N)</span></code> which generates the control-control-control-control Z on <span class="math notranslate nohighlight">\(n\)</span> qubits.  The first <span class="math notranslate nohighlight">\(n-1\)</span> qubits are targets which have to be 1 for the last Z qubit to happen.</p>
+<p>This is an example for <code class="docutils literal notranslate"><span class="pre">controlZ(5)</span></code>.</p>
+<img src="https://clark.physics.illinois.edu/qcPics/controlZ.png" width="300">
+<p>You can get a control-control-control-control-x from qiskit by doing the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">mcx</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;noancilla&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(N-1\)</span> is the numer of target wires.</p>
+<p>Test out your circuit by using the following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">initCircuit</span><span class="o">=</span><span class="n">InitializeCircuit</span><span class="p">(</span><span class="s1">&#39;11110&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1">#initCircuit=InitializeCircuit(&#39;11010&#39;,5)</span>
+<span class="n">initCircuit</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">=</span><span class="n">AddCircuits</span><span class="p">([</span><span class="n">initCircuit</span><span class="p">,</span><span class="n">ControlZ</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunCircuit</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+<span class="n">PrintDirac</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You should get something close to</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">0.7071067811865475</span><span class="o">+</span><span class="mf">8.659560562354932e-17</span><span class="n">j</span><span class="p">)</span><span class="o">|</span><span class="mi">11110</span><span class="o">&gt;</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.7071067811865476</span><span class="o">-</span><span class="mf">8.659560562354934e-17</span><span class="n">j</span><span class="p">)</span><span class="o">|</span><span class="mi">11111</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>and then if you comment out the second initialization with <code class="docutils literal notranslate"><span class="pre">11010</span></code> you will get</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">0.7071067811865476</span><span class="o">+</span><span class="mi">0</span><span class="n">j</span><span class="p">)</span><span class="o">|</span><span class="mi">11010</span><span class="o">&gt;</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.7071067811865475</span><span class="o">+</span><span class="mi">0</span><span class="n">j</span><span class="p">)</span><span class="o">|</span><span class="mi">11011</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="b-all-hadamards">
+<h3>b. All Hadamards<a class="headerlink" href="#b-all-hadamards" title="Permalink to this heading">#</a></h3>
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">AllHadamard(n)</span></code> which builds <span class="math notranslate nohighlight">\(n\)</span> wires of Hadamards</p>
+<img src="https://clark.physics.illinois.edu/qcPics/allHadamard.png" width="100">
+<p>Check it by the following test:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">=</span><span class="n">AllHadamard</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunCircuit</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and seeing that it produces a state which is uniform.  This is what we will use for the start of Grover’s algorithm.</p>
+</section>
+<section id="c-flipallbutzero">
+<h3>c. FlipAllButZero<a class="headerlink" href="#c-flipallbutzero" title="Permalink to this heading">#</a></h3>
+<p>Define <code class="docutils literal notranslate"><span class="pre">FlipAllButZero(n)</span></code>. which should flip all but the zero configurations on <span class="math notranslate nohighlight">\(n\)</span> bits.  It will us <span class="math notranslate nohighlight">\(n+1\)</span> wires (you need an ancilla).  The example below is the output for FlipAllbutZero(4)</p>
+<img src="https://clark.physics.illinois.edu/qcPics/allZero.png" width="300">
+<p>You might want to add some circuits together.  To add these circuits you can do</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AddCircuits</span><span class="p">([</span><span class="n">circuit1</span><span class="p">,</span><span class="n">circuit2</span><span class="p">,</span><span class="n">circuit3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>You can test it your result by doing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">=</span><span class="n">InitializeCircuitRandom</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunCircuit</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">=</span><span class="n">FlipAllButZero</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunCircuit</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You should find that everything but the zero flipped.  It is ok if you are finding the zero flipped and nothing else.  Quantum states aren’t defined up to a global phase and so the flipping of everything is equivalent to doing nothing.</p>
+</section>
+<section id="d-invert">
+<h3>d. Invert<a class="headerlink" href="#d-invert" title="Permalink to this heading">#</a></h3>
+<p>Define the <code class="docutils literal notranslate"><span class="pre">Invert(N)</span></code> function.  This will also be on <span class="math notranslate nohighlight">\(N+1\)</span> wires.  Here you need to add together the AllHadamard and FlipAllButZero and AllHadamard again.</p>
+<img src="https://clark.physics.illinois.edu/qcPics/invert.png" width="300">
+<p>You can test it in the following way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">=</span><span class="n">InitializeCircuitRandom</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunCircuit</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">=</span><span class="n">Invert</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunCircuit</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will generate a random state and then invert it around the mean (shown in a blue dotted line).  Your mean before and after should be the same and everything else should flip around that dotted line.  (Also everything totally flipping is still allowed)</p>
+</section>
+<section id="e-running-grover-s-algorithm">
+<h3>e. Running Grover’s Algorithm<a class="headerlink" href="#e-running-grover-s-algorithm" title="Permalink to this heading">#</a></h3>
+<p>Put everything together to run Grover’s algorithm.</p>
+<img src="https://clark.physics.illinois.edu/qcPics/Grovers.png" width="600">
+</section>
+</section>
+<section id="exercise-4-quantum-key-distribution-ec-20-points">
+<h2>Exercise 4 Quantum Key Distribution (EC - 20 points)<a class="headerlink" href="#exercise-4-quantum-key-distribution-ec-20-points" title="Permalink to this heading">#</a></h2>
 <section id="a-one-time-pads">
 <h3>a. One time pads<a class="headerlink" href="#a-one-time-pads" title="Permalink to this heading">#</a></h3>
 <p>If Alice and Bob have two identical secret books of bits which agree, they could send secret messages to each other. Here’s a way to make a bunch of secret bits by sharing a quantum state.  After the quantum state is produced, they can separate their wires to be far apart.</p>
@@ -864,9 +1753,9 @@ and demonstrate what you find.</p></li>
 <span class="n">qc</span><span class="o">.</span><span class="n">cx</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">])</span>
 <span class="n">qc</span><span class="o">.</span><span class="n">barrier</span><span class="p">()</span>
-<span class="c1">### Eve is done now. </span>
+<span class="c1">### Eve is done now.</span>
 
-<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>  <span class="c1">#this is your measure from earlier. </span>
+<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>  <span class="c1">#this is your measure from earlier.</span>
 
 <span class="c1">###How often do Alice and Bob&#39;s bits agree.</span>
 <span class="c1">### How often do Alice and Eve&#39;s bits agree.</span>
@@ -907,7 +1796,7 @@ Suppose Alice and Bob agree that for each of the 100 trials, Alice and Bob are g
 <p>Now add Eve back using your approach from (b).  How often do Alice and Bob agree?  How often do Alice and Eve agree?   Suppose Alice and Bob were willing to talk some - can they catch Eve’s eavsdropping and still have some useful random bits left if Eve wasn’t listening.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the same Eve technique as you did in (b) and see how often they agree.  If Alice and Bob&#39;s bits don&#39;t </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the same Eve technique as you did in (b) and see how often they agree.  If Alice and Bob&#39;s bits don&#39;t</span>
 <span class="c1"># always agree is their a way for Alice and Bob to then detect Eve&#39;s eavesdropping while still having</span>
 <span class="c1"># some one-time pad bits left.</span>
 </pre></div>
@@ -929,13 +1818,13 @@ Alice and Eve Agree:  0.71
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HadamardA</span><span class="o">=</span><span class="p">[]</span>
 <span class="n">HadamardB</span><span class="o">=</span><span class="p">[]</span>
 
-<span class="c1">## Now remove the cheating from the approach.  </span>
+<span class="c1">## Now remove the cheating from the approach.</span>
 <span class="c1">## This time, Alice and Bob are going to have to talk about both the decisions they made (Hadamard or not)</span>
 <span class="c1">## as well as what result they get</span>
 
 <span class="n">mask</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">HadamardA</span><span class="p">)</span><span class="o">==</span><span class="p">(</span><span class="n">HadamardB</span><span class="p">)</span>
 
-<span class="c1">## How often do they agree if we only consider the cases when they made the same choice. </span>
+<span class="c1">## How often do they agree if we only consider the cases when they made the same choice.</span>
 </pre></div>
 </div>
 </div>
@@ -956,8 +1845,8 @@ Alice and Eve Agree:  0.71
 </div>
 </section>
 </section>
-<section id="exercise-4-building-up-tools-ec-10-points">
-<h2>Exercise 4: Building up tools (EC - 10 points)<a class="headerlink" href="#exercise-4-building-up-tools-ec-10-points" title="Permalink to this heading">#</a></h2>
+<section id="exercise-5-building-up-tools-ec-10-points">
+<h2>Exercise 5: Building up tools (EC - 10 points)<a class="headerlink" href="#exercise-5-building-up-tools-ec-10-points" title="Permalink to this heading">#</a></h2>
 <p>Now we are going to build up some tools and intuition so we can learn to build more complicated circuits.</p>
 <section id="a-initializing-a-binary-number">
 <h3>a. Initializing a binary number<a class="headerlink" href="#a-initializing-a-binary-number" title="Permalink to this heading">#</a></h3>
@@ -1139,7 +2028,7 @@ $<span class="math notranslate nohighlight">\(\frac{1}{\sqrt{N}}\sum_{i=1}^N |i\
 <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-<span class="c1">#only plot the probability of wire 1. You want to get the same result. </span>
+<span class="c1">#only plot the probability of wire 1. You want to get the same result.</span>
 </pre></div>
 </div>
 </div>
@@ -1199,12 +2088,12 @@ $<span class="math notranslate nohighlight">\(\frac{1}{\sqrt{N}}\sum_{i=1}^N |i\
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="OrbitalDynamics2.html"
+       href="MachineLearningGalaxies.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Many Body Simulations</p>
+        <p class="prev-next-title">Classifying Galaxies</p>
       </div>
     </a>
     <a class="right-next"
@@ -1231,16 +2120,30 @@ $<span class="math notranslate nohighlight">\(\frac{1}{\sqrt{N}}\sum_{i=1}^N |i\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-a-single-qubit-33-points">Exercise 1: A Single Qubit (33 points)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-a-single-qubit-33-points">Exercise 1: A Single Qubit (33 points)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-a-one-qubit-state">a. A one qubit state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-one-qubit-gates">b. One qubit gates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-seeing-the-rotation">c.  Seeing the rotation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-measuring-the-state">d. Measuring the state</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-two-qubits-34-points">Exercise 2: Two qubits (34 points)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-control-not-gates">a. Control-not gates</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-build-an-epr-pair">b.  Build an EPR Pair</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-measuring-epr-pairs">c. Measuring EPR Pairs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-running-on-an-actual-quantum-computer">d. Running on an actual Quantum Computer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-entanglement">e. Entanglement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-entanglement-extra-credit-5-points">e. Entanglement (Extra Credit: 5 points)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-quantum-key-distribution-ec-20-points">Exercise 3 Quantum Key Distribution (EC - 20 points)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-grover-s-algorithm">Exercise 3:  Grover’s Algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-control-control-control-z">a. Control-Control-Control Z</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-all-hadamards">b. All Hadamards</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-flipallbutzero">c. FlipAllButZero</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-invert">d. Invert</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-running-grover-s-algorithm">e. Running Grover’s Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-quantum-key-distribution-ec-20-points">Exercise 4 Quantum Key Distribution (EC - 20 points)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-one-time-pads">a. One time pads</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-eve-s-arrival">b. Eve’s arrival</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-an-improved-protocol">c. An improved protocol</a></li>
@@ -1248,7 +2151,7 @@ $<span class="math notranslate nohighlight">\(\frac{1}{\sqrt{N}}\sum_{i=1}^N |i\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-not-flipping-shared-coins">e.  Not flipping shared coins</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-building-up-tools-ec-10-points">Exercise 4: Building up tools (EC - 10 points)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-building-up-tools-ec-10-points">Exercise 5: Building up tools (EC - 10 points)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-initializing-a-binary-number">a. Initializing a binary number</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-a-sum-over-all-states">b. A sum over all states</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-angle-of-a-random-gate">c.  Angle of a random gate</a></li>
