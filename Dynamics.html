@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -141,6 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -184,7 +185,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="MachineLearningGalaxies.html">Classifying Galaxies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC1.html">Quantum Computing 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC2.html">Building a Physical Qubit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Climate.html">Climate Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics2.html">Many Body Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QC2_old.html">Quantum Computing 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Projects.html">Cool Projects</a></li>
 </ul>
 
@@ -323,6 +326,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -332,6 +336,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -454,16 +459,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">scipy</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">ll</span><span class="o">=</span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;who_ls&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 11, 30, 21, 20, 41, 893140)
 </pre></div>
 </div>
 </div>
@@ -600,7 +596,7 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bf5723fc08845eebc4335a751492f32951d25efbc5ee4077323ff9c9a0f1387e.png" src="_images/bf5723fc08845eebc4335a751492f32951d25efbc5ee4077323ff9c9a0f1387e.png" />
+<img alt="_images/061cf7526837368a1160bd62fec19afb5d5c4a2603f8c41ad471db818fce530f.png" src="_images/061cf7526837368a1160bd62fec19afb5d5c4a2603f8c41ad471db818fce530f.png" />
 </div>
 </div>
 <p>Here is an example of such data.  You want to figure out what this relationship is.   To do this, you can use
@@ -628,10 +624,10 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.31880108 0.06159952]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.32698012 -0.00633555]
 </pre></div>
 </div>
-<img alt="_images/3e0dfdcca44626e34b70c551fbe4d097cf505792f3ad66d47965d1dd9a56c905.png" src="_images/3e0dfdcca44626e34b70c551fbe4d097cf505792f3ad66d47965d1dd9a56c905.png" />
+<img alt="_images/7782d3bcd738d74603bf970a90b0c6c95302addface835597675b8f8040f9c50.png" src="_images/7782d3bcd738d74603bf970a90b0c6c95302addface835597675b8f8040f9c50.png" />
 </div>
 </div>
 </section>
@@ -655,7 +651,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2dc2e4ec4286a953446d03ce11423e203fbe4a09a0d1c063aa992a67861f45d7.png" src="_images/2dc2e4ec4286a953446d03ce11423e203fbe4a09a0d1c063aa992a67861f45d7.png" />
+<img alt="_images/66d6f2396b24f3302168f33514e20c0bf4ddace7a7eee4349227b87f52b42383.png" src="_images/66d6f2396b24f3302168f33514e20c0bf4ddace7a7eee4349227b87f52b42383.png" />
 </div>
 </div>
 <p>Let’s go ahead and plot x and y on a log-log scale.  To do this redo the plot above but add</p>
@@ -679,7 +675,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8150195300fb0bffb27c3a2a94a8fd23e986f01e760ca84991dbb483e609e74c.png" src="_images/8150195300fb0bffb27c3a2a94a8fd23e986f01e760ca84991dbb483e609e74c.png" />
+<img alt="_images/806b14c9905b474c3a62ac451da737d72629afb85cfe7460dc0d3f78cf3dacfa.png" src="_images/806b14c9905b474c3a62ac451da737d72629afb85cfe7460dc0d3f78cf3dacfa.png" />
 </div>
 </div>
 <p>You should notice your plot looks roughly linear.  We can go get the slope by doing a linear fit to the log-log plot. This can be done by doing</p>
@@ -696,7 +692,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.99528436 0.01362348]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.98665001 0.03846264]
 </pre></div>
 </div>
 </div>
@@ -714,7 +710,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/135dd8811dbc494345bba1d66f91861691691c25791ef83e33595ca4e2f17653.png" src="_images/135dd8811dbc494345bba1d66f91861691691c25791ef83e33595ca4e2f17653.png" />
+<img alt="_images/3b2b8ac2b2ad8d1acee2aab65193bf856348dd14d6d734d60a859ba82f08a8c8.png" src="_images/3b2b8ac2b2ad8d1acee2aab65193bf856348dd14d6d734d60a859ba82f08a8c8.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -945,9 +941,11 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="n">a84d4e44732c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">40</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span> <span class="n">init_func</span><span class="o">=</span><span class="n">init</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>                                    <span class="n">frames</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> 
+<span class="g g-Whitespace">     </span><span class="mi">37</span>                                    <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 <span class="g g-Whitespace">     </span><span class="mi">38</span>     <span class="k">return</span> <span class="n">anim</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span> 
 <span class="ne">---&gt; </span><span class="mi">40</span> <span class="n">anim</span><span class="o">=</span><span class="n">animateMe</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="n">HTML</span><span class="p">(</span><span class="n">anim</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
 
@@ -1263,7 +1261,7 @@ dv &amp;= \frac{F(x_\textrm{midpoint},v_\textrm{midpoint},t_\textrm{midpoint})}{
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="N_Ways_of_Measuring_PI.html"
@@ -1357,6 +1355,7 @@ By Bryan Clark; George Gollin; Ryan Levy
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2021.
@@ -1383,8 +1382,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

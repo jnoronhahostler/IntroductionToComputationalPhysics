@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Projects';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Many Body Simulations" href="OrbitalDynamics2.html" />
+    <link rel="prev" title="Quantum Computing 2" href="QC2_old.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -138,6 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -181,7 +182,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="MachineLearningGalaxies.html">Classifying Galaxies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC1.html">Quantum Computing 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC2.html">Building a Physical Qubit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Climate.html">Climate Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics2.html">Many Body Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QC2_old.html">Quantum Computing 2</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Cool Projects</a></li>
 </ul>
 
@@ -289,6 +292,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -298,6 +302,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -333,6 +338,79 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cool-projects">
 <h1>Cool Projects<a class="headerlink" href="#cool-projects" title="Permalink to this heading">#</a></h1>
+<p>Dynamics:</p>
+<ul class="simple">
+<li><p>Understand the relationship between Reynolds number and air resistance.  Given an object compute the right value for the ….  model all sorts of objects and compare their terminal velocity.</p></li>
+</ul>
+<p>Orbital Dynamics:</p>
+<ul class="simple">
+<li><p>Compute a trajectory to launch from the Earth and land on the moon. To accomplish this, you will need to model both the spacecraft and the moon orbiting around the Earth.  In addition you will need to take into account the fact that the Earth is rotating and so gives an initial velocity to the spacecraft.</p></li>
+<li><p>Compute a trajectory to launch from the Earth to Mars.</p></li>
+<li><p>Model the trajectory of voyager through the Solar System.  This requires some intermediate thrusts from voyager and requires modeling a large part of the solar system.  This is a somewhat challenging project.  If you want to do this, you are essentially allowed to look anything up (i.e. you can go look up any information about voyager).</p></li>
+<li><p>Lagrange points via optimization:  Find the lagrange points between the Sun and Earth by combining your orbital dynamics simulation and scipy.optimize.  Once you’ve found them, show that they work by modeling them in your simulations nad then show that two of them are stable and three of them are unstable.</p></li>
+<li><p>Modeling the orbit of a spacecraft around a  black hole:  We modeled the perihelion at Mercury by taking the effect of general relativity to first order.  If you want to model orbiting around a black hole you need to actually use the proper GR equations of motion.  See Black Holes book.</p></li>
+<li><p>Simulate the twin paradox.</p></li>
+<li><p>Nice model for planetary formation</p></li>
+</ul>
+<p>Exoplanets:</p>
+<ul class="simple">
+<li><p>Do the exoplanet assignment but get the data from a many-body simulation with two planets + the sun.  Write code that gets the oscillations for the largest planet.  Also write code that correctly accounts for the fact that the solar system you are emulating isn’t aligned with the Earth.</p></li>
+</ul>
+<p>Chaos:</p>
+<ul class="simple">
+<li><p>Logistics map for chaos</p></li>
+<li><p>Chaos on billiard balls. There is a difference between square straight walls and curved walls.</p></li>
+</ul>
+<p>Many Body Simulations:</p>
+<ul class="simple">
+<li><p>Do a full simulation of the solar system.  You probably want to implement a symplectic integrator to do this.</p></li>
+<li><p>Do a galaxy simulation.  You probably want to implement a symplectic integrator to do this.  You may want to implement a method to speed up the use of the gravitiational force.  You can use jax for this project which probably wil make your life simpler.</p></li>
+<li><p>With a few lines of code, I think you should be able to turn your jax result into a code that simulates a gas inside a room.  Copute something interesting for this gas.</p></li>
+</ul>
+<p>Random Walks/Markov Chains:</p>
+<ul class="simple">
+<li><p>Implement a path integral Monte Carlo code for a Harmonic oscillator</p></li>
+<li><p>Implement an Ising model.</p></li>
+</ul>
+<p>Predator-Prey:</p>
+<ul class="simple">
+<li><p>Epidemic Modeling</p>
+<ul>
+<li><p>Agent Based Approach:</p></li>
+<li><p>SIR Model</p></li>
+</ul>
+</li>
+<li><p>On the agent evolution, start with 100 foxes and keep track of who is a given fox descendent.  Visualize this in your animation  by color…separately plot the number of descendants of each original fox as a function of time</p></li>
+<li><p>Add evolution to your simulation … allow foxes and bunnies to adjust speed , when they starve and fraction to reproduce. You’ll need to add these to the class</p></li>
+<li><p>There is an interesting fact I’ve hear about humans that you don’t have to go too many generations back before you are a descendant of everyone or no one.  Model this in an agent-based model.</p></li>
+<li><p>Hp model of protein folding</p></li>
+<li><p>Implement some version of blast</p></li>
+</ul>
+<p>Fluid Dynamics:</p>
+<ul class="simple">
+<li><p>Gpu version of lattice Boltzmann</p></li>
+<li><p>Machine learning on lattice Boltzmann fluid dynamics</p></li>
+<li><p>Model moving objects in your fluid dynamics simulation and measure the air resistance to different types of shapes</p></li>
+<li><p>Take your fluid dynamics data and look at different quantities. Measure the curl and density and visualize these side by side</p></li>
+</ul>
+<p>Machine Learning Galaxies:</p>
+<ul class="simple">
+<li><p>Break 90% using the full dataset.  You can look up whatever you want to pull this off as well as use pytorch, stax, etc.</p></li>
+</ul>
+<p>Quantum Computing</p>
+<ul class="simple">
+<li><p>Shadow tomography</p></li>
+</ul>
+<p>Climate Modeling</p>
+<ul class="simple">
+<li><p>Modify your climate modeling to work in 2D</p></li>
+<li><p>Modify your climate modeling to deal with seasonal variation of solar insolation.</p></li>
+<li><p>E&amp;M:  Implement code that solve poisson’s equation for a bunch of wires and point charges.</p></li>
+<li><p>Heat Equation: Implement something that takes a bar with heat on the two edges and models how it distributes</p></li>
+<li><p>Simulated Annealing: Implement and do some simulated annealing.</p></li>
+<li><p>Impelement the schrodinger equation</p></li>
+<li><p>Do diagramtic Monte Carlo</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -363,15 +441,15 @@ document.write(`
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
-       href="OrbitalDynamics2.html"
+       href="QC2_old.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Many Body Simulations</p>
+        <p class="prev-next-title">Quantum Computing 2</p>
       </div>
     </a>
 </div>
@@ -397,6 +475,7 @@ By Bryan Clark; George Gollin; Ryan Levy
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2021.
@@ -423,8 +502,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
