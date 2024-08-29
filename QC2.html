@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'QC2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Climate Dynamics" href="Climate.html" />
+    <link rel="next" title="Many Body Simulations" href="OrbitalDynamics2.html" />
     <link rel="prev" title="Quantum Computing 1" href="QC1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -179,16 +179,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Markov%20Chains.html">Markov Chains</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Predator-Prey.html">Predator-Prey</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ParticlePhysics.html">Particle Physics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Climate.html">Climate Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Predator-Prey.html">Predator-Prey</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FluidDynamics.html">Fluid Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MachineLearningGalaxies.html">Classifying Galaxies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC1.html">Quantum Computing 1</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Building a Physical Qubit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Climate.html">Climate Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics2.html">Many Body Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC2_old.html">Quantum Computing 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Projects.html">Cool Projects</a></li>
 </ul>
 
     </div>
@@ -418,262 +417,244 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scqubits
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading scqubits-3.3.0-py3-none-any.whl.metadata (2.4 kB)
+  Downloading scqubits-4.1.0-py3-none-any.whl.metadata (2.5 kB)
 Requirement already satisfied: cycler in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (0.12.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cython&lt;3.0.0,&gt;=0.29.20 (from scqubits)
-  Downloading Cython-0.29.36-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl.metadata (3.1 kB)
-Requirement already satisfied: matplotlib&gt;=3.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (3.7.4)
-Requirement already satisfied: numpy&gt;=1.14.2 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (1.23.5)
-Requirement already satisfied: pyyaml in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (6.0.1)
-Requirement already satisfied: qutip&gt;=4.3.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (4.7.3)
-Requirement already satisfied: scipy&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (1.10.1)
-Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (1.12)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cython&gt;=0.29.20 (from scqubits)
+  Downloading Cython-3.0.11-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.2 kB)
+Requirement already satisfied: matplotlib&gt;=3.5.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (3.7.5)
+Requirement already satisfied: numpy&gt;=1.14.2 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (1.24.4)
+Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (1.10.1)
+Requirement already satisfied: dill in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (0.3.8)
+Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (1.13.2)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting tqdm (from scqubits)
-  Downloading tqdm-4.66.1-py3-none-any.whl.metadata (57 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/57.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">57.6/57.6 kB</span> <span class=" -Color -Color-Red">4.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (4.8.0)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5-&gt;scqubits) (1.1.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5-&gt;scqubits) (4.45.1)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5-&gt;scqubits) (1.4.5)
-Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5-&gt;scqubits) (23.2)
-Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5-&gt;scqubits) (10.1.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5-&gt;scqubits) (3.1.1)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5-&gt;scqubits) (2.8.2)
-Requirement already satisfied: importlib-resources&gt;=3.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5-&gt;scqubits) (6.1.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&gt;=0.19 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy-&gt;scqubits) (1.3.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading tqdm-4.66.5-py3-none-any.whl.metadata (57 kB)
+Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (4.12.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.5-&gt;scqubits) (3.17.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qutip&lt;5.0 (from scqubits)
+  Downloading qutip-4.7.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (1.1.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (4.53.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (1.4.5)
+Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (24.1)
+Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (10.4.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (3.1.4)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (2.9.0.post0)
+Requirement already satisfied: importlib-resources&gt;=3.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (6.4.4)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy-&gt;scqubits) (1.3.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&gt;=3.5-&gt;scqubits) (1.16.0)
-Downloading scqubits-3.3.0-py3-none-any.whl (6.5 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.5.1-&gt;scqubits) (3.20.1)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&gt;=3.5.1-&gt;scqubits) (1.16.0)
+Downloading scqubits-4.1.0-py3-none-any.whl (6.5 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/6.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.4/6.5 MB</span> <span class=" -Color -Color-Red">13.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.5/6.5 MB</span> <span class=" -Color -Color-Red">128.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading Cython-3.0.11-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.6 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.6/3.6 MB</span> <span class=" -Color -Color-Red">162.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading qutip-4.7.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/16.8 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.0/6.5 MB</span> <span class=" -Color -Color-Red">14.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.8/6.5 MB</span> <span class=" -Color -Color-Red">17.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/16.8 MB</span> <span class=" -Color -Color-Red">142.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading tqdm-4.66.5-py3-none-any.whl (78 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.9/6.5 MB</span> <span class=" -Color -Color-Red">20.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: tqdm, cython, qutip, scqubits
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.3/6.5 MB</span> <span class=" -Color -Color-Red">24.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━ <span class=" -Color -Color-Green">6.1/6.5 MB</span> <span class=" -Color -Color-Red">29.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed cython-3.0.11 qutip-4.7.6 scqubits-4.1.0 tqdm-4.66.5
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.5/6.5 MB</span> <span class=" -Color -Color-Red">27.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading Cython-0.29.36-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (1.9 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/1.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qiskit in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (1.2.0)
+Requirement already satisfied: rustworkx&gt;=0.15.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (0.15.1)
+Requirement already satisfied: numpy&lt;3,&gt;=1.17 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (1.24.4)
+Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (1.10.1)
+Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (1.13.2)
+Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (0.3.8)
+Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (2.9.0.post0)
+Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (5.3.0)
+Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (4.12.2)
+Requirement already satisfied: symengine&gt;=0.11 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (0.11.0)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit) (1.16.0)
+Requirement already satisfied: pbr&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit) (6.1.0)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit) (1.3.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.9/1.9 MB</span> <span class=" -Color -Color-Red">60.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading tqdm-4.66.1-py3-none-any.whl (78 kB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/78.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">78.3/78.3 kB</span> <span class=" -Color -Color-Red">27.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qiskit[visualization] in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (1.2.0)
+Requirement already satisfied: rustworkx&gt;=0.15.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (0.15.1)
+Requirement already satisfied: numpy&lt;3,&gt;=1.17 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (1.24.4)
+Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (1.10.1)
+Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (1.13.2)
+Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (0.3.8)
+Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (2.9.0.post0)
+Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (5.3.0)
+Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (4.12.2)
+Requirement already satisfied: symengine&gt;=0.11 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (0.11.0)
+Requirement already satisfied: matplotlib&gt;=3.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (3.7.5)
+Requirement already satisfied: pydot in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (3.0.1)
+Requirement already satisfied: Pillow&gt;=4.2.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (10.4.0)
+Requirement already satisfied: pylatexenc&gt;=1.4 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (2.10)
+Requirement already satisfied: seaborn&gt;=0.9.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (0.13.2)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (1.1.1)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (4.53.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (1.4.5)
+Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (24.1)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (3.1.4)
+Requirement already satisfied: importlib-resources&gt;=3.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (6.4.4)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit[visualization]) (1.16.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: tqdm, cython, scqubits
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas&gt;=1.2 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2.0.3)
+Requirement already satisfied: pbr&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit[visualization]) (6.1.0)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit[visualization]) (1.3.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed cython-0.29.36 scqubits-3.3.0 tqdm-4.66.1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.3-&gt;qiskit[visualization]) (3.20.1)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2024.1)
+Requirement already satisfied: tzdata&gt;=2022.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2024.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.3.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qiskit in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (0.45.1)
-Requirement already satisfied: qiskit-terra==0.45.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (0.45.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rustworkx&gt;=0.13.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit) (0.13.2)
-Requirement already satisfied: numpy&lt;2,&gt;=1.17 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit) (1.23.5)
-Requirement already satisfied: ply&gt;=3.10 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit) (3.11)
-Requirement already satisfied: psutil&gt;=5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit) (5.9.6)
-Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit) (1.10.1)
-Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit) (1.12)
-Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit) (0.3.7)
-Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit) (2.8.2)
-Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit) (5.1.0)
-Requirement already satisfied: symengine!=0.10.0,&gt;=0.9 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit) (0.11.0)
-Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit) (4.8.0)
-Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit-terra==0.45.1-&gt;qiskit) (1.16.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pbr!=2.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit-terra==0.45.1-&gt;qiskit) (6.0.0)
-Requirement already satisfied: mpmath&gt;=0.19 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit-terra==0.45.1-&gt;qiskit) (1.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.3.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qiskit[visualization] in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (0.45.1)
-Requirement already satisfied: qiskit-terra==0.45.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (0.45.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rustworkx&gt;=0.13.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit[visualization]) (0.13.2)
-Requirement already satisfied: numpy&lt;2,&gt;=1.17 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit[visualization]) (1.23.5)
-Requirement already satisfied: ply&gt;=3.10 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit[visualization]) (3.11)
-Requirement already satisfied: psutil&gt;=5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit[visualization]) (5.9.6)
-Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit[visualization]) (1.10.1)
-Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit[visualization]) (1.12)
-Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit[visualization]) (0.3.7)
-Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit[visualization]) (2.8.2)
-Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit[visualization]) (5.1.0)
-Requirement already satisfied: symengine!=0.10.0,&gt;=0.9 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit[visualization]) (0.11.0)
-Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit[visualization]) (4.8.0)
-Requirement already satisfied: matplotlib&gt;=3.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (3.7.4)
-Requirement already satisfied: ipywidgets&gt;=7.3.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (8.1.1)
-Requirement already satisfied: pydot in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (1.4.2)
-Requirement already satisfied: pillow&gt;=4.2.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (10.1.0)
-Requirement already satisfied: pylatexenc&gt;=1.4 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (2.10)
-Requirement already satisfied: seaborn&gt;=0.9.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.13.0)
-Requirement already satisfied: pygments&gt;=2.4 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (2.17.2)
-Requirement already satisfied: comm&gt;=0.1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.2.0)
-Requirement already satisfied: ipython&gt;=6.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (8.12.3)
-Requirement already satisfied: traitlets&gt;=4.3.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (5.14.0)
-Requirement already satisfied: widgetsnbextension~=4.0.9 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (4.0.9)
-Requirement already satisfied: jupyterlab-widgets~=3.0.9 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (3.0.9)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (1.1.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (4.45.1)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (1.4.5)
-Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (23.2)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (3.1.1)
-Requirement already satisfied: importlib-resources&gt;=3.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (6.1.1)
-Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit-terra==0.45.1-&gt;qiskit[visualization]) (1.16.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas&gt;=1.2 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from seaborn&gt;=0.9.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (2.0.3)
-Requirement already satisfied: pbr!=2.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit-terra==0.45.1-&gt;qiskit[visualization]) (6.0.0)
-Requirement already satisfied: mpmath&gt;=0.19 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit-terra==0.45.1-&gt;qiskit[visualization]) (1.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.3-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (3.17.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: backcall in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.2.0)
-Requirement already satisfied: decorator in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (5.1.1)
-Requirement already satisfied: jedi&gt;=0.16 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.19.1)
-Requirement already satisfied: matplotlib-inline in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.1.6)
-Requirement already satisfied: pickleshare in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.7.5)
-Requirement already satisfied: prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (3.0.41)
-Requirement already satisfied: stack-data in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.6.3)
-Requirement already satisfied: pexpect&gt;4.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (4.9.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (2023.3.post1)
-Requirement already satisfied: tzdata&gt;=2022.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (2023.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.8.3)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.7.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wcwidth in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.2.12)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: executing&gt;=1.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (2.0.1)
-Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (2.4.1)
-Requirement already satisfied: pure-eval in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=7.3.0-&gt;qiskit-terra[visualization]; extra == &quot;visualization&quot;-&gt;qiskit[visualization]) (0.2.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.3.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qiskit_aer in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (0.13.1)
-Requirement already satisfied: qiskit&gt;=0.44.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (0.45.1)
-Requirement already satisfied: numpy&gt;=1.16.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (1.23.5)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qiskit_aer in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (0.15.0)
+Requirement already satisfied: qiskit&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (1.2.0)
+Requirement already satisfied: numpy&gt;=1.16.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (1.24.4)
 Requirement already satisfied: scipy&gt;=1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (1.10.1)
-Requirement already satisfied: psutil&gt;=5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (5.9.6)
-Requirement already satisfied: qiskit-terra==0.45.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=0.44.0-&gt;qiskit_aer) (0.45.1)
+Requirement already satisfied: psutil&gt;=5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (6.0.0)
+Requirement already satisfied: rustworkx&gt;=0.15.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (0.15.1)
+Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.13.2)
+Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (0.3.8)
+Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (2.9.0.post0)
+Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (5.3.0)
+Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (4.12.2)
+Requirement already satisfied: symengine&gt;=0.11 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (0.11.0)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.16.0)
+Requirement already satisfied: pbr&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (6.1.0)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.3.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rustworkx&gt;=0.13.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (0.13.2)
-Requirement already satisfied: ply&gt;=3.10 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (3.11)
-Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (1.12)
-Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (0.3.7)
-Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (2.8.2)
-Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (5.1.0)
-Requirement already satisfied: symengine!=0.10.0,&gt;=0.9 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (0.11.0)
-Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra==0.45.1-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (4.8.0)
-Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit-terra==0.45.1-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qutip in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (4.7.6)
+Requirement already satisfied: numpy&gt;=1.16.6 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (1.24.4)
+Requirement already satisfied: scipy&lt;1.13.0,&gt;=1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (1.10.1)
+Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (24.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pbr!=2.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit-terra==0.45.1-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (6.0.0)
-Requirement already satisfied: mpmath&gt;=0.19 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit-terra==0.45.1-&gt;qiskit&gt;=0.44.0-&gt;qiskit_aer) (1.3.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qiskit-ibmq-provider
+  Using cached qiskit_ibmq_provider-0.20.2-py3-none-any.whl.metadata (14 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.3.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qiskit-terra&gt;=0.18.0 (from qiskit-ibmq-provider)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qutip in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (4.7.3)
-Requirement already satisfied: numpy&gt;=1.16.6 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (1.23.5)
-Requirement already satisfied: scipy&gt;=1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (1.10.1)
-Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (23.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached qiskit_terra-0.46.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (13 kB)
+Requirement already satisfied: requests&gt;=2.19 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (2.32.3)
+Collecting requests-ntlm&lt;=1.1.0 (from qiskit-ibmq-provider)
+  Using cached requests_ntlm-1.1.0-py2.py3-none-any.whl.metadata (938 bytes)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.3.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&lt;1.24 (from qiskit-ibmq-provider)
+  Using cached numpy-1.23.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.3 kB)
+Requirement already satisfied: urllib3&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (2.2.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (2.9.0.post0)
+Collecting websocket-client&gt;=1.5.1 (from qiskit-ibmq-provider)
+  Using cached websocket_client-1.8.0-py3-none-any.whl.metadata (8.0 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qiskit-ibmq-provider in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (0.20.2)
-Requirement already satisfied: qiskit-terra&gt;=0.18.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (0.45.1)
-Requirement already satisfied: requests&gt;=2.19 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (2.31.0)
-Requirement already satisfied: requests-ntlm&lt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (1.1.0)
-Requirement already satisfied: numpy&lt;1.24 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (1.23.5)
-Requirement already satisfied: urllib3&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (2.1.0)
-Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (2.8.2)
-Requirement already satisfied: websocket-client&gt;=1.5.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (1.6.4)
-Requirement already satisfied: websockets&gt;=10.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-ibmq-provider) (12.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting websockets&gt;=10.0 (from qiskit-ibmq-provider)
+  Using cached websockets-13.0.1-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
 Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit-ibmq-provider) (1.16.0)
+Requirement already satisfied: rustworkx&gt;=0.13.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (0.15.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rustworkx&gt;=0.13.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (0.13.2)
-Requirement already satisfied: ply&gt;=3.10 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (3.11)
-Requirement already satisfied: psutil&gt;=5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (5.9.6)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ply&gt;=3.10 (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider)
+  Using cached ply-3.11-py2.py3-none-any.whl.metadata (844 bytes)
+Requirement already satisfied: psutil&gt;=5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (6.0.0)
 Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (1.10.1)
-Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (1.12)
-Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (0.3.7)
-Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (5.1.0)
-Requirement already satisfied: symengine!=0.10.0,&gt;=0.9 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (0.11.0)
-Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (4.8.0)
+Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (1.13.2)
+Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (0.3.8)
+Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (5.3.0)
+Requirement already satisfied: symengine&gt;=0.11 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (0.11.0)
+Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (4.12.2)
 Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from requests&gt;=2.19-&gt;qiskit-ibmq-provider) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from requests&gt;=2.19-&gt;qiskit-ibmq-provider) (3.6)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from requests&gt;=2.19-&gt;qiskit-ibmq-provider) (2023.11.17)
-Requirement already satisfied: ntlm-auth&gt;=1.0.2 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider) (1.5.0)
-Requirement already satisfied: cryptography&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider) (41.0.7)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from requests&gt;=2.19-&gt;qiskit-ibmq-provider) (3.8)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from requests&gt;=2.19-&gt;qiskit-ibmq-provider) (2024.7.4)
+Collecting ntlm-auth&gt;=1.0.2 (from requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider)
+  Using cached ntlm_auth-1.5.0-py2.py3-none-any.whl.metadata (10 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cffi&gt;=1.12 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from cryptography&gt;=1.3-&gt;requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cryptography&gt;=1.3 (from requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider)
+  Using cached cryptography-43.0.0-cp37-abi3-manylinux_2_28_x86_64.whl.metadata (5.4 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pbr!=2.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (6.0.0)
-Requirement already satisfied: mpmath&gt;=0.19 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (1.3.0)
-Requirement already satisfied: pycparser in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from cffi&gt;=1.12-&gt;cryptography&gt;=1.3-&gt;requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider) (2.21)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cffi&gt;=1.12 (from cryptography&gt;=1.3-&gt;requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider)
+  Using cached cffi-1.17.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">23.3.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pbr&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (6.1.0)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit-terra&gt;=0.18.0-&gt;qiskit-ibmq-provider) (1.3.0)
+Collecting pycparser (from cffi&gt;=1.12-&gt;cryptography&gt;=1.3-&gt;requests-ntlm&lt;=1.1.0-&gt;qiskit-ibmq-provider)
+  Using cached pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+Using cached qiskit_ibmq_provider-0.20.2-py3-none-any.whl (241 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.1 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/17.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">17.1/17.1 MB</span> <span class=" -Color -Color-Red">145.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading qiskit_terra-0.46.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.4 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/5.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/5.4 MB</span> <span class=" -Color -Color-Red">251.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/5.4 MB</span> <span class=" -Color -Color-Red">251.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/5.4 MB</span> <span class=" -Color -Color-Red">251.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/5.4 MB</span> <span class=" -Color -Color-Red">251.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">5.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading requests_ntlm-1.1.0-py2.py3-none-any.whl (5.7 kB)
+Downloading websocket_client-1.8.0-py3-none-any.whl (58 kB)
+Downloading websockets-13.0.1-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (157 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading cryptography-43.0.0-cp37-abi3-manylinux_2_28_x86_64.whl (4.0 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/4.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.0/4.0 MB</span> <span class=" -Color -Color-Red">156.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading ntlm_auth-1.5.0-py2.py3-none-any.whl (29 kB)
+Downloading ply-3.11-py2.py3-none-any.whl (49 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading cffi-1.17.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (446 kB)
+Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: ply, websockets, websocket-client, pycparser, numpy, ntlm-auth, cffi, qiskit-terra, cryptography, requests-ntlm, qiskit-ibmq-provider
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: numpy
+    Found existing installation: numpy 1.24.4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling numpy-1.24.4:
+      Successfully uninstalled numpy-1.24.4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed cffi-1.17.0 cryptography-43.0.0 ntlm-auth-1.5.0 numpy-1.23.5 ply-3.11 pycparser-2.22 qiskit-ibmq-provider-0.20.2 qiskit-terra-0.46.2 requests-ntlm-1.1.0 websocket-client-1.8.0 websockets-13.0.1
 </pre></div>
 </div>
 </div>
@@ -779,6 +760,40 @@ Requirement already satisfied: pycparser in /opt/hostedtoolcache/Python/3.8.18/x
     <span class="k">return</span> <span class="n">ax</span>
 
 <span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UserWarning: The new version of Cython, (&gt;= 3.0.0) is not supported.
+ /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qutip/__init__.py: 66
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">scqubits</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">transpile</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">from</span> <span class="nn">qiskit_aer</span> <span class="kn">import</span> <span class="n">AerSimulator</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">from</span> <span class="nn">qiskit.visualization</span> <span class="kn">import</span> <span class="n">plot_histogram</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.18</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">qiskit</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">38</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">_suppress_error</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;QISKIT_SUPPRESS_1_0_IMPORT_ERROR&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">_major</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">_suppress_error</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">38</span>         <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>             <span class="s2">&quot;Qiskit is installed in an invalid environment that has both Qiskit &gt;=1.0&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>             <span class="s2">&quot; and an earlier version.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>             <span class="s2">&quot; You should create a new virtual environment, and ensure that you do not mix&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>             <span class="s2">&quot; dependencies between Qiskit &lt;1.0 and &gt;=1.0.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="s2">&quot; Any packages that depend on &#39;qiskit-terra&#39; are not compatible with Qiskit 1.0 and&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>             <span class="s2">&quot; will need to be updated.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>             <span class="s2">&quot; Qiskit unfortunately cannot enforce this requirement during environment resolution.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>             <span class="s2">&quot; See https://qisk.it/packaging-1-0 for more detail.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>         <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="kn">import</span> <span class="nn">qiskit._accelerate</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="kn">import</span> <span class="nn">qiskit._numpy_compat</span>
+
+<span class="ne">ImportError</span>: Qiskit is installed in an invalid environment that has both Qiskit &gt;=1.0 and an earlier version. You should create a new virtual environment, and ensure that you do not mix dependencies between Qiskit &lt;1.0 and &gt;=1.0. Any packages that depend on &#39;qiskit-terra&#39; are not compatible with Qiskit 1.0 and will need to be updated. Qiskit unfortunately cannot enforce this requirement during environment resolution. See https://qisk.it/packaging-1-0 for more detail.
 </pre></div>
 </div>
 </div>
@@ -1145,11 +1160,11 @@ Identify where on the Bloch sphere the initial point is and the point at <span c
       </div>
     </a>
     <a class="right-next"
-       href="Climate.html"
+       href="OrbitalDynamics2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Climate Dynamics</p>
+        <p class="prev-next-title">Many Body Simulations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

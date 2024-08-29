@@ -15,22 +15,121 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import qiskit
-import time
-from qiskit import *
 import numpy as np
-from qiskit.visualization import *
+import matplotlib.pyplot as plt
+import random
 import pylab as plt
-#from tqdm import tqdm
+import scipy.linalg
+import scqubits
+import matplotlib.animation as animation
+from IPython.display import HTML
+import scqubits
+
+import numpy as np
+from qiskit import QuantumCircuit, QuantumRegister, transpile
+from qiskit_aer import AerSimulator
+from qiskit.visualization import plot_histogram
+from qiskit.circuit.library.standard_gates import ZGate, XGate
+from qiskit import IBMQ
+from qiskit.visualization import plot_bloch_vector
+from qiskit.visualization import plot_distribution
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit, Aer, execute
+import qutip
+from qiskit.circuit.quantumregister import AncillaRegister
+import pylab as plt
+from qiskit.circuit.library import MCMT
+import numpy as np
+import scipy
+from qiskit import *
+
+
+def resetMe(keepList=[]):
+    ll=%who_ls
+    keepList=keepList+['resetMe','np','plt','random']
+    for iiii in keepList:
+        if iiii in ll:
+            ll.remove(iiii)
+    for iiii in ll:
+        jjjj="^"+iiii+"$"
+        %reset_selective -f {jjjj}
+    ll=%who_ls
+    return
+import datetime;datetime.datetime.now()
+
+sigma_x=np.matrix([[0,1],[1,0]],dtype=complex)
+sigma_z=np.matrix([[1,0],[0,-1]],dtype=complex)
+
+
+
+
+def RunCircuit(circuit,a=None):
+  numQubits=circuit.num_qubits
+  if a!=None:
+    numQubits=max(numQubits,a.num_qubits)
+    initCircuit=QuantumCircuit(a.num_qubits,a.num_qubits)
+    initCircuit.initialize(a)
+    circuit=AddCircuits([initCircuit,circuit])
+  circuit.save_statevector(label='myStateVector')
+  compiled_circuit = transpile(circuit, simulator)
+  resultA = simulator.run(compiled_circuit).result()
+  forward=list(range(0,numQubits))
+  reverse=forward[::-1]
+  circuit.measure(forward,reverse)
+  compiled_circuit = transpile(circuit, simulator)
+  resultB = simulator.run(compiled_circuit).result()
+  return resultA.data()['myStateVector'],resultB.data()['counts']
+
+
+def AddCircuits(theCircuits):
+  numQubits=np.array([c.num_qubits for c in theCircuits])
+  numQubits=np.max(numQubits)
+  circuit=QuantumCircuit(numQubits,numQubits)
+  for i in range(0,len(theCircuits)):
+    circuit=circuit.compose(theCircuits[i],qubits=list(range(0,theCircuits[i].num_qubits)))
+  return circuit
+
+
+
+def AddBlochSphere(overlap,ax,withArrow=False):
+    rho = np.outer(overlap.conj(), overlap)
+    bvec=(2 * np.real(rho[0,1]), 2 * np.imag(rho[0,1]), np.real(rho[0,0]) - np.real(rho[1,1]))
+    if withArrow:
+        sf = ax.quiver([0,], [0,],[0,],bvec[0], bvec[1], bvec[2])
+    ax.scatter(bvec[0],bvec[1],bvec[2], color='r')
+    return ax
+
+def MakeBlochSphere():
+    fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+    ax.set_zlim([0,1])
+    ax.clear()
+    ax.set_xlim([-1.1,1.1])
+    ax.set_ylim([-1.1,1.1])
+    ax.set_zlim([-1.1,1.1])
+    u, v = np.mgrid[0:2*np.pi:100j, 0:np.pi:100j]
+    x = np.cos(u)*np.sin(v)
+    y = np.sin(u)*np.sin(v)
+    z = np.cos(v)
+    ax.plot_surface(x, y, z, color="yellow", alpha = 0.3)
+    ax.set_box_aspect((2,2,2))
+    return ax
+
+simulator = AerSimulator()
+
 ------------------
 
+----- stderr -----
+UserWarning: The new version of Cython, (>= 3.0.0) is not supported.
+ /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qutip/__init__.py: 66
+------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mImportError[0m                               Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mqiskit[39;00m
-[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mtime[39;00m
-[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+Cell [0;32mIn[2], line 12[0m
+[1;32m      9[0m [38;5;28;01mimport[39;00m [38;5;21;01mscqubits[39;00m
+[1;32m     11[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m---> 12[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m [38;5;28;01mimport[39;00m QuantumCircuit, QuantumRegister, transpile
+[1;32m     13[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit_aer[39;00m [38;5;28;01mimport[39;00m AerSimulator
+[1;32m     14[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m[38;5;21;01m.[39;00m[38;5;21;01mvisualization[39;00m [38;5;28;01mimport[39;00m plot_histogram
 
 File [0;32m/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/__init__.py:38[0m
 [1;32m     36[0m     _suppress_error [38;5;241m=[39m os[38;5;241m.[39menviron[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mQISKIT_SUPPRESS_1_0_IMPORT_ERROR[39m[38;5;124m"[39m, [38;5;28;01mFalse[39;00m) [38;5;241m==[39m [38;5;124m"[39m[38;5;124m1[39m[38;5;124m"[39m

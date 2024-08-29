@@ -67,7 +67,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'QC2_old';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Cool Projects" href="Projects.html" />
     <link rel="prev" title="Many Body Simulations" href="OrbitalDynamics2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -179,16 +178,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Markov%20Chains.html">Markov Chains</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Predator-Prey.html">Predator-Prey</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ParticlePhysics.html">Particle Physics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Climate.html">Climate Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Predator-Prey.html">Predator-Prey</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FluidDynamics.html">Fluid Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MachineLearningGalaxies.html">Classifying Galaxies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC1.html">Quantum Computing 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC2.html">Building a Physical Qubit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Climate.html">Climate Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics2.html">Many Body Simulations</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Quantum Computing 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Projects.html">Cool Projects</a></li>
 </ul>
 
     </div>
@@ -430,6 +428,34 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">qiskit</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">time</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.18</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">qiskit</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">38</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">_suppress_error</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;QISKIT_SUPPRESS_1_0_IMPORT_ERROR&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">_major</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">_suppress_error</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">38</span>         <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>             <span class="s2">&quot;Qiskit is installed in an invalid environment that has both Qiskit &gt;=1.0&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>             <span class="s2">&quot; and an earlier version.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>             <span class="s2">&quot; You should create a new virtual environment, and ensure that you do not mix&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>             <span class="s2">&quot; dependencies between Qiskit &lt;1.0 and &gt;=1.0.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="s2">&quot; Any packages that depend on &#39;qiskit-terra&#39; are not compatible with Qiskit 1.0 and&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>             <span class="s2">&quot; will need to be updated.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>             <span class="s2">&quot; Qiskit unfortunately cannot enforce this requirement during environment resolution.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>             <span class="s2">&quot; See https://qisk.it/packaging-1-0 for more detail.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>         <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="kn">import</span> <span class="nn">qiskit._accelerate</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="kn">import</span> <span class="nn">qiskit._numpy_compat</span>
+
+<span class="ne">ImportError</span>: Qiskit is installed in an invalid environment that has both Qiskit &gt;=1.0 and an earlier version. You should create a new virtual environment, and ensure that you do not mix dependencies between Qiskit &lt;1.0 and &gt;=1.0. Any packages that depend on &#39;qiskit-terra&#39; are not compatible with Qiskit 1.0 and will need to be updated. Qiskit unfortunately cannot enforce this requirement during environment resolution. See https://qisk.it/packaging-1-0 for more detail.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -470,120 +496,6 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#You should have set this up in the last notebook</span>
 <span class="n">IBMQ</span><span class="o">.</span><span class="n">load_account</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2370/4240591050.py:2: DeprecationWarning: The package qiskit.providers.ibmq is being deprecated. Please see https://ibm.biz/provider_migration_guide to get instructions on how to migrate to qiskit-ibm-provider (https://github.com/Qiskit/qiskit-ibm-provider) and qiskit-ibm-runtime (https://github.com/Qiskit/qiskit-ibm-runtime).
-  IBMQ.load_account()
-/tmp/ipykernel_2370/4240591050.py:2: DeprecationWarning: The qiskit.IBMQ entrypoint and the qiskit-ibmq-provider package (accessible from &#39;qiskit.providers.ibmq`) are deprecated and will be removed in a future release. Instead you should use the qiskit-ibm-provider package which is accessible from &#39;qiskit_ibm_provider&#39;. You can install it with &#39;pip install qiskit_ibm_provider&#39;. Just replace &#39;qiskit.IBMQ&#39; with &#39;qiskit_ibm_provider.IBMProvider&#39;
-  IBMQ.load_account()
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/session.py:278,</span> in <span class="ni">RetrySession.request</span><span class="nt">(self, method, url, bare, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="n">response</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">final_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">278</span>     <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="k">except</span> <span class="n">RequestException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="c1"># Wrap the requests exceptions into a IBM Q custom one, for</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="c1"># compatibility.</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/requests/models.py:1021,</span> in <span class="ni">Response.raise_for_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="k">if</span> <span class="n">http_error_msg</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1021</span>     <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">http_error_msg</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-
-<span class="ne">HTTPError</span>: 401 Client Error: Unauthorized for url: https://auth.quantum-computing.ibm.com/api/users/loginWithToken
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">RequestsApiError</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#You should have set this up in the last notebook</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">IBMQ</span><span class="o">.</span><span class="n">load_account</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/ibmqfactory.py:191,</span> in <span class="ni">IBMQFactory.load_account</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Credentials are already in use. The existing &#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span>                    <span class="s1">&#39;account in the session will be replaced.&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">disable_account</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">191</span> <span class="bp">self</span><span class="o">.</span><span class="n">_initialize_providers</span><span class="p">(</span><span class="n">credentials</span><span class="p">,</span> <span class="n">preferences</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="c1"># Prevent edge case where no hubs are available.</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="n">providers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/ibmqfactory.py:456,</span> in <span class="ni">IBMQFactory._initialize_providers</span><span class="nt">(self, credentials, preferences)</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span> <span class="k">def</span> <span class="nf">_initialize_providers</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span>         <span class="bp">self</span><span class="p">,</span> <span class="n">credentials</span><span class="p">:</span> <span class="n">Credentials</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span>         <span class="n">preferences</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">449</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Authenticate against IBM Quantum and populate the providers.</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">452</span><span class="sd">     Args:</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span><span class="sd">         credentials: Credentials for IBM Quantum.</span>
-<span class="g g-Whitespace">    </span><span class="mi">454</span><span class="sd">         preferences: Account preferences.</span>
-<span class="g g-Whitespace">    </span><span class="mi">455</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">456</span>     <span class="n">auth_client</span> <span class="o">=</span> <span class="n">AuthClient</span><span class="p">(</span><span class="n">credentials</span><span class="o">.</span><span class="n">token</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">457</span>                              <span class="n">credentials</span><span class="o">.</span><span class="n">base_url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span>                              <span class="o">**</span><span class="n">credentials</span><span class="o">.</span><span class="n">connection_parameters</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span>     <span class="n">service_urls</span> <span class="o">=</span> <span class="n">auth_client</span><span class="o">.</span><span class="n">current_service_urls</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span>     <span class="n">user_hubs</span> <span class="o">=</span> <span class="n">auth_client</span><span class="o">.</span><span class="n">user_hubs</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/clients/auth.py:41,</span> in <span class="ni">AuthClient.__init__</span><span class="nt">(self, api_token, auth_url, **request_kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="bp">self</span><span class="o">.</span><span class="n">_service_urls</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: ignore[var-annotated]</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth_api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">RetrySession</span><span class="p">(</span><span class="n">auth_url</span><span class="p">,</span> <span class="o">**</span><span class="n">request_kwargs</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">41</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_api</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_service_clients</span><span class="p">(</span><span class="o">**</span><span class="n">request_kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/clients/auth.py:53,</span> in <span class="ni">AuthClient._init_service_clients</span><span class="nt">(self, **request_kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Initialize the clients used for communicating with the API.</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span><span class="sd"> Args:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span><span class="sd">     Client for the API server.</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="c1"># Request an access token.</span>
-<span class="ne">---&gt; </span><span class="mi">53</span> <span class="n">access_token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_request_access_token</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="c1"># Use the token for the next auth server requests.</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth_api</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">access_token</span> <span class="o">=</span> <span class="n">access_token</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/clients/auth.py:75,</span> in <span class="ni">AuthClient._request_access_token</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Request a new access token from the API authentication service.</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span><span class="sd"> Returns:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd">     RequestsApiError: If the request failed.</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">75</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth_api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">api_token</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="k">except</span> <span class="n">RequestsApiError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>     <span class="c1"># Get the original exception that raised.</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/rest/root.py:125,</span> in <span class="ni">Api.login</span><span class="nt">(self, api_token)</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Login with token.</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span><span class="sd"> Args:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span><span class="sd">     JSON response.</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span> <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">125</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;apiToken&#39;</span><span class="p">:</span> <span class="n">api_token</span><span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/requests/sessions.py:637,</span> in <span class="ni">Session.post</span><span class="nt">(self, url, data, json, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">626</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">627</span><span class="w">     </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a POST request. Returns :class:`Response` object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">628</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">629</span><span class="sd">     :param url: URL for the new :class:`Request` object.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">634</span><span class="sd">     :rtype: requests.Response</span>
-<span class="g g-Whitespace">    </span><span class="mi">635</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">637</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">json</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/providers/ibmq/api/session.py:300,</span> in <span class="ni">RetrySession.request</span><span class="nt">(self, method, url, bare, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span>         <span class="c1"># Modify the original message on the chained exceptions.</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_modify_chained_exception_messages</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">300</span>     <span class="k">raise</span> <span class="n">RequestsApiError</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">status_code</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="k">return</span> <span class="n">response</span>
-
-<span class="ne">RequestsApiError</span>: &#39;401 Client Error: Unauthorized for url: https://auth.quantum-computing.ibm.com/api/users/loginWithToken. Login failed., Error code: 3446.&#39;
 </pre></div>
 </div>
 </div>
@@ -879,15 +791,6 @@ Does this method still work?</p>
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Many Body Simulations</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Projects.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cool Projects</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
