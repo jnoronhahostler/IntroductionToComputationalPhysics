@@ -458,7 +458,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 8, 29, 19, 24, 9, 177033)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 8, 29, 19, 37, 12, 566681)
 </pre></div>
 </div>
 </div>
@@ -595,7 +595,7 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0954a99ee5abf284a373f2fd70d71518cc499c77d31cede30afb9194936994e5.png" src="_images/0954a99ee5abf284a373f2fd70d71518cc499c77d31cede30afb9194936994e5.png" />
+<img alt="_images/d44f9dac0c6623ea41d3862f08a4fd285429e9f59ec70fb0b2defdec2eb405e8.png" src="_images/d44f9dac0c6623ea41d3862f08a4fd285429e9f59ec70fb0b2defdec2eb405e8.png" />
 </div>
 </div>
 <p>Here is an example of such data.  You want to figure out what this relationship is.   To do this, you can use
@@ -623,10 +623,10 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.31431481 0.02982204]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.36583682 -0.04530739]
 </pre></div>
 </div>
-<img alt="_images/b84a2a3242b1c440b028373ef5630f76425405d2737787bb931650f9446aba35.png" src="_images/b84a2a3242b1c440b028373ef5630f76425405d2737787bb931650f9446aba35.png" />
+<img alt="_images/74390dffdfbb4f7d63d4703221aaa6bbbd197fc410125e0e067096942b3081be.png" src="_images/74390dffdfbb4f7d63d4703221aaa6bbbd197fc410125e0e067096942b3081be.png" />
 </div>
 </div>
 </section>
@@ -650,7 +650,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d2e88e598d0b3c686f9424a817cd9e220374012a03dc79e8c3347de9ec1ccad0.png" src="_images/d2e88e598d0b3c686f9424a817cd9e220374012a03dc79e8c3347de9ec1ccad0.png" />
+<img alt="_images/f02e2e5daac5ad203784c121350f7326e246328e2a21861d3b97c54de350e5c8.png" src="_images/f02e2e5daac5ad203784c121350f7326e246328e2a21861d3b97c54de350e5c8.png" />
 </div>
 </div>
 <p>Let’s go ahead and plot x and y on a log-log scale.  To do this redo the plot above but add</p>
@@ -674,7 +674,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a98a0a35f2e809e89d83364490740f8dd006b1cb7e428eef8f5723d712cbe75b.png" src="_images/a98a0a35f2e809e89d83364490740f8dd006b1cb7e428eef8f5723d712cbe75b.png" />
+<img alt="_images/4b062449fc9049d7da0434d09c40b6c9e4550113b75b1cfc35511c7218b2d71a.png" src="_images/4b062449fc9049d7da0434d09c40b6c9e4550113b75b1cfc35511c7218b2d71a.png" />
 </div>
 </div>
 <p>You should notice your plot looks roughly linear.  We can go get the slope by doing a linear fit to the log-log plot. This can be done by doing</p>
@@ -691,7 +691,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 2.01087522 -0.03116502]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.99059332 0.02720601]
 </pre></div>
 </div>
 </div>
@@ -709,7 +709,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a075e702f06b151fc15e8b13af9a24ff68e467fa8c5733f514192cfa655cb9c6.png" src="_images/a075e702f06b151fc15e8b13af9a24ff68e467fa8c5733f514192cfa655cb9c6.png" />
+<img alt="_images/5c9056edbb09692bee025f8ee9ab3920ad2cf75d23ed45b9964c32c85fa077b2.png" src="_images/5c9056edbb09692bee025f8ee9ab3920ad2cf75d23ed45b9964c32c85fa077b2.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -1212,7 +1212,7 @@ dv &amp;= \frac{F(x_\textrm{midpoint},v_\textrm{midpoint},t_\textrm{midpoint})}{
 </ul>
 <section id="a-runge-kutta-5-points">
 <h3>a. Runge-Kutta (5 points)<a class="headerlink" href="#a-runge-kutta-5-points" title="Permalink to this heading">#</a></h3>
-<p>We have implemented a first and second order integrator.  We can even use higher order integrators.  The typical one everyone uses is the fourth order Runge-Kutta (RK) integrator - see <a class="reference external" href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">https://en.wikipedia.org/wiki/Runge–Kutta_methods</a>. 🦉Go ahead and implement a fourth-order RK integrator and show (using the same time-step techniques above) that it is fourth order.</p>
+<p>We have implemented a first and second order integrator.  We can even use higher order integrators.  The typical one everyone uses is the fourth order Runge-Kutta (RK) integrator - see https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods. 🦉Go ahead and implement a fourth-order RK integrator and show (using the same time-step techniques above) that it is fourth order.</p>
 </section>
 <section id="b-scipy-ode-5-points">
 <h3>b. scipy ODE (5 points)<a class="headerlink" href="#b-scipy-ode-5-points" title="Permalink to this heading">#</a></h3>

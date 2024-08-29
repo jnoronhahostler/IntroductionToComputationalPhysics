@@ -413,18 +413,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-08-29 19:24:11--  https://clark.physics.illinois.edu/exo_helper.py
-Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.220.149.166
-Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-08-29 19:37:15--  https://clark.physics.illinois.edu/exo_helper.py
+Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 18.220.149.166
+Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... connected.
+HTTP request sent, awaiting response... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
@@ -435,7 +427,7 @@ Saving to: ‘exo_helper.py.1’
 exo_helper.py.1       0%[                    ]       0  --.-KB/s               
 exo_helper.py.1     100%[===================&gt;]   1.69K  --.-KB/s    in 0s      
 
-2024-08-29 19:24:12 (1.39 GB/s) - ‘exo_helper.py.1’ saved [1729/1729]
+2024-08-29 19:37:15 (1.27 GB/s) - ‘exo_helper.py.1’ saved [1729/1729]
 </pre></div>
 </div>
 </div>
@@ -578,7 +570,7 @@ To get our hands a little dirty and simulate the observed solar system radial ve
 <p>Here is what I got:</p>
 <div><img src="https://clark.physics.illinois.edu/246img/exoplanets9.png" width=400 alt="confirmedExoplanets"></img><br></div><p>If we were to include a second planet, for example, one moving in Venus’ orbit, but with ten times as much mass, we’ll see wiggles at the Venusian orbital period superimposed on the larger Jovian-induced variation. Please set the Venusian mass to ten times its actual value of 4868.5e21, rather than zero.<br />
 🦉Generate another plot of the sun’s velocity. It should look like this:</p>
-<div><img src="https://clark.physics.illinois.edu/246img/exoplanets10.png" width=400 alt="confirmedExoplanets"></img><br></div><p>You should define the masses, in kg. The first is the sun, the second Jupiter, the third Venus. See <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size">https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size</a></p>
+<div><img src="https://clark.physics.illinois.edu/246img/exoplanets10.png" width=400 alt="confirmedExoplanets"></img><br></div><p>You should define the masses, in kg. The first is the sun, the second Jupiter, the third Venus. See https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
@@ -624,14 +616,15 @@ G\frac{m^3_{\text{planet}}}{m^2_{\text{star}}} &amp;= \frac{P}{2\pi}v^3_{\text{s
 \end{split}\]</div>
 <p> <br />
  <br />
-$<span class="math notranslate nohighlight">\(
-\begin{align}
+$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-83d91510-4a60-4864-935d-aedcf4a402b0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-83d91510-4a60-4864-935d-aedcf4a402b0" title="Permalink to this equation">#</a></span>\[\begin{align}
 m^3_{\text{planet}}\sin^3 i &amp;= m^2_{\text{star}} \frac{P}{2\pi G}\left(v_{\text{star}}\sin i\right)^3\\
 m_{\text{planet}}\sin i &amp;= \left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{1/3} v_{\text{star}}\sin i\\
 &amp;=\left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{1/3} v_r\\
 &amp;\equiv m_{\text{projected}}.
-\end{align}
-\)</span>$</p>
+\end{align}\]</div>
+<p>$$</p>
 <p>To summarize,</p>
 <div class="math notranslate nohighlight">
 \[ \boxed{m_\textrm{projected} = \left( \frac{m^2_\textrm{star} P }{ 2\pi G } \right)^{1/3} v_r }\]</div>
@@ -747,35 +740,27 @@ m_{\text{planet}}\sin i &amp;= \left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-08-29 19:24:12--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
-Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-08-29 19:37:15--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
+Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 130.126.151.14
+Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4993
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130.126.151.14
-Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
-Length: 4993 (4.9K) [text/plain]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> (4.9K) [text/plain]
 Saving to: ‘UID_0019921_RVC_002.tbl.txt’
 
 
           UID_00199   0%[                    ]       0  --.-KB/s               
 UID_0019921_RVC_002 100%[===================&gt;]   4.88K  --.-KB/s    in 0s      
 
-2024-08-29 19:24:13 (2.20 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
+2024-08-29 19:37:16 (3.05 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
 </pre></div>
 </div>
 </div>
 </div>
 <p>The file contains data from a NASA exoplanet archive<span class="xref myst"><sup>19</sup></span>  that are fully “reduced,” meaning that corrections for the motions of the telescope, earth, sun, and solar system around the galactic center have been removed. Since the file is plain text, you can open it and read it with any editor, including Jupyter’s. A header listing information about the measurements comprises the first 22 lines of the file.</p>
-<p>The header is followed by tabular data of the measured radial velocity spanning a period of about eight years. The three columns in each line of data hold the Julian date, the radial velocity, and the measurement uncertainty in the velocity. The Julian date is the number of days since noon (universal time) on January 1, 4713 BC. (There is a good converter on the Naval Observatory’s web site: see <a class="reference external" href="http://aa.usno.navy.mil/data/docs/JulianDate.php.">http://aa.usno.navy.mil/data/docs/JulianDate.php.</a>)</p>
+<p>The header is followed by tabular data of the measured radial velocity spanning a period of about eight years. The three columns in each line of data hold the Julian date, the radial velocity, and the measurement uncertainty in the velocity. The Julian date is the number of days since noon (universal time) on January 1, 4713 BC. (There is a good converter on the Naval Observatory’s web site: see http://aa.usno.navy.mil/data/docs/JulianDate.php.)</p>
 <p>The first line of data is</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">2450831.081551</span>    <span class="o">-</span><span class="mf">33.9</span>     <span class="mf">2.1</span>
 </pre></div>
@@ -922,25 +907,25 @@ After you find the best <span class="math notranslate nohighlight">\(v_r\)</span
 Ported to Jupyter and new material by BKC &amp; RL (2019)</p>
 <hr class="docutils" />
 <p><span id=“fn1”><sup>1</sup>Wolszczan, A.; Frail, D. A. (1992). “A planetary system around the millisecond pulsar PSR1257+12”. Nature. 355(6356): 145–147. </span></p>
-<p><span id=“fn2”><sup>2</sup>3,572 as of December 21, 2017: <a class="reference external" href="https://exoplanetarchive.ipac.caltech.edu/">https://exoplanetarchive.ipac.caltech.edu/</a>.</span></p>
+<p><span id=“fn2”><sup>2</sup>3,572 as of December 21, 2017: https://exoplanetarchive.ipac.caltech.edu/.</span></p>
 <p><span id=“fn3”><sup>3</sup>Original letter from Isaac Newton to Richard Bentley, dated 10 December 1692, The Newton project, 189.R.4.47, ff. 4A-5, Trinity College Library, Cambridge, UK</span></p>
-<p><span id=“fn4”><sup>4</sup> <a class="reference external" href="https://en.wikipedia.org/wiki/Pierre-Simon_Laplace">https://en.wikipedia.org/wiki/Pierre-Simon_Laplace</a>. The solar system is actually a chaotic system, capable of ejecting a planet now and then, so it is inaccurate to say that it is stable.</p>
+<p><span id=“fn4”><sup>4</sup> https://en.wikipedia.org/wiki/Pierre-Simon_Laplace. The solar system is actually a chaotic system, capable of ejecting a planet now and then, so it is inaccurate to say that it is stable.</p>
 <p><span id=“fn5”><sup>5</sup> Mayor, Michael; Queloz, Didier (1995). “A Jupiter-mass companion to a solar-type star”. Nature. 378 (6555): 355– 359.</span></p>
-<p><span id=“fn6”><sup>6</sup>  <a class="reference external" href="https://en.wikipedia.org/wiki/Exoplanet">https://en.wikipedia.org/wiki/Exoplanet</a></span></p>
+<p><span id=“fn6”><sup>6</sup>  https://en.wikipedia.org/wiki/Exoplanet</span></p>
 <p><span id=“fn7”><sup>7</sup> One parsec is approximately 3.26 light years. It is the distance at which the mean radius of the earth’s orbit subtends one second of arc, or 4.848 microradians. The distance to Proxima Centauri, the closest star to the sun, is 4.243 light years, or 1.3 parsecs.</span></p>
 <p><span id=“fn8”><sup>8</sup> The diameter of our Milky Way is around 50 k parsecs, and its thickness is around 1 k parsecs. As a result, Doppler spectroscopy can only find planets in our home galaxy. </span></p>
 <p><span id=“fn9”><sup>9</sup>  Combining observations from 1 &amp; 2, we can estimate the planet’s density, and learn whether it’s more likely to be a gas giant or a rocky, possibly terrestrial planet. </span></p>
-<p><span id="fn10"><sup>10</sup> <a class="reference external" href="https://en.wikipedia.org/wiki/HR_8799">https://en.wikipedia.org/wiki/HR_8799</a> </span></p>
-<p><span id="fn11"><sup>11</sup>For example, <a class="reference external" href="https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets">https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets</a>; Udry S, Santos NC., 2007. Astron. Astrophys. 45:397-439; Winn JN., Fabrycky DC., 2015. Astron. Astrophys. 53:409-447. In February 2017, from Spitzer Space Telescope observation, NASA announced the discovery of the first known system of seven planets orbiting around a single star TRAPPIST-1. All are Earth-sized, with three are located in habitable zone. The system is seen nearly edge-on, and from the derived planetary orbital parameters, six have nearly circular orbits with eccentricity &lt; 0.1. Further, the orbits are almost co-planar. In the near future Spitzer, Hubble, Kepler, and the future James Webb Space Telescope will perform follow-up observations, hoping to determine their atmospheric composition (and therefore habitability). More details can be seen in Nature: Gillon, M., Triaud, A. H. M. J., Demory, B.-O., et al. 2017, Nature, 542, 456.</span></p>
-<p><span id="fn12"><sup>12</sup><a class="reference external" href="https://image.gsfc.nasa.gov/poetry/ask/a11354.html">https://image.gsfc.nasa.gov/poetry/ask/a11354.html</a>  </span></p>
-<p><span id="fn13"><sup>13</sup><a class="reference external" href="https://en.wikipedia.org/wiki/File:Hydrogen_spectrum.svg">https://en.wikipedia.org/wiki/File:Hydrogen_spectrum.svg</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Solar_Spectrum.png">https://commons.wikimedia.org/wiki/File:Solar_Spectrum.png</a>, This figure was prepared by Robert A. Rohde as part of the Global Warming Art project.</span></p>
-<p><span id="fn14"><sup>14</sup><a class="reference external" href="http://www.astronomynotes.com/light/s5.htm">http://www.astronomynotes.com/light/s5.htm</a>. The discussed spectral line is a fine-structure 2P – 3D, cited in Kramida 2010, Atomic Data and Nuclear Data Tables.</span></p>
-<p><span id ="fn15"><sup>15</sup> <a class="reference external" href="https://exoplanets.nasa.gov/exep/newslettersarchive-htmlfiles/2011July.html">https://exoplanets.nasa.gov/exep/newslettersarchive-htmlfiles/2011July.html</a></span></p>
-<p><span id="fn16"><sup>16</sup>Arkushanangarushashutu is about 130 lightyears away. The name is the longest of all star names, derived from ancient Babylonian, and meaning “the southeast star in the Crab.” See <a class="reference external" href="https://en.wikipedia.org/wiki/Delta_Cancri">https://en.wikipedia.org/wiki/Delta_Cancri</a>.</span></p>
-<p><span id="fn17"><sup>17</sup><a class="reference external" href="https://en.wikipedia.org/wiki/Epsilon_Reticuli">https://en.wikipedia.org/wiki/Epsilon_Reticuli</a></span></p>
-<p><span id="fn18"><sup>18</sup><a class="reference external" href="https://en.wikipedia.org/wiki/Henry_Draper_Catalogue">https://en.wikipedia.org/wiki/Henry_Draper_Catalogue</a></span></p>
-<p><span id="fn19"><sup>19</sup><a class="reference external" href="http://exoplanetarchive.ipac.caltech.edu/index.html">http://exoplanetarchive.ipac.caltech.edu/index.html</a></span></p>
-<p><span id="fn20"><sup>20</sup><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.io.genfromtxt.html">https://docs.scipy.org/doc/numpy/user/basics.io.genfromtxt.html</a></span></p>
+<p><span id="fn10"><sup>10</sup> https://en.wikipedia.org/wiki/HR_8799 </span></p>
+<p><span id="fn11"><sup>11</sup>For example, https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets; Udry S, Santos NC., 2007. Astron. Astrophys. 45:397-439; Winn JN., Fabrycky DC., 2015. Astron. Astrophys. 53:409-447. In February 2017, from Spitzer Space Telescope observation, NASA announced the discovery of the first known system of seven planets orbiting around a single star TRAPPIST-1. All are Earth-sized, with three are located in habitable zone. The system is seen nearly edge-on, and from the derived planetary orbital parameters, six have nearly circular orbits with eccentricity &lt; 0.1. Further, the orbits are almost co-planar. In the near future Spitzer, Hubble, Kepler, and the future James Webb Space Telescope will perform follow-up observations, hoping to determine their atmospheric composition (and therefore habitability). More details can be seen in Nature: Gillon, M., Triaud, A. H. M. J., Demory, B.-O., et al. 2017, Nature, 542, 456.</span></p>
+<p><span id="fn12"><sup>12</sup>https://image.gsfc.nasa.gov/poetry/ask/a11354.html  </span></p>
+<p><span id="fn13"><sup>13</sup>https://en.wikipedia.org/wiki/File:Hydrogen_spectrum.svg, https://commons.wikimedia.org/wiki/File:Solar_Spectrum.png, This figure was prepared by Robert A. Rohde as part of the Global Warming Art project.</span></p>
+<p><span id="fn14"><sup>14</sup>http://www.astronomynotes.com/light/s5.htm. The discussed spectral line is a fine-structure 2P – 3D, cited in Kramida 2010, Atomic Data and Nuclear Data Tables.</span></p>
+<p><span id ="fn15"><sup>15</sup> https://exoplanets.nasa.gov/exep/newslettersarchive-htmlfiles/2011July.html</span></p>
+<p><span id="fn16"><sup>16</sup>Arkushanangarushashutu is about 130 lightyears away. The name is the longest of all star names, derived from ancient Babylonian, and meaning “the southeast star in the Crab.” See https://en.wikipedia.org/wiki/Delta_Cancri.</span></p>
+<p><span id="fn17"><sup>17</sup>https://en.wikipedia.org/wiki/Epsilon_Reticuli</span></p>
+<p><span id="fn18"><sup>18</sup>https://en.wikipedia.org/wiki/Henry_Draper_Catalogue</span></p>
+<p><span id="fn19"><sup>19</sup>http://exoplanetarchive.ipac.caltech.edu/index.html</span></p>
+<p><span id="fn20"><sup>20</sup>https://docs.scipy.org/doc/numpy/user/basics.io.genfromtxt.html</span></p>
 <hr class="docutils" />
 <p><strong>Acknowledgements:</strong></p>
 <ul class="simple">
