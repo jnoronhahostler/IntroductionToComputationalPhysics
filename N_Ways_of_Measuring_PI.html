@@ -711,15 +711,15 @@ You can have a function that generates all the <code class="docutils literal not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3821521712882632
-0.283802114088616
--0.23481115236047434
--0.7030001577578782
-0.4413411182706599
--0.6704415808189359
--0.5938658224969975
-0.5470197618583035
--0.15841736247415228
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.477827970966777
+-0.5159265127205153
+0.9268280158708115
+0.4050145355305359
+-0.35213233345259076
+0.3648447116384388
+0.54289420736151
+-0.2812014971086241
+0.7305577197462634
 </pre></div>
 </div>
 </div>
@@ -728,7 +728,9 @@ You can have a function that generates all the <code class="docutils literal not
 <section id="a-darts-at-a-board">
 <h3>a. Darts at a board<a class="headerlink" href="#a-darts-at-a-board" title="Permalink to this heading">#</a></h3>
 <p>🦉Call DrawCircle() to draw a circle of radius 1.0 in a <span class="math notranslate nohighlight">\(2 \times 2\)</span> square. Then pick 25 random points <span class="math notranslate nohighlight">\((x,y)\)</span> in the square (do this by picking two random numbers each between -1 and 1). Plot them within the square (<code class="docutils literal notranslate"><span class="pre">plt.plot(x,y,'.',color='red'</span></code>).   Recall that the area of a circle is <span class="math notranslate nohighlight">\(\pi r^2\)</span>, and that if you inscribe a circle of radius 1.0 inside a square of side length 2, the ratio of the areas of the circle and square will be <span class="math notranslate nohighlight">\(\pi\)</span>/4.
-$<span class="math notranslate nohighlight">\(\frac{\pi r^2}{4 r^2}= \frac{\pi}{4}\)</span>$</p>
+$<span class="math notranslate nohighlight">\(
+\frac{\pi r^2}{4 r^2}= \frac{\pi}{4}
+\)</span>$</p>
 <p>Because the dart is likely to hit any place on the square, the fraction of dots within the circle is the ratio of the area between the circle and the square.</p>
 <p>I removed all the axis to make them look prettier by doing:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
