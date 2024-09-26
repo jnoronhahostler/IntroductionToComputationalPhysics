@@ -429,7 +429,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 9, 26, 11, 24, 38, 40284)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 9, 26, 12, 6, 36, 238302)
 </pre></div>
 </div>
 </div>
@@ -492,7 +492,7 @@ document.write(`
 <p>When working with pendula, instead of keeping track of the position <span class="math notranslate nohighlight">\((x,y)\)</span>, we instead are going to keep track of the angle <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/pendula.png" width=400  alt="Answer (start)"></img><br></div><p>In this exercise, we are going to simulate a pendulum with a rigid rod <span class="math notranslate nohighlight">\(L\)</span> and a fixed mass <span class="math notranslate nohighlight">\(m\)</span> at the end of it.  We can define the position of the pendulum by the angle it makes with respect to hanging down (at <span class="math notranslate nohighlight">\(\theta=0\)</span>).</p>
 <p>You can force your code to use theta simply by giving initial conditions and velocities for a single dimension (i.e. <code class="docutils literal notranslate"><span class="pre">params['initPos']=np.array([0.1])</span></code> would start you pendulum at 0.1 radians.</p>
-<p>The force of a single pendulum is <span class="math notranslate nohighlight">\(F(\theta)= -mg\sin(\theta)/L\)</span>.  Modify the force function to use this new force.</p>
+<p>The “force” (angular acceleration) of a single pendulum is <span class="math notranslate nohighlight">\(\alpha(\theta)= -g\sin(\theta)/L\)</span>.  Modify the force function to use this new “force”.</p>
 <p>🦉Run a simulation with no initial velocity and an initial angle of <span class="math notranslate nohighlight">\(\theta=0.6\)</span> and a <span class="math notranslate nohighlight">\(dt=0.01\)</span> for a time <span class="math notranslate nohighlight">\(T=10\)</span>.</p>
 <p>Plot</p>
 <ul class="simple">
