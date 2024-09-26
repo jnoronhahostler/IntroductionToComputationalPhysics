@@ -429,7 +429,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 9, 26, 10, 14, 22, 938164)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 9, 26, 11, 17, 8, 628781)
 </pre></div>
 </div>
 </div>
@@ -498,13 +498,13 @@ document.write(`
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\theta\)</span> vs. <span class="math notranslate nohighlight">\(t\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span>  (include the origin on this plot)</p></li>
-<li><p>a <em>phase space diagram</em> (<span class="math notranslate nohighlight">\(v\)</span> vs <span class="math notranslate nohighlight">\(\theta\)</span>)</p></li>
+<li><p>a <em>phase space diagram</em> (<span class="math notranslate nohighlight">\(\omega\)</span> vs <span class="math notranslate nohighlight">\(\theta\)</span>)</p></li>
 <li><p>and animate the pendula.</p></li>
 </ul>
 <p>A phase space diagram is a graph displaying the position and velocity of an object on the abscissa (x axis) and ordinate (y axis). Since an undamped, undriven harmonic oscillator moves with</p>
 <div class="math notranslate nohighlight">
-\[x(t) = A\cos(\omega t + \phi)\hspace{2cm} v(t)=-A\omega\sin(\omega t+\phi)\]</div>
-<p>its phase trajectory will be an ellipse with axes of lengths <span class="math notranslate nohighlight">\(2A\)</span> and <span class="math notranslate nohighlight">\(2A\omega\)</span>.</p>
+\[\theta(t) = A\cos(\Omega t + \phi)\hspace{2cm} \omega(t)=-A\Omega\sin(\Omega t+\phi)\]</div>
+<p>its phase trajectory will be an ellipse with axes of lengths <span class="math notranslate nohighlight">\(2A\)</span> and <span class="math notranslate nohighlight">\(2A\Omega\)</span>.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
@@ -540,7 +540,7 @@ document.write(`
 <h3>b. Pendula and the different starting positions<a class="headerlink" href="#b-pendula-and-the-different-starting-positions" title="Permalink to this heading">#</a></h3>
 <p>Recall in your intro mechanics class (Physics 211/etc) that you know the analytic solution for a pendulum is
 $<span class="math notranslate nohighlight">\(
-\theta(t) = \theta_0 \cos(\omega t)
+\theta(t) = \theta_0 \cos(\Omega t)
 \)</span>$
 However, that solution only works for <em>small angles</em>.</p>
 <p>🦉Let’s quickly check this, by looking at the “<strong>error</strong>” (difference) against the ‘analytic solution’ for <span class="math notranslate nohighlight">\(\theta_0 \in \{0.1,0.3,1\}\)</span>.</p>
@@ -583,18 +583,18 @@ However, that solution only works for <em>small angles</em>.</p>
 <p>The equation of motion for the pendulum is then
 $<span class="math notranslate nohighlight">\(\begin{align}
 \tau =  I\alpha &amp;= mL^2 \frac{d^2\theta}{dt^2}\\
-&amp;=-mgL\sin\theta - \beta \frac{d\theta}{dt} + \gamma \sin \Omega t
+&amp;=-mgL\sin\theta - \beta \frac{d\theta}{dt} + \gamma \sin \Omega_\mathrm{ext} t
 \end{align}\)</span>$</p>
 <p>The first term to the right of the equal sign is the torque due to gravity. The second term is the velocity-dependent damping, while the third term is the external driving torque. The symbols <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> represent constants.</p>
 <p>Do some algebra:</p>
 <div class="math notranslate nohighlight">
-\[\frac{d^2\theta}{dt^2} = -\frac{g}{L} \sin\theta -\frac{\beta}{mL^2}\frac{d\theta}{dt} + \frac{\gamma}{mL^2}\sin\Omega t\]</div>
+\[\frac{d^2\theta}{dt^2} = -\frac{g}{L} \sin\theta -\frac{\beta}{mL^2}\frac{d\theta}{dt} + \frac{\gamma}{mL^2}\sin\Omega_\mathrm{ext} t\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
-\[\frac{d^2\theta}{dt^2}+A\frac{d\theta}{dt} + B\sin\theta = C\sin\Omega t\]</div>
+\[\frac{d^2\theta}{dt^2}+A\frac{d\theta}{dt} + B\sin\theta = C\sin\Omega_\mathrm{ext} t\]</div>
 <p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are positive constants.  We can rewrite this as a pair of first order equations:</p>
 <div class="math notranslate nohighlight">
-\[\frac{d\theta}{dt}=\omega \hspace{3cm} \frac{d\omega}{dt} = -A\omega -B\sin\theta+C\sin\Omega t\]</div>
+\[\frac{d\theta}{dt}=\omega \hspace{3cm} \frac{d\omega}{dt} = -A\omega -B\sin\theta+C\sin\Omega_\mathrm{ext} t\]</div>
 <p>🦉Please write a program to calculate (and graph) <span class="math notranslate nohighlight">\(\theta\)</span> vs. <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> vs. <span class="math notranslate nohighlight">\(t\)</span> for the pendulum. You may find it convenient to write your expression for the force in this way:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Force</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">vel</span><span class="p">,</span><span class="n">params</span><span class="p">):</span>
     <span class="n">A</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
@@ -636,17 +636,17 @@ $<span class="math notranslate nohighlight">\(\begin{align}
 <td><p>1</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Omega\)</span> (driving frequency)</p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Omega_\mathrm{ext}\)</span> (driving frequency)</p></td>
 <td><p>N/A</p></td>
 <td><p>2</p></td>
 <td><p>1.2</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x_0\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\theta_0\)</span></p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(v_0\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\omega_0\)</span></p></td>
 <td><p>0.1</p></td>
 <td><p>0.1</p></td>
 <td><p>0.1</p></td>
@@ -663,7 +663,7 @@ $<span class="math notranslate nohighlight">\(\begin{align}
 </tr>
 </tbody>
 </table>
-<p>Version 1 is an undamped, undriven pendulum. The amplitude of motion is small enough so that it behaves very much like a harmonic oscillator with oscillation frequency <span class="math notranslate nohighlight">\(\omega_0=1\)</span>.   Version 2 is lightly damped, and driven at twice its natural frequency. As the initial motion (which has <span class="math notranslate nohighlight">\(\omega_0=1\)</span>) dies away, the driving force will cause it to oscillate at the same frequency as the driving frequency.</p>
+<p>Version 1 is an undamped, undriven pendulum. The amplitude of motion is small enough so that it behaves very much like a harmonic oscillator with oscillation frequency <span class="math notranslate nohighlight">\(\Omega=\sqrt{0.1}\)</span>.   Version 2 is lightly damped, and driven at twice its natural frequency. As the initial motion (which has <span class="math notranslate nohighlight">\(\Omega=1\)</span>) dies away, the driving force will cause it to oscillate at the same frequency as the driving frequency.</p>
 <p>It takes longer for the pendulum to settle down than it did in case 2.</p>
 <p>If we had tuned the parameters just right, we might have found a set for which the motion was chaotic, never settling into a periodic mode.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
@@ -701,15 +701,15 @@ $<span class="math notranslate nohighlight">\(\begin{align}
 <td><p>1</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Omega\)</span> (driving frequency)</p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Omega_\mathrm{ext}\)</span> (driving frequency)</p></td>
 <td><p>2</p></td>
 <td><p>1.2</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x_0\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\theta_0\)</span></p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(v_0\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\omega_0\)</span></p></td>
 <td><p>0.1</p></td>
 <td><p>0.1</p></td>
 </tr>
