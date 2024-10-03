@@ -621,7 +621,7 @@ Let me illustrate what I mean with a table of hypothetical data, for 2,000 rando
 </pre></div>
 </div>
 <p>You can then plot it by doing</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">rho</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">rho</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>(we scale it so that the integral of our density is 1.0).</p>
