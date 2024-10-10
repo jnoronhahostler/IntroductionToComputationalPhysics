@@ -422,7 +422,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 10, 3, 16, 51, 32, 670245)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 10, 10, 10, 6, 35, 155732)
 </pre></div>
 </div>
 </div>
@@ -481,7 +481,7 @@ For example, draw a uniform random number <span class="math notranslate nohighli
 </tr>
 </tbody>
 </table>
-<p>In particular, run 1000 steps of Markov chain sampling and keep a running (or cumulative) average of how many times you have seen each state. One way to do this is by having three length 1000 arrays <code class="docutils literal notranslate"><span class="pre">sunnyCounts</span></code>, <code class="docutils literal notranslate"><span class="pre">cloudyCounts</span></code>, <code class="docutils literal notranslate"><span class="pre">rainyCounts</span></code> that you fill with zeros and ones at each step, depending on which state you are at. The cumulative average of a sunny day, for example, will then be</p>
+<p>In particular, run 10000 steps of Markov chain sampling and keep a running (or cumulative) average of how many times you have seen each state. One way to do this is by having three length 10000 arrays <code class="docutils literal notranslate"><span class="pre">sunnyCounts</span></code>, <code class="docutils literal notranslate"><span class="pre">cloudyCounts</span></code>, <code class="docutils literal notranslate"><span class="pre">rainyCounts</span></code> that you fill with zeros and ones at each step, depending on which state you are at. The cumulative average of a sunny day, for example, will then be</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sunnyCumAvg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">sunnyCounts</span><span class="p">)</span> <span class="o">/</span> <span class="n">steps_so_far</span>
 </pre></div>
 </div>
