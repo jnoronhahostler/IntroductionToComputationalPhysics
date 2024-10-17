@@ -179,9 +179,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Markov%20Chains.html">Markov Chains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Predator-Prey.html">Predator-Prey</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ParticlePhysics.html">Particle Physics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Climate.html">Climate Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Predator-Prey.html">Predator-Prey</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FluidDynamics.html">Fluid Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MachineLearningGalaxies.html">Classifying Galaxies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC1.html">Quantum Computing 1</a></li>
@@ -458,7 +458,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 10, 10, 10, 9, 23, 574218)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 10, 17, 16, 29, 10, 105379)
 </pre></div>
 </div>
 </div>
@@ -595,7 +595,7 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1fedfe183d548c7c682728c96f6450e76037def53a7ed31842bccf7b6ab907b9.png" src="_images/1fedfe183d548c7c682728c96f6450e76037def53a7ed31842bccf7b6ab907b9.png" />
+<img alt="_images/a3858399cc98d729182fe549b1175379365bae5ec64833ac0d7e0a72fdcd7cd7.png" src="_images/a3858399cc98d729182fe549b1175379365bae5ec64833ac0d7e0a72fdcd7cd7.png" />
 </div>
 </div>
 <p>Here is an example of such data.  You want to figure out what this relationship is.   To do this, you can use
@@ -623,10 +623,10 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.37808928 -0.02596069]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.36440122 0.01561636]
 </pre></div>
 </div>
-<img alt="_images/fdd06393d626edb51dad63bd16f1db9b8c1f149d26295828722d13a102e6c42a.png" src="_images/fdd06393d626edb51dad63bd16f1db9b8c1f149d26295828722d13a102e6c42a.png" />
+<img alt="_images/b1174d43a36a12d34f3d3a8169f6ec6e133e178ace4943fce8f82242a57b51dc.png" src="_images/b1174d43a36a12d34f3d3a8169f6ec6e133e178ace4943fce8f82242a57b51dc.png" />
 </div>
 </div>
 </section>
@@ -650,7 +650,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e4d4cff9bb5bf0ecb335ef4144766bc1f8a7e96eef03a175125ddbd3b3a6c055.png" src="_images/e4d4cff9bb5bf0ecb335ef4144766bc1f8a7e96eef03a175125ddbd3b3a6c055.png" />
+<img alt="_images/629d93f88f016afc41abfd0d419db972f161dcc4a2cefe39e1d640280214fd28.png" src="_images/629d93f88f016afc41abfd0d419db972f161dcc4a2cefe39e1d640280214fd28.png" />
 </div>
 </div>
 <p>Let’s go ahead and plot x and y on a log-log scale.  To do this redo the plot above but add</p>
@@ -674,7 +674,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2a6f174fd6a7a1ee319e46351cadf9bdf03263029083f0d9f430e651fcb69528.png" src="_images/2a6f174fd6a7a1ee319e46351cadf9bdf03263029083f0d9f430e651fcb69528.png" />
+<img alt="_images/2019fee9033b1ba3b20ffbd617ef2b80e7cee840f4eb2771bae800196e44319d.png" src="_images/2019fee9033b1ba3b20ffbd617ef2b80e7cee840f4eb2771bae800196e44319d.png" />
 </div>
 </div>
 <p>You should notice your plot looks roughly linear.  We can go get the slope by doing a linear fit to the log-log plot. This can be done by doing</p>
@@ -691,7 +691,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 2.00677885 -0.02045016]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.98632431 0.04010535]
 </pre></div>
 </div>
 </div>
@@ -709,7 +709,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f1be73ca3e7ae1f89005fcbdf9ef6755403e1ff201b9b5ac8b13919f3a5ed2e2.png" src="_images/f1be73ca3e7ae1f89005fcbdf9ef6755403e1ff201b9b5ac8b13919f3a5ed2e2.png" />
+<img alt="_images/699c02a4b1b3b65662263fa02e911d5bae3832c7710d1886b547ffd534df444e.png" src="_images/699c02a4b1b3b65662263fa02e911d5bae3832c7710d1886b547ffd534df444e.png" />
 </div>
 </div>
 <hr class="docutils" />
