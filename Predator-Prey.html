@@ -603,7 +603,7 @@ Also generate a plot of the minimum prey seen during an ecosystem simulation for
 <li><p>first time we get one whole  bunny.</p></li>
 </ul>
 <p>This function should just loop over steps <span class="math notranslate nohighlight">\(dt\)</span> and return the time <span class="math notranslate nohighlight">\(t\)</span> if a random number is less then <span class="math notranslate nohighlight">\(\alpha \Delta t\)</span>.</p>
-<p>🦉Run this function 10000 times with <span class="math notranslate nohighlight">\(\alpha=1\)</span> and <span class="math notranslate nohighlight">\(dt=0.01\)</span> and plot it with <code class="docutils literal notranslate"><span class="pre">plt.hist(ts,100,density=1)</span></code> (100 sets the number of bins and <code class="docutils literal notranslate"><span class="pre">density=1</span></code> makes sure it is a normalized histogram).</p>
+<p>🦉Run this function 10000 times with <span class="math notranslate nohighlight">\(\alpha=1\)</span> and <span class="math notranslate nohighlight">\(dt=0.001\)</span> and plot it with <code class="docutils literal notranslate"><span class="pre">plt.hist(ts,100,density=1)</span></code> (100 sets the number of bins and <code class="docutils literal notranslate"><span class="pre">density=1</span></code> makes sure it is a normalized histogram).</p>
 <p>On the same plot, go ahead and plot
 $<span class="math notranslate nohighlight">\(P_B(T) = \alpha \exp[-\alpha T]\)</span>$</p>
 <p>from <span class="math notranslate nohighlight">\(T\in[0,35]\)</span> to compare them. (Recall that if you have a numpy array you can do math operations on them using functions like <code class="docutils literal notranslate"><span class="pre">np.exp</span></code>)</p>
