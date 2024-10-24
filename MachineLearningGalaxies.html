@@ -504,7 +504,7 @@ Wall time: 2.47 s
 <section id="a-galaxies">
 <h3>a. Galaxies<a class="headerlink" href="#a-galaxies" title="Permalink to this heading">#</a></h3>
 <p>Let’s now examine this data a bit.  We are first going to look at the training data.  The training data is what you are going to use to teach your neural network.  The test data is to check how good we are doing after (possibly during) training.  We won’t use it to train, though (this is to avoid overfitting; we want our neural network to learn how to classify galaxies but not memorize everything in the training set).</p>
-<p>We will start by plotting some of the galaxy images that we have loaded.  Do <code class="docutils literal notranslate"><span class="pre">plt.matshow(train_imagesP[0][:,:,0])</span></code> (This last <code class="docutils literal notranslate"><span class="pre">[:,:,0]</span></code> is because there are three layers to each of these galaxies and we just want to see the first layer. We’ve actually only included this first layer for you to save space, but if you want to use the full data this is necessary)</p>
+<p>We will start by plotting some of the galaxy images that we have loaded.  Do <code class="docutils literal notranslate"><span class="pre">plt.matshow(train_images_raw[0][:,:,0])</span></code> (This last <code class="docutils literal notranslate"><span class="pre">[:,:,0]</span></code> is because there are three layers to each of these galaxies and we just want to see the first layer. We’ve actually only included this first layer for you to save space, but if you want to use the full data this is necessary)</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot me here!</span>
@@ -583,7 +583,7 @@ Wall time: 2.47 s
 where</p>
 <ul class="simple">
 <li><p>W1 is a size 27648 x d matrix</p></li>
-<li><p>W2 is a size d x 5 matrix</p></li>
+<li><p>W2 is a size 5 x d matrix</p></li>
 <li><p>b1 is a size d vector</p></li>
 <li><p>b2 is a size 5 vector</p></li>
 </ul>
@@ -599,7 +599,7 @@ where</p>
 </div>
 <p>where params is a list that contains these parameters and imageVector is one of our reshaped images.</p>
 <p>Let’s test this out.  Generate a set of random parameters that have the correct dimension (for example to do this I used <code class="docutils literal notranslate"><span class="pre">0.1*np.random.randn(5,d)</span></code> for W2).   Then call <code class="docutils literal notranslate"><span class="pre">net(params,train_images[3])</span></code> and you should get what your current neural network guesses is the classification for the “3’rd” galaxy.  Use <span class="math notranslate nohighlight">\(d=100\)</span>.</p>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p>Notice that the output isn’t a nice vector like <code class="docutils literal notranslate"><span class="pre">[0,0,0,0,1,0,0,0,0,0]</span></code>. Instead, it has ten different numbers between zero and one such as <code class="docutils literal notranslate"><span class="pre">[0.2400989</span> <span class="pre">,</span> <span class="pre">0.39862376,</span> <span class="pre">0.4565858</span> <span class="pre">,</span> <span class="pre">0.286503</span>&#160; <span class="pre">,</span> <span class="pre">0.734855</span>&#160; <span class="pre">]</span></code>  We will say that the neural network classifies the galaxy by whichever index is largest i.e. <code class="docutils literal notranslate"><span class="pre">np.argmax(outputVector)</span></code>. In this case it is the 0.8866 which corresponds to spot 4 or “Disk Edge on- rounded bulge” category.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p>Notice that the output isn’t a nice vector like <code class="docutils literal notranslate"><span class="pre">[0,0,0,0,1]</span></code>. Instead, it has five different numbers between zero and one such as <code class="docutils literal notranslate"><span class="pre">[0.2400989</span> <span class="pre">,</span> <span class="pre">0.39862376,</span> <span class="pre">0.4565858</span> <span class="pre">,</span> <span class="pre">0.286503</span>&#160; <span class="pre">,</span> <span class="pre">0.734855</span>&#160; <span class="pre">]</span></code>  We will say that the neural network classifies the galaxy by whichever index is largest i.e. <code class="docutils literal notranslate"><span class="pre">np.argmax(outputVector)</span></code>. In this case it is the 0.8866 which corresponds to spot 4 or “Disk Edge on- rounded bulge” category.</p>
 </section>
 <section id="c-a-measure-of-goodness">
 <h3>c. A measure of goodness<a class="headerlink" href="#c-a-measure-of-goodness" title="Permalink to this heading">#</a></h3>
