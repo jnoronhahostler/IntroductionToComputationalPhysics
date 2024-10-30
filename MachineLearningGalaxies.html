@@ -537,7 +537,7 @@ Wall time: 2.47 s
 └── Class 9 (1045 images): Disk, Face-on, Loose Spiral
 </pre></div>
 </div>
-<p><img alt="Galaxy10 dataset" src="https://astronn.readthedocs.io/en/latest/_images/galaxy10_example.png" /></p>
+<p><img alt="Galaxy10 dataset" src="https://astronn.readthedocs.io/en/v1.0.1/_images/galaxy10_example.png" /></p>
 <p>We are going to use 5 sets, which are indicated with the <code class="docutils literal notranslate"><span class="pre">*#*</span></code></p>
 <p>Let’s instead display the image and label for image 98. We see that instead this is a disk galaxy (<em>this might depend on the randomness used in splitting up the training set so we need to check again when we re-pickle</em>)</p>
 <div class="cell docutils container">
@@ -592,13 +592,13 @@ where</p>
 <ul class="simple">
 <li><p>W1 is a size d x 4761 matrix</p></li>
 <li><p>W2 is a size 5 x d matrix</p></li>
-<li><p>b1 is a size d vector</p></li>
-<li><p>b2 is a size 5 vector</p></li>
+<li><p>b1 is a size d x 1 matrix (the 1 is important – use <code class="docutils literal notranslate"><span class="pre">np.random.rand(d,</span> <span class="pre">1)</span></code>)</p></li>
+<li><p>b2 is a size 5 x 1 matrix</p></li>
 </ul>
 <p>The last term: <span class="math notranslate nohighlight">\(1/(1+e^{-x})\)</span> ensures that all the numbers in <span class="math notranslate nohighlight">\(v_{out}\)</span> are between 0 and 1.</p>
 <p>To make this function work in parallel on multiple <span class="math notranslate nohighlight">\(v_{in}\)</span>’s simultaneously, you can just supply them as a big matrix <span class="math notranslate nohighlight">\(V_{in}\)</span> (of size <code class="docutils literal notranslate"><span class="pre">(17457,</span> <span class="pre">4761)</span></code>) and add in some transpositions to make the matrix multiplication shapes work:</p>
 <div class="math notranslate nohighlight">
-\[ v_{out} = \left(1+\exp\left[-\left(\left[W_2 \cdot \mathrm{tanh}(W_1 \cdot V_{in}^\top + b_1)^\top\right]^\top +b_2\right)^\top\right]\right)^{-1} \]</div>
+\[ v_{out} = \left(1+\exp\left[-\left(\left[W_2 \cdot \mathrm{tanh}(W_1 \cdot V_{in}^\top + b_1)\right] +b_2\right)\right]\right)^{-1} \]</div>
 <p>Implement a function</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">net</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">imageVector</span><span class="p">):</span>
    <span class="c1"># W1=params[0]</span>
