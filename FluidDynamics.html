@@ -491,7 +491,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-10-31 20:44:34--  https://courses.physics.illinois.edu/phys246/fa2020/code/TestFiles.zip
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-11-07 09:59:25--  https://courses.physics.illinois.edu/phys246/fa2020/code/TestFiles.zip
 Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 
 </pre></div>
 </div>
@@ -499,10 +499,7 @@ Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)...
 Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... connected.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 200 OK
 Length: 53041362 (51M) [application/x-zip-compressed]
 Saving to: ‘TestFiles.zip’
 
@@ -510,18 +507,18 @@ Saving to: ‘TestFiles.zip’
 TestFiles.zip         0%[                    ]       0  --.-KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         2%[                    ]   1.51M  7.26MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         2%[                    ]   1.35M  6.76MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        33%[=====&gt;              ]  16.99M  41.1MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        33%[=====&gt;              ]  16.71M  41.8MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        83%[===============&gt;    ]  42.47M  69.3MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        85%[================&gt;   ]  43.48M  72.5MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip       100%[===================&gt;]  50.58M  73.5MB/s    in 0.7s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip       100%[===================&gt;]  50.58M  76.9MB/s    in 0.7s    
 
-2024-10-31 20:44:35 (73.5 MB/s) - ‘TestFiles.zip’ saved [53041362/53041362]
+2024-11-07 09:59:25 (76.9 MB/s) - ‘TestFiles.zip’ saved [53041362/53041362]
 
 Archive:  TestFiles.zip
   inflating: Microscopic_after_move.dat  
@@ -531,7 +528,9 @@ Archive:  TestFiles.zip
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: rho_after_Micro2Macro.dat  
-  inflating: Microscopic_after_bounce.dat  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: Microscopic_after_bounce.dat  
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: Microscopic2.dat        
@@ -544,9 +543,7 @@ Archive:  TestFiles.zip
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: u_after_Micro2Macro.dat  
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: Microscopic_after_collision.dat  
+  inflating: Microscopic_after_collision.dat  
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: Microscopic_after_equilibrium.dat  
@@ -852,10 +849,10 @@ Take it back now y&#39;all♪
 <p>Given the microscopic densities, there are two macroscopic quanties:</p>
 <ul class="simple">
 <li><p>the macroscopic density <span class="math notranslate nohighlight">\(\rho(i,j)=\sum_k n_k\)</span> (<em>size: <span class="math notranslate nohighlight">\(n_x \times n_y\)</span></em>)</p></li>
-<li><p>the macroscopic velocity <span class="math notranslate nohighlight">\(\vec{u}(i,j) \equiv (u_x(i,j),u_y(i,j)\)</span> (<em>size: <span class="math notranslate nohighlight">\(2 \times n_x \times n_y\)</span></em>) where</p>
+<li><p>the macroscopic velocity <span class="math notranslate nohighlight">\(\vec{u}(i,j) \equiv (u_x(i,j),u_y(i,j))\)</span> (<em>size: <span class="math notranslate nohighlight">\(2 \times n_x \times n_y\)</span></em>) where</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(u_x(i,j) = 1/\rho \sum_k v_{k,x}\, n_k(i,j)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(u_y(i,j) = 1/\rho \sum_k v_{k,y}\, n_k(i,J)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u_x(i,j) = 1/\rho \sum_k v_{k,x} \: n_k(i,j)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u_y(i,j) = 1/\rho \sum_k v_{k,y} \: n_k(i,j)\)</span></p></li>
 </ul>
 </li>
 </ul>
