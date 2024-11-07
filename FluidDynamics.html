@@ -491,15 +491,21 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-11-07 10:48:32--  https://courses.physics.illinois.edu/phys246/fa2020/code/TestFiles.zip
-Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 130.126.151.14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-11-07 16:40:55--  https://courses.physics.illinois.edu/phys246/fa2020/code/TestFiles.zip
+Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130.126.151.14
 Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 200 OK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Length: 53041362 (51M) [application/x-zip-compressed]
 Saving to: ‘TestFiles.zip’
 
@@ -507,18 +513,30 @@ Saving to: ‘TestFiles.zip’
 TestFiles.zip         0%[                    ]       0  --.-KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         2%[                    ]   1.09M  4.94MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         0%[                    ] 152.00K   717KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        29%[====&gt;               ]  14.76M  35.2MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         1%[                    ] 824.00K  1.90MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        76%[==============&gt;     ]  38.82M  62.6MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         5%[&gt;                   ]   2.84M  4.47MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip       100%[===================&gt;]  50.58M  69.5MB/s    in 0.7s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        18%[==&gt;                 ]   9.38M  11.1MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        41%[=======&gt;            ]  20.96M  19.8MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        64%[===========&gt;        ]  32.57M  25.7MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        87%[================&gt;   ]  44.38M  30.0MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip       100%[===================&gt;]  50.58M  31.8MB/s    in 1.6s    
 
-2024-11-07 10:48:33 (69.5 MB/s) - ‘TestFiles.zip’ saved [53041362/53041362]
+2024-11-07 16:40:57 (31.8 MB/s) - ‘TestFiles.zip’ saved [53041362/53041362]
 
 Archive:  TestFiles.zip
   inflating: Microscopic_after_move.dat  
@@ -1178,8 +1196,8 @@ a. <span class="math notranslate nohighlight">\(\omega\)</span> is the viscosity
 <li><p>pick some macroscopic density <span class="math notranslate nohighlight">\(\rho\)</span> of size <span class="math notranslate nohighlight">\((n_x,n_y)\)</span> (uniformly equal to 1.0) and a</p></li>
 <li><p>macroscopic velocity <span class="math notranslate nohighlight">\(\vec{u}(i,j)\)</span> (sizes <span class="math notranslate nohighlight">\((2,n_x,n_y)\)</span>)</p>
 <ul>
-<li><p>zero in the x-direction (aka 0)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">0.04*(1.0+1e-4*np.sin(y/(ny)*2*np.pi))</span></code> in the y-direction (aka 1). This introduces a very tiny anisotropy to the system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0.04*(1.0+1e-4*np.sin(y/(ny)*2*np.pi))</span></code> in the x-direction (aka 0). This introduces a very tiny anisotropy to the system.</p></li>
+<li><p>zero in the y-direction (aka 1)</p></li>
 </ul>
 </li>
 <li><p>compute the equilibrium density <span class="math notranslate nohighlight">\(n_{eq}\)</span> associated with the initial density and velocities.<br />
@@ -1241,7 +1259,7 @@ a. <span class="math notranslate nohighlight">\(\omega\)</span> is the viscosity
 <li><p>the last microscopic density <code class="docutils literal notranslate"><span class="pre">n</span></code></p></li>
 </ul>
 <p>Now (below) call your <code class="docutils literal notranslate"><span class="pre">Setup</span></code> and <code class="docutils literal notranslate"><span class="pre">Run</span></code> functions. Then plot the final configuration (something like <code class="docutils literal notranslate"><span class="pre">plt.matshow(us[-1])</span></code>).</p>
-<p>🦉Run for 201 steps recording every 100 steps.</p>
+<p>🦉Run for 2001 steps recording every 100 steps.</p>
 <section id="answer">
 <h4>Answer:<a class="headerlink" href="#answer" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
@@ -1275,7 +1293,7 @@ a. <span class="math notranslate nohighlight">\(\omega\)</span> is the viscosity
 <span class="n">fins</span><span class="o">=</span><span class="n">rhos</span><span class="o">=</span><span class="n">us</span><span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="mi">21</span>
 <span class="n">fins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">fin</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
-    <span class="o">%</span><span class="k">time</span> (rhos[i],us[i],fins[i+1])=Run(2000,100,fins[i],feq_init,obstacle)
+    <span class="o">%</span><span class="k">time</span> (rhos[i],us[i],fins[i+1])=Run(2001,100,fins[i],feq_init,obstacle)
 <span class="c1">#!Stop</span>
 </pre></div>
 </div>
