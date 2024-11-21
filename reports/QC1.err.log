@@ -31,8 +31,7 @@ The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
 !pip install qiskit[visualization];
-!pip install qiskit_aer;
 !pip install qutip
-!pip install qiskit-ibmq-provider
+!pip install qiskit_aer;
 -------------------
 
