@@ -59,8 +59,33 @@ import datetime;datetime.datetime.now()
 sigma_x=np.matrix([[0,1],[1,0]],dtype=complex)
 sigma_z=np.matrix([[1,0],[0,-1]],dtype=complex)
 
+def PrintDirac(out_state_a):
+  out_state=np.asarray(out_state_a)
+  l=len(out_state)
+  num_qubits=int(round(np.log(len(out_state))/np.log(2)))
+  for i in range(0,l):
+    if not np.isclose(out_state[i],0):
+      print(str(out_state[i])+'|'+bin(i)[2:].zfill(num_qubits)[::-1]+'>',end=' + ')
+  print()
 
+def MakeState(v):
+  numWires=int(round(np.log2(len(v))))
+  qc1=QuantumCircuit(numWires,numWires)
+  qc1.initialize(v)
+  a,_=RunCircuit(qc1)
+  return a
 
+def PlotBloch(v,bb):
+  vv=np.asarray(v)
+  #print(vv)
+  a=vv[0]*np.conj(vv[0])
+  b=vv[1]*np.conj(vv[0])
+  x = np.real(2.0 * b.real)
+  y = np.real(2.0 * b.imag)
+  z = np.real(2.0 * a - 1.0)
+  #print(x,y,z)
+  bb.add_vectors([x,y,z])
+  return  #plot_bloch_vector([x,y,z])
 
 def RunCircuit(circuit,a=None):
   numQubits=circuit.num_qubits
