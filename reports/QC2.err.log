@@ -33,7 +33,7 @@ from qiskit.circuit.library.standard_gates import ZGate, XGate
 from qiskit import IBMQ
 from qiskit.visualization import plot_bloch_vector
 from qiskit.visualization import plot_distribution
-from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit, Aer, execute
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
 import qutip
 from qiskit.circuit.quantumregister import AncillaRegister
 import pylab as plt
@@ -124,28 +124,12 @@ UserWarning: The new version of Cython, (>= 3.0.0) is not supported.
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mImportError[0m                               Traceback (most recent call last)
-Cell [0;32mIn[2], line 12[0m
-[1;32m      9[0m [38;5;28;01mimport[39;00m [38;5;21;01mscqubits[39;00m
-[1;32m     11[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[0;32m---> 12[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m [38;5;28;01mimport[39;00m QuantumCircuit, QuantumRegister, transpile
-[1;32m     13[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit_aer[39;00m [38;5;28;01mimport[39;00m AerSimulator
+Cell [0;32mIn[2], line 16[0m
 [1;32m     14[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m[38;5;21;01m.[39;00m[38;5;21;01mvisualization[39;00m [38;5;28;01mimport[39;00m plot_histogram
+[1;32m     15[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcircuit[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlibrary[39;00m[38;5;21;01m.[39;00m[38;5;21;01mstandard_gates[39;00m [38;5;28;01mimport[39;00m ZGate, XGate
+[0;32m---> 16[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m [38;5;28;01mimport[39;00m IBMQ
+[1;32m     17[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m[38;5;21;01m.[39;00m[38;5;21;01mvisualization[39;00m [38;5;28;01mimport[39;00m plot_bloch_vector
+[1;32m     18[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m[38;5;21;01m.[39;00m[38;5;21;01mvisualization[39;00m [38;5;28;01mimport[39;00m plot_distribution
 
-File [0;32m/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/__init__.py:38[0m
-[1;32m     36[0m     _suppress_error [38;5;241m=[39m os[38;5;241m.[39menviron[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mQISKIT_SUPPRESS_1_0_IMPORT_ERROR[39m[38;5;124m"[39m, [38;5;28;01mFalse[39;00m) [38;5;241m==[39m [38;5;124m"[39m[38;5;124m1[39m[38;5;124m"[39m
-[1;32m     37[0m     [38;5;28;01mif[39;00m [38;5;28mint[39m(_major) [38;5;241m>[39m [38;5;241m0[39m [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m _suppress_error:
-[0;32m---> 38[0m         [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(
-[1;32m     39[0m             [38;5;124m"[39m[38;5;124mQiskit is installed in an invalid environment that has both Qiskit >=1.0[39m[38;5;124m"[39m
-[1;32m     40[0m             [38;5;124m"[39m[38;5;124m and an earlier version.[39m[38;5;124m"[39m
-[1;32m     41[0m             [38;5;124m"[39m[38;5;124m You should create a new virtual environment, and ensure that you do not mix[39m[38;5;124m"[39m
-[1;32m     42[0m             [38;5;124m"[39m[38;5;124m dependencies between Qiskit <1.0 and >=1.0.[39m[38;5;124m"[39m
-[1;32m     43[0m             [38;5;124m"[39m[38;5;124m Any packages that depend on [39m[38;5;124m'[39m[38;5;124mqiskit-terra[39m[38;5;124m'[39m[38;5;124m are not compatible with Qiskit 1.0 and[39m[38;5;124m"[39m
-[1;32m     44[0m             [38;5;124m"[39m[38;5;124m will need to be updated.[39m[38;5;124m"[39m
-[1;32m     45[0m             [38;5;124m"[39m[38;5;124m Qiskit unfortunately cannot enforce this requirement during environment resolution.[39m[38;5;124m"[39m
-[1;32m     46[0m             [38;5;124m"[39m[38;5;124m See https://qisk.it/packaging-1-0 for more detail.[39m[38;5;124m"[39m
-[1;32m     47[0m         )
-[1;32m     49[0m [38;5;28;01mimport[39;00m [38;5;21;01mqiskit[39;00m[38;5;21;01m.[39;00m[38;5;21;01m_accelerate[39;00m
-[1;32m     50[0m [38;5;28;01mimport[39;00m [38;5;21;01mqiskit[39;00m[38;5;21;01m.[39;00m[38;5;21;01m_numpy_compat[39;00m
-
-[0;31mImportError[0m: Qiskit is installed in an invalid environment that has both Qiskit >=1.0 and an earlier version. You should create a new virtual environment, and ensure that you do not mix dependencies between Qiskit <1.0 and >=1.0. Any packages that depend on 'qiskit-terra' are not compatible with Qiskit 1.0 and will need to be updated. Qiskit unfortunately cannot enforce this requirement during environment resolution. See https://qisk.it/packaging-1-0 for more detail.
+[0;31mImportError[0m: cannot import name 'IBMQ' from 'qiskit' (/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qiskit/__init__.py)
 
