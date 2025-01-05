@@ -402,18 +402,18 @@ document.write(`
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">jax.numpy</span> <span class="k">as</span> <span class="nn">jnp</span>
-<span class="kn">from</span> <span class="nn">jax</span> <span class="kn">import</span> <span class="n">jit</span>
-<span class="kn">import</span>  <span class="nn">jax</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="kn">import</span> <span class="nn">pickle</span>
-<span class="kn">import</span> <span class="nn">datetime</span><span class="p">;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jax</span><span class="w"> </span><span class="kn">import</span> <span class="n">jit</span>
+<span class="kn">import</span><span class="w">  </span><span class="nn">jax</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="kn">import</span> <span class="n">FuncAnimation</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="p">;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
     <span class="n">keepList</span><span class="o">=</span><span class="n">keepList</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;resetMe&#39;</span><span class="p">,</span><span class="s1">&#39;np&#39;</span><span class="p">,</span><span class="s1">&#39;plt&#39;</span><span class="p">,</span><span class="s1">&#39;math&#39;</span><span class="p">,</span><span class="s1">&#39;FuncAnimation&#39;</span><span class="p">,</span>
                        <span class="s1">&#39;HTML&#39;</span><span class="p">,</span><span class="s1">&#39;itertools&#39;</span><span class="p">,</span><span class="s1">&#39;pickle&#39;</span><span class="p">,</span><span class="s1">&#39;testFunc&#39;</span><span class="p">,</span><span class="s1">&#39;jnp&#39;</span><span class="p">,</span><span class="s1">&#39;jax&#39;</span><span class="p">,</span><span class="s1">&#39;jit&#39;</span><span class="p">]</span>
@@ -432,10 +432,10 @@ document.write(`
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">jax.numpy</span> <span class="k">as</span> <span class="nn">jnp</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">jax</span> <span class="kn">import</span> <span class="n">jit</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span>  <span class="nn">jax</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jax</span><span class="w"> </span><span class="kn">import</span> <span class="n">jit</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w">  </span><span class="nn">jax</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;jax&#39;
 </pre></div>
@@ -483,7 +483,7 @@ dataG.pkl.gz.1      100%[===================&gt;]  80.73M   136MB/s    in 0.6s
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
-<span class="kn">import</span> <span class="nn">gzip</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gzip</span>
 <span class="p">(</span><span class="n">train_images_raw</span><span class="p">,</span><span class="n">train_labels</span><span class="p">,</span><span class="n">test_images_raw</span><span class="p">,</span><span class="n">test_labels</span><span class="p">)</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;dataG.pkl.gz&quot;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -609,7 +609,7 @@ where</p>
 <div class="math notranslate nohighlight">
 \[ v_{out} = \left(1+\exp\left[-\left(\left[W_2 \cdot \mathrm{tanh}(W_1 \cdot V_{in}^\top + b_1)\right] +b_2\right)\right]\right)^{-1} \]</div>
 <p>Implement a function</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">net</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">imageVector</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">net</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">imageVector</span><span class="p">):</span>
    <span class="c1"># W1=params[0]</span>
    <span class="c1"># b1=params[1]</span>
    <span class="c1"># W2= params[2]</span>

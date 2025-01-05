@@ -410,11 +410,11 @@ document.write(`
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="k">def</span> <span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
     <span class="n">keepList</span><span class="o">=</span><span class="n">keepList</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;resetMe&#39;</span><span class="p">,</span><span class="s1">&#39;np&#39;</span><span class="p">,</span><span class="s1">&#39;plt&#39;</span><span class="p">,</span><span class="s1">&#39;math&#39;</span><span class="p">,</span><span class="s1">&#39;random&#39;</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">iiii</span> <span class="ow">in</span> <span class="n">keepList</span><span class="p">:</span>
@@ -426,7 +426,7 @@ document.write(`
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
     <span class="k">return</span>
-<span class="kn">import</span> <span class="nn">datetime</span><span class="p">;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="p">;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <span class="n">resetMe</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -707,22 +707,22 @@ You can have a function that generates all the <code class="docutils literal not
 <p>You can read about Python’s (pseudo)random number generating functions <a class="reference external" href="https://docs.python.org/3/library/random.html">here</a>. They live in the <code class="docutils literal notranslate"><span class="pre">random</span></code> library, and can be imported using <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code>. Here’s a snippet of code that generates a sequence of random numbers between -1 and 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3030172408359184
-0.31607791532598095
--0.8412315276140876
-0.27988569381415074
-0.351589996537399
-0.23802704040569234
--0.7213745493408574
--0.4350149149477591
-0.659678725302546
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.32200161559049256
+0.9549387187888108
+-0.9503245038285568
+0.7783878736427947
+0.036977238270793356
+-0.5383390737722924
+0.07638556257575368
+0.5024750311659629
+-0.5630261224825646
 </pre></div>
 </div>
 </div>

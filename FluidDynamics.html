@@ -451,14 +451,14 @@ document.write(`
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="kn">import</span> <span class="nn">pickle</span>
-<span class="k">def</span> <span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="kn">import</span> <span class="n">FuncAnimation</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
     <span class="n">keepList</span><span class="o">=</span><span class="n">keepList</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;resetMe&#39;</span><span class="p">,</span><span class="s1">&#39;np&#39;</span><span class="p">,</span><span class="s1">&#39;plt&#39;</span><span class="p">,</span><span class="s1">&#39;math&#39;</span><span class="p">,</span><span class="s1">&#39;FuncAnimation&#39;</span><span class="p">,</span>
                        <span class="s1">&#39;HTML&#39;</span><span class="p">,</span><span class="s1">&#39;itertools&#39;</span><span class="p">,</span><span class="s1">&#39;pickle&#39;</span><span class="p">,</span><span class="s1">&#39;testFunc&#39;</span><span class="p">]</span>
@@ -471,7 +471,7 @@ document.write(`
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
     <span class="k">return</span>
 
-<span class="k">def</span> <span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
     <span class="n">inputs</span>  <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">inFiles</span><span class="p">]</span>
     <span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">outFiles</span><span class="p">]</span>
     <span class="n">result</span>  <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inputs</span><span class="p">)</span>
@@ -501,15 +501,21 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-05 06:09:38--  https://courses.physics.illinois.edu/phys246/fa2020/code/TestFiles.zip
-Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 130.126.151.14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-05 17:52:25--  https://courses.physics.illinois.edu/phys246/fa2020/code/TestFiles.zip
+Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130.126.151.14
 Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 200 OK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Length: 53041362 (51M) [application/x-zip-compressed]
 Saving to: ‘TestFiles.zip’
 
@@ -517,18 +523,30 @@ Saving to: ‘TestFiles.zip’
 TestFiles.zip         0%[                    ]       0  --.-KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         3%[                    ]   1.54M  7.17MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         0%[                    ] 152.00K   638KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        37%[======&gt;             ]  19.18M  46.2MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         1%[                    ] 728.00K  1.49MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        91%[=================&gt;  ]  46.12M  75.0MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip         5%[&gt;                   ]   2.59M  3.61MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip       100%[===================&gt;]  50.58M  78.3MB/s    in 0.6s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        14%[=&gt;                  ]   7.10M  7.44MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        32%[=====&gt;              ]  16.27M  13.6MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        55%[==========&gt;         ]  27.99M  19.6MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip        78%[==============&gt;     ]  39.55M  23.7MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFiles.zip       100%[===================&gt;]  50.58M  27.2MB/s    in 1.9s    
 
-2025-01-05 06:09:39 (78.3 MB/s) - ‘TestFiles.zip’ saved [53041362/53041362]
+2025-01-05 17:52:28 (27.2 MB/s) - ‘TestFiles.zip’ saved [53041362/53041362]
 
 Archive:  TestFiles.zip
   inflating: Microscopic_after_move.dat  
@@ -727,7 +745,7 @@ Take it back now y&#39;all♪
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><div class="alert alert-danger" style="color:black">
 <p>If you have a function that takes in an array <code>n</code>, always make a new variable to return:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">doMath</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">doMath</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="c1"># nout = n.copy() #notice the .copy(), so that they aren&#39;t the same object</span>
     <span class="n">nout</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">5</span>
     <span class="k">return</span> <span class="n">nout</span>
@@ -1028,14 +1046,14 @@ a. <span class="math notranslate nohighlight">\(\omega\)</span> is the viscosity
 
 <span class="nn">/var/folders/5z/1xxxzf610_7gxv7scl0v99240000gn/T/ipykernel_1449/3739739110.py</span> in <span class="ni">testFunc</span><span class="nt">(func, inFiles, outFiles)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span> 
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span><span class="w"> </span><span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="n">inputs</span>  <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">inFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">outFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">result</span>  <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inputs</span><span class="p">)</span>
 
 <span class="nn">/var/folders/5z/1xxxzf610_7gxv7scl0v99240000gn/T/ipykernel_1449/3739739110.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span> 
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span><span class="w"> </span><span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="n">inputs</span>  <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">inFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">outFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">result</span>  <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inputs</span><span class="p">)</span>
@@ -1106,14 +1124,14 @@ a. <span class="math notranslate nohighlight">\(\omega\)</span> is the viscosity
 
 <span class="nn">/var/folders/5z/1xxxzf610_7gxv7scl0v99240000gn/T/ipykernel_1449/3739739110.py</span> in <span class="ni">testFunc</span><span class="nt">(func, inFiles, outFiles)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span> 
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span><span class="w"> </span><span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="n">inputs</span>  <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">inFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">outFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">result</span>  <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inputs</span><span class="p">)</span>
 
 <span class="nn">/var/folders/5z/1xxxzf610_7gxv7scl0v99240000gn/T/ipykernel_1449/3739739110.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span> 
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span><span class="w"> </span><span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="n">inputs</span>  <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">inFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">outFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">result</span>  <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inputs</span><span class="p">)</span>
@@ -1166,14 +1184,14 @@ a. <span class="math notranslate nohighlight">\(\omega\)</span> is the viscosity
 
 <span class="nn">/var/folders/5z/1xxxzf610_7gxv7scl0v99240000gn/T/ipykernel_1449/3739739110.py</span> in <span class="ni">testFunc</span><span class="nt">(func, inFiles, outFiles)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span> 
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span><span class="w"> </span><span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="n">inputs</span>  <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">inFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">outFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">result</span>  <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inputs</span><span class="p">)</span>
 
 <span class="nn">/var/folders/5z/1xxxzf610_7gxv7scl0v99240000gn/T/ipykernel_1449/3739739110.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span> 
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span><span class="w"> </span><span class="nf">testFunc</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">inFiles</span><span class="p">,</span><span class="n">outFiles</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="n">inputs</span>  <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">inFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">outFiles</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">result</span>  <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inputs</span><span class="p">)</span>
@@ -1388,11 +1406,11 @@ a. <span class="math notranslate nohighlight">\(\omega\)</span> is the viscosity
 </pre></div>
 </div>
 <p>This function will look like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">AnimateMe</span><span class="p">(</span><span class="n">us_flat</span><span class="p">,</span><span class="n">vMax</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">AnimateMe</span><span class="p">(</span><span class="n">us_flat</span><span class="p">,</span><span class="n">vMax</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
     <span class="n">cax</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">us_flat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Reds</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">vMax</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
          <span class="n">cax</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">us_flat</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
     <span class="n">anim</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">us_flat</span><span class="p">))</span>

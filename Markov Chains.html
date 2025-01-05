@@ -400,10 +400,10 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="k">def</span> <span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
     <span class="n">keepList</span><span class="o">=</span><span class="n">keepList</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;resetMe&#39;</span><span class="p">,</span><span class="s1">&#39;np&#39;</span><span class="p">,</span><span class="s1">&#39;plt&#39;</span><span class="p">,</span><span class="s1">&#39;random&#39;</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">iiii</span> <span class="ow">in</span> <span class="n">keepList</span><span class="p">:</span>
@@ -414,12 +414,12 @@ document.write(`
         <span class="o">%</span><span class="k">reset_selective</span> -f {jjjj}
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
     <span class="k">return</span>
-<span class="kn">import</span> <span class="nn">datetime</span><span class="p">;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="p">;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 5, 6, 9, 42, 711591)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 5, 17, 52, 31, 618219)
 </pre></div>
 </div>
 </div>
@@ -578,7 +578,7 @@ $<span class="math notranslate nohighlight">\(M(h) = I_1(h)/I_0(h)\)</span><span
 where \)</span>I_\nu(z)<span class="math notranslate nohighlight">\(  is a modified Bessel function of the second kind of order \)</span>\nu$.</p>
 <p><strong>Plotting</strong><br />
 🦉Plot your MCMC calculation results and the exact answer given by the above formula on the same plot. You can use the <code class="docutils literal notranslate"><span class="pre">scipy.special</span></code> module to compute the Bessel functions. For example,</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.special</span> <span class="k">as</span> <span class="nn">sps</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sps</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">sps</span><span class="o">.</span><span class="n">iv</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -665,7 +665,7 @@ computes the expectation value of the chain length</p>
 \[\langle M \rangle = \sum_S M(S) P(S) \approx \frac{1}{T_{max}} \sum_{t=1}^{T_{max}} M(S_t)\]</div>
 <p>given the value of the ratio <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>.  Your function, for instance, can look like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the average chain length using Metropolis MCMC. </span>
-    <span class="k">def</span> <span class="nf">computeAvgLength</span><span class="p">(</span><span class="n">epsilonRatio</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">computeAvgLength</span><span class="p">(</span><span class="n">epsilonRatio</span><span class="p">):</span>
     <span class="c1"># TODO: Write your code to compute avgLength here </span>
     <span class="c1">#...</span>
     <span class="k">return</span> <span class="n">avgLength</span>

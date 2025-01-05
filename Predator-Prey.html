@@ -409,20 +409,20 @@ document.write(`
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
-<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">field</span>
-<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
-<span class="kn">from</span>  <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">copy</span>
+<span class="kn">from</span><span class="w">  </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="kn">import</span> <span class="n">FuncAnimation</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
 
 
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;animation.embed_limit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">128</span>
 
-<span class="k">def</span> <span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
     <span class="n">keepList</span><span class="o">=</span><span class="n">keepList</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;resetMe&#39;</span><span class="p">,</span><span class="s1">&#39;np&#39;</span><span class="p">,</span><span class="s1">&#39;plt&#39;</span><span class="p">,</span><span class="s1">&#39;scipy&#39;</span><span class="p">,</span><span class="s1">&#39;scipy.optimize&#39;</span><span class="p">,</span><span class="s1">&#39;dataclass&#39;</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">iiii</span> <span class="ow">in</span> <span class="n">keepList</span><span class="p">:</span>
@@ -798,14 +798,14 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
 </ul>
 <p>To do this, we are going to have a class to store each “fox” or “bunny”:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">fox</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">fox</span><span class="p">:</span>
     <span class="n">location</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
     <span class="n">full</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>and</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">bunny</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">bunny</span><span class="p">:</span>
     <span class="n">location</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
     <span class="n">eaten</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>   
 </pre></div>
@@ -825,7 +825,7 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
 </pre></div>
 </div>
 <p>Write code</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">LocationsToList</span><span class="p">(</span><span class="n">locations</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">LocationsToList</span><span class="p">(</span><span class="n">locations</span><span class="p">):</span>
 </pre></div>
 </div>
 <p>which takes the bunnyLocations (foxLocations) and generate a list of bunnies (foxes) with correctly intialized <code class="docutils literal notranslate"><span class="pre">fox.Location</span></code> and <code class="docutils literal notranslate"><span class="pre">bunny.Location</span></code> parameters  -i.e.  suppose your grid has bunnies at locations (1,2) and (4,3).  Then <code class="docutils literal notranslate"><span class="pre">LocationToList(bunnyLocations)</span></code> should return something like the bunnies list from</p>
@@ -839,13 +839,13 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
 </div>
 <p>(obviously you have to make this work no matter what’s in bunnyLocations).</p>
 <p>Also write a function</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">GetLocations</span><span class="p">(</span><span class="n">animalList</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">GetLocations</span><span class="p">(</span><span class="n">animalList</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>that does the opposite.  It tkes the list of bunnies (foxes) and produces the location array of bunnies (foxes).</p>
 <p>You can test that these work by call <code class="docutils literal notranslate"><span class="pre">LocationsToList(GetLocations(LocationsToList(myLocations)))</span></code> to get back the same thing you started with.</p>
 <p>Your next step is to write a function</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Move</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span><span class="n">creatureLocations</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Move</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span><span class="n">creatureLocations</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>which (say we are doing foxes)</p>
@@ -860,7 +860,7 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
 </ul>
 <p>You should be able to check that you move class works.  One good test is to make a bunch of moves and verify that the total number of creatures stays fixed. Also check that <code class="docutils literal notranslate"><span class="pre">np.sum(foxLocations)</span></code> and <code class="docutils literal notranslate"><span class="pre">len(foxes)</span></code> is the same.  Also check that <code class="docutils literal notranslate"><span class="pre">np.max(foxLocations)</span></code> is one and <code class="docutils literal notranslate"><span class="pre">np.min(foxLocations)</span></code> is zero.</p>
 <p>After you’ve written the move function, now you can write the function</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Eat</span><span class="p">(</span><span class="n">bunnies</span><span class="p">,</span><span class="n">foxes</span><span class="p">,</span><span class="n">bunnyLocations</span><span class="p">,</span><span class="n">foxLocations</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Eat</span><span class="p">(</span><span class="n">bunnies</span><span class="p">,</span><span class="n">foxes</span><span class="p">,</span><span class="n">bunnyLocations</span><span class="p">,</span><span class="n">foxLocations</span><span class="p">):</span>
 </pre></div>
 </div>
 <p>If there are foxes and bunnies on the same cell, have the foxes eat all the bunnies making sure you update</p>
@@ -916,9 +916,9 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assumes locsF and locsB is a list of locations at each time step</span>
 
-<span class="k">def</span> <span class="nf">AnimateMe</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">AnimateMe</span><span class="p">():</span>
 
-    <span class="k">def</span> <span class="nf">GetData</span><span class="p">(</span><span class="n">mm</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">GetData</span><span class="p">(</span><span class="n">mm</span><span class="p">):</span>
         <span class="n">mm</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">locsF</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
         <span class="n">maskFox</span><span class="o">=</span><span class="n">locsF</span><span class="p">[</span><span class="n">mm</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span>
         <span class="n">maskBunny</span><span class="o">=</span><span class="n">locsB</span><span class="p">[</span><span class="n">mm</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span>
@@ -932,15 +932,15 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
     <span class="n">plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">GetData</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">():</span>
         <span class="n">plot</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">GetData</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">plot</span>
 
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">j</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">j</span><span class="p">):</span>
         <span class="n">plot</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">GetData</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">plot</span><span class="p">,</span>
 
-    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
     <span class="n">anim</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">locsF</span><span class="p">),</span> <span class="n">interval</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">anim</span>
@@ -963,10 +963,10 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> 
 <span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">GetData</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 <span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">():</span>
 
 <span class="nn">Cell In[16], line 6,</span> in <span class="ni">AnimateMe.&lt;locals&gt;.GetData</span><span class="nt">(mm)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">GetData</span><span class="p">(</span><span class="n">mm</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span><span class="w"> </span><span class="nf">GetData</span><span class="p">(</span><span class="n">mm</span><span class="p">):</span>
 <span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">mm</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">locsF</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">maskFox</span><span class="o">=</span><span class="n">locsF</span><span class="p">[</span><span class="n">mm</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">maskBunny</span><span class="o">=</span><span class="n">locsB</span><span class="p">[</span><span class="n">mm</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span>

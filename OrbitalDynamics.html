@@ -421,11 +421,11 @@ document.write(`
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
-<span class="k">def</span> <span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
     <span class="n">keepList</span><span class="o">=</span><span class="n">keepList</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;resetMe&#39;</span><span class="p">,</span><span class="s1">&#39;np&#39;</span><span class="p">,</span><span class="s1">&#39;plt&#39;</span><span class="p">,</span><span class="s1">&#39;math&#39;</span><span class="p">,</span><span class="s1">&#39;jax&#39;</span><span class="p">,</span><span class="s1">&#39;jnp&#39;</span><span class="p">,</span><span class="s1">&#39;jit&#39;</span><span class="p">,</span><span class="s1">&#39;grad&#39;</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">iiii</span> <span class="ow">in</span> <span class="n">keepList</span><span class="p">:</span>
@@ -438,12 +438,12 @@ document.write(`
     <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
     <span class="k">return</span>
 <span class="c1">#resetMe()</span>
-<span class="kn">import</span> <span class="nn">datetime</span><span class="p">;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="p">;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 5, 6, 9, 45, 691507)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 5, 17, 52, 34, 682187)
 </pre></div>
 </div>
 </div>
@@ -549,10 +549,10 @@ fig.gca().add_artist(earth_disk)
 <section id="c-animation">
 <h3>c. Animation<a class="headerlink" href="#c-animation" title="Permalink to this heading">#</a></h3>
 <p>Run the code below to plot an animation of your orbit.  Your coordinates have to be in positions.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">animation</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">animation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
 
-<span class="k">def</span> <span class="nf">animateMe</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="n">fullLine</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">animateMe</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="n">fullLine</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="c1"># First set up the figure, the axis, and the plot element we want to animate</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
     <span class="n">x_min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">positions</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
@@ -568,12 +568,12 @@ fig.gca().add_artist(earth_disk)
     <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
     <span class="c1"># initialization function: plot the background of each frame</span>
-    <span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">():</span>
         <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">([],</span> <span class="p">[])</span>
         <span class="k">return</span> <span class="n">line</span><span class="p">,</span>
 
     <span class="c1"># animation function.  This is called sequentially</span>
-    <span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">y</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">fullLine</span><span class="p">:</span>

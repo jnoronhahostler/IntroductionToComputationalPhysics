@@ -412,11 +412,11 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>https://clark.physics.illinois.edu/exo_helper.py
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="c1">#from exo_helper import get_planet_vxvy_barycentric</span>
-<span class="k">def</span> <span class="nf">get_planet_vxvy_barycentric</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_planet_vxvy_barycentric</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
     <span class="c1"># take the average of the aphelion and perihelion as the distance</span>
     <span class="c1"># between the sun and Jupiter.</span>
     <span class="n">orbit_radius_jupiter</span> <span class="o">=</span> <span class="mf">778.295e9</span>
@@ -451,7 +451,7 @@ document.write(`
     <span class="n">vyarray</span> <span class="o">=</span> <span class="n">vyarray</span> <span class="o">-</span> <span class="n">vy_cm</span>
 
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">vxarray</span><span class="p">,</span> <span class="n">vyarray</span><span class="p">])</span>
-<span class="k">def</span> <span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
     <span class="n">keepList</span><span class="o">=</span><span class="n">keepList</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;resetMe&#39;</span><span class="p">,</span><span class="s1">&#39;np&#39;</span><span class="p">,</span><span class="s1">&#39;plt&#39;</span><span class="p">,</span><span class="s1">&#39;math&#39;</span><span class="p">,</span><span class="s1">&#39;get_planet_vxvy_barycentric&#39;</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">iiii</span> <span class="ow">in</span> <span class="n">keepList</span><span class="p">:</span>
@@ -466,13 +466,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-05 06:09:35--  https://clark.physics.illinois.edu/exo_helper.py
-Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 18.220.149.166
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-05 17:52:22--  https://clark.physics.illinois.edu/exo_helper.py
+Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.220.149.166
 Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
-HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
@@ -483,7 +488,7 @@ Saving to: ‘exo_helper.py.1’
 exo_helper.py.1       0%[                    ]       0  --.-KB/s               
 exo_helper.py.1     100%[===================&gt;]   1.69K  --.-KB/s    in 0s      
 
-2025-01-05 06:09:35 (1.25 GB/s) - ‘exo_helper.py.1’ saved [1729/1729]
+2025-01-05 17:52:23 (1.26 GB/s) - ‘exo_helper.py.1’ saved [1729/1729]
 </pre></div>
 </div>
 </div>
@@ -618,8 +623,8 @@ G\frac{m^3_{\text{planet}}}{m^2_{\text{star}}} &amp;= \frac{P}{2\pi}v^3_{\text{s
 <p> <br />
  <br />
 $$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9d542ac9-3d42-4387-83fe-f08ca5be3761">
-<span class="eqno">(1)<a class="headerlink" href="#equation-9d542ac9-3d42-4387-83fe-f08ca5be3761" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c4c03ab9-2b06-4220-8ad9-bda23fdd51a8">
+<span class="eqno">(1)<a class="headerlink" href="#equation-c4c03ab9-2b06-4220-8ad9-bda23fdd51a8" title="Permalink to this equation">#</a></span>\[\begin{align}
 m^3_{\text{planet}}\sin^3 i &amp;= m^2_{\text{star}} \frac{P}{2\pi G}\left(v_{\text{star}}\sin i\right)^3\\
 m_{\text{planet}}\sin i &amp;= \left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{1/3} v_{\text{star}}\sin i\\
 &amp;=\left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{1/3} v_r\\
@@ -741,12 +746,15 @@ m_{\text{planet}}\sin i &amp;= \left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-05 06:09:36--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-05 17:52:23--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
 Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130.126.151.14
-Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... connected.
+Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
@@ -760,7 +768,7 @@ Saving to: ‘UID_0019921_RVC_002.tbl.txt’
           UID_00199   0%[                    ]       0  --.-KB/s               
 UID_0019921_RVC_002 100%[===================&gt;]   4.88K  --.-KB/s    in 0s      
 
-2025-01-05 06:09:36 (3.29 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
+2025-01-05 17:52:24 (2.68 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
 </pre></div>
 </div>
 </div>
@@ -868,7 +876,7 @@ After you find the best <span class="math notranslate nohighlight">\(v_r\)</span
 <section id="c-find-a-better-fit-scipy">
 <h3>c. Find a better fit - <code class="docutils literal notranslate"><span class="pre">scipy</span></code><a class="headerlink" href="#c-find-a-better-fit-scipy" title="Permalink to this heading">#</a></h3>
 <p>While searching through a range is (relatively) easy to code, there are algorithms to smartly search for the best answer. Rather than spend a lot of time (and maybe pain) writing our own, <code class="docutils literal notranslate"><span class="pre">scipy</span></code> comes with a prewritten one. To use it, first at the top of your file add</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span>
 </pre></div>
 </div>
 <p>then define a function that takes 4 parameters <code class="docutils literal notranslate"><span class="pre">(params,time_array,rv_array,</span> <span class="pre">error_array)</span></code> and returns the vector with components <span class="math notranslate nohighlight">\(v_i-v(t_i)/\sigma_i\)</span>. Let’s call this function <code class="docutils literal notranslate"><span class="pre">errorfunc</span></code>. Parameters will be a list of [<code class="docutils literal notranslate"><span class="pre">A</span></code>,<code class="docutils literal notranslate"><span class="pre">phi</span></code>] so that we’re trying to fit something like</p>
@@ -891,7 +899,7 @@ After you find the best <span class="math notranslate nohighlight">\(v_r\)</span
 </pre></div>
 </div>
 <p>Notice that my function errfunc must be defined by</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">errfunc</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">time_array</span><span class="p">,</span><span class="n">rv_array</span><span class="p">,</span><span class="n">sigma_array</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">errfunc</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">time_array</span><span class="p">,</span><span class="n">rv_array</span><span class="p">,</span><span class="n">sigma_array</span><span class="p">):</span>
 </pre></div>
 </div>
 <p>but you are free to change it, as long as it works. 🦉Determine the new star velocity based on the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> best fit and see how it changes with the projected mass</p>
