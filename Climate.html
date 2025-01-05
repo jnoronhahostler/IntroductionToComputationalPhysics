@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="N_Ways_of_Measuring_PI.html">N ways to measure <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics.html">Orbital Dynamics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
@@ -397,7 +396,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="climate-dynamics">
 <h1>Climate Dynamics<a class="headerlink" href="#climate-dynamics" title="Permalink to this heading">#</a></h1>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>climlab
 <span class="o">!</span>wget<span class="w"> </span>https://clark.physics.illinois.edu/temp.data
@@ -412,7 +416,7 @@ document.write(`
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/3.1 MB</span> <span class=" -Color -Color-Red">59.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/3.1 MB</span> <span class=" -Color -Color-Red">58.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -468,19 +472,15 @@ Downloading scipy-1.10.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.wh
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/34.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.3/34.5 MB</span> <span class=" -Color -Color-Red">257.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">34.5/34.5 MB</span> <span class=" -Color -Color-Red">163.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading xarray-2023.1.0-py3-none-any.whl (973 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">34.5/34.5 MB</span> <span class=" -Color -Color-Red">175.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading xarray-2023.1.0-py3-none-any.whl (973 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/973.1 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">973.1/973.1 kB</span> <span class=" -Color -Color-Red">96.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">973.1/973.1 kB</span> <span class=" -Color -Color-Red">105.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hDownloading pandas-2.0.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.4 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/12.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.4/12.4 MB</span> <span class=" -Color -Color-Red">145.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.4/12.4 MB</span> <span class=" -Color -Color-Red">162.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hDownloading tzdata-2024.2-py2.py3-none-any.whl (346 kB)
 </pre></div>
 </div>
@@ -491,7 +491,7 @@ Downloading scipy-1.10.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.wh
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \ done
-?25h  Created wheel for climlab: filename=climlab-0.8.2-py3-none-any.whl size=171439 sha256=fc385e1f6f50abbd94e7d2ed116742772d59ab2a39859a743495bc91a72eff16
+?25h  Created wheel for climlab: filename=climlab-0.8.2-py3-none-any.whl size=171439 sha256=8fa86bb2fefca0474bbdb44946b99b5456169e17e6f9011f289ccdc95a601a60
   Stored in directory: /home/runner/.cache/pip/wheels/bd/07/56/ff3ce2e43c85c96acebbda20e5d72cdb0506dbee6ffad49364
 Successfully built climlab
 </pre></div>
@@ -502,7 +502,7 @@ Successfully built climlab
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed climlab-0.8.2 pandas-2.0.3 scipy-1.10.1 tzdata-2024.2 xarray-2023.1.0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-12-06 22:04:21--  https://clark.physics.illinois.edu/temp.data
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-05 06:05:21--  https://clark.physics.illinois.edu/temp.data
 Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 
 </pre></div>
 </div>
@@ -520,14 +520,22 @@ Saving to: ‘temp.data’
 
 
 temp.data             0%[                    ]       0  --.-KB/s               
-temp.data           100%[===================&gt;]  17.18K  --.-KB/s    in 0.02s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>temp.data           100%[===================&gt;]  17.18K  --.-KB/s    in 0.03s   
 
-2024-12-06 22:04:22 (799 KB/s) - ‘temp.data’ saved [17595/17595]
+2025-01-05 06:05:21 (643 KB/s) - ‘temp.data’ saved [17595/17595]
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -602,6 +610,7 @@ temp.data           100%[===================&gt;]  17.18K  --.-KB/s    in 0.02s
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section id="exercise-1-climate-and-global-warming">
 <h2>Exercise 1: Climate and Global Warming<a class="headerlink" href="#exercise-1-climate-and-global-warming" title="Permalink to this heading">#</a></h2>
@@ -714,7 +723,12 @@ temp.data           100%[===================&gt;]  17.18K  --.-KB/s    in 0.02s
 $<span class="math notranslate nohighlight">\( r \log \left(\frac{CO_{2;current}}{CO_{2;old}}\right) \)</span><span class="math notranslate nohighlight">\(
 where \)</span>r=-5$ is a proportionality constant.</p>
 <p>Below is the Carbon dioxide that is in the air as a function of year.  Plot it:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1751.590620307266</span><span class="p">,</span> <span class="mf">277.1900826446281</span><span class="p">],</span>
 <span class="p">[</span><span class="mf">1777.9960515400046</span><span class="p">,</span> <span class="mf">278.95316804407713</span><span class="p">],</span>
@@ -764,6 +778,7 @@ where \)</span>r=-5$ is a proportionality constant.</p>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Now, modify your code to include this additional forcing term into the emitted radiation.</p>
 <p>Compute the equilibrium temperature at the value of carbon dioxide for each year and graph this equilibrium temperature against the year.  Plot it on top of the actual measured temperature which is in <code class="docutils literal notranslate"><span class="pre">tempData[:,1]</span></code> (where the year is in <code class="docutils literal notranslate"><span class="pre">tempData[:,0]</span></code>).   Notice the close agreement between the predicted temperature based on the CO2 and our 0D EBM vs the actual temperature (actually the prediction is probably closer then it should be expected given the spherical cow nature of our approximation)</p>

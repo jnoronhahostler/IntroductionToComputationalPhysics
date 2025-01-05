@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="N_Ways_of_Measuring_PI.html">N ways to measure <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics.html">Orbital Dynamics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
@@ -403,7 +402,12 @@ document.write(`
 <li><p><strong>Time spent on this assignment:</strong></p></li>
 </ul>
 <p>Remember to execute this cell to load numpy and pylab.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -432,6 +436,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section id="background">
 <h2>0. Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
@@ -589,7 +594,9 @@ Also generate a plot of the minimum prey seen during an ecosystem simulation for
 <p>Suppose we take the limit where <span class="math notranslate nohighlight">\(\Delta t \rightarrow 0\)</span>  The the probability we get a bunny in an interval <span class="math notranslate nohighlight">\(\Delta t\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[ 0.2 \Delta t e^{-0.2 T}\]</div>
-<p><img alt="image.png" src="attachment:image.png" /></p>
+<p>This follows because</p>
+<div class="math notranslate nohighlight">
+\[ \lim_{t \rightarrow 0} (1-at)^{T/t}a = ae^{-aT} \]</div>
 <p>Let’s test this.</p>
 <p>We can write a function <code class="docutils literal notranslate"><span class="pre">TimeOfFirstBunny(alpha,deltaT)</span></code> which takes the</p>
 <ul class="simple">
@@ -602,8 +609,9 @@ Also generate a plot of the minimum prey seen during an ecosystem simulation for
 </ul>
 <p>This function should just loop over steps <span class="math notranslate nohighlight">\(dt\)</span> and return the time <span class="math notranslate nohighlight">\(t\)</span> if a random number is less then <span class="math notranslate nohighlight">\(\alpha \Delta t\)</span>.</p>
 <p>🦉Run this function 10000 times with <span class="math notranslate nohighlight">\(\alpha=1\)</span> and <span class="math notranslate nohighlight">\(dt=0.001\)</span> and plot it with <code class="docutils literal notranslate"><span class="pre">plt.hist(ts,100,density=1)</span></code> (100 sets the number of bins and <code class="docutils literal notranslate"><span class="pre">density=1</span></code> makes sure it is a normalized histogram).</p>
-<p>On the same plot, go ahead and plot
-$<span class="math notranslate nohighlight">\(P_B(T) = \alpha \exp[-\alpha T]\)</span>$</p>
+<p>On the same plot, go ahead and plot</p>
+<div class="math notranslate nohighlight">
+\[P_B(T) = \alpha \exp[-\alpha T]\]</div>
 <p>from <span class="math notranslate nohighlight">\(T\in[0,35]\)</span> to compare them. (Recall that if you have a numpy array you can do math operations on them using functions like <code class="docutils literal notranslate"><span class="pre">np.exp</span></code>)</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -616,9 +624,10 @@ $<span class="math notranslate nohighlight">\(P_B(T) = \alpha \exp[-\alpha T]\)<
 </section>
 <section id="b-a-faster-algorithm-to-find-the-first-bunny">
 <h3>b. A faster algorithm to find the first bunny.<a class="headerlink" href="#b-a-faster-algorithm-to-find-the-first-bunny" title="Permalink to this heading">#</a></h3>
-<p>Waiting to determine the time of first of bunny using <strong>a.</strong> is pretty slow. There is another algorithm that’s much faster (in the limit of <span class="math notranslate nohighlight">\(\Delta t\rightarrow 0\)</span>).  The time to first bunny is
-$<span class="math notranslate nohighlight">\(t= -\log(r)/\alpha\)</span><span class="math notranslate nohighlight">\(
-where \)</span>r$ is a uniform random number between 0 and 1.</p>
+<p>Waiting to determine the time of first of bunny using <strong>a.</strong> is pretty slow. There is another algorithm that’s much faster (in the limit of <span class="math notranslate nohighlight">\(\Delta t\rightarrow 0\)</span>).  The time to first bunny is</p>
+<div class="math notranslate nohighlight">
+\[t= -\log(r)/\alpha\]</div>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> is a uniform random number between 0 and 1.</p>
 <p>Instead of analytically verifying this, let’s check this numerically.</p>
 <p>🦉Write a function <code class="docutils literal notranslate"><span class="pre">TimeOfFirstBunny2(alpha,deltaT)</span></code> which returns <span class="math notranslate nohighlight">\(-\log(r)/\alpha\)</span> and make a plot comparing it to <span class="math notranslate nohighlight">\(\alpha \exp[-\alpha T]\)</span>.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
@@ -898,7 +907,12 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assumes locsF and locsB is a list of locations at each time step</span>
 
@@ -964,6 +978,7 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div>
 <p><strong>Acknowledgements:</strong></p>

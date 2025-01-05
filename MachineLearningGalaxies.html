@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="N_Ways_of_Measuring_PI.html">N ways to measure <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics.html">Orbital Dynamics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
@@ -396,7 +395,12 @@ document.write(`
 <li><p><strong>Time spent on this assignment:</strong></p></li>
 </ul>
 <p><em>This assignment closely follows a tutorial at the Galaxy Zoo.  You are not allowed to look up that tutorial when completing this assignment.</em></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">jax.numpy</span> <span class="k">as</span> <span class="nn">jnp</span>
@@ -437,6 +441,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section id="exercise-1-machine-learning-on-galaxies">
 <h2>Exercise 1: Machine Learning on Galaxies<a class="headerlink" href="#exercise-1-machine-learning-on-galaxies" title="Permalink to this heading">#</a></h2>
@@ -447,7 +452,12 @@ document.write(`
 <p>In this assignment, we are going to learn how to automatically classify galaxies using a deep neural network. Our goal will be to take a picture of a galaxy and decide which category it falls into (disc, round, cigar shape, etc).</p>
 <p>We are going to get the pictures of our galaxies from the Sloan Digital Sky Survey and the labels from the Galaxy Zoo (where the public hand-categorizes the galaxies).  We will then write and train a neural network to do this classification. Our goal is to be at least 66% accuracy (one can do much better but it requires more work then is reasonable for this assignment).</p>
 <p>Let’s start by reading in the data. Run the following command to download a copy of the data we’ll need</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>https://courses.physics.illinois.edu/phys246/fa2020/code/dataG.pkl.gz
 </pre></div>
@@ -467,6 +477,7 @@ dataG.pkl.gz.1      100%[===================&gt;]  80.73M   136MB/s    in 0.6s
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Now we’ll unpack it to the format we need</p>
 <div class="cell docutils container">
@@ -666,7 +677,7 @@ In addition to the cross-entropy, we care whether the winning labelling is corre
 <h3>e.  Mini-batches and vmap (Extra Credit: 5 points)<a class="headerlink" href="#e-mini-batches-and-vmap-extra-credit-5-points" title="Permalink to this heading">#</a></h3>
 <p><strong>Acknowledgement:</strong> This assignment follows very closely a tutorial from GalaxyZoo.com</p>
 <ul class="simple">
-<li><p>Bryan Clark and Ruyan Level (original)</p></li>
+<li><p>Bryan Clark and Ryan Levy (original)</p></li>
 </ul>
 <p>Copyright: 2021</p>
 <hr class="docutils" />

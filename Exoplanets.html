@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="N_Ways_of_Measuring_PI.html">N ways to measure <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics.html">Orbital Dynamics</a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
@@ -404,38 +403,16 @@ document.write(`
 <li><p><strong>Date:</strong></p></li>
 <li><p><strong>Time spent on this assignment:</strong></p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>https://clark.physics.illinois.edu/exo_helper.py
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-12-06 22:04:27--  https://clark.physics.illinois.edu/exo_helper.py
-Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 18.220.149.166
-Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
-HTTP request sent, awaiting response... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
-Length: 1729 (1.7K)
-Saving to: ‘exo_helper.py.1’
 
-
-exo_helper.py.1       0%[                    ]       0  --.-KB/s               
-exo_helper.py.1     100%[===================&gt;]   1.69K  --.-KB/s    in 0s      
-
-2024-12-06 22:04:27 (1.06 GB/s) - ‘exo_helper.py.1’ saved [1729/1729]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="c1">#from exo_helper import get_planet_vxvy_barycentric</span>
@@ -488,6 +465,29 @@ exo_helper.py.1     100%[===================&gt;]   1.69K  --.-KB/s    in 0s
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-05 06:05:27--  https://clark.physics.illinois.edu/exo_helper.py
+Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 18.220.149.166
+Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
+HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+Length: 1729 (1.7K)
+Saving to: ‘exo_helper.py.1’
+
+
+exo_helper.py.1       0%[                    ]       0  --.-KB/s               
+exo_helper.py.1     100%[===================&gt;]   1.69K  --.-KB/s    in 0s      
+
+2025-01-05 06:05:27 (1.26 GB/s) - ‘exo_helper.py.1’ saved [1729/1729]
+</pre></div>
+</div>
+</div>
+</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -618,8 +618,8 @@ G\frac{m^3_{\text{planet}}}{m^2_{\text{star}}} &amp;= \frac{P}{2\pi}v^3_{\text{s
 <p> <br />
  <br />
 $$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-43225bb0-cfdf-4ed2-8f97-43ccd411b249">
-<span class="eqno">(1)<a class="headerlink" href="#equation-43225bb0-cfdf-4ed2-8f97-43ccd411b249" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2ed46259-8a13-4a39-87da-a0faefca616d">
+<span class="eqno">(1)<a class="headerlink" href="#equation-2ed46259-8a13-4a39-87da-a0faefca616d" title="Permalink to this equation">#</a></span>\[\begin{align}
 m^3_{\text{planet}}\sin^3 i &amp;= m^2_{\text{star}} \frac{P}{2\pi G}\left(v_{\text{star}}\sin i\right)^3\\
 m_{\text{planet}}\sin i &amp;= \left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{1/3} v_{\text{star}}\sin i\\
 &amp;=\left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{1/3} v_r\\
@@ -741,15 +741,18 @@ m_{\text{planet}}\sin i &amp;= \left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-12-06 22:04:28--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
-Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 130.126.151.14
-Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-05 06:05:27--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
+Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130.126.151.14
+Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... connected.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 200 OK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Length: 4993 (4.9K) [text/plain]
 Saving to: ‘UID_0019921_RVC_002.tbl.txt’
 
@@ -757,7 +760,7 @@ Saving to: ‘UID_0019921_RVC_002.tbl.txt’
           UID_00199   0%[                    ]       0  --.-KB/s               
 UID_0019921_RVC_002 100%[===================&gt;]   4.88K  --.-KB/s    in 0s      
 
-2024-12-06 22:04:28 (3.60 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
+2025-01-05 06:05:28 (3.27 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
 </pre></div>
 </div>
 </div>
@@ -904,11 +907,6 @@ After you find the best <span class="math notranslate nohighlight">\(v_r\)</span
 <section id="exercise-4-putting-everything-together-extra-credit-5-points">
 <h2>Exercise 4 - Putting everything together! (extra credit - 5 points)<a class="headerlink" href="#exercise-4-putting-everything-together-extra-credit-5-points" title="Permalink to this heading">#</a></h2>
 <p>🦉Modify and use your orbital dynamics code (with midpoint) to simulate the sun/jupiter/venus system above producing the two projected velocity of the sun plots (see <strong>1a</strong>), one with and one without the (large) venus. You’ll need to have the planets also act on the sun, so that you now keep track of the sun’s motion. While in general it is needed, it is not necessary for the planets to act on each other here. Just have Sun&lt;-&gt;planet interactions and keep track of the three objects as they move.</p>
-<hr class="docutils" />
-<p>© Copyright 2020</p>
-<p>Originally developed by Monica Huang, Ryan Levy, and George Gollin for 298OWL<br />
-Ported to Jupyter and new material by BKC &amp; RL (2019)</p>
-<hr class="docutils" />
 <p><span id=“fn1”><sup>1</sup>Wolszczan, A.; Frail, D. A. (1992). “A planetary system around the millisecond pulsar PSR1257+12”. Nature. 355(6356): 145–147. </span></p>
 <p><span id=“fn2”><sup>2</sup>3,572 as of December 21, 2017: https://exoplanetarchive.ipac.caltech.edu/.</span></p>
 <p><span id=“fn3”><sup>3</sup>Original letter from Isaac Newton to Richard Bentley, dated 10 December 1692, The Newton project, 189.R.4.47, ff. 4A-5, Trinity College Library, Cambridge, UK</span></p>

@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="N_Ways_of_Measuring_PI.html">N ways to measure <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics.html">Orbital Dynamics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
@@ -434,7 +433,12 @@ document.write(`
 <li><p>compare the path of balls thrown with and without air resistance</p></li>
 <li><p>measure the terminal velocity of a falling object.</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -456,10 +460,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 12, 6, 22, 4, 25, 181135)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 5, 6, 5, 24, 568621)
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="warmups">
@@ -593,7 +598,7 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ef8a9eddd81650885a5d0686085db244b7a097fe3e2cbb21fec4efbd624b0030.png" src="_images/ef8a9eddd81650885a5d0686085db244b7a097fe3e2cbb21fec4efbd624b0030.png" />
+<img alt="_images/d8050cf571287d67a20442878a251c55ed389cbb91c6f22f5baac3d5a2e6cfcd.png" src="_images/d8050cf571287d67a20442878a251c55ed389cbb91c6f22f5baac3d5a2e6cfcd.png" />
 </div>
 </div>
 <p>Here is an example of such data.  You want to figure out what this relationship is.   To do this, you can use
@@ -621,10 +626,10 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.3815916  -0.05819031]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.37313023 -0.01182064]
 </pre></div>
 </div>
-<img alt="_images/99094a10e3ac70468c79383bd6cab691675b4a2f2d64c4ce98ef9254a71fb18a.png" src="_images/99094a10e3ac70468c79383bd6cab691675b4a2f2d64c4ce98ef9254a71fb18a.png" />
+<img alt="_images/7b2d6633028f35ee402e9ec97998aaf6fef38a885b26ed404131da011f2dc287.png" src="_images/7b2d6633028f35ee402e9ec97998aaf6fef38a885b26ed404131da011f2dc287.png" />
 </div>
 </div>
 </section>
@@ -648,7 +653,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8bead270d2d3a8f707e34c7f4a517d1c419b29a777037b97471a806b31087faa.png" src="_images/8bead270d2d3a8f707e34c7f4a517d1c419b29a777037b97471a806b31087faa.png" />
+<img alt="_images/d374fb279ebe80ae9a84f46c96eac81900e98b9800dc73c820958e3489730694.png" src="_images/d374fb279ebe80ae9a84f46c96eac81900e98b9800dc73c820958e3489730694.png" />
 </div>
 </div>
 <p>Let’s go ahead and plot x and y on a log-log scale.  To do this redo the plot above but add</p>
@@ -672,7 +677,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/caa2a717ca4924774f3d8d0115702974c9961519f7f60a7943f8a50b0bc21eac.png" src="_images/caa2a717ca4924774f3d8d0115702974c9961519f7f60a7943f8a50b0bc21eac.png" />
+<img alt="_images/c4ed42c81dab43cd5f6b22f7fb5357988faaa9725d4f892944ea87f31c78d7d1.png" src="_images/c4ed42c81dab43cd5f6b22f7fb5357988faaa9725d4f892944ea87f31c78d7d1.png" />
 </div>
 </div>
 <p>You should notice your plot looks roughly linear.  We can go get the slope by doing a linear fit to the log-log plot. This can be done by doing</p>
@@ -689,7 +694,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.99603935 0.01333737]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 2.02176057 -0.06347452]
 </pre></div>
 </div>
 </div>
@@ -707,7 +712,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/82c7ac8bc0416fda1ef56049aafc9aa4f36abe01bdf96fcb5c495420fae4eee3.png" src="_images/82c7ac8bc0416fda1ef56049aafc9aa4f36abe01bdf96fcb5c495420fae4eee3.png" />
+<img alt="_images/b96882bf367f85ce7f5266d2293335d6316ecd76b2dc5c6ea38c73f4b9ffd96a.png" src="_images/b96882bf367f85ce7f5266d2293335d6316ecd76b2dc5c6ea38c73f4b9ffd96a.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -889,7 +894,12 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <h3>e.  Animation<a class="headerlink" href="#e-animation" title="Permalink to this heading">#</a></h3>
 <p>If you send <code class="docutils literal notranslate"><span class="pre">animateMe</span></code> the list of positions it will animate them.  You shouldn’t have to change any code here as long as you’ve got a list of positions in the array <code class="docutils literal notranslate"><span class="pre">positions</span></code>. 🦉Go ahead and watch your thrown ball!  <strong>There is five points extra credit for anyone who gets the animation to actually run in time proportional to the total time the ball is in the air.  I haven’t thought about how to do this so I’m not sure how hard it is (or if it’s possible)</strong></p>
 <p><em>You just have to run this code and then play the animation to generate it.</em></p>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">animation</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
@@ -950,6 +960,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="f-errors">

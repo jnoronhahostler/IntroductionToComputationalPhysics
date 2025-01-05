@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="N_Ways_of_Measuring_PI.html">N ways to measure <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Orbital Dynamics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
@@ -365,7 +364,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Orbital Dynamics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warmups">Warmups</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planetary-parameters">Planetary Parameters</a></li>
@@ -392,12 +390,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-mercury-with-general-relativity">c.  Mercury with general relativity</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-transfer-orbits-extra-credit-10-points">Exercise 4. Transfer Orbits (Extra Credit: 10 points)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-transfer-orbits-extra-credit-5-points">Exercise 4. Transfer Orbits (Extra Credit: 5 points)</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-black-holes-extra-credit-20-points">Exercise 5. Black Holes (Extra Credit: 20 points)</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -420,7 +414,12 @@ document.write(`
 <p>In this assignment we will learn how to simulate the orbital dynamics of a planet going around the sun (which we assume to be fixed).  We will then proceed to use simulation to test two of the most important physics results in the last 400 years.</p>
 <p>First, we will numerically validate Kepler’s Second Law: a planet sweeps out the same area of its orbit in equal time.  Kepler’s first law (all planets 🪐 orbit in ellipses) and Kepler’s third law (the square of the orbital period of a planet is directly proportional to the cube of the semi-major axis of its orbit) will be left as extra credit.</p>
 <p>Then we will see that general relativity alters the Newtonian law of gravitation in such a way that the planets no longer move in ellipses.  Instead, their closest approach to the sun (the perihelion) changes its location slightly as you go around the Sun.  Mesuring this effect in Mercury was one of the key original validations of general relativity.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -444,10 +443,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 12, 6, 22, 4, 38, 46568)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 5, 6, 5, 37, 125629)
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="warmups">
@@ -606,8 +606,9 @@ fig.gca().add_artist(earth_disk)
 <section id="d-geosyncronous-orbit-extra-credit-5-points">
 <h3>d. Geosyncronous Orbit (Extra Credit: 5 Points)<a class="headerlink" href="#d-geosyncronous-orbit-extra-credit-5-points" title="Permalink to this heading">#</a></h3>
 <p>🦉Determine the height a spaceship needs to be above the surface of the Earth to be in circular Geosynchronous orbit. A geosynchronous orbit is one that stays over the same point of Earth for the entire orbit.   To determine this, we need to set up our orbit simulation to run for an Earth/Satellite simulation.</p>
-<p>A useful thing to know is that the velocity that you need to apply tangeant to a circular orbit to stay in a circular orbit of radius <span class="math notranslate nohighlight">\(r\)</span> is
-$<span class="math notranslate nohighlight">\( v = \sqrt{\frac{GM}{r}} \)</span>$</p>
+<p>A useful thing to know is that the velocity that you need to apply tangeant to a circular orbit to stay in a circular orbit of radius <span class="math notranslate nohighlight">\(r\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[ v = \sqrt{\frac{GM}{r}} \]</div>
 <p>Then compute the orbit of that trajectory.  To show that it’s geosynchronous you want it to produce an orbit that is a circle in one day.  You can make your <code class="docutils literal notranslate"><span class="pre">m</span></code> small (say 100 kg).  I recommend a <code class="docutils literal notranslate"><span class="pre">dt</span></code> of 1 second.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -626,7 +627,7 @@ $<span class="math notranslate nohighlight">\( v = \sqrt{\frac{GM}{r}} \)</span>
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
 <p>Kepler developed three laws about planetary motion (using data from Tycho Brahe on planetary motion).  In this exercise you will explicitly check Kepler’s laws.</p>
-<p>The three laws are (from (<a class="reference external" href="https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion">wikipedia</a>):</p>
+<p>The three laws are (from <a class="reference external" href="https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion">wikipedia</a>):</p>
 <p>(1) The orbit of a planet is an ellipse with the Sun at one of the two foci.</p>
 <p>(2) A line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time.</p>
 <p>(3) The square of the orbital period of a planet is directly proportional to the cube of the semi-major axis of its orbit.</p>
@@ -686,15 +687,16 @@ $<span class="math notranslate nohighlight">\( v = \sqrt{\frac{GM}{r}} \)</span>
 <h3>c. Law 3: (Extra Credit: 10 points)<a class="headerlink" href="#c-law-3-extra-credit-10-points" title="Permalink to this heading">#</a></h3>
 <p>Kepler’s third law tells us that the square of the orbital period of a planet is directly proportional to the cube of the semi-major axis of its orbit.</p>
 <p>In other words, <span class="math notranslate nohighlight">\(T^2 \propto a^3\)</span>.</p>
-<p><em>From Wikipedia quoting Kepler on finding the third law:</em>
-<img alt="image.png" src="attachment:image.png" /></p>
+<p><em>From Wikipedia quoting Kepler on finding the third law:</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/KeplerQuote.png" width=600  alt="Kepler Second Law"></img><br></div>
 <p>🦉Verify Kepler’s third law by computing the orbital period <span class="math notranslate nohighlight">\(T\)</span> (write a function that finds when your orbit essentially gets back to its starting place) and the semi-major axis (as you did above) for 25 different orbits.  To generate these orbits use random initial starting velocities of the form</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v_circ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">G</span><span class="o">*</span><span class="n">M</span><span class="o">/</span><span class="n">r0</span><span class="p">)</span>
 <span class="n">v0</span><span class="o">=</span><span class="p">[</span><span class="n">v_circ</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span><span class="o">*</span><span class="n">v_circ</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span><span class="o">*</span><span class="n">v_circ</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Then graph <span class="math notranslate nohighlight">\(a^3\)</span> vs. <span class="math notranslate nohighlight">\(T^2\)</span> and show that this makes a line.  🦉Show that the slope of this line is
-$<span class="math notranslate nohighlight">\(\frac{GM}{4\pi^2}\)</span>$</p>
+<p>Then graph <span class="math notranslate nohighlight">\(a^3\)</span> vs. <span class="math notranslate nohighlight">\(T^2\)</span> and show that this makes a line.  🦉Show that the slope of this line is</p>
+<div class="math notranslate nohighlight">
+\[\frac{GM}{4\pi^2}\]</div>
 <p>It is helpful to add code to your class that stops your simulation after you return to the starting point. This can be done by either:</p>
 <ul class="simple">
 <li><p>checking that the distance from the starting point gets further away-&gt;closer-&gt;further away</p></li>
@@ -856,8 +858,9 @@ I get that it is -0.017013797776581767923 microradians (but because this is very
 <section id="c-mercury-with-general-relativity">
 <h3>c.  Mercury with general relativity<a class="headerlink" href="#c-mercury-with-general-relativity" title="Permalink to this heading">#</a></h3>
 <p>Now turn on the effects of general relativity (by modifying your force) and do the same computation.</p>
-<p>The post-Newtonian modification to the gravitational acceleration experienced by Mercury adds an extra term after the inverse-square Newtonian term:
-$<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = -\frac{GM_\odot}{r^2} - \frac{3r_s\left(v_\textrm{perihelion}r_\textrm{perihelion}\right)^2}{2r^4}\)</span>$</p>
+<p>The post-Newtonian modification to the gravitational acceleration experienced by Mercury adds an extra term after the inverse-square Newtonian term:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{F(r)}{m} = -\frac{GM_\odot}{r^2} - \frac{3r_s\left(v_\textrm{perihelion}r_\textrm{perihelion}\right)^2}{2r^4}\]</div>
 <p>The Schwarzschild radius of the sun is <span class="math notranslate nohighlight">\(r_S = 2,953.36\)</span> meters. Mercury’s speed at perihelion is
 <span class="math notranslate nohighlight">\(v_\textrm{perihelion} = 58,980\)</span> m/s while its <span class="math notranslate nohighlight">\(r_\textrm{perihelion} = 4.60012e10\)</span> m.</p>
 <p>🦉Please add the post-Newtonian term to the acceleration of gravity and repeat parts (a) and (b)</p>
@@ -889,18 +892,13 @@ $<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = -\frac{GM_\odot}
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 </section>
-<section id="exercise-4-transfer-orbits-extra-credit-10-points">
-<h2>Exercise 4. Transfer Orbits (Extra Credit: 10 points)<a class="headerlink" href="#exercise-4-transfer-orbits-extra-credit-10-points" title="Permalink to this heading">#</a></h2>
+<section id="exercise-4-transfer-orbits-extra-credit-5-points">
+<h2>Exercise 4. Transfer Orbits (Extra Credit: 5 points)<a class="headerlink" href="#exercise-4-transfer-orbits-extra-credit-5-points" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
 <p>If you are trying to get spacecraft around the solar system, an important thing to be able to do is to get a spacecraft from one point to another point in a time <span class="math notranslate nohighlight">\(T\)</span>.  To do this, the spacecraft will need to choose a particular velocity (speed and direction) to be heading in. Write a function <code class="docutils literal notranslate"><span class="pre">Transfer(pos1,pos2,T)</span></code> which determines the velocity to get the spacecraft from pos1 to pos2 in time T.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercise-5-black-holes-extra-credit-20-points">
-<h1>Exercise 5. Black Holes (Extra Credit: 20 points)<a class="headerlink" href="#exercise-5-black-holes-extra-credit-20-points" title="Permalink to this heading">#</a></h1>
-<p>Here we have simulated a orbit around the Sun.  We got away with using a perturbative correction to get the correct equations of motion for GR because the gravity of the Sun was not that strong.  Now we would like to orbit a black hole.  Go ahead and simulate the equations of motion around a black hole.</p>
 <hr class="docutils" />
 <p>© Copyright 2020</p>
 <ul class="simple">
@@ -908,6 +906,7 @@ $<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = -\frac{GM_\odot}
 <li><p>Ex 2: Bryan Clark (original)</p></li>
 <li><p>Ex 3: George Gollin (original); Bryan Clark (modifications)</p></li>
 </ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -973,7 +972,6 @@ $<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = -\frac{GM_\odot}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Orbital Dynamics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warmups">Warmups</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planetary-parameters">Planetary Parameters</a></li>
@@ -1000,12 +998,8 @@ $<span class="math notranslate nohighlight">\( \frac{F(r)}{m} = -\frac{GM_\odot}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-mercury-with-general-relativity">c.  Mercury with general relativity</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-transfer-orbits-extra-credit-10-points">Exercise 4. Transfer Orbits (Extra Credit: 10 points)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-transfer-orbits-extra-credit-5-points">Exercise 4. Transfer Orbits (Extra Credit: 5 points)</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-black-holes-extra-credit-20-points">Exercise 5. Black Holes (Extra Credit: 20 points)</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>

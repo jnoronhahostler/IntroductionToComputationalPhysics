@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">N ways to measure <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics.html">Orbital Dynamics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
@@ -404,7 +403,12 @@ document.write(`
 <li><p><strong>Time spent on this assignment:</strong></p></li>
 </ul>
 <p>Remember to execute this cell to load numpy and pylab.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -427,6 +431,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>In this project we will consider three different ways of measuring <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <div class="alert alert-info">
@@ -699,7 +704,7 @@ You can have a function that generates all the <code class="docutils literal not
 </ul>
 <hr class="docutils" />
 <p>In this exercise, we will compute <span class="math notranslate nohighlight">\(\pi\)</span> by (<em>in silico</em><span class="xref myst"><sup>2</sup></span>) throwing darts at a board.  To do this,  we are going to need to use random numbers.</p>
-<p>You can read about Python’s (pseudo)random number generating functions here: https://docs.python.org/3/library/random.html. They live in the <code class="docutils literal notranslate"><span class="pre">random</span></code> library, and can be imported using <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code>. Here’s a snippet of code that generates a sequence of random numbers between -1 and 1.</p>
+<p>You can read about Python’s (pseudo)random number generating functions <a class="reference external" href="https://docs.python.org/3/library/random.html">here</a>. They live in the <code class="docutils literal notranslate"><span class="pre">random</span></code> library, and can be imported using <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code>. Here’s a snippet of code that generates a sequence of random numbers between -1 and 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -709,15 +714,15 @@ You can have a function that generates all the <code class="docutils literal not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.08015790252804367
-0.2891510473899539
-0.42585998229342636
--0.11377754061938572
--0.8943617913186477
--0.4387624822371079
-0.7886538983710214
--0.08575183053072233
-0.65704091000734
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5909995098194281
+-0.5051667902177166
+-0.5639947180074596
+-0.5975012156493149
+0.6161229571112588
+0.11440786979131867
+-0.050725274541085774
+0.7827520717949785
+0.023099695152917654
 </pre></div>
 </div>
 </div>
@@ -725,10 +730,11 @@ You can have a function that generates all the <code class="docutils literal not
 <p>A couple of fine points: <code class="docutils literal notranslate"><span class="pre">uniform(-1,1)</span></code> generates random numbers with a uniform distribution in the semi-open range <code class="docutils literal notranslate"><span class="pre">[-1.0,1.0)</span></code>;  the <code class="docutils literal notranslate"><span class="pre">range</span></code> specification in the for loop requires i to be greater than or equal to 1, but less than 10. Only nine random numbers are printed.</p>
 <section id="a-darts-at-a-board">
 <h3>a. Darts at a board<a class="headerlink" href="#a-darts-at-a-board" title="Permalink to this heading">#</a></h3>
-<p>🦉Call DrawCircle() to draw a circle of radius 1.0 in a <span class="math notranslate nohighlight">\(2 \times 2\)</span> square. Then pick 25 random points <span class="math notranslate nohighlight">\((x,y)\)</span> in the square (do this by picking two random numbers each between -1 and 1). Plot them within the square (<code class="docutils literal notranslate"><span class="pre">plt.plot(x,y,'.',color='red'</span></code>).   Recall that the area of a circle is <span class="math notranslate nohighlight">\(\pi r^2\)</span>, and that if you inscribe a circle of radius 1.0 inside a square of side length 2, the ratio of the areas of the circle and square will be <span class="math notranslate nohighlight">\(\pi\)</span>/4.
-$<span class="math notranslate nohighlight">\(
+<p>🦉Call DrawCircle() to draw a circle of radius 1.0 in a <span class="math notranslate nohighlight">\(2 \times 2\)</span> square. Then pick 25 random points <span class="math notranslate nohighlight">\((x,y)\)</span> in the square (do this by picking two random numbers each between -1 and 1). Plot them within the square (<code class="docutils literal notranslate"><span class="pre">plt.plot(x,y,'.',color='red'</span></code>).   Recall that the area of a circle is <span class="math notranslate nohighlight">\(\pi r^2\)</span>, and that if you inscribe a circle of radius 1.0 inside a square of side length 2, the ratio of the areas of the circle and square will be <span class="math notranslate nohighlight">\(\pi\)</span>/4.</p>
+<div class="math notranslate nohighlight">
+\[
 \frac{\pi r^2}{4 r^2}= \frac{\pi}{4}
-\)</span>$</p>
+\]</div>
 <p>Because the dart is likely to hit any place on the square, the fraction of dots within the circle is the ratio of the area between the circle and the square.</p>
 <p>I removed all the axis to make them look prettier by doing:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>

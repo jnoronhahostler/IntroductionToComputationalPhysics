@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="N_Ways_of_Measuring_PI.html">N ways to measure <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics.html">Orbital Dynamics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Random%20Walks.html">Random Walks</a></li>
@@ -396,7 +395,12 @@ document.write(`
 <li><p><strong>Time spent on this assignment:</strong></p></li>
 </ul>
 <p><em>Note:</em> You must answer things inside the answer tags as well as questions which have an <strong>A:</strong>.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -427,10 +431,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 12, 6, 22, 5, 28, 175659)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 5, 6, 6, 27, 425333)
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>In this project we are going to learn about pendula and chaos.  We will start with a single pendulum, examining phase space diagrams and animating trajectories, and moving toward a double pendulum. Then we’ll wrap up by using automatic differentiation to look at the same problem, recast in a different form, to write a more general solution to the double pendulum problem.</p>
 <section id="exercise-1-single-pendulum">
@@ -440,7 +445,12 @@ document.write(`
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
 <p>You will use the following animation code for exercise 1</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">animateMe_singlePendula</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span> 
     <span class="n">positionArray</span><span class="o">=</span><span class="p">[]</span>
@@ -484,6 +494,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section id="a-a-single-pendula">
 <h3>a. A Single Pendula<a class="headerlink" href="#a-a-single-pendula" title="Permalink to this heading">#</a></h3>
@@ -503,14 +514,25 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\theta(t) = A\cos(\Omega t + \phi)\hspace{2cm} \omega(t)=-A\Omega\sin(\Omega t+\phi)\]</div>
 <p>its phase trajectory will be an ellipse with axes of lengths <span class="math notranslate nohighlight">\(2A\)</span> and <span class="math notranslate nohighlight">\(2A\Omega\)</span>.</p>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#RUN ME TO ANIMATE YOUR CODE</span>
 <span class="n">ani</span><span class="o">=</span><span class="n">animateMe_singlePendula</span><span class="p">([</span><span class="n">positions</span><span class="p">])</span>
@@ -530,6 +552,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><strong>Q:</strong> Does the phase space diagram match your expectations? Explain</p>
 <p><strong>A:</strong></p>
@@ -550,7 +573,12 @@ However, that solution only works for <em>small angles</em>.</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ani</span><span class="o">=</span><span class="n">animateMe_singlePendula</span><span class="p">([</span><span class="n">positions</span><span class="p">,</span><span class="n">positions2</span><span class="p">,</span><span class="n">positions3</span><span class="p">])</span>
 <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
@@ -568,6 +596,7 @@ However, that solution only works for <em>small angles</em>.</p>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><strong>Q:</strong> Describe the “error” plot; what’s going on?</p>
 <p><strong>A:</strong></p>
@@ -578,11 +607,14 @@ However, that solution only works for <em>small angles</em>.</p>
 <h3>c. Damped and Driven and phase plots<a class="headerlink" href="#c-damped-and-driven-and-phase-plots" title="Permalink to this heading">#</a></h3>
 <p>The behavior of a “simple” pendulum becomes less simple when you add damping and drive the system.</p>
 <p>Suppose we make a pendulum from an object of mass <span class="math notranslate nohighlight">\(m\)</span> at the end of a rigid, massless rod of length <span class="math notranslate nohighlight">\(L\)</span>.  The rod is suspended from a bearing which exerts an angular velocity-dependent drag force on the pendulum. Because we are using a rod, not a string, the pendulum can swing in a full circle if it is moving sufficiently quickly. A motor attached to the pendulum provides a sinusoidally varying torque. Gravity acts on the pendulum in the usual way.</p>
-<p>The equation of motion for the pendulum is then
-$<span class="math notranslate nohighlight">\(\begin{align}
+<p>The equation of motion for the pendulum is then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
 \tau =  I\alpha &amp;= mL^2 \frac{d^2\theta}{dt^2}\\
 &amp;=-mgL\sin\theta - \beta \frac{d\theta}{dt} + \gamma \sin \Omega_\mathrm{ext} t
-\end{align}\)</span>$</p>
+\end{align}
+\end{split}\]</div>
 <p>The first term to the right of the equal sign is the torque due to gravity. The second term is the velocity-dependent damping, while the third term is the external driving torque. The symbols <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> represent constants.</p>
 <p>Do some algebra:</p>
 <div class="math notranslate nohighlight">
@@ -603,7 +635,7 @@ $<span class="math notranslate nohighlight">\(\begin{align}
     <span class="k">return</span> <span class="n">F</span>
 </pre></div>
 </div>
-<p>**Make sure when you make your plots that all values of <span class="math notranslate nohighlight">\(\theta\)</span> are <span class="math notranslate nohighlight">\(-\pi \leq \theta \leq \pi\)</span>.  When you produce your graphs make sure that you wrap things so that those are the only values that you see on your graph.</p>
+<p><strong>Make sure when you make your plots that all values of <span class="math notranslate nohighlight">\(\theta\)</span> are <span class="math notranslate nohighlight">\(-\pi \leq \theta \leq \pi\)</span>.  When you produce your graphs make sure that you wrap things so that those are the only values that you see on your graph.</strong></p>
 <p>Run your program with the following parameters and be sure to include all the plots in your Jupyter notebook.</p>
 <table class="table">
 <thead>
@@ -729,7 +761,12 @@ $<span class="math notranslate nohighlight">\(\begin{align}
 </div>
 </div>
 <p>If you want, go ahead and animate these pendula</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">positions2</span><span class="p">)</span>
 <span class="n">ani</span><span class="o">=</span><span class="n">animateMe_singlePendula</span><span class="p">([</span><span class="n">positions2</span><span class="p">[::</span><span class="n">l</span><span class="o">//</span><span class="mi">1000</span><span class="p">]])</span>
@@ -749,8 +786,14 @@ $<span class="math notranslate nohighlight">\(\begin{align}
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">positions4</span><span class="p">)</span>
 <span class="n">ani</span><span class="o">=</span><span class="n">animateMe_singlePendula</span><span class="p">([</span><span class="n">positions4</span><span class="p">[::</span><span class="n">l</span><span class="o">//</span><span class="mi">5000</span><span class="p">]])</span>
@@ -770,6 +813,7 @@ $<span class="math notranslate nohighlight">\(\begin{align}
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 </section>
@@ -780,7 +824,12 @@ $<span class="math notranslate nohighlight">\(\begin{align}
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
 <p>Single (rigid) Pendula are somewhat boring.  We can compute most things about them analytically. Double pendula on the other hand are much more exotic.  In this exercise you are going to simulate a double pendula.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">animateMe_doublePendula</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span> 
     <span class="n">positionArray</span><span class="o">=</span><span class="p">[]</span>
@@ -834,6 +883,7 @@ $<span class="math notranslate nohighlight">\(\begin{align}
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section id="a-simulating-double-pendula">
 <h3>a. Simulating double pendula<a class="headerlink" href="#a-simulating-double-pendula" title="Permalink to this heading">#</a></h3>
@@ -882,7 +932,12 @@ $<span class="math notranslate nohighlight">\(\begin{align}
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
 <span class="n">ani</span><span class="o">=</span><span class="n">animateMe_doublePendula</span><span class="p">([</span><span class="n">pos</span><span class="p">[::</span><span class="n">l</span><span class="o">//</span><span class="mi">100</span><span class="p">]])</span>
@@ -902,6 +957,7 @@ $<span class="math notranslate nohighlight">\(\begin{align}
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><strong>Q:</strong> Does the inner bob (<span class="math notranslate nohighlight">\(m_1\)</span>) act like a simple pendulum? Use the phase space diagram in your answer</p>
 <p><strong>A:</strong></p>
@@ -936,7 +992,12 @@ Animate them all simultaneously to see what happens.</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ani</span><span class="o">=</span><span class="n">animateMe_doublePendula</span><span class="p">(</span><span class="n">allPositions</span><span class="p">)</span>
 <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
@@ -954,6 +1015,7 @@ Animate them all simultaneously to see what happens.</p>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><strong>Acknowledgements:</strong></p>
 <ul class="simple">
