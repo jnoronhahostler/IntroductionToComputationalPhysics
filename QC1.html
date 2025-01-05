@@ -375,7 +375,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-control-not-gates">a. Control-not gates</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-build-an-epr-pair">b.  Build an EPR Pair</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-measuring-epr-pairs">c. Measuring EPR Pairs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-entanglement-extra-credit-5-points">d. Entanglement (Extra Credit: 5 points)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-grover-s-algorithm">Exercise 3:  Grover’s Algorithm</a><ul class="nav section-nav flex-column">
@@ -384,22 +383,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-flipallbutzero">c. FlipAllButZero</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-invert">d. Invert</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-running-grover-s-algorithm">e. Running Grover’s Algorithm</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-quantum-key-distribution-ec-20-points">Exercise 4 Quantum Key Distribution (EC - 20 points)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-one-time-pads">a. One time pads</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-eve-s-arrival">b. Eve’s arrival</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-an-improved-protocol">c. An improved protocol</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-eve-in-the-improved-protocol">d. Eve in the improved protocol</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-not-flipping-shared-coins">e.  Not flipping shared coins</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-building-up-tools-ec-10-points">Exercise 5: Building up tools (EC - 10 points)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-initializing-a-binary-number">a. Initializing a binary number</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-a-sum-over-all-states">b. A sum over all states</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-angle-of-a-random-gate">c.  Angle of a random gate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-inverting-a-cnot">d. Inverting a CNOT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-deferred-measurements">e. Deferred Measurements</a></li>
 </ul>
 </li>
 </ul>
@@ -420,14 +403,19 @@ document.write(`
 <li><p><strong>Date:</strong></p></li>
 <li><p><strong>Time Spent on this Assignment:</strong></p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qiskit<span class="o">[</span>visualization<span class="o">]</span><span class="p">;</span>
 <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qutip
 <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qiskit_aer<span class="p">;</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qiskit[visualization]
 </pre></div>
@@ -443,9 +431,7 @@ Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting sympy&gt;=1.3 (from qiskit[visualization])
   Downloading sympy-1.13.3-py3-none-any.whl.metadata (12 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting dill&gt;=0.3 (from qiskit[visualization])
+Collecting dill&gt;=0.3 (from qiskit[visualization])
   Downloading dill-0.3.9-py3-none-any.whl.metadata (10 kB)
 Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (2.9.0.post0)
 </pre></div>
@@ -461,10 +447,10 @@ Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading symengine-0.13.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.2 kB)
 Requirement already satisfied: matplotlib&gt;=3.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (3.7.5)
 Collecting pydot (from qiskit[visualization])
-  Downloading pydot-3.0.4-py3-none-any.whl.metadata (10 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Pillow&gt;=4.2.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (10.4.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pydot-3.0.4-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: Pillow&gt;=4.2.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (10.4.0)
 Collecting pylatexenc&gt;=1.4 (from qiskit[visualization])
   Downloading pylatexenc-2.10.tar.gz (162 kB)
 </pre></div>
@@ -480,9 +466,7 @@ Collecting pylatexenc&gt;=1.4 (from qiskit[visualization])
 Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (1.1.1)
 Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (0.12.1)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (4.55.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (1.4.7)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (1.4.7)
 Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (24.2)
 Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (3.1.4)
 Requirement already satisfied: importlib-resources&gt;=3.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (6.4.5)
@@ -492,21 +476,21 @@ Requirement already satisfied: pandas&gt;=1.2 in /opt/hostedtoolcache/Python/3.8
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pbr&gt;=2.0.0 (from stevedore&gt;=3.0.0-&gt;qiskit[visualization])
   Downloading pbr-6.1.0-py2.py3-none-any.whl.metadata (3.4 kB)
-Collecting mpmath&lt;1.4,&gt;=1.1.0 (from sympy&gt;=1.3-&gt;qiskit[visualization])
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
-Requirement already satisfied: zipp&gt;=3.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.3-&gt;qiskit[visualization]) (3.20.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting mpmath&lt;1.4,&gt;=1.1.0 (from sympy&gt;=1.3-&gt;qiskit[visualization])
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2024.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.3-&gt;qiskit[visualization]) (3.20.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2024.2)
 Requirement already satisfied: tzdata&gt;=2022.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2024.2)
-Downloading dill-0.3.9-py3-none-any.whl (119 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading rustworkx-0.15.1-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading dill-0.3.9-py3-none-any.whl (119 kB)
+Downloading rustworkx-0.15.1-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/2.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/2.0 MB</span> <span class=" -Color -Color-Red">71.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/2.0 MB</span> <span class=" -Color -Color-Red">79.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -516,31 +500,30 @@ Downloading symengine-0.13.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_6
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/49.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">30.4/49.7 MB</span> <span class=" -Color -Color-Red">153.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">22.0/49.7 MB</span> <span class=" -Color -Color-Red">111.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">49.5/49.7 MB</span> <span class=" -Color -Color-Red">140.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━ <span class=" -Color -Color-Green">46.1/49.7 MB</span> <span class=" -Color -Color-Red">122.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">49.7/49.7 MB</span> <span class=" -Color -Color-Red">107.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━ <span class=" -Color -Color-Green">48.2/49.7 MB</span> <span class=" -Color -Color-Red">80.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">49.7/49.7 MB</span> <span class=" -Color -Color-Red">65.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/6.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.2/6.2 MB</span> <span class=" -Color -Color-Red">160.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading pydot-3.0.4-py3-none-any.whl (35 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.2/6.2 MB</span> <span class=" -Color -Color-Red">151.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading pydot-3.0.4-py3-none-any.whl (35 kB)
 Downloading qiskit-1.2.4-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.8 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/4.8 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.8/4.8 MB</span> <span class=" -Color -Color-Red">131.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.8/4.8 MB</span> <span class=" -Color -Color-Red">130.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hDownloading mpmath-1.3.0-py3-none-any.whl (536 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/536.2 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">536.2/536.2 kB</span> <span class=" -Color -Color-Red">62.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">536.2/536.2 kB</span> <span class=" -Color -Color-Red">64.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hDownloading pbr-6.1.0-py2.py3-none-any.whl (108 kB)
 </pre></div>
 </div>
@@ -554,7 +537,7 @@ Downloading qiskit-1.2.4-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.wh
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for pylatexenc: filename=pylatexenc-2.10-py3-none-any.whl size=136824 sha256=0b9af4206dbcd0acd409a5fc2012d2165648f5e8684b9ecca4c3535360acfa55
+?25h  Created wheel for pylatexenc: filename=pylatexenc-2.10-py3-none-any.whl size=136824 sha256=769d44f60351112b72e12c360f30a9e8a1e8a1179e746406363501f89785f42e
   Stored in directory: /home/runner/.cache/pip/wheels/72/99/be/81d9bcdf5dd5ee5acd8119a9dd5bc07204c9ce205fd341b021
 Successfully built pylatexenc
 </pre></div>
@@ -572,16 +555,7 @@ Successfully built pylatexenc
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/6.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/6.4 MB</span> <span class=" -Color -Color-Red">17.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━ <span class=" -Color -Color-Green">5.2/6.4 MB</span> <span class=" -Color -Color-Red">15.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">6.3/6.4 MB</span> <span class=" -Color -Color-Red">15.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.4/6.4 MB</span> <span class=" -Color -Color-Red">9.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.4/6.4 MB</span> <span class=" -Color -Color-Red">99.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -642,16 +616,16 @@ Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache
 Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (5.3.0)
 Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (4.12.2)
 Requirement already satisfied: symengine&lt;0.14,&gt;=0.11 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (0.13.0)
-Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.17.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pbr&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (6.1.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.17.0)
+Requirement already satisfied: pbr&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (6.1.0)
 Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.3.0)
 Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.3 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/12.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.3/12.3 MB</span> <span class=" -Color -Color-Red">131.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.3/12.3 MB</span> <span class=" -Color -Color-Red">81.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -662,84 +636,33 @@ Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pylab</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">qiskit</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">qutip</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">transpile</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_histogram</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.circuit.library.standard_gates</span><span class="w"> </span><span class="kn">import</span> <span class="n">ZGate</span><span class="p">,</span> <span class="n">XGate</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.circuit.quantumregister</span><span class="w"> </span><span class="kn">import</span> <span class="n">AncillaRegister</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pylab</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.quantum_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">Statevector</span><span class="p">,</span> <span class="n">partial_trace</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">transpile</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">qutip</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumCircuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">transpile</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">qiskit_aer</span><span class="w"> </span><span class="kn">import</span> <span class="n">AerSimulator</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/qutip/__init__.py:65: UserWarning: The new version of Cython, (&gt;= 3.0.0) is not supported.
-  warnings.warn(
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_histogram</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">RunMe</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span><span class="n">num_shots</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
-    <span class="n">backend</span> <span class="o">=</span> <span class="n">BasicAer</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;qasm_simulator&#39;</span><span class="p">)</span>
-    <span class="n">job</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span><span class="n">shots</span><span class="o">=</span><span class="n">num_shots</span><span class="p">)</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">RunMeState</span><span class="p">(</span><span class="n">qc</span><span class="p">):</span>
-    <span class="n">backend</span> <span class="o">=</span> <span class="n">BasicAer</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;statevector_simulator&#39;</span><span class="p">)</span>
-    <span class="n">job</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span><span class="n">shots</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">RunMeQC</span><span class="p">(</span><span class="n">qc</span><span class="p">):</span>
-    <span class="n">provider</span> <span class="o">=</span> <span class="n">IBMQ</span><span class="o">.</span><span class="n">get_provider</span><span class="p">(</span><span class="n">hub</span><span class="o">=</span><span class="s1">&#39;ibm-q&#39;</span><span class="p">)</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.providers.ibmq</span><span class="w"> </span><span class="kn">import</span> <span class="n">least_busy</span>
-    <span class="n">small_devices</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">configuration</span><span class="p">()</span><span class="o">.</span><span class="n">n_qubits</span> <span class="o">==</span> <span class="mi">5</span>
-                                       <span class="ow">and</span> <span class="ow">not</span> <span class="n">x</span><span class="o">.</span><span class="n">configuration</span><span class="p">()</span><span class="o">.</span><span class="n">simulator</span><span class="p">)</span>
-    <span class="n">backend</span> <span class="o">=</span> <span class="n">least_busy</span><span class="p">(</span><span class="n">small_devices</span><span class="p">)</span>
-    <span class="n">jobReal</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">jobReal</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">RunCircuit</span><span class="p">(</span><span class="n">circuit</span><span class="p">):</span>
-  <span class="n">circuit</span><span class="o">.</span><span class="n">save_statevector</span><span class="p">()</span>
-  <span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
-  <span class="n">result</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-  <span class="n">out_state</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_statevector</span><span class="p">()</span>
-  <span class="k">return</span> <span class="n">out_state</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">StateToBinary</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-    <span class="n">wires</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">))))</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">**</span><span class="n">wires</span><span class="p">):</span>
-        <span class="n">myFormat</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">wires</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;b&quot;</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39;|&#39;</span><span class="p">,</span><span class="nb">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">myFormat</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;&gt;&#39;</span><span class="p">)</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+  <span class="n">numQubits</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">num_qubits</span>
+  <span class="k">if</span> <span class="n">a</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+    <span class="n">numQubits</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">numQubits</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)</span>
+    <span class="n">initCircuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)</span>
+    <span class="n">initCircuit</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">=</span><span class="n">AddCircuits</span><span class="p">([</span><span class="n">initCircuit</span><span class="p">,</span><span class="n">circuit</span><span class="p">])</span>
   <span class="n">circuit</span><span class="o">.</span><span class="n">save_statevector</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;myStateVector&#39;</span><span class="p">)</span>
   <span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
   <span class="n">resultA</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-  <span class="n">numQubits</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">num_qubits</span>
   <span class="n">forward</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">numQubits</span><span class="p">))</span>
   <span class="n">reverse</span><span class="o">=</span><span class="n">forward</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
   <span class="n">circuit</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">forward</span><span class="p">,</span><span class="n">reverse</span><span class="p">)</span>
@@ -747,6 +670,13 @@ Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_
   <span class="n">resultB</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
   <span class="k">return</span> <span class="n">resultA</span><span class="o">.</span><span class="n">data</span><span class="p">()[</span><span class="s1">&#39;myStateVector&#39;</span><span class="p">],</span><span class="n">resultB</span><span class="o">.</span><span class="n">data</span><span class="p">()[</span><span class="s1">&#39;counts&#39;</span><span class="p">]</span>
 
+
+<span class="k">def</span><span class="w"> </span><span class="nf">MakeState</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+  <span class="n">numWires</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">v</span><span class="p">)))))</span>
+  <span class="n">qc1</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">numWires</span><span class="p">,</span><span class="n">numWires</span><span class="p">)</span>
+  <span class="n">qc1</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+  <span class="n">a</span><span class="p">,</span><span class="n">_</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">qc1</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">a</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">PrintDirac</span><span class="p">(</span><span class="n">out_state_a</span><span class="p">):</span>
   <span class="n">out_state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">out_state_a</span><span class="p">)</span>
@@ -757,7 +687,15 @@ Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_
       <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_state</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;|&#39;</span><span class="o">+</span><span class="nb">bin</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">num_qubits</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; + &#39;</span><span class="p">)</span>
   <span class="nb">print</span><span class="p">()</span>
 
-
+<span class="k">def</span><span class="w"> </span><span class="nf">PlotBloch</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">bb</span><span class="p">):</span>
+  <span class="n">vv</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+  <span class="n">a</span><span class="o">=</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">b</span><span class="o">=</span><span class="n">vv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+  <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">a</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
+  <span class="n">bb</span><span class="o">.</span><span class="n">add_vectors</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">])</span>
+  <span class="k">return</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">PlotState</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">plotAll</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">myTitle</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">plotAll</span><span class="p">:</span>
@@ -775,30 +713,20 @@ Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">idx</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span><span class="n">idx</span><span class="o">+</span><span class="mf">0.1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">i</span><span class="p">)],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">idx</span><span class="o">+</span><span class="mf">0.1</span><span class="p">],[</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">i</span><span class="p">)],</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
   <span class="n">avg</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span>
-  <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">avg</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">avg</span><span class="p">),</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">myTitle</span><span class="p">)</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">MakeState</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
-  <span class="n">numWires</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))))</span>
-  <span class="n">qc1</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">numWires</span><span class="p">,</span><span class="n">numWires</span><span class="p">)</span>
-  <span class="n">qc1</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-  <span class="n">a</span><span class="p">,</span><span class="n">_</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">qc1</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">a</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">PlotBloch</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">bb</span><span class="p">):</span>
-  <span class="n">vv</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-  <span class="c1">#print(vv)</span>
-  <span class="n">a</span><span class="o">=</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-  <span class="n">b</span><span class="o">=</span><span class="n">vv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-  <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
-  <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
-  <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">a</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
-  <span class="c1">#print(x,y,z)</span>
-  <span class="n">bb</span><span class="o">.</span><span class="n">add_vectors</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">])</span>
-  <span class="k">return</span>  <span class="c1">#plot_bloch_vector([x,y,z])</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">AddCircuits</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">):</span>
+  <span class="n">numQubits</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">num_qubits</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">theCircuits</span><span class="p">])</span>
+  <span class="n">numQubits</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">numQubits</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">numQubits</span><span class="p">,</span><span class="n">numQubits</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">)):</span>
+    <span class="n">circuit</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">qubits</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">theCircuits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)))</span>
+  <span class="k">return</span> <span class="n">circuit</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">Mark</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
@@ -831,42 +759,12 @@ Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_
   <span class="k">return</span> <span class="n">circuit</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-  <span class="n">numQubits</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">num_qubits</span>
-  <span class="k">if</span> <span class="n">a</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
-    <span class="n">numQubits</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">numQubits</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)</span>
-    <span class="n">initCircuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)</span>
-    <span class="n">initCircuit</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="n">circuit</span><span class="o">=</span><span class="n">AddCircuits</span><span class="p">([</span><span class="n">initCircuit</span><span class="p">,</span><span class="n">circuit</span><span class="p">])</span>
-  <span class="n">circuit</span><span class="o">.</span><span class="n">save_statevector</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;myStateVector&#39;</span><span class="p">)</span>
-  <span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
-  <span class="n">resultA</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-  <span class="n">forward</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">numQubits</span><span class="p">))</span>
-  <span class="n">reverse</span><span class="o">=</span><span class="n">forward</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-  <span class="n">circuit</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">forward</span><span class="p">,</span><span class="n">reverse</span><span class="p">)</span>
-  <span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
-  <span class="n">resultB</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-  <span class="k">return</span> <span class="n">resultA</span><span class="o">.</span><span class="n">data</span><span class="p">()[</span><span class="s1">&#39;myStateVector&#39;</span><span class="p">],</span><span class="n">resultB</span><span class="o">.</span><span class="n">data</span><span class="p">()[</span><span class="s1">&#39;counts&#39;</span><span class="p">]</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">AddCircuits</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">):</span>
-  <span class="n">numQubits</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">num_qubits</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">theCircuits</span><span class="p">])</span>
-  <span class="n">numQubits</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">numQubits</span><span class="p">)</span>
-  <span class="n">circuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">numQubits</span><span class="p">,</span><span class="n">numQubits</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">)):</span>
-    <span class="n">circuit</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">qubits</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">theCircuits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">InitializeCircuit</span><span class="p">(</span><span class="n">my_string</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+  <span class="n">circuit</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">my_string</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
   <span class="k">return</span> <span class="n">circuit</span>
 
-
-<span class="k">def</span><span class="w"> </span><span class="nf">RunMeQC</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span><span class="n">num_shots</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
-    <span class="n">numQubits</span><span class="o">=</span><span class="n">qc</span><span class="o">.</span><span class="n">num_qubits</span>
-    <span class="n">forward</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">numQubits</span><span class="p">))</span>
-    <span class="n">reverse</span><span class="o">=</span><span class="n">forward</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">forward</span><span class="p">,</span><span class="n">reverse</span><span class="p">)</span>
-    <span class="n">backend</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;ibm_lagos&#39;</span><span class="p">)</span>
-    <span class="n">job</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span><span class="n">shots</span><span class="o">=</span><span class="n">num_shots</span><span class="p">)</span>
-    <span class="c1">#result = job.result()</span>
-    <span class="k">return</span> <span class="n">job</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -888,45 +786,31 @@ Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_
 </pre></div>
 </div>
 <p>Go ahead and try it out</p>
-<div class="cell docutils container">
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)])</span>
-<span class="n">state</span><span class="o">=</span><span class="n">MakeState</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-<span class="n">PrintDirac</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-<span class="n">PlotState</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-<span class="n">b</span><span class="o">=</span><span class="n">qutip</span><span class="o">.</span><span class="n">Bloch</span><span class="p">()</span>
-<span class="n">PlotBloch</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="n">b</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
-<span class="n">b</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5477225575051661+0j)|0&gt; + (-0.8366600265340756+0j)|1&gt; + 
-</pre></div>
 </div>
-<img alt="_images/5d5b1c6430cc52dc9bcc21e0d90d4816b676342d61f4ac8eca8518589a861a05.png" src="_images/5d5b1c6430cc52dc9bcc21e0d90d4816b676342d61f4ac8eca8518589a861a05.png" />
-<img alt="_images/f326aa548cf19e1d2a69dcb32cf2ba3c2af5667a3078e6cf187746232c2f62b7.png" src="_images/f326aa548cf19e1d2a69dcb32cf2ba3c2af5667a3078e6cf187746232c2f62b7.png" />
-</div>
-</div>
-<p>Let’s go ahead and plot these three states</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p>Let’s go ahead and plot these three states</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(|0\rangle \equiv [1,0]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(|1\rangle \equiv [0,1]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(1/\sqrt{2} |0\rangle + 1/\sqrt{2} |1\rangle \equiv [1/\sqrt{2},1/\sqrt{2}]\)</span></p></li>
 </ul>
 <p>Pay special attention to where those three states are on the Bloch Sphere</p>
-<div class="cell docutils container">
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Plot the three states here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-one-qubit-gates">
 <h3>b. One qubit gates<a class="headerlink" href="#b-one-qubit-gates" title="Permalink to this heading">#</a></h3>
-<p>Quantum circuits are made out of quantum gates. Let us start by considering 1-qubit gates.  The 1-qubit gate rotates states around the Bloch sphere.  Three special gates are <code class="docutils literal notranslate"><span class="pre">rx</span></code>, <code class="docutils literal notranslate"><span class="pre">ry</span></code>, and <code class="docutils literal notranslate"><span class="pre">rz</span></code> which respectively rotate around the X, Y, and Z axis. These gates take an angle and a wire - i.e. <code class="docutils literal notranslate"><span class="pre">rx(0.3*np.pi,0)</span></code> will rotate <span class="math notranslate nohighlight">\(1/3 \pi\)</span> around the X axis.</p>
+<p>Quantum circuits are made out of quantum gates. Let us start by considering 1-qubit gates.  The 1-qubit gate rotates states around the Bloch sphere.  Three special gates are <code class="docutils literal notranslate"><span class="pre">rx</span></code>, <code class="docutils literal notranslate"><span class="pre">ry</span></code>, and <code class="docutils literal notranslate"><span class="pre">rz</span></code> which respectively rotate around the X, Y, and Z axis. These gates take an angle and a wire - i.e. <code class="docutils literal notranslate"><span class="pre">rx(1/3*np.pi,0)</span></code> will rotate <span class="math notranslate nohighlight">\(1/3 \pi\)</span> around the X axis.</p>
 <p>To set up your circuit you can do</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="c1">#Build your circuit here</span>
@@ -935,38 +819,43 @@ Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_
 </pre></div>
 </div>
 <p>Go ahead and figure out how to use <code class="docutils literal notranslate"><span class="pre">rx</span></code> gate to move from a <span class="math notranslate nohighlight">\(|0\rangle\)</span> to a <span class="math notranslate nohighlight">\(|1\rangle\)</span> state.</p>
-<div class="cell docutils container">
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now we want to go ahead and use <code class="docutils literal notranslate"><span class="pre">ry</span></code> to go from <span class="math notranslate nohighlight">\(|0\rangle \rightarrow 1/\sqrt{2}|0\rangle + 1/\sqrt{2}|1\rangle\)</span>.  Write such a circuit.  Then check to see what your circuit does to the state <span class="math notranslate nohighlight">\(|1\rangle\)</span> (you can get this using your other circuit from above).</p>
-<p>So far we’ve seen we can get half <span class="math notranslate nohighlight">\(|0\rangle\)</span> and half <span class="math notranslate nohighlight">\(|1\rangle\)</span>.  We can also adjust states to get more of <span class="math notranslate nohighlight">\(|1\rangle\)</span> then <span class="math notranslate nohighlight">\(|0\rangle\)</span> (or visa versa).  Generically we can get a state
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p>Now we want to go ahead and use <code class="docutils literal notranslate"><span class="pre">ry</span></code> to go from <span class="math notranslate nohighlight">\(|0\rangle \rightarrow 1/\sqrt{2}|0\rangle + 1/\sqrt{2}|1\rangle\)</span>.  Write such a circuit.  Then check to see what your circuit does to the state <span class="math notranslate nohighlight">\(|1\rangle\)</span> (you can get this using your other circuit from above).</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p>So far we’ve seen we can get half <span class="math notranslate nohighlight">\(|0\rangle\)</span> and half <span class="math notranslate nohighlight">\(|1\rangle\)</span>.  We can also adjust states to get more of <span class="math notranslate nohighlight">\(|1\rangle\)</span> then <span class="math notranslate nohighlight">\(|0\rangle\)</span> (or visa versa).  Generically we can get a state
 <span class="math notranslate nohighlight">\(\cos(\theta) |0\rangle + \sin(\theta) e^{i\phi} |1\rangle\)</span>.</p>
 <p>If we had such a state, after measurement we get “0” with probability <span class="math notranslate nohighlight">\(\cos^2\theta\)</span> and “1” with probability <span class="math notranslate nohighlight">\(\sin^2\theta\)</span>.<br />
 Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\theta =1\)</span> so we either get “0” or “1”.</p>
 <p>To produce this state with <span class="math notranslate nohighlight">\(\phi=0\)</span>, we can use the gate <code class="docutils literal notranslate"><span class="pre">qc.ry(2*theta,wire)</span></code> which takes <span class="math notranslate nohighlight">\(|0\rangle \rightarrow \cos \theta |0\rangle + \sin \theta |1\rangle\)</span></p>
-<ul class="simple">
-<li><p>Produce some plots with <span class="math notranslate nohighlight">\(\theta=0.5\)</span> and check to make sure it gives you the right amplitudes.</p></li>
-</ul>
-<div class="cell docutils container">
+<p>Produce the state <span class="math notranslate nohighlight">\(\cos(0.5)|0\rangle + \sin(0.5)|1\rangle\)</span> and check to make sure it gives you the right amplitudes.</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now, make a circuit that rotates  <code class="docutils literal notranslate"><span class="pre">rx</span></code> and <code class="docutils literal notranslate"><span class="pre">rz</span></code> both by <span class="math notranslate nohighlight">\(0.3 \pi\)</span>.</p>
-<div class="cell docutils container">
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p>Now, make a circuit that rotates  <code class="docutils literal notranslate"><span class="pre">rx</span></code> and <code class="docutils literal notranslate"><span class="pre">rz</span></code> both by <span class="math notranslate nohighlight">\(0.3 \pi\)</span>.</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Notice that by smartly choosing the angles around <code class="docutils literal notranslate"><span class="pre">rx</span></code> and <code class="docutils literal notranslate"><span class="pre">rz</span></code> and then <code class="docutils literal notranslate"><span class="pre">rx</span></code> again you should be able to take <span class="math notranslate nohighlight">\(|0\rangle\)</span> to any state and <span class="math notranslate nohighlight">\(|1\rangle\)</span> to any state which is orthogonal to <span class="math notranslate nohighlight">\(|0\rangle\)</span>.</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p>Notice that by smartly choosing the angles around <code class="docutils literal notranslate"><span class="pre">rx</span></code> and <code class="docutils literal notranslate"><span class="pre">rz</span></code> and then <code class="docutils literal notranslate"><span class="pre">rx</span></code> again you can produce an arbitrary rotation on the sphere and therefore take <span class="math notranslate nohighlight">\(|0\rangle\)</span> and <span class="math notranslate nohighlight">\(|1\rangle\)</span> to any two orthogonal states.</p>
 </section>
 <section id="c-seeing-the-rotation">
 <h3>c.  Seeing the rotation<a class="headerlink" href="#c-seeing-the-rotation" title="Permalink to this heading">#</a></h3>
@@ -982,17 +871,14 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 <span class="n">b</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/09029cbc7485df00c9b7351599fc45c5d50239257d5db9baa507047aeafd08d7.png" src="_images/09029cbc7485df00c9b7351599fc45c5d50239257d5db9baa507047aeafd08d7.png" />
 </div>
-</div>
-</section>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="d-measuring-the-state">
 <h3>d. Measuring the state<a class="headerlink" href="#d-measuring-the-state" title="Permalink to this heading">#</a></h3>
 <p>So far we’ve been cheating by looking at the quantum state. In the real world, you can’t do that.  Instead you have to measure at the end of your circuit.  The RunMe circuit returns two parameters.  The second one is measurement outcomes - i.e.</p>
@@ -1003,48 +889,30 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot_histgoram</span><span class="p">(</span><span class="n">measure</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Go ahead and measure the outcomes of a state rotated around the X axis by <span class="math notranslate nohighlight">\(0.3\pi\)</span>. See that it gives you the expected raction of 0 and 1.</p>
-<div class="cell docutils container">
+<p>Go ahead and measure the outcomes of a state rotated around the X axis by <span class="math notranslate nohighlight">\(0.3\pi\)</span>. See that it gives you the expected raction of 0 and 1.  Remember that the probability should be equal to the amplitude squared.</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
 <section id="exercise-2-two-qubits-34-points">
 <h2>Exercise 2: Two qubits (34 points)<a class="headerlink" href="#exercise-2-two-qubits-34-points" title="Permalink to this heading">#</a></h2>
 <p>In this exercise we will see how to build quantum states of two qubits.</p>
 <section id="a-control-not-gates">
 <h3>a. Control-not gates<a class="headerlink" href="#a-control-not-gates" title="Permalink to this heading">#</a></h3>
-<p><em>The controlled-not gate:</em> The key gate for two qubits is the control-not gate (<code class="docutils literal notranslate"><span class="pre">qc.cx(0,1)</span></code>.  The key gate “nots” the second wire (wire 1) if the first wire is “1” (wire 0).  Let’s check it out.  Apply the “control-not” to a state <span class="math notranslate nohighlight">\(|00\rangle\)</span> and to a state <span class="math notranslate nohighlight">\(|10\rangle\)</span> and print out the state (i.e. <code class="docutils literal notranslate"><span class="pre">RunMe</span></code>). Don’t put in a measurement.</p>
-<p>To apply a control-not gate you want to do <code class="docutils literal notranslate"><span class="pre">circuit.cx(wire)</span></code></p>
-<div class="cell docutils container">
+<p><em>The controlled-not gate:</em> The key gate for two qubits is the control-not gate (<code class="docutils literal notranslate"><span class="pre">circuit.cx(0,1)</span></code>).  The key gate “nots” the second wire (wire 1) if the first wire is “1” (wire 0).  Let’s check it out.  Apply the “control-not” to a state <span class="math notranslate nohighlight">\(|00\rangle\)</span> and to a state <span class="math notranslate nohighlight">\(|10\rangle\)</span> and print out the state (not the measurement outcome)</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Circuit here applying control-not to |00&gt;.  Print the state when you&#39;re done.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1+0j) | 00 &gt;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Circuit here applying control-not to |10&gt;.  Print the state when you&#39;re done.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1+0j) | 11 &gt;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-build-an-epr-pair">
 <h3>b.  Build an EPR Pair<a class="headerlink" href="#b-build-an-epr-pair" title="Permalink to this heading">#</a></h3>
 <p>The most interesting two qubit state is an EPR pair, <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}\left(|00\rangle + |11\rangle\right)\)</span>.    You can build it with a Hadamard and a CNOT.  Go ahead and try different things and figure out how to build yourself an EPR pair.  You can start out with</p>
@@ -1053,75 +921,32 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 <span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">quantumWires</span><span class="p">,</span><span class="n">classicalWires</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>to start out a quantum circuit with two wires.  You can’t plot this on the bloch sphere but you can still plot it with <code class="docutils literal notranslate"><span class="pre">PlotState</span></code>.  Go ahead and do this.</p>
-<div class="cell docutils container">
+<p>to start out a quantum circuit with two wires.  You can’t plot this on the bloch sphere but you can still plot it with <code class="docutils literal notranslate"><span class="pre">PlotState</span></code>.  =</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Make an EPR Pair. It can be done with Hadamards and CNOTs.  Run it and look at the state when you&#39;re done.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-measuring-epr-pairs">
 <h3>c. Measuring EPR Pairs<a class="headerlink" href="#c-measuring-epr-pairs" title="Permalink to this heading">#</a></h3>
-<p>Let’s go ahead and measure your EPR circuit above plotting the histogram of your measurements.</p>
-<div class="cell docutils container">
+<p>Now that you’ve made an EPR pair, let’s go ahead and measure your EPR circuit above plotting the histogram of your measurements.</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Do the same thing with the EPR Pair but now look at the measurements.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>There is something very powerful here.  If you get a “0” on the top wire, then you always get a “0” on the bottom wire.  If you get a “1” on the top wire, then you get a “1” on bottom wire.  This is even the case if these wires are taken miles apart before you measure.</p>
-</section>
-<section id="d-entanglement-extra-credit-5-points">
-<h3>d. Entanglement (Extra Credit: 5 points)<a class="headerlink" href="#d-entanglement-extra-credit-5-points" title="Permalink to this heading">#</a></h3>
-<p>The EPR pair is called entangled.<br />
-<strong>Not entangled</strong> means<br />
-Pr(wires measures “00”)  = Pr(wire 0 measures “0”) <span class="math notranslate nohighlight">\(\times\)</span> Pr(wire 1 measures “0”)
-<em>Note that when you check things you aren’t going to get this exactly even if things are independent because things are stochastic.  If you’re careful you can compute error bars but otherwise use reasonable judgement</em></p>
-<p>We want to check if things are entangled.  To accomplish this, let’s write a function to measure the probability that wire <span class="math notranslate nohighlight">\(i\)</span> is 0 - i.e. <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">wire_i_probability(myCounts,wire_i)</span></code> (you can assume <code class="docutils literal notranslate"><span class="pre">wire_i</span></code> will either be 0 or 1).</p>
-<p>Now write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">wires_probability(myCounts)</span></code> which returns the probability that the two wires are “00”.</p>
-<p>Given these two functions we want to see which circuits produce entangled states.  In particular check</p>
-<ul class="simple">
-<li><p>The EPR Pair</p></li>
-<li><p>A circuit you generate which has no two wire gates in it (i.e. no CNOT)
-and demonstrate what you find.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Measure the probability of getting &quot;0&quot; on the wire `wire`</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">Probability</span><span class="p">(</span><span class="n">myCounts</span><span class="p">,</span><span class="n">wire</span><span class="p">):</span>
-    <span class="n">zeroProb</span><span class="o">=</span><span class="mf">0.0</span>
-    <span class="k">if</span> <span class="n">wire</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-
-    <span class="k">elif</span> <span class="n">wire</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">zeroProb</span><span class="o">/</span><span class="mf">1024.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-8-9fe96e3ec3ad&gt;&quot;</span><span class="gt">, line </span><span class="mi">6</span>
-    <span class="k">elif</span> <span class="n">wire</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
-    <span class="o">^</span>
-<span class="ne">IndentationError</span>: expected an indented block after &#39;if&#39; statement on line 4
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Now check the entanglement of the EPR pair and a state you make only using 1-qubit gates.</span>
-</pre></div>
-</div>
-</div>
-</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p>There is something very powerful here.  If you get a “0” on the top wire, then you always get a “0” on the bottom wire.  If you get a “1” on the top wire, then you get a “1” on bottom wire.  This is even the case if these wires are taken miles apart before you measure.</p>
 </section>
 </section>
 <section id="exercise-3-grover-s-algorithm">
 <h2>Exercise 3:  Grover’s Algorithm<a class="headerlink" href="#exercise-3-grover-s-algorithm" title="Permalink to this heading">#</a></h2>
 <p>In this exercise, we are going to implement Grover’s algorithm.  Grover’s algorithm takes a unitary which marks an element <span class="math notranslate nohighlight">\(i\)</span> and uses that as a subroutine with more circuit elements so that, after measurementt, you sample the marked element <span class="math notranslate nohighlight">\(i\)</span>.</p>
-<p>To do this we are going to need to put together a lot of different circuit elements.  Let’s start with the unitary which does the marking which we will give you:</p>
+<p>To do this we are going to need to put together a lot of different circuit elements.  Let’s start with the unitary which does the marking which we will give you.  In this case it’s going to mark element 3 by taking it and changing its sign.  Go ahead and run this to see explicitly what it does.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Check Mark</span>
 <span class="n">circuit</span><span class="o">=</span><span class="n">InitializeCircuitRandom</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
@@ -1131,24 +956,14 @@ and demonstrate what you find.</p></li>
 <span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="n">myTitle</span><span class="o">=</span><span class="s2">&quot;Hopefully marked state&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Check Mark</span>
-<span class="n">circuit</span><span class="o">=</span><span class="n">InitializeCircuitRandom</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
-<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="n">myTitle</span><span class="o">=</span><span class="s2">&quot;Initial Random State&quot;</span><span class="p">)</span>
-<span class="n">circuit</span><span class="o">=</span><span class="n">Mark</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
-<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="n">myTitle</span><span class="o">=</span><span class="s2">&quot;Hopefully marked state&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/0490fe40713058c376a3f17e8c0b9c72a815ea6563238cc7e0ea7474ecd2aec8.png" src="_images/0490fe40713058c376a3f17e8c0b9c72a815ea6563238cc7e0ea7474ecd2aec8.png" />
-<img alt="_images/91727f768e111243546cf05969e103880425050cdf2629e5ef537766b2716fd8.png" src="_images/91727f768e111243546cf05969e103880425050cdf2629e5ef537766b2716fd8.png" />
 </div>
-</div>
-<section id="a-control-control-control-z">
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><section id="a-control-control-control-z">
 <h3>a. Control-Control-Control Z<a class="headerlink" href="#a-control-control-control-z" title="Permalink to this heading">#</a></h3>
 <p>Define a function <code class="docutils literal notranslate"><span class="pre">controlZ(N)</span></code> which generates the control-control-control-control Z on <span class="math notranslate nohighlight">\(n\)</span> qubits.  The first <span class="math notranslate nohighlight">\(n-1\)</span> qubits are targets which have to be 1 for the last Z qubit to happen.</p>
 <p>This is an example for <code class="docutils literal notranslate"><span class="pre">controlZ(5)</span></code>.</p>
@@ -1176,7 +991,14 @@ and demonstrate what you find.</p></li>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">0.7071067811865476</span><span class="o">+</span><span class="mi">0</span><span class="n">j</span><span class="p">)</span><span class="o">|</span><span class="mi">11010</span><span class="o">&gt;</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.7071067811865475</span><span class="o">+</span><span class="mi">0</span><span class="n">j</span><span class="p">)</span><span class="o">|</span><span class="mi">11011</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-</section>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-all-hadamards">
 <h3>b. All Hadamards<a class="headerlink" href="#b-all-hadamards" title="Permalink to this heading">#</a></h3>
 <p>Define a function <code class="docutils literal notranslate"><span class="pre">AllHadamard(n)</span></code> which builds <span class="math notranslate nohighlight">\(n\)</span> wires of Hadamards</p>
@@ -1188,7 +1010,14 @@ and demonstrate what you find.</p></li>
 </pre></div>
 </div>
 <p>and seeing that it produces a state which is uniform.  This is what we will use for the start of Grover’s algorithm.</p>
-</section>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-flipallbutzero">
 <h3>c. FlipAllButZero<a class="headerlink" href="#c-flipallbutzero" title="Permalink to this heading">#</a></h3>
 <p>Define <code class="docutils literal notranslate"><span class="pre">FlipAllButZero(n)</span></code>. which should flip all but the zero configurations on <span class="math notranslate nohighlight">\(n\)</span> bits.  It will us <span class="math notranslate nohighlight">\(n+1\)</span> wires (you need an ancilla).  The example below is the output for FlipAllbutZero(4)</p>
@@ -1199,15 +1028,22 @@ and demonstrate what you find.</p></li>
 </div>
 <p>You can test it your result by doing</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">=</span><span class="n">InitializeCircuitRandom</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
-<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="n">myTitle</span><span class="o">=</span><span class="s2">&quot;Initial State&quot;</span><span class="p">)</span>
 <span class="n">circuit</span><span class="o">=</span><span class="n">FlipAllButZero</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
-<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="n">PlotState</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="n">myTitle</span><span class="o">=</span><span class="s2">&quot;Flipped Circuit&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You should find that everything but the zero flipped.  It is ok if you are finding the zero flipped and nothing else.  Quantum states aren’t defined up to a global phase and so the flipping of everything is equivalent to doing nothing.</p>
-</section>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="d-invert">
 <h3>d. Invert<a class="headerlink" href="#d-invert" title="Permalink to this heading">#</a></h3>
 <p>Define the <code class="docutils literal notranslate"><span class="pre">Invert(N)</span></code> function.  This will also be on <span class="math notranslate nohighlight">\(N+1\)</span> wires.  Here you need to add together the AllHadamard and FlipAllButZero and AllHadamard again.</p>
@@ -1222,392 +1058,30 @@ and demonstrate what you find.</p></li>
 </pre></div>
 </div>
 <p>This will generate a random state and then invert it around the mean (shown in a blue dotted line).  Your mean before and after should be the same and everything else should flip around that dotted line.  (Also everything totally flipping is still allowed)</p>
-</section>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="e-running-grover-s-algorithm">
 <h3>e. Running Grover’s Algorithm<a class="headerlink" href="#e-running-grover-s-algorithm" title="Permalink to this heading">#</a></h3>
 <p>Put everything together to run Grover’s algorithm.</p>
 <img src="https://clark.physics.illinois.edu/qcPics/Grovers.png" width="600">
-</section>
-</section>
-<section id="exercise-4-quantum-key-distribution-ec-20-points">
-<h2>Exercise 4 Quantum Key Distribution (EC - 20 points)<a class="headerlink" href="#exercise-4-quantum-key-distribution-ec-20-points" title="Permalink to this heading">#</a></h2>
-<section id="a-one-time-pads">
-<h3>a. One time pads<a class="headerlink" href="#a-one-time-pads" title="Permalink to this heading">#</a></h3>
-<p>If Alice and Bob have two identical secret books of bits which agree, they could send secret messages to each other. Here’s a way to make a bunch of secret bits by sharing a quantum state.  After the quantum state is produced, they can separate their wires to be far apart.</p>
-<div class="cell docutils container">
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">MakeSinglet</span><span class="p">(</span><span class="n">qc</span><span class="p">):</span>
-    <span class="n">aliceWire</span><span class="o">=</span><span class="mi">0</span>
-    <span class="n">bobWire</span><span class="o">=</span><span class="mi">1</span>
-    <span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">aliceWire</span><span class="p">)</span>
-    <span class="n">qc</span><span class="o">.</span><span class="n">cx</span><span class="p">(</span><span class="n">aliceWire</span><span class="p">,</span><span class="n">bobWire</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">MakeSharedState</span><span class="p">(</span><span class="n">qc</span><span class="p">):</span>
-    <span class="n">MakeSinglet</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-    <span class="n">qc</span><span class="o">.</span><span class="n">barrier</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">qc</span>
-
-<span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">=</span><span class="n">MakeSharedState</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/deb64e0078a1a438b47ba8979fcfb6a0bfc64b75179cd727a394c9a707d2bcb9.png" src="_images/deb64e0078a1a438b47ba8979fcfb6a0bfc64b75179cd727a394c9a707d2bcb9.png" />
 </div>
-</div>
-<p>Let <code class="docutils literal notranslate"><span class="pre">AliceWire=0</span></code> and <code class="docutils literal notranslate"><span class="pre">BobWire=1</span></code> .</p>
+ <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p><strong>Acknowledgement:</strong></p>
 <ul class="simple">
-<li><p>Add some measurement to the circuit above</p></li>
-<li><p>execute this circuit 100 times (use <code class="docutils literal notranslate"><span class="pre">RunMe(qc,1)</span></code> so you only run one copy of it)</p></li>
-<li><p>store a list of Alice and Bob’s bits and report what fraction of the time they agree.</p></li>
+<li><p>Bryan Clark (original)</p></li>
 </ul>
-<p>For this latter task I find the following helpful: <code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">theKey=list(result.get_counts().keys())[0]</span></code>. <code class="docutils literal notranslate"><span class="pre">theKey</span></code> will be the bitstring of measured state <em>in reversed order</em> (i.e. <code class="docutils literal notranslate"><span class="pre">theKey[0]</span></code> is q0, <code class="docutils literal notranslate"><span class="pre">theKey[1]</span></code> is q1, etc)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aliceBits</span><span class="o">=</span><span class="p">[]</span>
-<span class="n">bobBits</span><span class="o">=</span><span class="p">[]</span>
-
-<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="c1">## After measurement how often do Alice and Bob&#39;s bits agree.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;They agree this fraction of the time: &quot;</span> <span class="p">,</span><span class="n">amountAgree</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">f96726f9186e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">bobBits</span><span class="o">=</span><span class="p">[]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1">## After measurement how often do Alice and Bob&#39;s bits agree.</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-
-<span class="ne">NameError</span>: name &#39;qc&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="b-eve-s-arrival">
-<h3>b. Eve’s arrival<a class="headerlink" href="#b-eve-s-arrival" title="Permalink to this heading">#</a></h3>
-<p>Unfortunately this approach has a problem.  Suppose that you’re sending an EPR pair to Alice and the eavesdropper Eve gets a hold of it.  Is their a way to have Eve sneakily get the message without Alice and Bob noticing?  Add some circuit for Eve.  Assume that she can do anything she wants to the state (and her wire) after the shared state is made but before it’s shipped off to Alice and Bob.</p>
-<p>Then, measure what fraction of the time Alice and Bob agree and what fraction of the time Eve has successfully figured out the bit.</p>
-<p><img alt="image.png" src="attachment:image.png" /></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">AliceBits</span><span class="o">=</span><span class="p">[]</span>
-<span class="n">EveBits</span><span class="o">=</span><span class="p">[]</span>
-<span class="n">BobBits</span><span class="o">=</span><span class="p">[]</span>
-<span class="n">eveWire</span><span class="o">=</span><span class="mi">2</span>
-<span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">=</span><span class="n">MakeSharedState</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-<span class="c1">###What can Eve do here so that she knows the secret bit and can&#39;t be detected by Alice and Bob</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">cx</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">barrier</span><span class="p">()</span>
-<span class="c1">### Eve is done now.</span>
-
-<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>  <span class="c1">#this is your measure from earlier.</span>
-
-<span class="c1">###How often do Alice and Bob&#39;s bits agree.</span>
-<span class="c1">### How often do Alice and Eve&#39;s bits agree.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">35</span><span class="n">d1d42d0720</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">BobBits</span><span class="o">=</span><span class="p">[]</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">eveWire</span><span class="o">=</span><span class="mi">2</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">qc</span><span class="o">=</span><span class="n">MakeSharedState</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1">###What can Eve do here so that she knows the secret bit and can&#39;t be detected by Alice and Bob</span>
-
-<span class="ne">NameError</span>: name &#39;QuantumCircuit&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p>If you’ve done it correctly you should find that Alice and Bob always agree but also Alice and Eve also always agree.  So our protocol was a good way to share some secrete bits but doesn’t work if Even can get a hold of the state before Alice and Bob gert it.  We need an improved protocol.</p>
-</section>
-<section id="c-an-improved-protocol">
-<h3>c. An improved protocol<a class="headerlink" href="#c-an-improved-protocol" title="Permalink to this heading">#</a></h3>
-<p>Let’s remove Eve for the moment and work on an improved protocol.
-Suppose Alice and Bob agree that for each of the 100 trials, Alice and Bob are going to flip a shared coin and decide to randomly put a Hadamard on both their wires if you get heads (<code class="docutils literal notranslate"><span class="pre">np.random.random()&gt;0.5</span></code>) and leave it alone otherwise (<em>Yes - I know flipping a shared coin is cheating.  We will fix it later</em>).  Emulate this new protocol and see how often Alice and Bob’s bits agree?  Store also an array which specifies when you decided to add the Hadamard.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Build here the improved protocol and see how often Alice and Bob&#39;s bits agree.</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="d-eve-in-the-improved-protocol">
-<h3>d. Eve in the improved protocol<a class="headerlink" href="#d-eve-in-the-improved-protocol" title="Permalink to this heading">#</a></h3>
-<p>Now add Eve back using your approach from (b).  How often do Alice and Bob agree?  How often do Alice and Eve agree?   Suppose Alice and Bob were willing to talk some - can they catch Eve’s eavsdropping and still have some useful random bits left if Eve wasn’t listening.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the same Eve technique as you did in (b) and see how often they agree.  If Alice and Bob&#39;s bits don&#39;t</span>
-<span class="c1"># always agree is their a way for Alice and Bob to then detect Eve&#39;s eavesdropping while still having</span>
-<span class="c1"># some one-time pad bits left.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice and Bob Agree:  0.74
-Alice and Eve Agree:  0.71
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="e-not-flipping-shared-coins">
-<h3>e.  Not flipping shared coins<a class="headerlink" href="#e-not-flipping-shared-coins" title="Permalink to this heading">#</a></h3>
-<p>In practice, Alice and Bob can’t randomly choose to both use the Hadamard gate at the same time.   Let’s assume instead they independently add a random Hadamard gate.  Modify your code to do this and record when Bob and Alice chose Hadamard.  Now write some code to allow Alice and Bob to identify when there is eavesdropping. To do this, Alice and Bob need to not only talk about what answers they got but also whether not they both added their Hadamard gate.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HadamardA</span><span class="o">=</span><span class="p">[]</span>
-<span class="n">HadamardB</span><span class="o">=</span><span class="p">[]</span>
-
-<span class="c1">## Now remove the cheating from the approach.</span>
-<span class="c1">## This time, Alice and Bob are going to have to talk about both the decisions they made (Hadamard or not)</span>
-<span class="c1">## as well as what result they get</span>
-
-<span class="n">mask</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">HadamardA</span><span class="p">)</span><span class="o">==</span><span class="p">(</span><span class="n">HadamardB</span><span class="p">)</span>
-
-<span class="c1">## How often do they agree if we only consider the cases when they made the same choice.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">0</span><span class="n">a1f5e87666f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## as well as what result they get</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> 
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">mask</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">HadamardA</span><span class="p">)</span><span class="o">==</span><span class="p">(</span><span class="n">HadamardB</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> 
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1">## How often do they agree if we only consider the cases when they made the same choice.</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="exercise-5-building-up-tools-ec-10-points">
-<h2>Exercise 5: Building up tools (EC - 10 points)<a class="headerlink" href="#exercise-5-building-up-tools-ec-10-points" title="Permalink to this heading">#</a></h2>
-<p>Now we are going to build up some tools and intuition so we can learn to build more complicated circuits.</p>
-<section id="a-initializing-a-binary-number">
-<h3>a. Initializing a binary number<a class="headerlink" href="#a-initializing-a-binary-number" title="Permalink to this heading">#</a></h3>
-<p>Often it is useful to get some binary state (like <span class="math notranslate nohighlight">\(|0110\rangle\)</span>) into your quantum computer.  Write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">Init(qc,myBinaryNumber)</span></code> which generates the state <span class="math notranslate nohighlight">\(|\textrm{myBinaryNumber}\rangle\)</span>. Run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Init</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span><span class="s1">&#39;011&#39;</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Init</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span><span class="n">myString</span><span class="o">=</span><span class="s1">&#39;000&#39;</span><span class="p">):</span>
-    <span class="c1">#write me</span>
-
-<span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">Init</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span><span class="s1">&#39;011&#39;</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-16-64a1f88e0e9c&gt;&quot;</span><span class="gt">, line </span><span class="mi">4</span>
-    <span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-     <span class="o">^</span>
-<span class="ne">IndentationError</span>: expected an indented block
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="b-a-sum-over-all-states">
-<h3>b. A sum over all states<a class="headerlink" href="#b-a-sum-over-all-states" title="Permalink to this heading">#</a></h3>
-<p>A useful state to be able to make is
-$<span class="math notranslate nohighlight">\(\frac{1}{\sqrt{N}}\sum_{i=1}^N |i\rangle\)</span>$</p>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">AllSum(qc,w)</span></code> which adds this circuit to qc for <span class="math notranslate nohighlight">\(N=2^w\)</span>.  Run it with <span class="math notranslate nohighlight">\(w=5\)</span> and draw out your circuit.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qr</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">cr</span> <span class="o">=</span> <span class="n">ClassicalRegister</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">qr</span><span class="p">,</span><span class="n">cr</span><span class="p">)</span>
-<span class="n">AllSum</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">qr</span><span class="p">,</span><span class="n">cr</span><span class="p">)</span>
-
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">7</span><span class="n">c39755fd900</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">qr</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">ClassicalRegister</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">qr</span><span class="p">,</span><span class="n">cr</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">AllSum</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">qr</span><span class="p">,</span><span class="n">cr</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;QuantumRegister&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now run the state on your simulator and measure how often you get various states.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run me looking at the measurements and see what happens</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="c-angle-of-a-random-gate">
-<h3>c.  Angle of a random gate<a class="headerlink" href="#c-angle-of-a-random-gate" title="Permalink to this heading">#</a></h3>
-<p>In this section, we are going to start out with a <span class="math notranslate nohighlight">\(R_z(\theta)\)</span> gate but we don’t know what <span class="math notranslate nohighlight">\(\theta\)</span> is.  Your goal is to use other gates to figure out <span class="math notranslate nohighlight">\(\theta\)</span>.  Write some code which returns your guess of <span class="math notranslate nohighlight">\(\theta\)</span>.  To add your random gate to your circuit, you may call RandomGate(qc).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">RandomGateHelp</span><span class="p">():</span>
-    <span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">RandomGate</span><span class="p">(</span><span class="n">qc</span><span class="p">):</span>
-        <span class="n">qc</span><span class="o">.</span><span class="n">rz</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">RandomGate</span>
-
-<span class="n">RandomGate</span><span class="o">=</span><span class="n">RandomGateHelp</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ReturnTheta</span><span class="p">():</span>
-    <span class="n">qr</span><span class="o">=</span><span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">cr</span><span class="o">=</span><span class="n">ClassicalRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">qr</span><span class="p">,</span><span class="n">cr</span><span class="p">)</span>
-    <span class="c1">#change this function somehow</span>
-    <span class="n">RandomGate</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-    <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">result</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
-    <span class="n">myCounts</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">myCounts</span><span class="p">)</span>
-    <span class="k">return</span> <span class="mf">0.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Theta is &quot;</span><span class="p">,</span><span class="n">ReturnTheta</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">1</span><span class="n">a8f8b58a905</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="nb">print</span><span class="p">(</span><span class="n">myCounts</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="k">return</span> <span class="mf">0.0</span>
-<span class="ne">---&gt; </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Theta is &quot;</span><span class="p">,</span><span class="n">ReturnTheta</span><span class="p">())</span>
-
-<span class="nn">&lt;ipython-input-19-1a8f8b58a905&gt;</span> in <span class="ni">ReturnTheta</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">ReturnTheta</span><span class="p">():</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">qr</span><span class="o">=</span><span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">cr</span><span class="o">=</span><span class="n">ClassicalRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">qr</span><span class="p">,</span><span class="n">cr</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="c1">#change this function somehow</span>
-
-<span class="ne">NameError</span>: name &#39;QuantumRegister&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="d-inverting-a-cnot">
-<h3>d. Inverting a CNOT<a class="headerlink" href="#d-inverting-a-cnot" title="Permalink to this heading">#</a></h3>
-<p>Suppose you have a quantum computer which can generate a CNOT where the control wire is smaller then the NOT wire - i.e. <code class="docutils literal notranslate"><span class="pre">qc.cx(i,j)</span></code> where <span class="math notranslate nohighlight">\(i&lt;j\)</span>.  Now, you need the gate <code class="docutils literal notranslate"><span class="pre">qc.cx(j,i)</span></code> . Figure out how to use 1-qubit gates and <code class="docutils literal notranslate"><span class="pre">qc.cx(i,j)</span></code> to build the gate <code class="docutils literal notranslate"><span class="pre">qc.cx(j,i)</span></code> and demonstrate that it works.  <em>Hint:</em> You can do this with one CNOT some number of Hadamards.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="e-deferred-measurements">
-<h3>e. Deferred Measurements<a class="headerlink" href="#e-deferred-measurements" title="Permalink to this heading">#</a></h3>
-<p>Suppose you have a calculation where you do a measurement in the middle of your simulation.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qr</span><span class="o">=</span><span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">cr</span><span class="o">=</span><span class="n">ClassicalRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">qr</span><span class="p">,</span><span class="n">cr</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">rx</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">rz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">3.</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">rx</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">5.</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">rz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">5.</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">ry</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/b10f15513f5170901f49f0d22125e71f601e9701c9ed547015aba597443d8fa4.png" src="_images/b10f15513f5170901f49f0d22125e71f601e9701c9ed547015aba597443d8fa4.png" />
-</div>
-</div>
-<p>We can measure the probabilities of the output:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_histogram</span><span class="p">(</span><span class="n">RunMe</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span><span class="o">.</span><span class="n">get_counts</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/7d95c9a386cfac208b6314cc54a733e8ae066ae5e499c984b3bc0fe9fcb2ef9c.png" src="_images/7d95c9a386cfac208b6314cc54a733e8ae066ae5e499c984b3bc0fe9fcb2ef9c.png" />
-</div>
-</div>
-<p>We want to rewrite the circuit on two wires so that you can do all the measurements at the end.  Figure out how to pull this off and show that you get the same probability distribution over the first wire.  You should be able to do this essentially independently of the gates that I include on the top wire. <em>Hint:</em> You want to essentially copy what would have been the result of the measurement to the bottom wire.  Then you can measure the bottom wire whenever since there are no gates there.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qr</span><span class="o">=</span><span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">cr</span><span class="o">=</span><span class="n">ClassicalRegister</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">qr</span><span class="p">,</span><span class="n">cr</span><span class="p">)</span>
-<span class="c1"># do stuff before the measurement which is the last thing you do</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-<span class="c1">#only plot the probability of wire 1. You want to get the same result.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="mi">58</span><span class="n">c437e115d3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">qr</span><span class="o">=</span><span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">cr</span><span class="o">=</span><span class="n">ClassicalRegister</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">qc</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">qr</span><span class="p">,</span><span class="n">cr</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># do stuff before the measurement which is the last thing you do</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;QuantumRegister&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Acknowledgement:</strong></p>
-<ul class="simple">
-<li><p>Bryan Clark and Ryan Level (original)</p></li>
-</ul>
-<p>Copyright: 2021</p>
+<p>Copyright: 2025</p>
 <hr class="docutils" />
 </section>
 </section>
@@ -1687,7 +1161,6 @@ $<span class="math notranslate nohighlight">\(\frac{1}{\sqrt{N}}\sum_{i=1}^N |i\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-control-not-gates">a. Control-not gates</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-build-an-epr-pair">b.  Build an EPR Pair</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-measuring-epr-pairs">c. Measuring EPR Pairs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-entanglement-extra-credit-5-points">d. Entanglement (Extra Credit: 5 points)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-grover-s-algorithm">Exercise 3:  Grover’s Algorithm</a><ul class="nav section-nav flex-column">
@@ -1696,22 +1169,6 @@ $<span class="math notranslate nohighlight">\(\frac{1}{\sqrt{N}}\sum_{i=1}^N |i\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-flipallbutzero">c. FlipAllButZero</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-invert">d. Invert</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-running-grover-s-algorithm">e. Running Grover’s Algorithm</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-quantum-key-distribution-ec-20-points">Exercise 4 Quantum Key Distribution (EC - 20 points)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-one-time-pads">a. One time pads</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-eve-s-arrival">b. Eve’s arrival</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-an-improved-protocol">c. An improved protocol</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-eve-in-the-improved-protocol">d. Eve in the improved protocol</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-not-flipping-shared-coins">e.  Not flipping shared coins</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-building-up-tools-ec-10-points">Exercise 5: Building up tools (EC - 10 points)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-initializing-a-binary-number">a. Initializing a binary number</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-a-sum-over-all-states">b. A sum over all states</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-angle-of-a-random-gate">c.  Angle of a random gate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-inverting-a-cnot">d. Inverting a CNOT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-deferred-measurements">e. Deferred Measurements</a></li>
 </ul>
 </li>
 </ul>
