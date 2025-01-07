@@ -374,14 +374,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-state-overlaps">c. State overlaps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-fluxonium">Exercise 2: Fluxonium</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fluxonium-hamiltonian">a. Fluxonium Hamiltonian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">b. Time Evolution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-the-bloch-sphere">c.  The Bloch Sphere</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-fluxonium-with-scqubits-extra-credit-10-points">Exercise 3: Fluxonium with scqubits (Extra credit: 10 points)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">b. Time Evolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-the-bloch-sphere">c.  The Bloch Sphere</a></li>
 </ul>
             </nav>
         </div>
@@ -400,106 +394,20 @@ document.write(`
 <li><p>Date:</p></li>
 <li><p>Time spent on this assignment:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>scqubits
-<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qiskit
-<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qiskit<span class="o">[</span>visualization<span class="o">]</span><span class="p">;</span>
-<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qiskit_aer<span class="p">;</span>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qiskit<span class="o">[</span>visualization<span class="o">]</span><span class="p">;</span>
 <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qutip
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qiskit_aer<span class="p">;</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scqubits
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading scqubits-4.1.0-py3-none-any.whl.metadata (2.5 kB)
-Requirement already satisfied: cycler in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (0.12.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cython&gt;=0.29.20 (from scqubits)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading Cython-3.0.11-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.2 kB)
-Requirement already satisfied: matplotlib&gt;=3.5.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (3.7.5)
-Requirement already satisfied: numpy&gt;=1.14.2 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (1.24.4)
-Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (1.10.1)
-Requirement already satisfied: dill in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (0.3.9)
-Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (1.13.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting tqdm (from scqubits)
-  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
-Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from scqubits) (4.12.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qutip&lt;5.0 (from scqubits)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qutip-4.7.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (1.1.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (4.55.3)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (1.4.7)
-Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (24.2)
-Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (10.4.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (3.1.4)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (2.9.0.post0)
-Requirement already satisfied: importlib-resources&gt;=3.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.5.1-&gt;scqubits) (6.4.5)
-Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy-&gt;scqubits) (1.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.5.1-&gt;scqubits) (3.20.2)
-Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&gt;=3.5.1-&gt;scqubits) (1.17.0)
-Downloading scqubits-4.1.0-py3-none-any.whl (6.5 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/6.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.5/6.5 MB</span> <span class=" -Color -Color-Red">36.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading Cython-3.0.11-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.6 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.6/3.6 MB</span> <span class=" -Color -Color-Red">152.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qutip-4.7.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/16.8 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.3/16.8 MB</span> <span class=" -Color -Color-Red">35.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━ <span class=" -Color -Color-Green">11.5/16.8 MB</span> <span class=" -Color -Color-Red">29.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/16.8 MB</span> <span class=" -Color -Color-Red">28.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: tqdm, cython, qutip, scqubits
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed cython-3.0.11 qutip-4.7.6 scqubits-4.1.0 tqdm-4.67.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qiskit in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (1.2.4)
-Requirement already satisfied: rustworkx&gt;=0.15.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (0.15.1)
-Requirement already satisfied: numpy&lt;3,&gt;=1.17 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (1.24.4)
-Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (1.10.1)
-Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (1.13.3)
-Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (0.3.9)
-Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (2.9.0.post0)
-Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (5.3.0)
-Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (4.12.2)
-Requirement already satisfied: symengine&lt;0.14,&gt;=0.11 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit) (0.13.0)
-Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit) (1.17.0)
-Requirement already satisfied: pbr&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit) (6.1.0)
-Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit) (1.3.0)
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qiskit[visualization] in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (1.2.4)
 Requirement already satisfied: rustworkx&gt;=0.15.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (0.15.1)
 Requirement already satisfied: numpy&lt;3,&gt;=1.17 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (1.24.4)
@@ -528,11 +436,45 @@ Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas&gt;=1.2 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2.0.3)
 Requirement already satisfied: pbr&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit[visualization]) (6.1.0)
 Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit[visualization]) (1.3.0)
-Requirement already satisfied: zipp&gt;=3.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.3-&gt;qiskit[visualization]) (3.20.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2024.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.3-&gt;qiskit[visualization]) (3.20.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2024.2)
 Requirement already satisfied: tzdata&gt;=2022.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2024.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qutip
+  Using cached qutip-5.0.1.tar.gz (6.4 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+?25h  Getting requirements to build wheel ... ?25l?25hcanceled
+<span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
+
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qiskit_aer in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (0.15.1)
@@ -549,44 +491,29 @@ Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/
 Requirement already satisfied: symengine&lt;0.14,&gt;=0.11 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (0.13.0)
 Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.17.0)
 Requirement already satisfied: pbr&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (6.1.0)
-Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.3.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qutip in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (4.7.6)
-Requirement already satisfied: numpy&gt;=1.16.6 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (1.24.4)
-Requirement already satisfied: scipy&lt;1.13.0,&gt;=1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (1.10.1)
-Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qutip) (24.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.3.0)
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pylab</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">scipy.linalg</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scqubits</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">animation</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scqubits</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">transpile</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit_aer</span><span class="w"> </span><span class="kn">import</span> <span class="n">AerSimulator</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_histogram</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.circuit.library.standard_gates</span><span class="w"> </span><span class="kn">import</span> <span class="n">ZGate</span><span class="p">,</span> <span class="n">XGate</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_bloch_vector</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_distribution</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumCircuit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">qiskit</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">qutip</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.circuit.quantumregister</span><span class="w"> </span><span class="kn">import</span> <span class="n">AncillaRegister</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pylab</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.circuit.library</span><span class="w"> </span><span class="kn">import</span> <span class="n">MCMT</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">transpile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit_aer</span><span class="w"> </span><span class="kn">import</span> <span class="n">AerSimulator</span>
+
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
@@ -602,38 +529,17 @@ Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.8.18/x
     <span class="k">return</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="p">;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 
-<span class="n">sigma_x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]],</span><span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
-<span class="n">sigma_z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span><span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">PrintDirac</span><span class="p">(</span><span class="n">out_state_a</span><span class="p">):</span>
-  <span class="n">out_state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">out_state_a</span><span class="p">)</span>
-  <span class="n">l</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">out_state</span><span class="p">)</span>
-  <span class="n">num_qubits</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">out_state</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">out_state</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">0</span><span class="p">):</span>
-      <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_state</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;|&#39;</span><span class="o">+</span><span class="nb">bin</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">num_qubits</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; + &#39;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">AddCircuits</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">):</span>
+  <span class="n">numQubits</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">num_qubits</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">theCircuits</span><span class="p">])</span>
+  <span class="n">numQubits</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">numQubits</span><span class="p">)</span>
+  <span class="n">circuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">numQubits</span><span class="p">,</span><span class="n">numQubits</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">)):</span>
+    <span class="n">circuit</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">qubits</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">theCircuits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)))</span>
+  <span class="k">return</span> <span class="n">circuit</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">MakeState</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
-  <span class="n">numWires</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))))</span>
-  <span class="n">qc1</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">numWires</span><span class="p">,</span><span class="n">numWires</span><span class="p">)</span>
-  <span class="n">qc1</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-  <span class="n">a</span><span class="p">,</span><span class="n">_</span><span class="o">=</span><span class="n">RunCircuit</span><span class="p">(</span><span class="n">qc1</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">a</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">PlotBloch</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">bb</span><span class="p">):</span>
-  <span class="n">vv</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-  <span class="c1">#print(vv)</span>
-  <span class="n">a</span><span class="o">=</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-  <span class="n">b</span><span class="o">=</span><span class="n">vv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-  <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
-  <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
-  <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">a</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
-  <span class="c1">#print(x,y,z)</span>
-  <span class="n">bb</span><span class="o">.</span><span class="n">add_vectors</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">])</span>
-  <span class="k">return</span>  <span class="c1">#plot_bloch_vector([x,y,z])</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">RunCircuit</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
   <span class="n">numQubits</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">num_qubits</span>
   <span class="k">if</span> <span class="n">a</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
     <span class="n">numQubits</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">numQubits</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)</span>
@@ -651,46 +557,24 @@ Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.8.18/x
   <span class="k">return</span> <span class="n">resultA</span><span class="o">.</span><span class="n">data</span><span class="p">()[</span><span class="s1">&#39;myStateVector&#39;</span><span class="p">],</span><span class="n">resultB</span><span class="o">.</span><span class="n">data</span><span class="p">()[</span><span class="s1">&#39;counts&#39;</span><span class="p">]</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">AddCircuits</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">):</span>
-  <span class="n">numQubits</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">num_qubits</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">theCircuits</span><span class="p">])</span>
-  <span class="n">numQubits</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">numQubits</span><span class="p">)</span>
-  <span class="n">circuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">numQubits</span><span class="p">,</span><span class="n">numQubits</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">)):</span>
-    <span class="n">circuit</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="n">theCircuits</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">qubits</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">theCircuits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)))</span>
-  <span class="k">return</span> <span class="n">circuit</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">MakeState</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+  <span class="n">numWires</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">v</span><span class="p">)))))</span>
+  <span class="n">qc1</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">numWires</span><span class="p">,</span><span class="n">numWires</span><span class="p">)</span>
+  <span class="n">qc1</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+  <span class="n">a</span><span class="p">,</span><span class="n">_</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">qc1</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">a</span>
 
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">AddBlochSphere</span><span class="p">(</span><span class="n">overlap</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">withArrow</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">overlap</span><span class="o">.</span><span class="n">conj</span><span class="p">(),</span> <span class="n">overlap</span><span class="p">)</span>
-    <span class="n">bvec</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
-    <span class="k">if</span> <span class="n">withArrow</span><span class="p">:</span>
-        <span class="n">sf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">([</span><span class="mi">0</span><span class="p">,],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,],[</span><span class="mi">0</span><span class="p">,],</span><span class="n">bvec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bvec</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bvec</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bvec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">bvec</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">bvec</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ax</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">MakeBlochSphere</span><span class="p">():</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="s2">&quot;3d&quot;</span><span class="p">})</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>
-    <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">:</span><span class="mi">100</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">:</span><span class="mi">100</span><span class="n">j</span><span class="p">]</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_box_aspect</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">ax</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">PlotBloch</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">bb</span><span class="p">):</span>
+  <span class="n">vv</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+  <span class="n">a</span><span class="o">=</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">b</span><span class="o">=</span><span class="n">vv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+  <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">a</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
+  <span class="n">bb</span><span class="o">.</span><span class="n">add_vectors</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">])</span>
+  <span class="k">return</span>
 
 <span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UserWarning: The new version of Cython, (&gt;= 3.0.0) is not supported.
- /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/qutip/__init__.py: 66
 </pre></div>
 </div>
 </div>
@@ -708,38 +592,37 @@ Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.8.18/x
 <section id="a-abstract-model-of-computation">
 <h3>a. Abstract Model of Computation<a class="headerlink" href="#a-abstract-model-of-computation" title="Permalink to this heading">#</a></h3>
 <p>Our target here is we want to go ahead and implement a gate using electronics.  The gate we are going to implement is the following gate:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">rx</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">50.</span><span class="p">)</span>
-<span class="n">circuit</span><span class="o">.</span><span class="n">rz</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">50.</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">rx</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">50.</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">rz</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">50.</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Let’s start by implementing this in qiskit.</p>
 <p>Run the gate <span class="math notranslate nohighlight">\(k\)</span> times (from <span class="math notranslate nohighlight">\(0 \leq k &lt; 400\)</span>) and graph (with two lines) the probability you would measure “0” and the probability you would measure “1” as a function of <span class="math notranslate nohighlight">\(k\)</span>.</p>
-<div class="cell docutils container">
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We know that the state of a single qubit is <span class="math notranslate nohighlight">\(\alpha |0\rangle + \beta |1\rangle\)</span> where <span class="math notranslate nohighlight">\(|\alpha|^2 + |\beta|^2=1\)</span>.   We might think that we could then represent the qubit by a point <span class="math notranslate nohighlight">\((\alpha, \beta)\)</span> which is on a circle of radius 1.  But <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are complex numbers so it’s not quite that simple - instead you can represent the qubit as a point on a sphere.  This is called the Bloch sphere.  (Technical point: You might think that you need four numbers to represent two complex numbers but it’s actually only three because of the normalization and relative phase).</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p>We know that the state of a single qubit is <span class="math notranslate nohighlight">\(\alpha |0\rangle + \beta |1\rangle\)</span> where <span class="math notranslate nohighlight">\(|\alpha|^2 + |\beta|^2=1\)</span>.   We might think that we could then represent the qubit by a point <span class="math notranslate nohighlight">\((\alpha, \beta)\)</span> which is on a circle of radius 1.  But <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are complex numbers so it’s not quite that simple - instead you can represent the qubit as a point on a sphere.  This is called the Bloch sphere.  (Technical point: You might think that you need four numbers to represent two complex numbers but it’s actually only three because of the normalization and relative phase).</p>
 <p>At the moment, it’s not important that you know how to perform this mapping but to understand for every qubit there is a point that it appears on the bloch sphere.</p>
-<p>Plot a qubit on the Bloch sphere using a numpy array of overlap that correspond to the overlap with <span class="math notranslate nohighlight">\(|0\rangle\)</span> and the overlap with <span class="math notranslate nohighlight">\(|1\rangle\)</span> (you’ve done it in QC1)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">overlap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.8</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)])</span>
-<span class="n">state</span> <span class="o">=</span> <span class="n">MakeState</span><span class="p">(</span><span class="n">overlap</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">qutip</span><span class="o">.</span><span class="n">Bloch</span><span class="p">()</span>
-<span class="n">PlotBloch</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<p>Plot the path of this gate (iterated over and over) on the Bloch sphere using something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">qutip</span><span class="o">.</span><span class="n">Bloch</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">[::</span><span class="mi">10</span><span class="p">]:</span>
+  <span class="n">PlotBloch</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="n">b</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
 <span class="n">b</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
 <hr class="docutils" />
 <section id="exercise-1-particle-in-a-box">
@@ -773,25 +656,28 @@ In order to do that matrix exponential you can use</p></li>
 <section id="a-hamiltonian-for-a-particle-in-a-box">
 <h2>a. Hamiltonian for a Particle in a Box<a class="headerlink" href="#a-hamiltonian-for-a-particle-in-a-box" title="Permalink to this heading">#</a></h2>
 <p>We can start by working with a particle in a box.  Consider a particle in a box of length 20 spanning <span class="math notranslate nohighlight">\(-10 \leq x \leq 10\)</span>.</p>
-<p>The Hamiltonian for a particle in a box is
-$<span class="math notranslate nohighlight">\( H=-\frac{\partial^2 }{\partial x^2} \)</span><span class="math notranslate nohighlight">\(
-with hard walls for any \)</span>|x|\geq 20$ outside the box.</p>
-<p>We need to convert this into a matrix. To do that, we should know from calculus that the stencil for a second derivative is
-$<span class="math notranslate nohighlight">\( \frac{\partial^2 }{\partial x^2} \equiv \frac{f(x+\delta) - 2 f(x) + f(x-\delta)}{\delta^2} \)</span>$</p>
+<p>The Hamiltonian for a particle in a box is</p>
+<div class="math notranslate nohighlight">
+\[ H=-\frac{\partial^2 }{\partial x^2} \]</div>
+<p>with hard walls for any <span class="math notranslate nohighlight">\(|x|\geq 20\)</span> outside the box.</p>
+<p>We need to convert this into a matrix. To do that, we should know from calculus that the stencil for a second derivative is</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial^2 }{\partial x^2} \equiv \frac{f(x+\delta) - 2 f(x) + f(x-\delta)}{\delta^2} \]</div>
 <p>We can let the rows and columns of the matrix <span class="math notranslate nohighlight">\(H\)</span> be indexed by the values of <span class="math notranslate nohighlight">\(x\)</span> - to get the values of <span class="math notranslate nohighlight">\(x\)</span>, we can do</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">delta_x</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">delta_x</span> <span class="o">=</span> <span class="mf">0.05</span>
 <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">delta_x</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Then the above stencil corresponds to the matrix
-$<span class="math notranslate nohighlight">\(
+<p>Then the above stencil corresponds to the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 H[i,j] = \begin{cases}
 2/(\delta x)^2 &amp; \text{if } i == j \\
 -1/(\delta x)^2 &amp; \text{if } \textrm{abs}(i-j)== 1\\
 0 &amp; \text{otherwise }
 \end{cases}
-\)</span>$</p>
+\end{split}\]</div>
 <ul class="simple">
 <li><p>Make the Hamiltonian matrix H</p></li>
 <li><p>diagonalize it and</p></li>
@@ -799,15 +685,16 @@ H[i,j] = \begin{cases}
 </ul>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## ANSWER HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p>The eigenvalues for a particle in a box are quantized.  They should be equal to
-$<span class="math notranslate nohighlight">\(E_n = \frac{\pi^2}{L^2}n^2\)</span><span class="math notranslate nohighlight">\(
-for \)</span>n={1,2,…}$.</p>
-<p>Plot the lowest five eigen-energies and compare them against this formula.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p>The eigenvalues for a particle in a box are quantized.  They should be equal to</p>
+<div class="math notranslate nohighlight">
+\[E_n = \frac{\pi^2}{L^2}n^2\]</div>
+<p>for <span class="math notranslate nohighlight">\(n=\{1,2,...\}\)</span>.</p>
+<p>Plot the lowest five eigen-energies and compare them against this formula (they should be close but possibly not quite on because the delta_x is too big)</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
@@ -944,8 +831,9 @@ Perform time evolution</p>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p>You will notice that by changing the magnetic field by a tiny amount and waiting for about 24 seconds, we’ve implemented a gate which takes <span class="math notranslate nohighlight">\(|0\rangle\)</span> to half <span class="math notranslate nohighlight">\(|0\rangle\)</span> and half <span class="math notranslate nohighlight">\(|1\rangle\)</span>.  Because this is probabilities that you are measuring, actually this gate is taking <span class="math notranslate nohighlight">\(|0\rangle \rightarrow \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)\)</span> (actually the plot you made isn’t sufficient information to distinguish between <span class="math notranslate nohighlight">\(+|1\rangle\)</span> and <span class="math notranslate nohighlight">\(-|1\rangle\)</span>.</p>
 <p>Actually, if you want more seconds (or less seconds) you actually get a whole manifold of states.  In the next two sections, we will better understand the manifold of gates we’ve made.</p>
+</section>
 <section id="c-the-bloch-sphere">
-<h3>c.  The Bloch Sphere<a class="headerlink" href="#c-the-bloch-sphere" title="Permalink to this heading">#</a></h3>
+<h2>c.  The Bloch Sphere<a class="headerlink" href="#c-the-bloch-sphere" title="Permalink to this heading">#</a></h2>
 <p>Using your results from (b), plot on the Bloch sphere your gate.
 Identify where on the Bloch sphere the initial point is and the point at <span class="math notranslate nohighlight">\(T=44\)</span> seconds.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
@@ -956,36 +844,6 @@ Identify where on the Bloch sphere the initial point is and the point at <span c
 </div>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
-</section>
-<section id="exercise-3-fluxonium-with-scqubits-extra-credit-10-points">
-<h2>Exercise 3: Fluxonium with scqubits (Extra credit: 10 points)<a class="headerlink" href="#exercise-3-fluxonium-with-scqubits-extra-credit-10-points" title="Permalink to this heading">#</a></h2>
-<section id="a">
-<h3>a.<a class="headerlink" href="#a" title="Permalink to this heading">#</a></h3>
-<p>In this exercise, we are going to replicate the above results using a python package called scqubits.  scqubits already knows about the fluxonium Hamiltonian and so we can just tell it that we want to have a fluxonium molecule by doing</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fluxonium</span> <span class="o">=</span> <span class="n">scqubits</span><span class="o">.</span><span class="n">Fluxonium</span><span class="p">(</span><span class="n">EJ</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
-                               <span class="n">EC</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
-                               <span class="n">EL</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span>
-                               <span class="n">flux</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
-                               <span class="n">cutoff</span> <span class="o">=</span> <span class="mi">110</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>The flux is in units of <span class="math notranslate nohighlight">\(2\pi\)</span> so previously we had a flux of <span class="math notranslate nohighlight">\(\pi\)</span>.  Now we have a flux of 0.5</p>
-<p>To get the Hamiltonian of the fluxonium molecule, you should use <code class="docutils literal notranslate"><span class="pre">fluxonium.hamiltonian()</span></code></p>
-<p>You may notice that if you print the Hamiltonian it looks different then the Hamiltonian that you generated in previous sections.  This is because the Hamiltonian is in a different basis.  You can essentially ignore this and do the same steps that you did before.  Use it to generate the absolute value and bloch sphere plots.</p>
-<p>There is an ambiguity here in the sign of the eigenstates.  Use this to change the eigenstate:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">vvv</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
-    <span class="n">vvv</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">vvv</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span>
-</pre></div>
-</div>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1053,14 +911,8 @@ Identify where on the Bloch sphere the initial point is and the point at <span c
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-state-overlaps">c. State overlaps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-fluxonium">Exercise 2: Fluxonium</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fluxonium-hamiltonian">a. Fluxonium Hamiltonian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">b. Time Evolution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-the-bloch-sphere">c.  The Bloch Sphere</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-fluxonium-with-scqubits-extra-credit-10-points">Exercise 3: Fluxonium with scqubits (Extra credit: 10 points)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">b. Time Evolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-the-bloch-sphere">c.  The Bloch Sphere</a></li>
 </ul>
   </nav></div>
 
