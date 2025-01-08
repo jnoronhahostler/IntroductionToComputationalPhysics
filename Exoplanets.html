@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Predator-Prey.html">Predator-Prey</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Climate.html">Climate Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FluidDynamics.html">Fluid Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="QC1.html">Quantum Computing 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QC1.html">Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="QC2.html">Building a Physical Qubit</a></li>
 </ul>
 
@@ -384,7 +384,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-find-a-better-fit-scipy">c. Find a better fit - <code class="docutils literal notranslate"><span class="pre">scipy</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-putting-everything-together-extra-credit-5-points">Exercise 4 - Putting everything together! (extra credit - 5 points)</a></li>
 </ul>
             </nav>
         </div>
@@ -403,13 +402,8 @@ document.write(`
 <li><p><strong>Date:</strong></p></li>
 <li><p><strong>Time spent on this assignment:</strong></p></li>
 </ul>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>https://clark.physics.illinois.edu/exo_helper.py
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -465,12 +459,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-07 23:45:43--  https://clark.physics.illinois.edu/exo_helper.py
-Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.220.149.166
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-08 21:17:39--  https://clark.physics.illinois.edu/exo_helper.py
+Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 18.220.149.166
 Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... connected.
 </pre></div>
 </div>
@@ -485,7 +481,7 @@ Saving to: ‘exo_helper.py.1’
 exo_helper.py.1       0%[                    ]       0  --.-KB/s               
 exo_helper.py.1     100%[===================&gt;]   1.69K  --.-KB/s    in 0s      
 
-2025-01-07 23:45:43 (1.49 GB/s) - ‘exo_helper.py.1’ saved [1729/1729]
+2025-01-08 21:17:39 (1.19 GB/s) - ‘exo_helper.py.1’ saved [1729/1729]
 </pre></div>
 </div>
 </div>
@@ -559,9 +555,8 @@ exo_helper.py.1     100%[===================&gt;]   1.69K  --.-KB/s    in 0s
 <p><strong>A lightning-fast tour of our special function</strong><br />
 To get our hands a little dirty and simulate the observed solar system radial velocities, we’ve gone and figured out the math and implemented it in a handy function!
 <code class="docutils literal notranslate"><span class="pre">get_planet_vxvy_barycentric(mass,t)</span></code> returns the planets’ x, y velocities in a barycentric (CM) coordinate system. Given the default masses below, the first item is the sun, the second Jupiter. If there’s a third mass (“Venus” let’s say), that’ll be the third entry.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the masses, in kg. The first is the sun, the second Jupiter, </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the masses, in kg. The first is the sun, the second Jupiter,</span>
 <span class="c1"># the third Venus.  </span>
-<span class="c1"># See https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size</span>
 <span class="n">mass</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;SunMass&quot;</span><span class="p">],</span><span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;JupiterMass&quot;</span><span class="p">],</span><span class="mf">0.0</span><span class="p">])</span>
 <span class="c1"># get vx, vy for the sun + jupiter + venus.</span>
 <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="n">get_planet_vxvy_barycentric</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
@@ -617,20 +612,20 @@ G\frac{m^3_{\text{planet}}}{m^2_{\text{star}}} &amp;= \frac{P}{2\pi}v^3_{\text{s
 \frac{m^3_{\text{planet}}}{m^2_{\text{star}}} &amp;= \frac{P\left(v_{\text{star}}\sin i\right)^3}{2\pi G \sin^3 i}
 \end{align}
 \end{split}\]</div>
-<p> <br />
- <br />
-$$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-13a1ab15-c2d5-43ad-942d-af8e897b4d29">
-<span class="eqno">(1)<a class="headerlink" href="#equation-13a1ab15-c2d5-43ad-942d-af8e897b4d29" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
 m^3_{\text{planet}}\sin^3 i &amp;= m^2_{\text{star}} \frac{P}{2\pi G}\left(v_{\text{star}}\sin i\right)^3\\
 m_{\text{planet}}\sin i &amp;= \left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{1/3} v_{\text{star}}\sin i\\
 &amp;=\left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{1/3} v_r\\
 &amp;\equiv m_{\text{projected}}.
-\end{align}\]</div>
-<p>$$</p>
+\end{align}
+\end{split}\]</div>
 <p>To summarize,</p>
 <div class="math notranslate nohighlight">
-\[ \boxed{m_\textrm{projected} = \left( \frac{m^2_\textrm{star} P }{ 2\pi G } \right)^{1/3} v_r }\]</div>
+\[
+\boxed{m_\textrm{projected} = \left( \frac{m^2_\textrm{star} P }{ 2\pi G } \right)^{1/3} v_r }
+\]</div>
 <p>Since we measure the period and the radial velocity, we can (if we have a good estimate of the star’s mass) determine a the “projected mass,” which is a lower limit on the planet’s mass since <span class="math notranslate nohighlight">\(m_\textrm{planet} \sin i \leq m_\textrm{planet}\)</span> . Since astronomers are generally able to make a reasonably good estimate of a star’s mass from its observable properties, we are able to evaluate the right side of the equation to solve for the planet’s projected mass.</p>
 <p><strong>Extracting the amplitude and period from our data</strong></p>
 <p>We would like to extract the planet’s projected mass from the radial velocity data. Recall that</p>
@@ -691,16 +686,16 @@ m_{\text{planet}}\sin i &amp;= \left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{
 <p>It is perfectly fine to use years as your unit of time, as long as ω has units of inverse years. Let’s say that your time and velocity arrays are named <code class="docutils literal notranslate"><span class="pre">tarray</span></code> (values are in years) and <code class="docutils literal notranslate"><span class="pre">varray</span></code> (values are in m/s). For each <span class="math notranslate nohighlight">\(\omega\)</span> value you can do the sum like this (take note of the use of 1j as the square root of -1):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">FT_integral</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tarray</span><span class="p">)):</span>
-    <span class="n">FT_integral</span> <span class="o">+=</span> <span class="n">varray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">tarray</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> 
+    <span class="n">FT_integral</span> <span class="o">+=</span> <span class="n">varray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">tarray</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 <span class="n">FT_integral</span> <span class="o">=</span> <span class="n">FT_integral</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Note:</strong> List comprehensions can make a large speedup here! This code will be slow, but try and make it as fast as possible if you have time.</p>
 <p>🦉Calculate the square of the magnitude of <code class="docutils literal notranslate"><span class="pre">FT_integral</span></code> at each ω value, then graph that as a function of <span class="math notranslate nohighlight">\(\omega\)</span>.  You may want to use a logarithmic y scale. You should see two clear peaks, corresponding to the orbital frequencies of Jupiter and Venus.</p>
-<p>Here are my plots. Note that in the second I am plotting frequency <span class="math notranslate nohighlight">\(f\)</span>, and not <span class="math notranslate nohighlight">\(\omega = 2\pi f\)</span> along the horizontal axis.</p>
+<p>Here is my plots. Note that I am plotting frequency <span class="math notranslate nohighlight">\(f\)</span>, and not <span class="math notranslate nohighlight">\(\omega = 2\pi f\)</span> along the horizontal axis.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/exoplanets13.png" width=600 alt="confirmedExoplanets"></img><br></div><div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWERE HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
@@ -734,16 +729,20 @@ m_{\text{planet}}\sin i &amp;= \left(\frac{m^2_{\text{star}} P}{2\pi G}\right)^{
 <p>Armed with an understanding of our model for radial velocity measurements, let’s take a look at real data from NASA.</p>
 <p>Epsilon Reticuli is a double star 59 light years away in the constellation Reticulum.<span class="xref myst"><sup>17</sup></span> The larger of the two stars is an orange sub-giant near the end of its life (it is on the way to becoming a red giant). Its smaller companion is a white dwarf, at a distance of 240 AU from the primary. (An AU is the radius of the earth’s orbit). Based on the spectral type (color and brightness) and our understanding of stellar evolution, astronomers estimate the mass of the primary to be ~1.2 <span class="math notranslate nohighlight">\(M_\odot\)</span>. NASA refers to the system using its “Henry Draper Catalogue”<span class="xref myst"><sup>18</sup></span> listing, HD 27442.</p>
 <p>In 2001 Butler et al. reported the discovery of HD 27442 b, an exoplanet orbiting the orange star at a distance of 1.2 AU. (As you might have noticed, astronomers name a star’s planets by following the name of the star with the letter b, c, d, etc. The host star is supposed to be the “a.” ) The planet is at least 1.5 times as massive as Jupiter, with an orbital period of 428 days.</p>
-<p>🦉Download the file <a class="reference external" href="https://courses.physics.illinois.edu/phys298owl/fa2019/code/UID_0019921_RVC_002.tbl.txt">UID_0019921_RVC_002.tbl.txt</a> from the code repository. We can do this with a trick:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<p>🦉Download the file <a class="reference external" href="https://courses.physics.illinois.edu/phys298owl/fa2019/code/UID_0019921_RVC_002.tbl.txt">UID_0019921_RVC_002.tbl.txt</a> from the code repository using</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
-<span class="c1">#you can also download it manually and upload to the same folder of the Jupyter notebook</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-07 23:45:44--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-08 21:17:40--  https://courses.physics.illinois.edu/phys246/fa2020/code/UID_0019921_RVC_002.tbl.txt
 Resolving courses.physics.illinois.edu (courses.physics.illinois.edu)... 130.126.151.14
 Connecting to courses.physics.illinois.edu (courses.physics.illinois.edu)|130.126.151.14|:443... 
 </pre></div>
@@ -759,10 +758,11 @@ Saving to: ‘UID_0019921_RVC_002.tbl.txt’
           UID_00199   0%[                    ]       0  --.-KB/s               
 UID_0019921_RVC_002 100%[===================&gt;]   4.88K  --.-KB/s    in 0s      
 
-2025-01-07 23:45:44 (2.50 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
+2025-01-08 21:17:40 (3.12 GB/s) - ‘UID_0019921_RVC_002.tbl.txt’ saved [4993/4993]
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>The file contains data from a NASA exoplanet archive<span class="xref myst"><sup>19</sup></span>  that are fully “reduced,” meaning that corrections for the motions of the telescope, earth, sun, and solar system around the galactic center have been removed. Since the file is plain text, you can open it and read it with any editor, including Jupyter’s. A header listing information about the measurements comprises the first 22 lines of the file.</p>
 <p>The header is followed by tabular data of the measured radial velocity spanning a period of about eight years. The three columns in each line of data hold the Julian date, the radial velocity, and the measurement uncertainty in the velocity. The Julian date is the number of days since noon (universal time) on January 1, 4713 BC. (There is a good converter on the Naval Observatory’s web site: see http://aa.usno.navy.mil/data/docs/JulianDate.php.)</p>
@@ -776,13 +776,15 @@ UID_0019921_RVC_002 100%[===================&gt;]   4.88K  --.-KB/s    in 0s
 data = np.genfromtxt(‘UID_0019921_RVC_002.tbl.txt’, skip_header=22)
 </pre></div>
 </div>
-<p>You can load an array of the zeroth column of data this way:</p>
+<p>You can load an array of the column of data this way:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time_array</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">varray</span><span class="o">=</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sigma_array</span><span class="o">=</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>🦉Please make a graph of the radial velocity as a function of year, setting the time of the first bin to zero. I suggest you set the plot’s aspect ratio via a set_aspect command so that the sinusoidal variations in velocity are easy to see:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span> 
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mf">0.0125</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -790,7 +792,7 @@ data = np.genfromtxt(‘UID_0019921_RVC_002.tbl.txt’, skip_header=22)
 <div><img src="https://clark.physics.illinois.edu/246img/exoplanets15.png" width=600 alt="confirmedExoplanets"></img><br></div><p>You can get data using <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">np.genfromtxt('UID_0019921_RVC_002.tbl.txt',</span> <span class="pre">skip_header=22)</span> </code>.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
@@ -845,7 +847,7 @@ I find:</p>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###ANSWER HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
@@ -854,11 +856,11 @@ I find:</p>
 </section>
 <section id="b-find-a-better-fit-manual">
 <h3>b. Find a better fit - Manual<a class="headerlink" href="#b-find-a-better-fit-manual" title="Permalink to this heading">#</a></h3>
-<p>In order to find out what the actual magnitude is, we’ll look at a best fit to determine the best <span class="math notranslate nohighlight">\(v_r\)</span>. First, determine a range of parameters <span class="math notranslate nohighlight">\(v_r\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> to look through. First try a range of <span class="math notranslate nohighlight">\(\pm5\)</span> from your original guess at <span class="math notranslate nohighlight">\(v_r\)</span> with 500 different velocities and a grid of 0 to 2π of length 200 for <span class="math notranslate nohighlight">\(\phi\)</span>.
+<p>In order to find out what the actual magnitude is, we’ll look at a best fit to determine the best <span class="math notranslate nohighlight">\(v_r\)</span>. First, determine a range of parameters <span class="math notranslate nohighlight">\(v_r\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> to look through. First try a range of <span class="math notranslate nohighlight">\(\pm 10\)</span> from your original guess at <span class="math notranslate nohighlight">\(v_r\)</span> with 1000 different velocities and a grid of 0 to 2π of length 200 for <span class="math notranslate nohighlight">\(\phi\)</span>.
 After you find the best <span class="math notranslate nohighlight">\(v_r\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> for the best <span class="math notranslate nohighlight">\(\chi^2\)</span>, calculate the new projected mass. I find that a smaller <span class="math notranslate nohighlight">\(v_r\)</span> fits the data better(!)</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### ANSWER HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
 </div>
 </div>
@@ -901,12 +903,7 @@ After you find the best <span class="math notranslate nohighlight">\(v_r\)</span
 </div>
 </div>
 </div>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
-</section>
-<section id="exercise-4-putting-everything-together-extra-credit-5-points">
-<h2>Exercise 4 - Putting everything together! (extra credit - 5 points)<a class="headerlink" href="#exercise-4-putting-everything-together-extra-credit-5-points" title="Permalink to this heading">#</a></h2>
-<p>🦉Modify and use your orbital dynamics code (with midpoint) to simulate the sun/jupiter/venus system above producing the two projected velocity of the sun plots (see <strong>1a</strong>), one with and one without the (large) venus. You’ll need to have the planets also act on the sun, so that you now keep track of the sun’s motion. While in general it is needed, it is not necessary for the planets to act on each other here. Just have Sun&lt;-&gt;planet interactions and keep track of the three objects as they move.</p>
-<p><span id=“fn1”><sup>1</sup>Wolszczan, A.; Frail, D. A. (1992). “A planetary system around the millisecond pulsar PSR1257+12”. Nature. 355(6356): 145–147. </span></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p><span id=“fn1”><sup>1</sup>Wolszczan, A.; Frail, D. A. (1992). “A planetary system around the millisecond pulsar PSR1257+12”. Nature. 355(6356): 145–147. </span></p>
 <p><span id=“fn2”><sup>2</sup>3,572 as of December 21, 2017: https://exoplanetarchive.ipac.caltech.edu/.</span></p>
 <p><span id=“fn3”><sup>3</sup>Original letter from Isaac Newton to Richard Bentley, dated 10 December 1692, The Newton project, 189.R.4.47, ff. 4A-5, Trinity College Library, Cambridge, UK</span></p>
 <p><span id=“fn4”><sup>4</sup> https://en.wikipedia.org/wiki/Pierre-Simon_Laplace. The solar system is actually a chaotic system, capable of ejecting a planet now and then, so it is inaccurate to say that it is stable.</p>
@@ -931,9 +928,11 @@ After you find the best <span class="math notranslate nohighlight">\(v_r\)</span
 <ul class="simple">
 <li><p>Overall assignment + Ex. 1 and 2 Monica Huang and George Gollin (original);</p></li>
 <li><p>Ex. 3 Ryan Levy and Bryan Clark (original)</p></li>
+<li><p>Very minor modifications otherwise by Bryan Clark</p></li>
 </ul>
 <p>© Copyright 2021</p>
 <hr class="docutils" />
+</section>
 </section>
 </section>
 
@@ -1020,7 +1019,6 @@ After you find the best <span class="math notranslate nohighlight">\(v_r\)</span
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-find-a-better-fit-scipy">c. Find a better fit - <code class="docutils literal notranslate"><span class="pre">scipy</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-putting-everything-together-extra-credit-5-points">Exercise 4 - Putting everything together! (extra credit - 5 points)</a></li>
 </ul>
   </nav></div>
 
