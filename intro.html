@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>An Introduction to Modern Computational Physics &#8212; Physics 246</title>
   
@@ -15,59 +14,61 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="N ways to measure \(\pi\)" href="N_Ways_of_Measuring_PI.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -75,32 +76,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -108,7 +93,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -116,16 +100,27 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -140,6 +135,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="#">
   
@@ -153,11 +150,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="_static/FD.png" class="logo__image only-light" alt="Physics 246 - Home"/>
-    <script>document.write(`<img src="_static/FD.png" class="logo__image only-dark" alt="Physics 246 - Home"/>`);</script>
+    <img src="_static/FD.png" class="logo__image only-dark pst-js-only" alt="Physics 246 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -190,14 +194,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -206,14 +215,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -289,27 +298,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -367,10 +368,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="an-introduction-to-modern-computational-physics">
-<h1>An Introduction to Modern Computational Physics<a class="headerlink" href="#an-introduction-to-modern-computational-physics" title="Permalink to this heading">#</a></h1>
+<h1>An Introduction to Modern Computational Physics<a class="headerlink" href="#an-introduction-to-modern-computational-physics" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Physics 246, Fall 2024</p></li>
 <li><p>Thursday 4:00-5:50pm CST</p></li>
@@ -382,7 +383,7 @@ document.write(`
 <p>Here is an <a href="https://clark.physics.illinois.edu/classSummary/index.html">overview presentation</a> of what you will learn in this class.</p>
 <hr class="docutils" />
 <section id="course-logistics">
-<h2>Course Logistics<a class="headerlink" href="#course-logistics" title="Permalink to this heading">#</a></h2>
+<h2>Course Logistics<a class="headerlink" href="#course-logistics" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Lectures:</strong> R 4:00-5:50, 222 Loomis</p></li>
 <li><p><strong>Professor:</strong> Bryan Clark</p>
@@ -409,10 +410,10 @@ document.write(`
 </li>
 </ul>
 <section id="online-tools">
-<h3>Online Tools<a class="headerlink" href="#online-tools" title="Permalink to this heading">#</a></h3>
+<h3>Online Tools<a class="headerlink" href="#online-tools" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Campuswire</strong>:  We will use campuswire as a class forum;  a way to message the course staff and each other; and to submit your attendance question.</p></li>
-<li><p><strong>Google Colab</strong>: On <span class="xref myst">Google Colab</span>  you will be able to program your code in a jupyter notebook and submit it for us to grade. Please sign in to your Illinois account.  While working on the assignment, you will share each of your colab assignments with the professor and the TA (but no one else).  You can load things in google colab just by clicking on the relevant button in the notebook (looks like a shuttle).  You must then save to your google drive and it will be there later when you go to google colab!</p></li>
+<li><p><strong>Google Colab</strong>: On <a class="reference internal" href="#colab.google.com"><span class="xref myst">Google Colab</span></a>  you will be able to program your code in a jupyter notebook and submit it for us to grade. Please sign in to your Illinois account.  While working on the assignment, you will share each of your colab assignments with the professor and the TA (but no one else).  You can load things in google colab just by clicking on the relevant button in the notebook (looks like a shuttle).  You must then save to your google drive and it will be there later when you go to google colab!</p></li>
 <li><p><strong>Canvas</strong>: You will submit your projcts via Canvas, which will also contain your grades and your returned assignments. There will be two Canvas assignments per course project: one where you must submit the “Sharing” link for your Colab document containing your project solution, and another where you must submit a printout of your Colab document in .pdf format. Both submissions are required for each project to obtain credit. <a class="reference internal" href="#instructions-for-submitting-your-assignments"><span class="std std-ref">Detailed submission instructions can be found here.</span></a></p></li>
 <li><p><strong>my.physics gradebook</strong>: Assignment grades will also be entered here.</p></li>
 </ul>
@@ -420,9 +421,9 @@ document.write(`
 </section>
 </section>
 <section id="calendar">
-<h2>Calendar<a class="headerlink" href="#calendar" title="Permalink to this heading">#</a></h2>
+<h2>Calendar<a class="headerlink" href="#calendar" title="Link to this heading">#</a></h2>
 <p>(Some of these projects might swap around)</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Date</p></th>
 <th class="head"><p>Assignment</p></th>
@@ -473,12 +474,13 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <hr class="docutils" />
 </section>
 <section id="coursework">
-<h2>Coursework<a class="headerlink" href="#coursework" title="Permalink to this heading">#</a></h2>
+<h2>Coursework<a class="headerlink" href="#coursework" title="Link to this heading">#</a></h2>
 <section id="computational-assignments">
-<h3>Computational Assignments<a class="headerlink" href="#computational-assignments" title="Permalink to this heading">#</a></h3>
+<h3>Computational Assignments<a class="headerlink" href="#computational-assignments" title="Link to this heading">#</a></h3>
 <p>The heart of this course will be a series of computational assignments.</p>
 <ul class="simple">
 <li><p>You will work on the assignments both during class and as homework.</p></li>
@@ -495,18 +497,18 @@ document.write(`
 <li><p>You may not use generative AI, LLM’s, etc.  <strong>You must turn this off in google colab</strong>.</p></li>
 </ul>
 <section id="instructions-for-submitting-your-assignments">
-<span id="id1"></span><h4>Instructions for submitting your assignments<a class="headerlink" href="#instructions-for-submitting-your-assignments" title="Permalink to this heading">#</a></h4>
+<span id="id1"></span><h4>Instructions for submitting your assignments<a class="headerlink" href="#instructions-for-submitting-your-assignments" title="Link to this heading">#</a></h4>
 <p>Once you are finished working on an assignment, first make sure that it is shared with the course staff by clicking “Share” in the upper right hand corner in the Colab window and adding us via email address (bkclark&#64;illinois.edu, mt24&#64;illinois.edu, and cychow2&#64;illinois.edu). Then, at the bottom of that same “Share” menu, click “Copy Link” to get the sharing link to your Colab document. Next, save a .pdf printout copy of your Colab document. This can be done by clicking “File” and then “Print,” and then saving the printout as a .pdf via your operating system.</p>
 <p>Assignments are submitted via Canvas, which requires two simple steps. Each week, there will be two assignment submission pages availale in Canvas, one titled “[Assigment Title] (Colab link)” and one titled “[Assigment Title] (PDF file).” First, paste the aforementioned sharing link into the “… (Colab link)” assignment and then submit that assignment. Second, upload your printout .pdf file into the “… (PDF file)” assignment and then submit that assignment.</p>
 <p>We will review both the printout and Colab code while grading your assignment, so please refrain from editing the Colab document after the submission deadline.</p>
 </section>
 </section>
 <section id="final-project">
-<h3>Final Project<a class="headerlink" href="#final-project" title="Permalink to this heading">#</a></h3>
+<h3>Final Project<a class="headerlink" href="#final-project" title="Link to this heading">#</a></h3>
 <p>During the final period, you will put together a project that demonstrates something in computational physics.  It can be an extension of some of the work that you did in class or something new.  This project can be done in small groups (2-3 people).  Projects have to be approved by course staff.  For your project you will submit a jupyter notebook (in the spirit of what you’ve done in class but expository) as well as give a 5 minute presentation during the finals period for the course.</p>
 </section>
 <section id="extra-credit">
-<h3>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this heading">#</a></h3>
+<h3>Extra Credit<a class="headerlink" href="#extra-credit" title="Link to this heading">#</a></h3>
 <p>There will be occassional opportunities to get extra credit. To zeroth order these exist because I think they are cool and useful for understanding computational physics but I can’t justify within the 2 credit hours of the course.</p>
 <p>Extra credit assignments will often be described poorly (maybe even something like, `get a full solar system simulation working’). If you have questions about it, please ask before you spend too much time on it. Also, we have no obligation to make extra credit typo-free. Please try to answer the question we mean to be asking.</p>
 <p>For the extra credit, per exercise, the grading is all or nothing. We aren’t going to hunt for typos and give partial credit for sortof working code. The amount of extra credit per exercise/etc is listed on the assignment.</p>
@@ -514,7 +516,7 @@ document.write(`
 </section>
 </section>
 <section id="grading">
-<h2>Grading<a class="headerlink" href="#grading" title="Permalink to this heading">#</a></h2>
+<h2>Grading<a class="headerlink" href="#grading" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Computational Assignments: 95%</p></li>
 <li><p>Final Project: 5%</p></li>
@@ -541,22 +543,22 @@ All problem sets count for the same amount.  Unless otherwise noted, every exerc
 <hr class="docutils" />
 </section>
 <section id="policies">
-<h2>Policies<a class="headerlink" href="#policies" title="Permalink to this heading">#</a></h2>
+<h2>Policies<a class="headerlink" href="#policies" title="Link to this heading">#</a></h2>
 <section id="attendance">
-<h3>Attendance<a class="headerlink" href="#attendance" title="Permalink to this heading">#</a></h3>
+<h3>Attendance<a class="headerlink" href="#attendance" title="Link to this heading">#</a></h3>
 <p>There is no attendance required for class (although we believe that coming to class will be helpful!)  That said, <strong>please do not attend class if you are sick</strong>.  In such a case, we will work with you to make sure you get caught up.  No notes for sickness, etc are required.</p>
 </section>
 <section id="about-using-code-you-find-on-the-web">
-<h3>About using code you find on the web<a class="headerlink" href="#about-using-code-you-find-on-the-web" title="Permalink to this heading">#</a></h3>
+<h3>About using code you find on the web<a class="headerlink" href="#about-using-code-you-find-on-the-web" title="Link to this heading">#</a></h3>
 <p>The quickest way to deal with the arcana of programing is to ask Google for examples of what you are seeking to accomplish. But you will need to use your judgment in doing this: the Google search “how do I use color maps in python?” is fine, while “show me a script that calculates pi” is not. And you should always credit the original source of code that you paste into your own programs in a comment that includes the URL for the original code. If an author says that his/her code is not to be copied or incorporated into your programs, then DON’T.</p>
 <p>The goal of this course is for you to deeply understand this material. For this to work, you’ll need to write your own code.</p>
 </section>
 <section id="about-large-langauge-models">
-<h3>About Large Langauge Models<a class="headerlink" href="#about-large-langauge-models" title="Permalink to this heading">#</a></h3>
+<h3>About Large Langauge Models<a class="headerlink" href="#about-large-langauge-models" title="Link to this heading">#</a></h3>
 <p>In a similar vein, you aren’t allowed to use LLM for help.  This includes chatGPT, google bard/gemini, claude, etc. <strong>You must turn off the generative AI in colab if you have it on (which it might be by default)</strong>.</p>
 </section>
 <section id="academic-integrity">
-<h3>Academic Integrity<a class="headerlink" href="#academic-integrity" title="Permalink to this heading">#</a></h3>
+<h3>Academic Integrity<a class="headerlink" href="#academic-integrity" title="Link to this heading">#</a></h3>
 <p>You must never submit the work of someone else as your own. We understand that many of you will find it helpful to work with other students to master Physics 246. But when you collaborate with your study group on homework assignments, you must be a full, active participant in developing the solutions that you submit for credit.</p>
 <p>It is cheating to receive answers from another student and then use them as your own. It is cheating to submit as your own work solutions that you find by searching on the worldwide web (though see “About using code you find on the web”) It is cheating—and a violation of U.S. copyright law—to give (or sell) course material to someone else who intends to redistribute and/or sell it.</p>
 <p>All activities in this course are subject to the Academic Integrity rules as described in Article 1, Part 4, Academic Integrity, of the Student Code.</p>
@@ -564,7 +566,7 @@ All problem sets count for the same amount.  Unless otherwise noted, every exerc
 </section>
 </section>
 <section id="useful-python">
-<h2>Useful Python<a class="headerlink" href="#useful-python" title="Permalink to this heading">#</a></h2>
+<h2>Useful Python<a class="headerlink" href="#useful-python" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Intro Python Jupyter Notebooks:</p>
 <ul>
@@ -577,7 +579,7 @@ All problem sets count for the same amount.  Unless otherwise noted, every exerc
 <li><p><a class="reference external" href="https://developers.google.com/edu/python">Google’s Python Programming Class</a></p></li>
 </ul>
 <section id="why-this-course">
-<h3>Why this course?<a class="headerlink" href="#why-this-course" title="Permalink to this heading">#</a></h3>
+<h3>Why this course?<a class="headerlink" href="#why-this-course" title="Link to this heading">#</a></h3>
 <p>As the needs of our students evolve—there is, for example, increasing focus on early readiness for research—the Physics faculty are obliged to adjust both what we teach, and how we teach.</p>
 <p>There is a rich tradition of innovation in engineering pedagogy at Illinois. Fifty years ago UIUC became the first school to teach its undergraduates to design computers. More recently, our colleagues have become national leaders in successful efforts to improve instructional outcomes in elementary physics. We intend to continue this Illinois tradition by incorporating computational literacy into the set of core competencies to be mastered by our students.</p>
 <p>Just as we require physics majors to enroll in courses taught by Mathematics, but teach the applications of mathematics to physics in our own courses, we hope to do the same with programming. We will continue to require that our students take an introductory course in Computer Science, while incorporating into our own courses machine-based approaches to problems that cannot be solved analytically. Examples include chaos and nonlinear phenomena; fluid dynamics; real-world electrodynamics; quantum mechanics of multi-electron atoms.</p>
@@ -588,11 +590,11 @@ The technical foundation for physics majors includes material in physics, mathem
 </section>
 </section>
 <section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">#</a></h2>
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
 <p>The current version of this course is developed by Bryan Clark.  An earlier version of <a class="reference external" href="https://courses.physics.illinois.edu/phys298owl/fa2018/">this course</a> was developed and run by <a class="reference external" href="https://physics.illinois.edu/people/directory/profile/g-gollin">George Gollin</a> and this current version has non-trival overlapping units and problems.  The classifying galaxy assignment closely follows a tutorial at the Galaxy Zoo. The fluid dynamics assignment was originally inspired to get you to develop lattice Boltzmann code similar to that from flowkit.com.  The jupyter-ization of the course was done by Ryan Levy and Bryan Clark.</p>
 </section>
 <section id="related-courses">
-<h2>Related Courses<a class="headerlink" href="#related-courses" title="Permalink to this heading">#</a></h2>
+<h2>Related Courses<a class="headerlink" href="#related-courses" title="Link to this heading">#</a></h2>
 <p>Here are some number of related (but less exciting) courses which have similar goals.</p>
 <p>In <a class="reference external" href="http://theory.caltech.edu/~dsd/ph121ab/2019-2020/">Caltech</a> you write a smaller number of similar assignments (but with no guidance).</p>
 <p><a class="reference external" href="https://computationalthinking.mit.edu/Spring21/">MIT</a> runs a similar course in Julia.</p>
@@ -628,7 +630,7 @@ The technical foundation for physics majors includes material in physics, mathem
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="right-next"
@@ -647,7 +649,9 @@ The technical foundation for physics majors includes material in physics, mathem
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -731,8 +735,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

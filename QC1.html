@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Quantum Computing &#8212; Physics 246</title>
   
@@ -15,53 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'QC1';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Fluid Dynamics" href="FluidDynamics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -143,6 +134,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -156,11 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="_static/FD.png" class="logo__image only-light" alt="Physics 246 - Home"/>
-    <script>document.write(`<img src="_static/FD.png" class="logo__image only-dark" alt="Physics 246 - Home"/>`);</script>
+    <img src="_static/FD.png" class="logo__image only-dark pst-js-only" alt="Physics 246 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -241,14 +246,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/bkclark/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/QC1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -323,27 +328,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -394,10 +391,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="quantum-computing">
-<h1>Quantum Computing<a class="headerlink" href="#quantum-computing" title="Permalink to this heading">#</a></h1>
+<h1>Quantum Computing<a class="headerlink" href="#quantum-computing" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Author:</strong></p></li>
 <li><p><strong>Date:</strong></p></li>
@@ -420,37 +417,35 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qiskit[visualization]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qiskit-1.2.4-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qiskit-1.3.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting rustworkx&gt;=0.15.0 (from qiskit[visualization])
   Downloading rustworkx-0.15.1-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.9 kB)
+Requirement already satisfied: numpy&lt;3,&gt;=1.17 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit[visualization]) (2.2.2)
+Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit[visualization]) (1.15.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;3,&gt;=1.17 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (1.24.4)
-Requirement already satisfied: scipy&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (1.10.1)
-Collecting sympy&gt;=1.3 (from qiskit[visualization])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting sympy&gt;=1.3 (from qiskit[visualization])
   Downloading sympy-1.13.3-py3-none-any.whl.metadata (12 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting dill&gt;=0.3 (from qiskit[visualization])
+Collecting dill&gt;=0.3 (from qiskit[visualization])
   Downloading dill-0.3.9-py3-none-any.whl.metadata (10 kB)
-Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (2.9.0.post0)
-Collecting stevedore&gt;=3.0.0 (from qiskit[visualization])
+Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit[visualization]) (2.9.0.post0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading stevedore-5.3.0-py3-none-any.whl.metadata (2.3 kB)
-Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (4.12.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting stevedore&gt;=3.0.0 (from qiskit[visualization])
+  Downloading stevedore-5.4.0-py3-none-any.whl.metadata (2.3 kB)
+Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit[visualization]) (4.12.2)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting symengine&lt;0.14,&gt;=0.11 (from qiskit[visualization])
-  Downloading symengine-0.13.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.2 kB)
-Requirement already satisfied: matplotlib&gt;=3.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (3.7.5)
+  Downloading symengine-0.13.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.2 kB)
+Requirement already satisfied: matplotlib&gt;=3.3 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit[visualization]) (3.10.0)
 Collecting pydot (from qiskit[visualization])
+  Downloading pydot-3.0.4-py3-none-any.whl.metadata (10 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pydot-3.0.4-py3-none-any.whl.metadata (10 kB)
-Requirement already satisfied: Pillow&gt;=4.2.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit[visualization]) (10.4.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Pillow&gt;=4.2.1 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit[visualization]) (11.1.0)
 Collecting pylatexenc&gt;=1.4 (from qiskit[visualization])
   Downloading pylatexenc-2.10.tar.gz (162 kB)
 </pre></div>
@@ -463,67 +458,62 @@ Collecting pylatexenc&gt;=1.4 (from qiskit[visualization])
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hCollecting seaborn&gt;=0.9.0 (from qiskit[visualization])
   Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (1.1.1)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (4.55.3)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (1.4.7)
-Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (24.2)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (3.1.4)
-Requirement already satisfied: importlib-resources&gt;=3.2.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (6.4.5)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (1.3.1)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (4.55.4)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (1.4.8)
+Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (24.2)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from matplotlib&gt;=3.3-&gt;qiskit[visualization]) (3.2.1)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit[visualization]) (1.17.0)
+Requirement already satisfied: pandas&gt;=1.2 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2.2.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit[visualization]) (1.17.0)
-Requirement already satisfied: pandas&gt;=1.2 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2.0.3)
-Collecting pbr&gt;=2.0.0 (from stevedore&gt;=3.0.0-&gt;qiskit[visualization])
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pbr-6.1.0-py2.py3-none-any.whl.metadata (3.4 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pbr&gt;=2.0.0 (from stevedore&gt;=3.0.0-&gt;qiskit[visualization])
+  Downloading pbr-6.1.0-py2.py3-none-any.whl.metadata (3.4 kB)
 Collecting mpmath&lt;1.4,&gt;=1.1.0 (from sympy&gt;=1.3-&gt;qiskit[visualization])
-  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.3-&gt;qiskit[visualization]) (3.20.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2024.2)
-Requirement already satisfied: tzdata&gt;=2022.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2024.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2024.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from pandas&gt;=1.2-&gt;seaborn&gt;=0.9.0-&gt;qiskit[visualization]) (2025.1)
 Downloading dill-0.3.9-py3-none-any.whl (119 kB)
 Downloading rustworkx-0.15.1-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/2.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/2.0 MB</span> <span class=" -Color -Color-Red">81.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/2.0 MB</span> <span class=" -Color -Color-Red">74.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hDownloading seaborn-0.13.2-py3-none-any.whl (294 kB)
-Downloading stevedore-5.3.0-py3-none-any.whl (49 kB)
+Downloading stevedore-5.4.0-py3-none-any.whl (49 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading symengine-0.13.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (49.7 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading symengine-0.13.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (49.7 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/49.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━ <span class=" -Color -Color-Green">41.7/49.7 MB</span> <span class=" -Color -Color-Red">208.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">49.5/49.7 MB</span> <span class=" -Color -Color-Red">262.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">49.7/49.7 MB</span> <span class=" -Color -Color-Red">146.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">49.7/49.7 MB</span> <span class=" -Color -Color-Red">176.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/6.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.2/6.2 MB</span> <span class=" -Color -Color-Red">158.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading pydot-3.0.4-py3-none-any.whl (35 kB)
-Downloading qiskit-1.2.4-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.8 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/4.8 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.2/6.2 MB</span> <span class=" -Color -Color-Red">205.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading pydot-3.0.4-py3-none-any.whl (35 kB)
+Downloading qiskit-1.3.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.8 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/6.8 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.8/4.8 MB</span> <span class=" -Color -Color-Red">154.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.8/6.8 MB</span> <span class=" -Color -Color-Red">203.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hDownloading mpmath-1.3.0-py3-none-any.whl (536 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/536.2 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">536.2/536.2 kB</span> <span class=" -Color -Color-Red">63.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading pbr-6.1.0-py2.py3-none-any.whl (108 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">536.2/536.2 kB</span> <span class=" -Color -Color-Red">79.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading pbr-6.1.0-py2.py3-none-any.whl (108 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Building wheels for collected packages: pylatexenc
@@ -535,102 +525,78 @@ Downloading qiskit-1.2.4-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.wh
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for pylatexenc: filename=pylatexenc-2.10-py3-none-any.whl size=136824 sha256=5a06f07812a13f11ca2b485dd02039457e792362b41d8cea76e28b31f5e3d186
-  Stored in directory: /home/runner/.cache/pip/wheels/72/99/be/81d9bcdf5dd5ee5acd8119a9dd5bc07204c9ce205fd341b021
+?25h  Created wheel for pylatexenc: filename=pylatexenc-2.10-py3-none-any.whl size=136818 sha256=e004927f527a7630de58cdc21d7ae6bec457216a4ff4f9d1fb37992efc39caf8
+  Stored in directory: /home/runner/.cache/pip/wheels/d3/31/8b/e09b0386afd80cfc556c00408c9aeea5c35c4d484a9c762fd5
 Successfully built pylatexenc
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: pylatexenc, mpmath, sympy, symengine, rustworkx, pydot, pbr, dill, stevedore, seaborn, qiskit
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed dill-0.3.9 mpmath-1.3.0 pbr-6.1.0 pydot-3.0.4 pylatexenc-2.10 qiskit-1.2.4 rustworkx-0.15.1 seaborn-0.13.2 stevedore-5.3.0 symengine-0.13.0 sympy-1.13.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed dill-0.3.9 mpmath-1.3.0 pbr-6.1.0 pydot-3.0.4 pylatexenc-2.10 qiskit-1.3.2 rustworkx-0.15.1 seaborn-0.13.2 stevedore-5.4.0 symengine-0.13.0 sympy-1.13.3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qutip
-  Downloading qutip-5.0.1.tar.gz (6.4 MB)
-?25l
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/6.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qutip-5.1.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.2 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.4/6.4 MB</span> <span class=" -Color -Color-Red">60.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.22 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qutip) (2.2.2)
+Requirement already satisfied: scipy&gt;=1.9 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qutip) (1.15.1)
+Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qutip) (24.2)
+Downloading qutip-5.1.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (28.4 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/28.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">14.7/28.4 MB</span> <span class=" -Color -Color-Red">129.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">28.3/28.4 MB</span> <span class=" -Color -Color-Red">79.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">28.4/28.4 MB</span> <span class=" -Color -Color-Red">68.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: qutip
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-?25h  Getting requirements to build wheel ... ?25l?25hcanceled
-<span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed qutip-5.1.1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qiskit_aer
-  Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.0 kB)
-Requirement already satisfied: qiskit&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (1.2.4)
-Requirement already satisfied: numpy&gt;=1.16.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (1.24.4)
-Requirement already satisfied: scipy&gt;=1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (1.10.1)
-Requirement already satisfied: psutil&gt;=5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit_aer) (6.1.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rustworkx&gt;=0.15.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (0.15.1)
-Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.13.3)
-Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (0.3.9)
-Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (2.9.0.post0)
-Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (5.3.0)
-Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (4.12.2)
-Requirement already satisfied: symengine&lt;0.14,&gt;=0.11 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (0.13.0)
-Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.17.0)
-Requirement already satisfied: pbr&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (6.1.0)
-Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from sympy&gt;=1.3-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.3.0)
-Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.3 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qiskit_aer-0.16.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.2 kB)
+Requirement already satisfied: qiskit&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit_aer) (1.3.2)
+Requirement already satisfied: numpy&gt;=1.16.3 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit_aer) (2.2.2)
+Requirement already satisfied: scipy&gt;=1.0 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit_aer) (1.15.1)
+Requirement already satisfied: psutil&gt;=5 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit_aer) (6.1.1)
+Requirement already satisfied: rustworkx&gt;=0.15.0 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (0.15.1)
+Requirement already satisfied: sympy&gt;=1.3 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.13.3)
+Requirement already satisfied: dill&gt;=0.3 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (0.3.9)
+Requirement already satisfied: python-dateutil&gt;=2.8.0 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (2.9.0.post0)
+Requirement already satisfied: stevedore&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (5.4.0)
+Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (4.12.2)
+Requirement already satisfied: symengine&lt;0.14,&gt;=0.11 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from qiskit&gt;=1.1.0-&gt;qiskit_aer) (0.13.0)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from python-dateutil&gt;=2.8.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.17.0)
+Requirement already satisfied: pbr&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from stevedore&gt;=3.0.0-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (6.1.0)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from sympy&gt;=1.3-&gt;qiskit&gt;=1.1.0-&gt;qiskit_aer) (1.3.0)
+Downloading qiskit_aer-0.16.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.3 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/12.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.3/12.3 MB</span> <span class=" -Color -Color-Red">113.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.3/12.3 MB</span> <span class=" -Color -Color-Red">144.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: qiskit_aer
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed qiskit_aer-0.15.1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed qiskit_aer-0.16.0
 </pre></div>
 </div>
 </div>
@@ -768,9 +734,9 @@ Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_
 </div>
 </div>
 <section id="exercise-1-a-single-qubit-33-points">
-<h2>Exercise 1: A Single Qubit (33 points)<a class="headerlink" href="#exercise-1-a-single-qubit-33-points" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 1: A Single Qubit (33 points)<a class="headerlink" href="#exercise-1-a-single-qubit-33-points" title="Link to this heading">#</a></h2>
 <section id="a-a-one-qubit-state">
-<h3>a. A one qubit state<a class="headerlink" href="#a-a-one-qubit-state" title="Permalink to this heading">#</a></h3>
+<h3>a. A one qubit state<a class="headerlink" href="#a-a-one-qubit-state" title="Link to this heading">#</a></h3>
 <p>A quantum state consists of a certain fraction of <span class="math notranslate nohighlight">\(|0\rangle\)</span> and a certain fraction of <span class="math notranslate nohighlight">\(|1\rangle\)</span> - i.e.  <span class="math notranslate nohighlight">\(\sqrt{0.3} |0\rangle - \sqrt{0.7} |1\rangle\)</span>.</p>
 <p>We can plot this state in a variety of ways.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)])</span>
@@ -807,7 +773,7 @@ Downloading qiskit_aer-0.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-one-qubit-gates">
-<h3>b. One qubit gates<a class="headerlink" href="#b-one-qubit-gates" title="Permalink to this heading">#</a></h3>
+<h3>b. One qubit gates<a class="headerlink" href="#b-one-qubit-gates" title="Link to this heading">#</a></h3>
 <p>Quantum circuits are made out of quantum gates. Let us start by considering 1-qubit gates.  The 1-qubit gate rotates states around the Bloch sphere.  Three special gates are <code class="docutils literal notranslate"><span class="pre">rx</span></code>, <code class="docutils literal notranslate"><span class="pre">ry</span></code>, and <code class="docutils literal notranslate"><span class="pre">rz</span></code> which respectively rotate around the X, Y, and Z axis. These gates take an angle and a wire - i.e. <code class="docutils literal notranslate"><span class="pre">rx(1/3*np.pi,0)</span></code> will rotate <span class="math notranslate nohighlight">\(1/3 \pi\)</span> around the X axis.</p>
 <p>To set up your circuit you can do</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">=</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -856,7 +822,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p>Notice that by smartly choosing the angles around <code class="docutils literal notranslate"><span class="pre">rx</span></code> and <code class="docutils literal notranslate"><span class="pre">rz</span></code> and then <code class="docutils literal notranslate"><span class="pre">rx</span></code> again you can produce an arbitrary rotation on the sphere and therefore take <span class="math notranslate nohighlight">\(|0\rangle\)</span> and <span class="math notranslate nohighlight">\(|1\rangle\)</span> to any two orthogonal states.</p>
 </section>
 <section id="c-seeing-the-rotation">
-<h3>c.  Seeing the rotation<a class="headerlink" href="#c-seeing-the-rotation" title="Permalink to this heading">#</a></h3>
+<h3>c.  Seeing the rotation<a class="headerlink" href="#c-seeing-the-rotation" title="Link to this heading">#</a></h3>
 <p>We would like to plot the rotation around the bloch sphere.  We can do this as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="n">qutip</span><span class="o">.</span><span class="n">Bloch</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.1</span><span class="p">):</span>
@@ -878,7 +844,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="d-measuring-the-state">
-<h3>d. Measuring the state<a class="headerlink" href="#d-measuring-the-state" title="Permalink to this heading">#</a></h3>
+<h3>d. Measuring the state<a class="headerlink" href="#d-measuring-the-state" title="Link to this heading">#</a></h3>
 <p>So far we’ve been cheating by looking at the quantum state. In the real world, you can’t do that.  Instead you have to measure at the end of your circuit.  The RunMe circuit returns two parameters.  The second one is measurement outcomes - i.e.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="p">,</span><span class="n">measure</span><span class="o">=</span><span class="n">RunMe</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
 </pre></div>
@@ -898,10 +864,10 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
 <section id="exercise-2-two-qubits-34-points">
-<h2>Exercise 2: Two qubits (34 points)<a class="headerlink" href="#exercise-2-two-qubits-34-points" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 2: Two qubits (34 points)<a class="headerlink" href="#exercise-2-two-qubits-34-points" title="Link to this heading">#</a></h2>
 <p>In this exercise we will see how to build quantum states of two qubits.</p>
 <section id="a-control-not-gates">
-<h3>a. Control-not gates<a class="headerlink" href="#a-control-not-gates" title="Permalink to this heading">#</a></h3>
+<h3>a. Control-not gates<a class="headerlink" href="#a-control-not-gates" title="Link to this heading">#</a></h3>
 <p><em>The controlled-not gate:</em> The key gate for two qubits is the control-not gate (<code class="docutils literal notranslate"><span class="pre">circuit.cx(0,1)</span></code>).  The key gate “nots” the second wire (wire 1) if the first wire is “1” (wire 0).  Let’s check it out.  Apply the “control-not” to a state <span class="math notranslate nohighlight">\(|00\rangle\)</span> and to a state <span class="math notranslate nohighlight">\(|10\rangle\)</span> and print out the state (not the measurement outcome)</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -912,7 +878,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-build-an-epr-pair">
-<h3>b.  Build an EPR Pair<a class="headerlink" href="#b-build-an-epr-pair" title="Permalink to this heading">#</a></h3>
+<h3>b.  Build an EPR Pair<a class="headerlink" href="#b-build-an-epr-pair" title="Link to this heading">#</a></h3>
 <p>The most interesting two qubit state is an EPR pair, <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}\left(|00\rangle + |11\rangle\right)\)</span>.    You can build it with a Hadamard and a CNOT.  Go ahead and try different things and figure out how to build yourself an EPR pair.  You can start out with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quantumWires</span><span class="o">=</span><span class="mi">2</span>
 <span class="n">classicalWires</span><span class="o">=</span><span class="mi">2</span>
@@ -929,7 +895,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-measuring-epr-pairs">
-<h3>c. Measuring EPR Pairs<a class="headerlink" href="#c-measuring-epr-pairs" title="Permalink to this heading">#</a></h3>
+<h3>c. Measuring EPR Pairs<a class="headerlink" href="#c-measuring-epr-pairs" title="Link to this heading">#</a></h3>
 <p>Now that you’ve made an EPR pair, let’s go ahead and measure your EPR circuit above plotting the histogram of your measurements.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -942,7 +908,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </section>
 </section>
 <section id="exercise-3-grover-s-algorithm">
-<h2>Exercise 3:  Grover’s Algorithm<a class="headerlink" href="#exercise-3-grover-s-algorithm" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 3:  Grover’s Algorithm<a class="headerlink" href="#exercise-3-grover-s-algorithm" title="Link to this heading">#</a></h2>
 <p>In this exercise, we are going to implement Grover’s algorithm.  Grover’s algorithm takes a unitary which marks an element <span class="math notranslate nohighlight">\(i\)</span> and uses that as a subroutine with more circuit elements so that, after measurementt, you sample the marked element <span class="math notranslate nohighlight">\(i\)</span>.</p>
 <p>To do this we are going to need to put together a lot of different circuit elements.  Let’s start with the unitary which does the marking which we will give you.  In this case it’s going to mark element 3 by taking it and changing its sign.  Go ahead and run this to see explicitly what it does.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Check Mark</span>
@@ -962,7 +928,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </div>
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><section id="a-control-control-control-z">
-<h3>a. Control-Control-Control Z<a class="headerlink" href="#a-control-control-control-z" title="Permalink to this heading">#</a></h3>
+<h3>a. Control-Control-Control Z<a class="headerlink" href="#a-control-control-control-z" title="Link to this heading">#</a></h3>
 <p>Define a function <code class="docutils literal notranslate"><span class="pre">controlZ(N)</span></code> which generates the control-control-control-control Z on <span class="math notranslate nohighlight">\(n\)</span> qubits.  The first <span class="math notranslate nohighlight">\(n-1\)</span> qubits are targets which have to be 1 for the last Z qubit to happen.</p>
 <p>This is an example for <code class="docutils literal notranslate"><span class="pre">controlZ(5)</span></code>.</p>
 <img src="https://clark.physics.illinois.edu/qcPics/controlZ.png" width="300">
@@ -998,7 +964,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-all-hadamards">
-<h3>b. All Hadamards<a class="headerlink" href="#b-all-hadamards" title="Permalink to this heading">#</a></h3>
+<h3>b. All Hadamards<a class="headerlink" href="#b-all-hadamards" title="Link to this heading">#</a></h3>
 <p>Define a function <code class="docutils literal notranslate"><span class="pre">AllHadamard(n)</span></code> which builds <span class="math notranslate nohighlight">\(n\)</span> wires of Hadamards</p>
 <img src="https://clark.physics.illinois.edu/qcPics/allHadamard.png" width="100">
 <p>Check it by the following test:</p>
@@ -1017,7 +983,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-flipallbutzero">
-<h3>c. FlipAllButZero<a class="headerlink" href="#c-flipallbutzero" title="Permalink to this heading">#</a></h3>
+<h3>c. FlipAllButZero<a class="headerlink" href="#c-flipallbutzero" title="Link to this heading">#</a></h3>
 <p>Define <code class="docutils literal notranslate"><span class="pre">FlipAllButZero(n)</span></code>. which should flip all but the zero configurations on <span class="math notranslate nohighlight">\(n\)</span> bits.  It will us <span class="math notranslate nohighlight">\(n+1\)</span> wires (you need an ancilla).  The example below is the output for FlipAllbutZero(4)</p>
 <img src="https://clark.physics.illinois.edu/qcPics/allZero.png" width="300">
 <p>You might want to add some circuits together.  To add these circuits you can do</p>
@@ -1043,7 +1009,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="d-invert">
-<h3>d. Invert<a class="headerlink" href="#d-invert" title="Permalink to this heading">#</a></h3>
+<h3>d. Invert<a class="headerlink" href="#d-invert" title="Link to this heading">#</a></h3>
 <p>Define the <code class="docutils literal notranslate"><span class="pre">Invert(N)</span></code> function.  This will also be on <span class="math notranslate nohighlight">\(N+1\)</span> wires.  Here you need to add together the AllHadamard and FlipAllButZero and AllHadamard again.</p>
 <img src="https://clark.physics.illinois.edu/qcPics/invert.png" width="300">
 <p>You can test it in the following way:</p>
@@ -1065,7 +1031,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="e-running-grover-s-algorithm">
-<h3>e. Running Grover’s Algorithm<a class="headerlink" href="#e-running-grover-s-algorithm" title="Permalink to this heading">#</a></h3>
+<h3>e. Running Grover’s Algorithm<a class="headerlink" href="#e-running-grover-s-algorithm" title="Link to this heading">#</a></h3>
 <p>Put everything together to run Grover’s algorithm.</p>
 <img src="https://clark.physics.illinois.edu/qcPics/Grovers.png" width="600">
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
@@ -1112,7 +1078,7 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1140,7 +1106,9 @@ Notice that <span class="math notranslate nohighlight">\(\cos^2\theta + \sin^2\t
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1217,8 +1185,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

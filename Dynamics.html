@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Dynamics &#8212; Physics 246</title>
   
@@ -15,53 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Dynamics';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="N ways to measure \(\pi\)" href="N_Ways_of_Measuring_PI.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -143,6 +134,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -156,11 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="_static/FD.png" class="logo__image only-light" alt="Physics 246 - Home"/>
-    <script>document.write(`<img src="_static/FD.png" class="logo__image only-dark" alt="Physics 246 - Home"/>`);</script>
+    <img src="_static/FD.png" class="logo__image only-dark pst-js-only" alt="Physics 246 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -241,14 +246,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/bkclark/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Dynamics.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -323,27 +328,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -411,17 +408,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dynamics">
-<h1>Dynamics<a class="headerlink" href="#dynamics" title="Permalink to this heading">#</a></h1>
+<h1>Dynamics<a class="headerlink" href="#dynamics" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Author:</strong></p></li>
 <li><p><strong>Date:</strong></p></li>
 <li><p><strong>Time spent on this assignment:</strong></p></li>
 </ul>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>In this assignment you are going to first</p>
 <ul class="simple">
 <li><p>write a first-order integrator to solve differential equations (like dynamics)</p></li>
@@ -460,7 +457,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 8, 21, 17, 37, 193826)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 22, 20, 10, 47, 223389)
 </pre></div>
 </div>
 </div>
@@ -468,9 +465,9 @@ document.write(`
 </div>
 </section>
 <section id="warmups">
-<h2>Warmups<a class="headerlink" href="#warmups" title="Permalink to this heading">#</a></h2>
+<h2>Warmups<a class="headerlink" href="#warmups" title="Link to this heading">#</a></h2>
 <section id="lists-to-numpy-arrays">
-<h3>Lists to numpy arrays<a class="headerlink" href="#lists-to-numpy-arrays" title="Permalink to this heading">#</a></h3>
+<h3>Lists to numpy arrays<a class="headerlink" href="#lists-to-numpy-arrays" title="Link to this heading">#</a></h3>
 <p>In a number of cases you will hav a list like <code class="docutils literal notranslate"><span class="pre">a=[1.2,3.2,5.4]</span></code> and want to convert it to a numpy array.  To do this, you can do  <code class="docutils literal notranslate"><span class="pre">a=np.array(a)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,7 +519,7 @@ The y positions should be [1.,2.,3.]
 </div>
 </section>
 <section id="math-with-numpy-arrays">
-<h3>Math with numpy arrays<a class="headerlink" href="#math-with-numpy-arrays" title="Permalink to this heading">#</a></h3>
+<h3>Math with numpy arrays<a class="headerlink" href="#math-with-numpy-arrays" title="Link to this heading">#</a></h3>
 <p>Imagine that I have a numpy array representing a velocity: <code class="docutils literal notranslate"><span class="pre">myVel=np.array([0.2,2.5])</span></code>.</p>
 <p>I can now do math with this array.  I could for example  take a time <code class="docutils literal notranslate"><span class="pre">dt=0.1</span></code> and multiply it by <code class="docutils literal notranslate"><span class="pre">dt</span></code>.  This will multiply both the “0.2” and “2.5”.</p>
 <p>You could square all the velocities by doing <code class="docutils literal notranslate"><span class="pre">myVel**2</span></code></p>
@@ -549,7 +546,7 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </section>
 <section id="dictionaries">
-<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h3>
+<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h3>
 <p>Later in this assignment (exercise 2) we are going to want to store some relevant parameters for our simulations (masses, time steps, friction constants, etc.).  One approach to doing this is to store them in a dictionary.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">params</span><span class="o">=</span><span class="nb">dict</span><span class="p">()</span> <span class="c1"># can also use {}</span>
 <span class="n">params</span><span class="p">[</span><span class="s2">&quot;dt&quot;</span><span class="p">]</span>   <span class="o">=</span> <span class="mf">0.01</span>
@@ -581,7 +578,7 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </section>
 <section id="fitting-lines">
-<h3>Fitting Lines<a class="headerlink" href="#fitting-lines" title="Permalink to this heading">#</a></h3>
+<h3>Fitting Lines<a class="headerlink" href="#fitting-lines" title="Link to this heading">#</a></h3>
 <p>Suppose you have two arrays, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> and you expect that there should be some linear relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,7 +595,7 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e2b175c985f026314bce80c46e7d6c077f3c032ce7a6918823db43d3f7d6e687.png" src="_images/e2b175c985f026314bce80c46e7d6c077f3c032ce7a6918823db43d3f7d6e687.png" />
+<img alt="_images/65a2458ced6506b965c9608571b02e2aed554df6138a005b716fe48886c7e597.png" src="_images/65a2458ced6506b965c9608571b02e2aed554df6138a005b716fe48886c7e597.png" />
 </div>
 </div>
 <p>Here is an example of such data.  You want to figure out what this relationship is.   To do this, you can use
@@ -626,15 +623,15 @@ myVel**2 is 	 [0.04 6.25]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.29932771 0.07778903]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.38464796 -0.04024948]
 </pre></div>
 </div>
-<img alt="_images/927fa81382db0b381d57f76e6e9a37d9cd38411ddab535512b7b10cd03daacc9.png" src="_images/927fa81382db0b381d57f76e6e9a37d9cd38411ddab535512b7b10cd03daacc9.png" />
+<img alt="_images/947d271d5b58156d0c03af21d16cc541723855de65b2ffab07f4f6cf964fa7cf.png" src="_images/947d271d5b58156d0c03af21d16cc541723855de65b2ffab07f4f6cf964fa7cf.png" />
 </div>
 </div>
 </section>
 <section id="fitting-polynomials">
-<h3>Fitting Polynomials<a class="headerlink" href="#fitting-polynomials" title="Permalink to this heading">#</a></h3>
+<h3>Fitting Polynomials<a class="headerlink" href="#fitting-polynomials" title="Link to this heading">#</a></h3>
 <p>Suppose that you think you have some graph which goes as <span class="math notranslate nohighlight">\(y = Ax^b\)</span>.  How are you going to figure out what <span class="math notranslate nohighlight">\(b\)</span> is?
 Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + b\log(x)\)</span>.   Plotting <span class="math notranslate nohighlight">\(\log(x)\)</span> vs <span class="math notranslate nohighlight">\(\log(y)\)</span> is called plotting the the data on a log-log scale. Let’s look at how that might work.</p>
 <p>Below is some data which has a polynomial relationship.  Notice how it looks quadratic.</p>
@@ -653,7 +650,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2eea3b6241352a394c25e508bebef14cd210501cfb56649967e87941cc8da59d.png" src="_images/2eea3b6241352a394c25e508bebef14cd210501cfb56649967e87941cc8da59d.png" />
+<img alt="_images/92f8202644fa2d6ae8002cf59c35d6cc58350b30f5430ca4fa26822a2aa377c3.png" src="_images/92f8202644fa2d6ae8002cf59c35d6cc58350b30f5430ca4fa26822a2aa377c3.png" />
 </div>
 </div>
 <p>Let’s go ahead and plot x and y on a log-log scale.  To do this redo the plot above but add</p>
@@ -677,7 +674,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e92aefd13a3f90c2420b3dfd46bb955c039e5360d9ba9e0907022d3ee35f36d1.png" src="_images/e92aefd13a3f90c2420b3dfd46bb955c039e5360d9ba9e0907022d3ee35f36d1.png" />
+<img alt="_images/f58a51aa670c68929b8e039d72b7598b303d3c27d9c8feab84a99c6c1e523eba.png" src="_images/f58a51aa670c68929b8e039d72b7598b303d3c27d9c8feab84a99c6c1e523eba.png" />
 </div>
 </div>
 <p>You should notice your plot looks roughly linear.  We can go get the slope by doing a linear fit to the log-log plot. This can be done by doing</p>
@@ -694,7 +691,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.99501648 0.01501526]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.99439666 0.01535945]
 </pre></div>
 </div>
 </div>
@@ -712,7 +709,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bee3603ff06d23a94d7e0fd79c9af056fb880dacfcb41f0731c14ea506e59758.png" src="_images/bee3603ff06d23a94d7e0fd79c9af056fb880dacfcb41f0731c14ea506e59758.png" />
+<img alt="_images/fea107ae922d8423c89a835f0a245495f1579821d3eee5026ba6a413437583c4.png" src="_images/fea107ae922d8423c89a835f0a245495f1579821d3eee5026ba6a413437583c4.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -721,7 +718,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </section>
 <hr class="docutils" />
 <section id="exercise-1-euler-integration">
-<h2>Exercise 1: Euler Integration<a class="headerlink" href="#exercise-1-euler-integration" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 1: Euler Integration<a class="headerlink" href="#exercise-1-euler-integration" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
@@ -741,7 +738,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <li><p>once we know <span class="math notranslate nohighlight">\(v_y(t)\)</span>, then we know that <span class="math notranslate nohighlight">\(y(t+dt) = y(t) + dy(t) = y(t) + v_y(t) dt\)</span></p></li>
 </ul>
 <section id="a-euler-integration-in-one-dimension-first-order-integrator">
-<h3>a. Euler Integration in one-dimension (first order integrator)<a class="headerlink" href="#a-euler-integration-in-one-dimension-first-order-integrator" title="Permalink to this heading">#</a></h3>
+<h3>a. Euler Integration in one-dimension (first order integrator)<a class="headerlink" href="#a-euler-integration-in-one-dimension-first-order-integrator" title="Link to this heading">#</a></h3>
 <p>We can use this to write a function that takes the current time, position, velocity and dt and then gives back out the new time, position, and velocity - i.e</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Step</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">vel</span><span class="p">,</span><span class="n">dt</span><span class="p">):</span>
   <span class="c1"># do stuff</span>
@@ -789,7 +786,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 </section>
 <section id="b-euler-integration-in-two-dimensions-first-order-integrator">
-<h3>b. Euler Integration  in two-dimensions  (first order integrator)<a class="headerlink" href="#b-euler-integration-in-two-dimensions-first-order-integrator" title="Permalink to this heading">#</a></h3>
+<h3>b. Euler Integration  in two-dimensions  (first order integrator)<a class="headerlink" href="#b-euler-integration-in-two-dimensions-first-order-integrator" title="Link to this heading">#</a></h3>
 <p>We know have a <code class="docutils literal notranslate"><span class="pre">Step</span></code> function that allows us to work in one-dimension.  Balls are sometimes thrown in directions other then straight up, though.  Let’s modify our code to also work in two dimensions.   In addition to the equation for <span class="math notranslate nohighlight">\(a_y,v_y,y\)</span> we can also have a similar set of equation for <span class="math notranslate nohighlight">\(a_x,v_x,x\)</span>:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(v_x(t+dt) = v_x(t) + a_x(t) dt\)</span></p></li>
@@ -844,7 +841,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-a-full-simulation">
-<h3>c.  A full simulation<a class="headerlink" href="#c-a-full-simulation" title="Permalink to this heading">#</a></h3>
+<h3>c.  A full simulation<a class="headerlink" href="#c-a-full-simulation" title="Link to this heading">#</a></h3>
 <p>In this part we are going to write a full simulation and compute the path of a ball until it hits the ground. 🦉Write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">ThrowBall(initPos,initVel,dt)</span></code> which generates a path using your <code class="docutils literal notranslate"><span class="pre">Step</span></code> function and returns a numpy array of times (<code class="docutils literal notranslate"><span class="pre">np.array(ts)</span></code>), velocities (<code class="docutils literal notranslate"><span class="pre">np.array(vs)</span></code>) and positions (<code class="docutils literal notranslate"><span class="pre">np.array(positions)</span></code>)</p>
 <ul class="simple">
 <li><p>Initialize your time, height and velocity</p></li>
@@ -870,7 +867,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="d-making-plots">
-<h3>d. Making Plots<a class="headerlink" href="#d-making-plots" title="Permalink to this heading">#</a></h3>
+<h3>d. Making Plots<a class="headerlink" href="#d-making-plots" title="Link to this heading">#</a></h3>
 <p>We want to plot</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(y\)</span> vs. <span class="math notranslate nohighlight">\(t\)</span> (i.e. <code class="docutils literal notranslate"><span class="pre">plt.plot(ts,positions[:,1],label='first</span> <span class="pre">order</span> <span class="pre">integrator')</span></code>). Note that <code class="docutils literal notranslate"><span class="pre">x=positions[:,0]</span></code> and <code class="docutils literal notranslate"><span class="pre">y=positions[:,1]</span></code>.</p></li>
@@ -891,7 +888,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="e-animation">
-<h3>e.  Animation<a class="headerlink" href="#e-animation" title="Permalink to this heading">#</a></h3>
+<h3>e.  Animation<a class="headerlink" href="#e-animation" title="Link to this heading">#</a></h3>
 <p>If you send <code class="docutils literal notranslate"><span class="pre">animateMe</span></code> the list of positions it will animate them.  You shouldn’t have to change any code here as long as you’ve got a list of positions in the array <code class="docutils literal notranslate"><span class="pre">positions</span></code>. 🦉Go ahead and watch your thrown ball!  <strong>There is five points extra credit for anyone who gets the animation to actually run in time proportional to the total time the ball is in the air.  I haven’t thought about how to do this so I’m not sure how hard it is (or if it’s possible)</strong></p>
 <p><em>You just have to run this code and then play the animation to generate it.</em></p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
@@ -964,7 +961,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="f-errors">
-<h3>f. Errors<a class="headerlink" href="#f-errors" title="Permalink to this heading">#</a></h3>
+<h3>f. Errors<a class="headerlink" href="#f-errors" title="Link to this heading">#</a></h3>
 <p>In this section, we’d like to understand the error of your integrator.</p>
 <p>We’d like to figure out two things.  First, how does the error accumulate as a function of time (when we fix <span class="math notranslate nohighlight">\(dt\)</span>)?</p>
 <p>Secondly, if we run a bunch of simulations to a total time <span class="math notranslate nohighlight">\(T=1.28\)</span> using different time-steps <span class="math notranslate nohighlight">\(dt\)</span>,  how does the error change with <span class="math notranslate nohighlight">\(dt\)</span>?</p>
@@ -989,7 +986,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="g-energy">
-<h3>g. Energy<a class="headerlink" href="#g-energy" title="Permalink to this heading">#</a></h3>
+<h3>g. Energy<a class="headerlink" href="#g-energy" title="Link to this heading">#</a></h3>
 <p>Another important way of checking things is to verify certain physics isn’t broken.</p>
 <p>One of the things that should be true of the thrown ball is the energy should be constant. Recall that the energy should be</p>
 <div class="math notranslate nohighlight">
@@ -1012,7 +1009,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </section>
 <hr class="docutils" />
 <section id="exercise-2-air-resistance">
-<h2>Exercise 2: Air resistance<a class="headerlink" href="#exercise-2-air-resistance" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 2: Air resistance<a class="headerlink" href="#exercise-2-air-resistance" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
@@ -1023,7 +1020,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <li><p>Our second goal is to modify our code so that it can work with air resistance.  We will be able to see how air resistance affects balls flying through the air.  We can also see how a dropped ball reaches terminal velocity.</p></li>
 </ul>
 <section id="a-code-modifications">
-<h3>a. Code Modifications<a class="headerlink" href="#a-code-modifications" title="Permalink to this heading">#</a></h3>
+<h3>a. Code Modifications<a class="headerlink" href="#a-code-modifications" title="Link to this heading">#</a></h3>
 <p>In this section you are going to modify your code to compute dynamics with air resistance.  While doing so you are going to make the code a bit more general.  At the moment, we have defined the mass <code class="docutils literal notranslate"><span class="pre">m</span></code> in the middle of our function.  We also hard-coded the force.  When we are going to work with air resistance, we are going to have to define a constant <code class="docutils literal notranslate"><span class="pre">b</span></code>.  It’s going to get annoying to carry these all around.  In this part, we are going to pull out a function for the force <code class="docutils literal notranslate"><span class="pre">F(t,pos,vel,params)</span></code> that you should call (instead of writing <code class="docutils literal notranslate"><span class="pre">a=-9.8</span></code>.) We  will now pass around a dictionary <code class="docutils literal notranslate"><span class="pre">params</span></code> that gives us access to these parameters.   You will then be able to get to your paramaters by doing things like</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
 </pre></div>
@@ -1047,7 +1044,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-running-and-making-plots-for-throwing-a-ball">
-<h3>b.  Running and making Plots for Throwing a Ball<a class="headerlink" href="#b-running-and-making-plots-for-throwing-a-ball" title="Permalink to this heading">#</a></h3>
+<h3>b.  Running and making Plots for Throwing a Ball<a class="headerlink" href="#b-running-and-making-plots-for-throwing-a-ball" title="Link to this heading">#</a></h3>
 <p>🦉Here we want you to throw a ball in the air and make plots</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(y\)</span> vs. time</p></li>
@@ -1075,7 +1072,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-running-and-making-plots-for-dropping-a-ball">
-<h3>c.   Running and making plots for dropping a ball.<a class="headerlink" href="#c-running-and-making-plots-for-dropping-a-ball" title="Permalink to this heading">#</a></h3>
+<h3>c.   Running and making plots for dropping a ball.<a class="headerlink" href="#c-running-and-making-plots-for-dropping-a-ball" title="Link to this heading">#</a></h3>
 <p>Now we would like you to set up a simulation which has a ball being dropped.  The ball should have a mass of 1.0 kg and be dropped from a height of 1000 meters.  The air resistance value of <span class="math notranslate nohighlight">\(b\)</span> should be 0.3.  Use again a time-step of 0.01.</p>
 <p>🦉We want you to plot</p>
 <ul class="simple">
@@ -1093,7 +1090,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="d-hitting-a-target">
-<h3>d. Hitting a target<a class="headerlink" href="#d-hitting-a-target" title="Permalink to this heading">#</a></h3>
+<h3>d. Hitting a target<a class="headerlink" href="#d-hitting-a-target" title="Link to this heading">#</a></h3>
 <p>Let’s suppose we want to throw a ball starting at position <span class="math notranslate nohighlight">\((0,0)\)</span> with some initial velocity <code class="docutils literal notranslate"><span class="pre">v0</span></code> (<em>which you will find</em>) and have it hit a target on the ground at position <span class="math notranslate nohighlight">\((10.0,0.0)\)</span> m. Let <span class="math notranslate nohighlight">\(b=3.0\)</span> and <span class="math notranslate nohighlight">\(m=1.0\)</span>.  You may again use <span class="math notranslate nohighlight">\(dt=0.01\)</span>.  <strong>We are going to use <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code> to find the initial velocity.</strong> The library <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> is generically useful.</p>
 <p>To achieve this, first write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">myTarget(v,params):</span></code> which takes an initial velociy and a <code class="docutils literal notranslate"><span class="pre">params</span></code> dictionary.  The function should return how far (in absolute magnitude) a ball thrown with the parameters in <code class="docutils literal notranslate"><span class="pre">params</span></code> lands from the target (if included, ignore the initial velocity in params).</p>
 <p>Then you can call</p>
@@ -1116,7 +1113,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="e-hitting-a-moving-target-extra-credit-5-points">
-<h3>e. Hitting a moving target (extra credit: 5 points)<a class="headerlink" href="#e-hitting-a-moving-target-extra-credit-5-points" title="Permalink to this heading">#</a></h3>
+<h3>e. Hitting a moving target (extra credit: 5 points)<a class="headerlink" href="#e-hitting-a-moving-target-extra-credit-5-points" title="Link to this heading">#</a></h3>
 <p>Here we want to launch two balls. One has fixed parameters</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">params</span><span class="o">=</span><span class="p">{</span>
     <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
@@ -1151,7 +1148,7 @@ Well note that <span class="math notranslate nohighlight">\(\log(y) = \log(A) + 
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
 <section id="exercise-3-second-order-integrators">
-<h2>Exercise 3:  Second Order Integrators<a class="headerlink" href="#exercise-3-second-order-integrators" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 3:  Second Order Integrators<a class="headerlink" href="#exercise-3-second-order-integrators" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
@@ -1183,7 +1180,7 @@ dv &amp;= \frac{F(x_\textrm{midpoint},v_\textrm{midpoint},t_\textrm{midpoint})}{
 \[ t \leftarrow t+dt\]</div>
 <p><strong>Note that <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(v\)</span>, and <span class="math notranslate nohighlight">\(F\)</span> are all vectors, even though we haven’t written the vector symbol over them</strong></p>
 <section id="a-midpoint-method">
-<h3>a. Midpoint Method<a class="headerlink" href="#a-midpoint-method" title="Permalink to this heading">#</a></h3>
+<h3>a. Midpoint Method<a class="headerlink" href="#a-midpoint-method" title="Link to this heading">#</a></h3>
 <p>Implement this midpoint method replacing your previous <code class="docutils literal notranslate"><span class="pre">Step</span></code> function. Test that it works by verifying you are essentially getting the same results as earlier (it might be slightly different because you have a smaller time step error).</p>
 <p><em>Code for the midpoint method.</em></p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
@@ -1195,7 +1192,7 @@ dv &amp;= \frac{F(x_\textrm{midpoint},v_\textrm{midpoint},t_\textrm{midpoint})}{
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-measuring-the-error">
-<h3>b. Measuring the error.<a class="headerlink" href="#b-measuring-the-error" title="Permalink to this heading">#</a></h3>
+<h3>b. Measuring the error.<a class="headerlink" href="#b-measuring-the-error" title="Link to this heading">#</a></h3>
 <p>🦉Using your second order method, measure the time-step error of our integrator for a ball with friction in the same way that you did for the first order method.</p>
 <!-- * graphing the error it makes after a time $T=1.28$ as a function of $dt \in \{0.00001,0.0001,0.001,0.01,0.02,0.04,0.08,0.16,0.32\}$.
 * determining the $\alpha$ in the equation $\textrm{Error} \propto dt^\alpha$. 
@@ -1214,22 +1211,22 @@ dv &amp;= \frac{F(x_\textrm{midpoint},v_\textrm{midpoint},t_\textrm{midpoint})}{
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
 <section id="exercise-4-higher-order-integrators-extra-credit-15-points-total-5-points-section">
-<h2>Exercise 4: Higher Order Integrators (Extra Credit: 15 points total - 5 points/section)<a class="headerlink" href="#exercise-4-higher-order-integrators-extra-credit-15-points-total-5-points-section" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 4: Higher Order Integrators (Extra Credit: 15 points total - 5 points/section)<a class="headerlink" href="#exercise-4-higher-order-integrators-extra-credit-15-points-total-5-points-section" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
 <section id="a-runge-kutta-5-points">
-<h3>a. Runge-Kutta (5 points)<a class="headerlink" href="#a-runge-kutta-5-points" title="Permalink to this heading">#</a></h3>
+<h3>a. Runge-Kutta (5 points)<a class="headerlink" href="#a-runge-kutta-5-points" title="Link to this heading">#</a></h3>
 <p>We have implemented a first and second order integrator.  We can even use higher order integrators.  The typical one everyone uses is the fourth order Runge-Kutta (RK) integrator - see <a class="reference external" href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">wikipedia</a>.</p>
 <p>🦉 Go ahead and implement a fourth-order RK integrator and show (using the same time-step techniques above) that it is fourth order.</p>
 </section>
 <section id="b-scipy-ode-5-points">
-<h3>b. scipy ODE (5 points)<a class="headerlink" href="#b-scipy-ode-5-points" title="Permalink to this heading">#</a></h3>
+<h3>b. scipy ODE (5 points)<a class="headerlink" href="#b-scipy-ode-5-points" title="Link to this heading">#</a></h3>
 <p>🦉 Rewrite ThrowBall to use <code class="docutils literal notranslate"><span class="pre">scipy.integrate.ode</span></code>.</p>
 </section>
 <section id="c-symplectic-integrator-5-points">
-<h3>c. symplectic integrator (5 points)<a class="headerlink" href="#c-symplectic-integrator-5-points" title="Permalink to this heading">#</a></h3>
+<h3>c. symplectic integrator (5 points)<a class="headerlink" href="#c-symplectic-integrator-5-points" title="Link to this heading">#</a></h3>
 <p>Implement a symplectic integrator at any order.  Show what order it works at and show that the energy stays close for a much longer period of time then Euler.</p>
 <hr class="docutils" />
 <ul class="simple">
@@ -1269,7 +1266,7 @@ dv &amp;= \frac{F(x_\textrm{midpoint},v_\textrm{midpoint},t_\textrm{midpoint})}{
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1297,7 +1294,9 @@ dv &amp;= \frac{F(x_\textrm{midpoint},v_\textrm{midpoint},t_\textrm{midpoint})}{
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1391,8 +1390,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

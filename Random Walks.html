@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Random Walks &#8212; Physics 246</title>
   
@@ -15,53 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Random Walks';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Classifying Galaxies" href="MachineLearningGalaxies.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -143,6 +134,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -156,11 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="_static/FD.png" class="logo__image only-light" alt="Physics 246 - Home"/>
-    <script>document.write(`<img src="_static/FD.png" class="logo__image only-dark" alt="Physics 246 - Home"/>`);</script>
+    <img src="_static/FD.png" class="logo__image only-dark pst-js-only" alt="Physics 246 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -241,14 +246,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/bkclark/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Random Walks.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -323,27 +328,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -401,10 +398,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="random-walks">
-<h1>Random Walks<a class="headerlink" href="#random-walks" title="Permalink to this heading">#</a></h1>
+<h1>Random Walks<a class="headerlink" href="#random-walks" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Author:</strong></p></li>
 <li><p><strong>Date:</strong></p></li>
@@ -447,7 +444,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 8, 21, 19, 0, 85978)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 22, 20, 11, 25, 490063)
 </pre></div>
 </div>
 </div>
@@ -508,7 +505,7 @@ document.write(`
 </details>
 </div>
 <section id="exercise-1-unbiased-random-walks">
-<h2>Exercise 1: Unbiased Random Walks<a class="headerlink" href="#exercise-1-unbiased-random-walks" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 1: Unbiased Random Walks<a class="headerlink" href="#exercise-1-unbiased-random-walks" title="Link to this heading">#</a></h2>
 <p>In this exercise we are going to start by modeling a random walk.  A random walk starts at some location <span class="math notranslate nohighlight">\(x_0\)</span> at a time <span class="math notranslate nohighlight">\(t=0\)</span> and then continues to take random steps at each next unit in time.  Letting, <span class="math notranslate nohighlight">\(x_0=0\)</span>, we can model future steps as</p>
 <div class="math notranslate nohighlight">
 \[ x_t = x_{t-1} + \delta\]</div>
@@ -527,7 +524,7 @@ Lots of different physical processes could be modelled by random walks:</p>
 <p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is a number which represents an effective step-size and <span class="math notranslate nohighlight">\(N(0,1)\)</span> is a gaussian with mean 0 and standard deviation 1 generated by <code class="docutils literal notranslate"><span class="pre">np.random.randn()</span></code></p>
 <p>Notice that for each of these walks, if we were to watch just one walk - e.g. a single person moving back and forth or a single pollen -  it would look pretty random.   It’s only if we look at where the particle is at a moment in time over the distribution of many walks, can we say something quantitative about where we think the particle (or coin sum or person) might be.</p>
 <section id="a-simulating-a-random-walk">
-<h3>a. Simulating a random walk<a class="headerlink" href="#a-simulating-a-random-walk" title="Permalink to this heading">#</a></h3>
+<h3>a. Simulating a random walk<a class="headerlink" href="#a-simulating-a-random-walk" title="Link to this heading">#</a></h3>
 <p>Let’s start by writing code which simulates a random walk.  Your goal is to write a function</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">RandomWalk</span><span class="p">(</span><span class="n">NumSteps</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
   <span class="c1"># do stuff</span>
@@ -556,7 +553,7 @@ Lots of different physical processes could be modelled by random walks:</p>
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-random-walk-averages">
-<h3>b. Random Walk Averages<a class="headerlink" href="#b-random-walk-averages" title="Permalink to this heading">#</a></h3>
+<h3>b. Random Walk Averages<a class="headerlink" href="#b-random-walk-averages" title="Link to this heading">#</a></h3>
 <p>Since each random walk is different, it is useful to look at properties of the distribution over walks.  We are going to start by computing averages over a large number of walks.   The properites we will focus on is</p>
 <p>(1) The average <span class="math notranslate nohighlight">\(\langle x_t\rangle\)</span> over the walks at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>(2) The mean absolute deviation (MAD) <span class="math notranslate nohighlight">\(\langle |x_t| \rangle\)</span> over the walks at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
@@ -583,7 +580,7 @@ Like when you plotted the walks, you could generate all the walks and then produ
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 <section id="c-the-full-distribution">
-<h3>c. The Full Distribution<a class="headerlink" href="#c-the-full-distribution" title="Permalink to this heading">#</a></h3>
+<h3>c. The Full Distribution<a class="headerlink" href="#c-the-full-distribution" title="Link to this heading">#</a></h3>
 <p>So far we’ve been looking at some summary statistics as of the distribution such as the average and standard deviation.  Now, we’d like to look at the full distribution over walks.</p>
 <p>We will start by generating the 10 walks (don’t plot them) that we generated earlier and this time animating them with  <code class="docutils literal notranslate"><span class="pre">Animate1D(walks,make_hist=True)</span></code>.  This time the animation of the particles bouncing around will be generated with a histogram on top which gives the full distribution of the walks.  At the beginning you should see the histogram has all 10 particles in one places.  During the animiation, it will quickly end up each bin has only one particle in it although occassionally you will see 2 (and maybe 3) particles per bin.  Go ahead and animate it.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
@@ -633,9 +630,9 @@ Like when you plotted the walks, you could generate all the walks and then produ
 </section>
 </section>
 <section id="exercise-2-modeling-the-diffusion-deterministically">
-<h2>Exercise 2:  Modeling the diffusion deterministically<a class="headerlink" href="#exercise-2-modeling-the-diffusion-deterministically" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 2:  Modeling the diffusion deterministically<a class="headerlink" href="#exercise-2-modeling-the-diffusion-deterministically" title="Link to this heading">#</a></h2>
 <section id="a-representing-the-initial-distribution">
-<h3>a. Representing the initial distribution<a class="headerlink" href="#a-representing-the-initial-distribution" title="Permalink to this heading">#</a></h3>
+<h3>a. Representing the initial distribution<a class="headerlink" href="#a-representing-the-initial-distribution" title="Link to this heading">#</a></h3>
 <p>In this exercise, we’d like to deterministically model how the distribution over random walks changes in time.  What this means is that we want to have some equation of motion that starts with the histogram at step <span class="math notranslate nohighlight">\(t=1\)</span> and then generates the histogram at other time step <span class="math notranslate nohighlight">\(t\)</span>.  In the dynamics section, we stored the position and velocity of a planet at a moment in time. Now, we have to store a vector which stores the entire histogram or distribution at a moment in time.</p>
 <p>Start with a vector in the initial condition  <span class="math notranslate nohighlight">\(\rho(t=1)=\exp[-x^2/2\sigma^2]\)</span> where <span class="math notranslate nohighlight">\(\sigma=6\)</span> which we can represent on a grid with <span class="math notranslate nohighlight">\(dx=1\)</span> as</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">size</span><span class="o">=</span><span class="mi">4000</span>
@@ -659,7 +656,7 @@ Like when you plotted the walks, you could generate all the walks and then produ
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-time-evolving-the-distribution">
-<h3>b.  Time evolving the distribution<a class="headerlink" href="#b-time-evolving-the-distribution" title="Permalink to this heading">#</a></h3>
+<h3>b.  Time evolving the distribution<a class="headerlink" href="#b-time-evolving-the-distribution" title="Link to this heading">#</a></h3>
 <p>Now we need an equation of motion which tells us how to change the distribution.  Stochastic random walks are represented by the diffusion equation:</p>
 <div class="math notranslate nohighlight">
 \[ \frac{\partial \rho}{\partial t} = D \frac{\partial^2 \rho}{\partial x^2}\]</div>
@@ -686,9 +683,9 @@ Like when you plotted the walks, you could generate all the walks and then produ
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
 <section id="exercise-3-two-dimensional-random-walks">
-<h2>Exercise 3:  Two Dimensional Random Walks<a class="headerlink" href="#exercise-3-two-dimensional-random-walks" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 3:  Two Dimensional Random Walks<a class="headerlink" href="#exercise-3-two-dimensional-random-walks" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h3>a. Simulating a Random Walk<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>a. Simulating a Random Walk<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Let us now work with a two-dimensional random walk.   Starting at <span class="math notranslate nohighlight">\(x=(0,0)\)</span> generate 5 two-dimensional gaussian random walks with a <span class="math notranslate nohighlight">\(\sigma=6\)</span> each of 5000 steps.  Plot <span class="math notranslate nohighlight">\(y\)</span> vs <span class="math notranslate nohighlight">\(x\)</span> for these 5 walks.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -699,7 +696,7 @@ Like when you plotted the walks, you could generate all the walks and then produ
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-self-similarity">
-<h3>b. Self Similarity<a class="headerlink" href="#b-self-similarity" title="Permalink to this heading">#</a></h3>
+<h3>b. Self Similarity<a class="headerlink" href="#b-self-similarity" title="Link to this heading">#</a></h3>
 <p>Brownian random walks are self-similar. As you zoom into pieces of the figure, it looks qualitatively the same on all scales.
 Make a random walk of 128,000 steps.  Then plot (on separate plots)</p>
 <ul class="simple">
@@ -720,7 +717,7 @@ Make a random walk of 128,000 steps.  Then plot (on separate plots)</p>
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-standard-deviation">
-<h3>c. Standard Deviation<a class="headerlink" href="#c-standard-deviation" title="Permalink to this heading">#</a></h3>
+<h3>c. Standard Deviation<a class="headerlink" href="#c-standard-deviation" title="Link to this heading">#</a></h3>
 <p>Like in the 1D case, we expect the average <span class="math notranslate nohighlight">\(\langle x_k \rangle\)</span> to be zero.  Let’s just go ahead and plot the standard deviation</p>
 <div class="math notranslate nohighlight">
 \[\langle \sigma \rangle = \langle \sqrt{x_k^2 + y_k^2}  \rangle\]</div>
@@ -729,15 +726,15 @@ Make a random walk of 128,000 steps.  Then plot (on separate plots)</p>
 <p>It turns out that you also see this behavior in three dimensions. In general, the standard deviation always scales as the square root of time for any physical system undergoing diffusive motion.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div> <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="d-animation-extra-credit-5-points">
-<h3>d.  Animation (extra credit: 5 points)<a class="headerlink" href="#d-animation-extra-credit-5-points" title="Permalink to this heading">#</a></h3>
+<h3>d.  Animation (extra credit: 5 points)<a class="headerlink" href="#d-animation-extra-credit-5-points" title="Link to this heading">#</a></h3>
 <p>Animate the two-dimensional random walk.  You may find the animation code from previous exercise helpful.</p>
 </section>
 </section>
 <section id="exercise-3-diffusion-limited-aggregation">
-<h2>Exercise 3: Diffusion Limited Aggregation<a class="headerlink" href="#exercise-3-diffusion-limited-aggregation" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 3: Diffusion Limited Aggregation<a class="headerlink" href="#exercise-3-diffusion-limited-aggregation" title="Link to this heading">#</a></h2>
 <p>In the previous exercises we learned some properties of random walks.  In this exercise, we will apply random walks to the application of deposition.  This will be done by modeling it with diffusion limited aggregation (DLA).</p>
 <section id="a-dla-onto-a-core-point-at-the-origin">
-<h3>a. DLA onto a core point at the origin<a class="headerlink" href="#a-dla-onto-a-core-point-at-the-origin" title="Permalink to this heading">#</a></h3>
+<h3>a. DLA onto a core point at the origin<a class="headerlink" href="#a-dla-onto-a-core-point-at-the-origin" title="Link to this heading">#</a></h3>
 <p>In DLA, we do the following:</p>
 <ul class="simple">
 <li><p>Start with a particle at some fixed point (say the center of a box).</p></li>
@@ -775,7 +772,7 @@ Use 1000 different particles.</p>
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-dla-onto-a-surface-extra-credit-5-points">
-<h3>b. DLA onto a surface (extra credit: 5 points)<a class="headerlink" href="#b-dla-onto-a-surface-extra-credit-5-points" title="Permalink to this heading">#</a></h3>
+<h3>b. DLA onto a surface (extra credit: 5 points)<a class="headerlink" href="#b-dla-onto-a-surface-extra-credit-5-points" title="Link to this heading">#</a></h3>
 <p>In the previous section you did DLA onto a core point.  If you are interested in understanding deposition onto a surface, you want to modify your DLA to come in at the top and stick either at the bottom or if they hit any previously stuck point.  Implement this.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -794,9 +791,9 @@ Use 1000 different particles.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
 <section id="exercise-4-symmetry-restoration">
-<h2>Exercise 4: Symmetry Restoration<a class="headerlink" href="#exercise-4-symmetry-restoration" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 4: Symmetry Restoration<a class="headerlink" href="#exercise-4-symmetry-restoration" title="Link to this heading">#</a></h2>
 <section id="a-one-dimensional-discrete-walks">
-<h3>a. One dimensional Discrete Walks<a class="headerlink" href="#a-one-dimensional-discrete-walks" title="Permalink to this heading">#</a></h3>
+<h3>a. One dimensional Discrete Walks<a class="headerlink" href="#a-one-dimensional-discrete-walks" title="Link to this heading">#</a></h3>
 <p>So far we’ve been doing random walks with gaussian steps.  We would like to see what changes if instead we did discrete walks - i.e. at each step we are going to walk either left exactly 6 units or right exactly 6 units.</p>
 <p>Write code to do this random walk and then print the histogram on separate plots at</p>
 <ul class="simple">
@@ -819,7 +816,7 @@ Use 1000 different particles.</p>
 </div>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-rotational-invariance-in-2d">
-<h3>b. Rotational Invariance in 2D<a class="headerlink" href="#b-rotational-invariance-in-2d" title="Permalink to this heading">#</a></h3>
+<h3>b. Rotational Invariance in 2D<a class="headerlink" href="#b-rotational-invariance-in-2d" title="Link to this heading">#</a></h3>
 <p>Now we are going to show that in the 2D case, the discrete walks restore the rotational invariance of the gaussian walk.</p>
 <p>To do this, we want to put the location of the 2000 2d coordinates at t=1000 steps.</p>
 <p>Do this for both the discrete and guassian walks.</p>
@@ -870,7 +867,7 @@ Use 1000 different particles.</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -898,7 +895,9 @@ Use 1000 different particles.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -982,8 +981,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

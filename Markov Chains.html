@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Markov Chains &#8212; Physics 246</title>
   
@@ -15,53 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Markov Chains';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Random Walks" href="Random%20Walks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -143,6 +134,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -156,11 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="_static/FD.png" class="logo__image only-light" alt="Physics 246 - Home"/>
-    <script>document.write(`<img src="_static/FD.png" class="logo__image only-dark" alt="Physics 246 - Home"/>`);</script>
+    <img src="_static/FD.png" class="logo__image only-dark pst-js-only" alt="Physics 246 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -241,14 +246,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/bkclark/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Markov Chains.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -323,27 +328,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -389,10 +386,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="markov-chains">
-<h1>Markov Chains<a class="headerlink" href="#markov-chains" title="Permalink to this heading">#</a></h1>
+<h1>Markov Chains<a class="headerlink" href="#markov-chains" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Author:</strong></p></li>
 <li><p><strong>Date:</strong></p></li>
@@ -419,19 +416,19 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 8, 21, 17, 46, 338537)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 22, 20, 10, 55, 783803)
 </pre></div>
 </div>
 </div>
 </div>
 <section id="exercise-1-weather-markov-chains">
-<h2>Exercise 1: Weather Markov Chains<a class="headerlink" href="#exercise-1-weather-markov-chains" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 1: Weather Markov Chains<a class="headerlink" href="#exercise-1-weather-markov-chains" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
 <section id="background">
-<h3>0. Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h3>
+<h3>0. Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h3>
 <p>In science and engineering, random (or stochastic) processes are commonplace. Electron velocities in a wire, stock prices in the stock market, and traffic congestion on a highway are all examples of time-dependent random processes. To understand such systems, scientists and engineers make use of the Markov chain, a stochastic process model developed by the Russian mathematician Andrey Markov in the 1900s.</p>
 <p>A Markov chain is often described as a “memory-less” random process. This means that the next state of the system only depends on the current state and not on any previous states. To see how a Markov chain works, we will study a simple example with a helpful visualization.</p>
 <p>Suppose we make a simplistic model of summer weather in Champaign, Illinois using a Markov chain. We say that there are only three states for a day’s weather: sunny, cloudy, and rainy. The Markov chain is specified by the probabilities of transitioning from state 𝐴 to state 𝐵, i.e., from today’s weather 𝐴 to tomorrow’s weather 𝐵, which we call <span class="math notranslate nohighlight">\(P(A \rightarrow B)\)</span>  For example, maybe we think that 50% of the time a cloudy day leads to a rainy day, so that <span class="math notranslate nohighlight">\(P(\textrm{cloudy } \rightarrow \textrm{ rainy})=0.5\)</span>  And maybe we believe that 75% of the time a sunny day is followed by another sunny day, so that <span class="math notranslate nohighlight">\(𝑃(\textrm{ sunny } \rightarrow \textrm{sunny}) =0.75\)</span>  Once we have defined all these transition probabilities we have made a Markov chain such as the one below.</p>
@@ -450,9 +447,9 @@ For example, draw a uniform random number <span class="math notranslate nohighli
 <p>By now you might be able to see how the random walks we studied earlier were examples of Markov chains. Each step of the random walk only depended on the current position and randomly took the pollen grain to a new position. In that case, the states were represented by continuous variables (position) while in the weather example the states are discrete (sunny, cloudy, or rainy). Nonetheless, the idea is exactly the same.</p>
 </section>
 <section id="a-weather-probabilities">
-<h3>a. Weather Probabilities<a class="headerlink" href="#a-weather-probabilities" title="Permalink to this heading">#</a></h3>
+<h3>a. Weather Probabilities<a class="headerlink" href="#a-weather-probabilities" title="Link to this heading">#</a></h3>
 <p>🦉Implement the Markov chain described in the previous section. The transition probabilities we will use are given in the following table:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><em>state</em></p></th>
 <th class="head"><p>sunny</p></th>
@@ -478,15 +475,19 @@ For example, draw a uniform random number <span class="math notranslate nohighli
 </tr>
 </tbody>
 </table>
-<p>In particular, run 10000 steps of Markov chain sampling and keep a running (or cumulative) average of how many times you have seen each state. One way to do this is by having three length 10000 arrays <code class="docutils literal notranslate"><span class="pre">sunnyCounts</span></code>, <code class="docutils literal notranslate"><span class="pre">cloudyCounts</span></code>, <code class="docutils literal notranslate"><span class="pre">rainyCounts</span></code> that you fill with zeros and ones at each step, depending on which state you are at. The cumulative average of a sunny day, for example, will then be</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sunnyCumAvg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">sunnyCounts</span><span class="p">)</span> <span class="o">/</span> <span class="n">steps_so_far</span>
+</div>
+<p>In particular, run 10000 steps of Markov chain sampling and collect what the weather is on a given day.  The easiest way to do this is to keep an array <code class="docutils literal notranslate"><span class="pre">weather</span></code> for which you push back 0 if it’s sunny, 1 if it’s cloudy, and 2 if it’s rainy.</p>
+<p>Then we can graph the results in various ways.  For example, we can get a histogram of the results by doing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">weather</span><span class="p">[</span><span class="mi">100</span><span class="p">:],</span><span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">],</span><span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">rwidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;Sunny&#39;</span><span class="p">,</span><span class="s1">&#39;Cloudy&#39;</span><span class="p">,</span><span class="s1">&#39;Rainy&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>After enough steps, these running averages will approximate the unconditional probability distributions P(sunny), P(cloudy), P(rainy) Your result should look something like the following figure</p>
+<p>which will show us how often any given weather is.</p>
+<p><em>Slight Aside:</em>. Each Markov chain has an equilibration time. One should always wait until after the equilibration time before using statistics from a Markov chain. While we have not measured the equilibration time here, the equilibration time is short.  That said, the <code class="docutils literal notranslate"><span class="pre">100</span></code> in <code class="docutils literal notranslate"><span class="pre">weather[100:]</span></code> is to ensure the statistics start after the equilibration.  There are other time scales, such as the autocorrelation time and the mixing time, that are important to consider when using Markov chains, but I will not discuss them here.</p>
+<p>Alternatively, we might want to see the fluctations of the weather over time.  If you just plot weather (i.e. <code class="docutils literal notranslate"><span class="pre">plt.plot(weather)</span></code>) it won’t be very instructive because it will just jump around.  Instead it makes sense to get a running average.  Note that <code class="docutils literal notranslate"><span class="pre">np.average(measure[i-window//2:i+window//2]==0)</span></code> will give you the fraction of the time that it is sunny around day <code class="docutils literal notranslate"><span class="pre">i</span></code>. Using <code class="docutils literal notranslate"><span class="pre">window=100</span></code> go ahead and compute the fraction of time it is sunny (respectively cloudy and rainy) around day <code class="docutils literal notranslate"><span class="pre">i</span></code> plotting it is a function of <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
 <!--![image.png](attachment:image.png)-->
-<div><img src="https://clark.physics.illinois.edu/246img/MC_probability.png" width=500  alt="Answer (start)"></img><br></div><p>Notice that the Markov chain quickly settles down to equilibrium and the averages converge to constant values. Each Markov chain has an equilibration time. One should always wait until after the equilibration time before collecting statistics from a Markov chain. We have not measured the equilibration time, but for such a simple Markov chain with very few possible states, the equilibration time is very short. There are other time scales, such as the autocorrelation time and the mixing time, that are important to consider when using Markov chains, but I will not discuss them here.</p>
-<p>When run for 10000 steps, my Markov chain obtains the following estimates for the unconditional probabilities P(sunny)=0.625, P(cloudy) = 0.3125, P(rainy) =0.0625.  Make sure you obtain similar values.</p>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
+<div><img src="https://clark.physics.illinois.edu/246img/MC_probability.png" width=500  alt="Answer (start)"></img><br></div><div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
 </pre></div>
@@ -498,15 +499,18 @@ For example, draw a uniform random number <span class="math notranslate nohighli
 </section>
 <hr class="docutils" />
 <section id="information-about-markov-chain-monte-carlo">
-<h2>Information about Markov Chain Monte Carlo<a class="headerlink" href="#information-about-markov-chain-monte-carlo" title="Permalink to this heading">#</a></h2>
+<h2>Information about Markov Chain Monte Carlo<a class="headerlink" href="#information-about-markov-chain-monte-carlo" title="Link to this heading">#</a></h2>
 <p>Here we will discuss how to use Markov Chain Monte Carlo (MCMC) to compute expectation values.  In statistics, we study the properties of random variables <span class="math notranslate nohighlight">\(x\)</span> and their probability distributions <span class="math notranslate nohighlight">\(P(x)\)</span>.  We often care about computing expectation values of functions of the random variable such as</p>
 <div class="math notranslate nohighlight">
 \[\langle f(x) \rangle = \sum_x f(x) P(x)\]</div>
-<p>In general, the probability distribution <span class="math notranslate nohighlight">\(P(x)\)</span> can be very complicated and difficult to sample efficiently. In this case, we can use Markov chains to represent the probability distribution <span class="math notranslate nohighlight">\(P(x)\)</span>.   It is possible to pick the transition probabilities of the Markov chain so that the chain’s equilibrium probability distribution is the desired probability distribution <span class="math notranslate nohighlight">\(P(x)\)</span>. Once we have a correctly defined Markov chain, we can sample it to obtain a set of sampled states <span class="math notranslate nohighlight">\(x_1,x_2,...,x_T\)</span>.  These sampled states can be used to estimate expectation values in the following way
-$<span class="math notranslate nohighlight">\( \langle f(x) \rangle \approx \frac{1}{T_{max}} \sum_{t=1}^{T_{max}} f(x_t)\)</span>$</p>
+<p>In general, the probability distribution <span class="math notranslate nohighlight">\(P(x)\)</span> can be very complicated and difficult to sample efficiently. In this case, we can use Markov chains to represent the probability distribution <span class="math notranslate nohighlight">\(P(x)\)</span>.   It is possible to pick the transition probabilities of the Markov chain so that the chain’s equilibrium probability distribution is the desired probability distribution <span class="math notranslate nohighlight">\(P(x)\)</span>. Once we have a correctly defined Markov chain, we can sample it to obtain a set of sampled states <span class="math notranslate nohighlight">\(x_1,x_2,...,x_T\)</span>.  These sampled states can be used to estimate expectation values in the following way</p>
+<div class="math notranslate nohighlight">
+\[
+\langle f(x) \rangle \approx \frac{1}{T_{max}} \sum_{t=1}^{T_{max}} f(x_t)
+\]</div>
 <p>This should look familiar. This is secretly what we were doing when we were computing the RMS displacement of random walks previously.  However, you should be clear on the distinction between Monte Carlo and Markov chains. Monte Carlo methods are ways to evaluate integrals using random numbers. Markov chains are used to sample complicated probability distributions. When Monte Carlo is used to integrate a probability distribution specified by a Markov chain, then it is called Markov Chain Monte Carlo.</p>
 <section id="metropolis-algorithm">
-<h3>Metropolis Algorithm<a class="headerlink" href="#metropolis-algorithm" title="Permalink to this heading">#</a></h3>
+<h3>Metropolis Algorithm<a class="headerlink" href="#metropolis-algorithm" title="Link to this heading">#</a></h3>
 <p>A very common form of Markov Chain Monte Carlo is the Metropolis algorithm. This was the first MCMC algorithm developed. It was proposed in 1953 by Edward Teller, Nicholas Metropolis, and others at Los Alamos National Laboratory in New Mexico during the early days of scientific computing. Teller and his physics colleagues were interested in using MCMC to calculate the thermodynamic properties of a weakly interacting classical gas, which was very difficult to calculate analytically. Impressively, more than half a century after its introduction, Metropolis MCMC is still in wide use today in many areas of science, engineering, and statistics.</p>
 <p>The Metropolis algorithm samples a Markov chain by proposing moves between states, which are then either accepted or rejected according to a specific criterion. These proposed moves are chosen so that the Markov chain’s transition probabilities give the correct equilibrium distribution4. In general, Metropolis Markov chain sampling of a probability distribution <span class="math notranslate nohighlight">\(P(S)\)</span> works as follows:</p>
 <ol class="arabic simple">
@@ -519,7 +523,7 @@ $<span class="math notranslate nohighlight">\( \langle f(x) \rangle \approx \fra
 <p>This Markov chain’s samples <span class="math notranslate nohighlight">\(S_1,...S_{T_{max}}\)</span> are then used to estimate expectation values <span class="math notranslate nohighlight">\(\langle f(S) \rangle\)</span> in the way  discussed in the previous section. We will use this general Metropolis MCMC framework to sample the Boltzmann distribution, an important probability distribution in thermal physics.</p>
 </section>
 <section id="thermal-physics-and-the-boltzmann-distribution">
-<h3>Thermal physics and the Boltzmann distribution<a class="headerlink" href="#thermal-physics-and-the-boltzmann-distribution" title="Permalink to this heading">#</a></h3>
+<h3>Thermal physics and the Boltzmann distribution<a class="headerlink" href="#thermal-physics-and-the-boltzmann-distribution" title="Link to this heading">#</a></h3>
 <p>In some ways, the type of physics that we encounter most often in our everyday lives is thermal physics. We are perpetually surrounded by a heat bath of <span class="math notranslate nohighlight">\(\approx 10^{27}\)</span> particles whizzing around us. The black-body radiation we receive from the sun is in thermal equilibrium with the Earth’s surface. The phases of matter we see and interact with every day, such as liquid water, gaseous oxygen, or solid iron, are all described by the physics of thermodynamics and statistical mechanics.</p>
 <p>Physical systems that are in thermal equilibrium with a heat bath obey the laws of statistical mechanics. Heat baths are large physical systems that are assumed to be at a constant temperature <span class="math notranslate nohighlight">\(T\)</span>. A small system put in contact with a heat bath is able to exchange energy with the heat bath so that it also stays at the same temperature.</p>
 <!-- ![image.png](attachment:image.png) -->
@@ -537,7 +541,7 @@ $<span class="math notranslate nohighlight">\( \langle f(x) \rangle \approx \fra
 </section>
 </section>
 <section id="exercise-2-the-thermodynamics-of-a-paramagnetic-material">
-<h2>Exercise 2: The thermodynamics of a paramagnetic material<a class="headerlink" href="#exercise-2-the-thermodynamics-of-a-paramagnetic-material" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 2: The thermodynamics of a paramagnetic material<a class="headerlink" href="#exercise-2-the-thermodynamics-of-a-paramagnetic-material" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
@@ -555,7 +559,9 @@ $<span class="math notranslate nohighlight">\(E = -\mu B \cos \theta\)</span><sp
 where \)</span>\theta$ is the angle between the magnetic moment and the magnetic field.</p>
 <p>Each orientation of the dipole is called a “state.” The possible states for the dipole are specified by the angle <span class="math notranslate nohighlight">\(0\leq \theta &lt; 2\pi\)</span>; the probability of such states in thermal equilibrium is given by the Boltzmann distribution</p>
 <div class="math notranslate nohighlight">
-\[P(\theta) = \frac{1}{Z} e^{-E(\theta)/k_bT} = \frac{1}{Z} e^{\mu B \cos(\theta)/k_B T} \equiv \frac{1}{Z} e^{h \cos\theta}\]</div>
+\[
+P(\theta) = \frac{1}{Z} e^{-E(\theta)/k_bT} = \frac{1}{Z} e^{\mu B \cos(\theta)/k_B T} \equiv \frac{1}{Z} e^{h \cos\theta}
+\]</div>
 <p>where <span class="math notranslate nohighlight">\(h=\mu B/k_BT\)</span> is a dimensionless quantity.</p>
 <p>Now, we want to use Metropolis Markov Chain Monte Carlo to samples states from <span class="math notranslate nohighlight">\(P(\theta)\)</span> To sample states from the Markov chain, we use the steps outlined in the section on the Metropolis algorithm, but filling in the details for this specific problem:</p>
 <ol class="arabic simple">
@@ -578,15 +584,14 @@ $<span class="math notranslate nohighlight">\(M(h) = I_1(h)/I_0(h)\)</span><span
 where \)</span>I_\nu(z)<span class="math notranslate nohighlight">\(  is a modified Bessel function of the second kind of order \)</span>\nu$.</p>
 <p><strong>Plotting</strong><br />
 🦉Plot your MCMC calculation results and the exact answer given by the above formula on the same plot. You can use the <code class="docutils literal notranslate"><span class="pre">scipy.special</span></code> module to compute the Bessel functions. For example,</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sps</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sps</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sps</span><span class="o">.</span><span class="n">iv</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>prints the value <span class="math notranslate nohighlight">\(I_3(0.5)\)</span>.</p>
 <p>You should obtain a plot that looks like this:</p>
 <!--![image.png](attachment:image.png)-->
-<div><img src="https://clark.physics.illinois.edu/246img/MC_mag.png" width=400  alt="Answer (start)"></img><br></div><p>(You don’t need to compute the error bars for your MCMC data points. I included them to illustrate how accurate the results are.)</p>
-<p>Note how the magnetization changes with  <span class="math notranslate nohighlight">\(h\)</span>. For small <span class="math notranslate nohighlight">\(|h|\)</span> (high temperature or low magnetic field), the spins fluctuate wildly and so don’t align with the magnetic field, which causes there to be no magnetization. For large <span class="math notranslate nohighlight">\(|h|\)</span> (low temperature or high magnetic field), the spins are mostly aligned with the magnetic field and <span class="math notranslate nohighlight">\(|M|\)</span> is close to one.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/MC_mag.png" width=400  alt="Answer (start)"></img><br></div><p>Note how the magnetization changes with  <span class="math notranslate nohighlight">\(h\)</span>. For small <span class="math notranslate nohighlight">\(|h|\)</span> (high temperature or low magnetic field), the spins fluctuate wildly and so don’t align with the magnetic field, which causes there to be no magnetization. For large <span class="math notranslate nohighlight">\(|h|\)</span> (low temperature or high magnetic field), the spins are mostly aligned with the magnetic field and <span class="math notranslate nohighlight">\(|M|\)</span> is close to one.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,7 +603,7 @@ where \)</span>I_\nu(z)<span class="math notranslate nohighlight">\(  is a modif
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div>
 </section>
 <section id="exercise-3-thermodynamics-of-rubber-bands">
-<h2>Exercise 3: Thermodynamics of rubber bands<a class="headerlink" href="#exercise-3-thermodynamics-of-rubber-bands" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 3: Thermodynamics of rubber bands<a class="headerlink" href="#exercise-3-thermodynamics-of-rubber-bands" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
@@ -611,29 +616,32 @@ where \)</span>I_\nu(z)<span class="math notranslate nohighlight">\(  is a modif
 <p>The states of the rubber band, unlike the states of the paramagnet in the previous exercise, are discrete and can be labeled with integers. For example, the following three configurations of 7- polymer chains</p>
 <!--![image.png](attachment:image.png)-->
 <div><img src="https://clark.physics.illinois.edu/246img/MC_rubberBand2.png" width=200  alt="Answer (start)"></img><br></div><p>can be labeled with arrays of binary values:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> 
-<span class="n">configuration2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">configuration2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">configuration3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Here we chose to have the number one represent a flat polymer and the number zero a bent one.</p>
-<p>Now, let’s suppose that there is an energy difference <span class="math notranslate nohighlight">\(\epsilon\)</span> between a polymer it its flat and bent states, so that the total energy of a configuration <span class="math notranslate nohighlight">\(S\)</span> o a rubber band of length <span class="math notranslate nohighlight">\(M(S)a\)</span> is
-$<span class="math notranslate nohighlight">\(E(S) = \epsilon M(S).\)</span>$</p>
+<p>Now, let’s suppose that there is an energy difference <span class="math notranslate nohighlight">\(\epsilon\)</span> between a polymer it its flat and bent states, so that the total energy of a configuration <span class="math notranslate nohighlight">\(S\)</span> o a rubber band of length <span class="math notranslate nohighlight">\(M(S)a\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+E(S) = \epsilon M(S).
+\]</div>
 <p>It is  straightforward to calculate the length and energy of a configuration of the rubber band. For the first configuration above, we could do this by summing the number of ones in the binary vector:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">configuration1</span><span class="p">)</span> <span class="c1"># Will be 3 </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">configuration1</span><span class="p">)</span> <span class="c1"># Will be 3</span>
 <span class="n">length1</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">M1</span>
 <span class="n">energy1</span> <span class="o">=</span> <span class="n">epsilon</span> <span class="o">*</span> <span class="n">M1</span>
 </pre></div>
 </div>
 <section id="a-rubber-bands-at-infinite-temperature">
-<h3>a. Rubber bands at infinite temperature<a class="headerlink" href="#a-rubber-bands-at-infinite-temperature" title="Permalink to this heading">#</a></h3>
+<h3>a. Rubber bands at infinite temperature<a class="headerlink" href="#a-rubber-bands-at-infinite-temperature" title="Link to this heading">#</a></h3>
 <p>🦉Write code to calculate the average length of a rubber band of <span class="math notranslate nohighlight">\(N=100\)</span> polymers at <em>infinite temperature</em> <span class="math notranslate nohighlight">\(T=\infty\)</span>.  While this might sound mysterious and difficult, it is actually very simple.  At infinite temperature (or, if you prefer, at very high temperature), each polymer configuration is equally likely. We saw this in our discussion of the Boltzmann distribution. To sample this distribution, we need to pick any configuration of polymers with equal probability.</p>
 <p>This is a simple probability distribution that we can sample without a Markov chain. Do this by randomly picking polymer configurations in the following way: for each polymer in the chain, flip a coin to decide whether it is flat or bent. Your code should look something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">avgLength</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numSamples</span><span class="p">):</span>
-    <span class="c1"># TODO: Write code here to randomly pick a configuration </span>
+    <span class="c1"># TODO: Write code here to randomly pick a configuration</span>
     <span class="c1">#...</span>
-    <span class="c1"># TODO: Write code here to compute the configuration’s length </span>
+    <span class="c1"># TODO: Write code here to compute the configuration’s length</span>
     <span class="c1"># lengthConfiguration = . . .</span>
     <span class="n">avgLength</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">lengthConfiguration</span><span class="p">)</span> <span class="o">/</span> <span class="n">numSamples</span>
 </pre></div>
@@ -650,7 +658,7 @@ $<span class="math notranslate nohighlight">\(E(S) = \epsilon M(S).\)</span>$</p
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div>
 </section>
 <section id="b-rubber-bands-at-finite-temperature">
-<h3>b. Rubber bands at finite temperature<a class="headerlink" href="#b-rubber-bands-at-finite-temperature" title="Permalink to this heading">#</a></h3>
+<h3>b. Rubber bands at finite temperature<a class="headerlink" href="#b-rubber-bands-at-finite-temperature" title="Link to this heading">#</a></h3>
 <p>In this problem, we are going to see what happens to a rubber band when we heat it up or cool it down.</p>
 <p>We will be using the Metropolis algorithm to estimate the average length of the rubber band in thermal equilibrium, that is <span class="math notranslate nohighlight">\(\langle Ma \rangle\)</span>.  For this particular problem, the Metropolis Markov chain sampling looks like this:</p>
 <ol class="arabic simple">
@@ -664,9 +672,9 @@ computes the expectation value of the chain length</p>
 <div class="math notranslate nohighlight">
 \[\langle M \rangle = \sum_S M(S) P(S) \approx \frac{1}{T_{max}} \sum_{t=1}^{T_{max}} M(S_t)\]</div>
 <p>given the value of the ratio <span class="math notranslate nohighlight">\(\epsilon/k_BT\)</span>.  Your function, for instance, can look like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the average chain length using Metropolis MCMC. </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the average chain length using Metropolis MCMC.</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">computeAvgLength</span><span class="p">(</span><span class="n">epsilonRatio</span><span class="p">):</span>
-    <span class="c1"># TODO: Write your code to compute avgLength here </span>
+    <span class="c1"># TODO: Write your code to compute avgLength here</span>
     <span class="c1">#...</span>
     <span class="k">return</span> <span class="n">avgLength</span>
 </pre></div>
@@ -679,7 +687,7 @@ computes the expectation value of the chain length</p>
 <!--![image.png](attachment:image.png)-->
 <div><img src="https://clark.physics.illinois.edu/246img/MC_rubberBand3.png" width=400  alt="Answer (start)"></img><br></div><p>From this plot, we can see that when <span class="math notranslate nohighlight">\(\epsilon\)</span> is negative flat polymers are energetically preferred and the average length of the rubber band increases. When <span class="math notranslate nohighlight">\(\epsilon\)</span> is positive, bent polymers are more energetically favorable and the average length decreases.</p>
 <p>Notice the dependence on temperature. When temperature is very high, the rubber band has a nearly equal number of flat and bent polymers and so is about <span class="math notranslate nohighlight">\(Na/2\)</span> in length. When temperature is low, then the sign of ! determines whether the rubber band is maximally stretched or contracted.</p>
-<p>For the typical rubber bands you would get in the store, the polymers within it energetically prefer to lie flat so that <span class="math notranslate nohighlight">\(\epsilon&lt;0.\)</span> . This sign of <span class="math notranslate nohighlight">\(\epsilon\)</span> means that rubber bands contract when heated and expanded when cold!</p>
+<p>For the typical rubber bands you would get in the store, the polymers within it energetically prefer to lie flat so that <span class="math notranslate nohighlight">\(\epsilon&lt;0.\)</span>  This sign of <span class="math notranslate nohighlight">\(\epsilon\)</span> means that rubber bands contract when heated and expanded when cold!</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -692,9 +700,10 @@ computes the expectation value of the chain length</p>
 <p><strong>Q: What happens when <span class="math notranslate nohighlight">\(\epsilon/k_BT=0\)</span> ? Explain below</strong></p>
 <p>A:</p>
 <hr class="docutils" />
-<p>**Acknowledgements:</p>
+<p><strong>Acknowledgements:</strong></p>
 <ul class="simple">
 <li><p>Eli Chertkov and George Gollin (original)</p></li>
+<li><p>Minor Modifications: Bryan Clark</p></li>
 </ul>
 <p>© Copyright 2021</p>
 </section>
@@ -728,7 +737,7 @@ computes the expectation value of the chain length</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -756,7 +765,9 @@ computes the expectation value of the chain length</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -828,8 +839,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

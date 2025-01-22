@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Predator-Prey &#8212; Physics 246</title>
   
@@ -15,53 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Predator-Prey';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Markov Chains" href="Markov%20Chains.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -143,6 +134,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -156,11 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="_static/FD.png" class="logo__image only-light" alt="Physics 246 - Home"/>
-    <script>document.write(`<img src="_static/FD.png" class="logo__image only-dark" alt="Physics 246 - Home"/>`);</script>
+    <img src="_static/FD.png" class="logo__image only-dark pst-js-only" alt="Physics 246 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -241,14 +246,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/bkclark/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Predator-Prey.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -323,27 +328,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -392,10 +389,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="predator-prey">
-<h1>Predator-Prey<a class="headerlink" href="#predator-prey" title="Permalink to this heading">#</a></h1>
+<h1>Predator-Prey<a class="headerlink" href="#predator-prey" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Author:</strong></p></li>
 <li><p><strong>Date:</strong></p></li>
@@ -439,7 +436,7 @@ document.write(`
 </details>
 </div>
 <section id="background">
-<h2>0. Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
+<h2>0. Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
 <p>In this assignment we are going to consider the evolution of predators and preys within an ecosystem.</p>
 <p>We will focus on a single population of prey <span class="math notranslate nohighlight">\(F\)</span> (foxes) and a single population of predators <span class="math notranslate nohighlight">\(B\)</span> (bunnies).</p>
 <p>Three possible things can happen:</p>
@@ -480,13 +477,13 @@ We can write these as the differential equations</p>
 <p>These are called the <strong>Lotka-Volterra equations</strong></p>
 </section>
 <section id="exercise-1-solving-the-predatory-prey-differential-equations">
-<h2>Exercise 1: Solving the predatory-prey differential equations<a class="headerlink" href="#exercise-1-solving-the-predatory-prey-differential-equations" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 1: Solving the predatory-prey differential equations<a class="headerlink" href="#exercise-1-solving-the-predatory-prey-differential-equations" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
 <section id="a-modifying-your-code-to-run-predator-prey-equations">
-<h3>a. Modifying your code to run predator-prey equations<a class="headerlink" href="#a-modifying-your-code-to-run-predator-prey-equations" title="Permalink to this heading">#</a></h3>
+<h3>a. Modifying your code to run predator-prey equations<a class="headerlink" href="#a-modifying-your-code-to-run-predator-prey-equations" title="Link to this heading">#</a></h3>
 <p>In this exercise we will solve the differential equations which correspond to the predator-prey equations.  🦉Modify your dynamics code to solve these differential equations.  I found it less confusing to just switch it so it works directly with <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(F\)</span>.  You can just use Euler integration (i.e, the first order-methods).</p>
 <p><em>Note:</em> Notice that before we dealt with a second order equation, but this is only first order.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
@@ -498,7 +495,7 @@ We can write these as the differential equations</p>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 <section id="b-building-plots">
-<h3>b. Building Plots<a class="headerlink" href="#b-building-plots" title="Permalink to this heading">#</a></h3>
+<h3>b. Building Plots<a class="headerlink" href="#b-building-plots" title="Link to this heading">#</a></h3>
 <p>Let’s set <span class="math notranslate nohighlight">\(\alpha=1.0\)</span>, <span class="math notranslate nohighlight">\(\beta=0.005\)</span>, <span class="math notranslate nohighlight">\(\gamma=0.6\)</span> and <span class="math notranslate nohighlight">\(D=0.003\)</span>.  Use a timestep <span class="math notranslate nohighlight">\(dt=0.001\)</span></p>
 <p>We are going to start with <span class="math notranslate nohighlight">\(400\)</span> prey (bunnies) and <span class="math notranslate nohighlight">\(200\)</span> predators (foxes).</p>
 <p>Set up your code to run for time <span class="math notranslate nohighlight">\(T=50\)</span></p>
@@ -528,7 +525,7 @@ We can write these as the differential equations</p>
 <p>A:</p>
 </section>
 <section id="c-predator-phase-space-plots">
-<h3>c.  Predator Phase Space Plots<a class="headerlink" href="#c-predator-phase-space-plots" title="Permalink to this heading">#</a></h3>
+<h3>c.  Predator Phase Space Plots<a class="headerlink" href="#c-predator-phase-space-plots" title="Link to this heading">#</a></h3>
 <p>🦉Generate the phase space plots for a <span class="math notranslate nohighlight">\(x\)</span> prey and <span class="math notranslate nohighlight">\(x/2\)</span> predators for <span class="math notranslate nohighlight">\(x \in \{50,100,200,400,600,800,1000,1200,1600\}\)</span>. (Use the same initial conditions above).
 Also generate a plot of the minimum prey seen during an ecosystem simulation for a given number of starting prey.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
@@ -544,7 +541,7 @@ Also generate a plot of the minimum prey seen during an ecosystem simulation for
 <p>A:</p>
 </section>
 <section id="d-stationary-points">
-<h3>d. Stationary points<a class="headerlink" href="#d-stationary-points" title="Permalink to this heading">#</a></h3>
+<h3>d. Stationary points<a class="headerlink" href="#d-stationary-points" title="Link to this heading">#</a></h3>
 <p>An interesting question we can ask: <strong>is there is some number of prey and predators we can start with so that the total number of prey and predators never change?</strong>  This would be called a fixed point or stationary point.</p>
 <p>One approach is to figure this out analtyically.  Instead, in this part we will determine it numerically. 🦉 To accomplish this, let’s write a function <code class="docutils literal notranslate"><span class="pre">getDeviation(initial_population)</span></code> which takes the initial population as a list <code class="docutils literal notranslate"><span class="pre">[preyPopulation,predatorPopulation]</span></code> and returns the standard deviation of the number of prey (<code class="docutils literal notranslate"><span class="pre">np.std(listOfPreyVsTime)</span></code>).  If the total number of prey never change then its standard deviation will be zero. Therefore we’ve created a minimization problem.</p>
 <p>Now, all we have to do is call <code class="docutils literal notranslate"><span class="pre">getDeviation</span></code> a bunch of times with different parameters and figure out when it returns zero.  There are lots of rich and interesting approaches to optimization problems like this, but we don’t have time to explore them.  Here we are going to use a package from python calling <code class="docutils literal notranslate"><span class="pre">out=scipy.optimize.minimize(getDeviation,x0)</span></code>.  When it’s finished running, if you print <code class="docutils literal notranslate"><span class="pre">out.x</span></code> you can see which parameters it found.</p>
@@ -577,7 +574,7 @@ Also generate a plot of the minimum prey seen during an ecosystem simulation for
 </section>
 </section>
 <section id="exercise-2-stochasticity-in-predator-prey-equations">
-<h2>Exercise 2: Stochasticity in Predator-Prey equations<a class="headerlink" href="#exercise-2-stochasticity-in-predator-prey-equations" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 2: Stochasticity in Predator-Prey equations<a class="headerlink" href="#exercise-2-stochasticity-in-predator-prey-equations" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
@@ -588,7 +585,7 @@ Also generate a plot of the minimum prey seen during an ecosystem simulation for
 <p><em>Where is this coming from:</em>  We are simulating the ecosystem deterministically - there is no randomness involved.  Deterministic equations essentially can only do a few things: they can converge to fixed points, limit cycles or be chaotic.</p>
 <p>(2) centi-bunnies:  You may have noticed in your simulations that you ocassionally saw that your ecosystem had 1/100 of a bunny and that this 1/100 of a bunny recovered into a respectable population of 8000 bunnies.  This seems somewhat problematic. Our previous approach to simulation regularly involve fractional animals and can never have an extinction event.  To go beyond this we need to remove the deterministic nature of the equations by doing something stochastic and we need to recognize the discrete integer-ness of animals.</p>
 <section id="a-the-first-bunny">
-<h3>a.  The first bunny<a class="headerlink" href="#a-the-first-bunny" title="Permalink to this heading">#</a></h3>
+<h3>a.  The first bunny<a class="headerlink" href="#a-the-first-bunny" title="Link to this heading">#</a></h3>
 <p>Let’s think about what <span class="math notranslate nohighlight">\(dB = \alpha B(t) dt\)</span> means.  Previously we thought that it meant that in a unit of time <span class="math notranslate nohighlight">\(\Delta t\)</span> we got <span class="math notranslate nohighlight">\(\alpha B(t) \Delta t\)</span> new prey.  But if <span class="math notranslate nohighlight">\(\alpha B(t)\)</span> is 0.2 and <span class="math notranslate nohighlight">\(\Delta t=0.1\)</span> we don’t get 0.02 bunnies. Instead we can think of it stochasticallly interpreting the probability density of getting one whole new bunny as <span class="math notranslate nohighlight">\(20\%\)</span> and so the probability of getting a new bunny in a small interval <span class="math notranslate nohighlight">\(\Delta t\)</span> is <span class="math notranslate nohighlight">\(0.2 \Delta t\)</span>.</p>
 <p>We now ask the following question:  What is the probability of getting your first bunny after time <span class="math notranslate nohighlight">\(T+\Delta t\)</span>. Well, we’ve taken <span class="math notranslate nohighlight">\(T/\Delta t + 1\)</span> steps. You have to not have gotten a bunny the first <span class="math notranslate nohighlight">\(T/\Delta t\)</span> steps. That probability is <span class="math notranslate nohighlight">\((1-0.2 \Delta t)^{T/\Delta t}\)</span>.  The probability of getting a bunny at step <span class="math notranslate nohighlight">\(T/\Delta t+1\)</span> is <span class="math notranslate nohighlight">\(0.2 \Delta t\)</span>.   So the total probability density is <span class="math notranslate nohighlight">\((1-0.2 \Delta t)^{(T/\Delta t)} \times 0.2\)</span></p>
 <p>Suppose we take the limit where <span class="math notranslate nohighlight">\(\Delta t \rightarrow 0\)</span>  The the probability we get a bunny in an interval <span class="math notranslate nohighlight">\(\Delta t\)</span> is</p>
@@ -623,7 +620,7 @@ Also generate a plot of the minimum prey seen during an ecosystem simulation for
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div>
 </section>
 <section id="b-a-faster-algorithm-to-find-the-first-bunny">
-<h3>b. A faster algorithm to find the first bunny.<a class="headerlink" href="#b-a-faster-algorithm-to-find-the-first-bunny" title="Permalink to this heading">#</a></h3>
+<h3>b. A faster algorithm to find the first bunny.<a class="headerlink" href="#b-a-faster-algorithm-to-find-the-first-bunny" title="Link to this heading">#</a></h3>
 <p>Waiting to determine the time of first of bunny using <strong>a.</strong> is pretty slow. There is another algorithm that’s much faster (in the limit of <span class="math notranslate nohighlight">\(\Delta t\rightarrow 0\)</span>).  The time to first bunny is</p>
 <div class="math notranslate nohighlight">
 \[t= -\log(r)/\alpha\]</div>
@@ -639,7 +636,7 @@ Also generate a plot of the minimum prey seen during an ecosystem simulation for
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 <section id="c-continuous-time-markov-chain">
-<h3>c. Continuous time markov chain<a class="headerlink" href="#c-continuous-time-markov-chain" title="Permalink to this heading">#</a></h3>
+<h3>c. Continuous time markov chain<a class="headerlink" href="#c-continuous-time-markov-chain" title="Link to this heading">#</a></h3>
 <p>We will now use this to build a stochastic algorithm for predator-prey. Let’s translate everything we did above into this new continuous time language:</p>
 <ol class="arabic simple">
 <li><p>Prey reproduce at rate <span class="math notranslate nohighlight">\(\alpha B(t)\)</span></p>
@@ -706,7 +703,7 @@ and make sure to keep track of <span class="math notranslate nohighlight">\(\alp
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 <section id="d-stochastic-populations">
-<h3>d.  Stochastic Populations<a class="headerlink" href="#d-stochastic-populations" title="Permalink to this heading">#</a></h3>
+<h3>d.  Stochastic Populations<a class="headerlink" href="#d-stochastic-populations" title="Link to this heading">#</a></h3>
 <p>🦉Plot</p>
 <ul class="simple">
 <li><p>Population vs t</p>
@@ -728,7 +725,7 @@ and make sure to keep track of <span class="math notranslate nohighlight">\(\alp
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 <section id="e-stationary-again">
-<h3>e. Stationary again<a class="headerlink" href="#e-stationary-again" title="Permalink to this heading">#</a></h3>
+<h3>e. Stationary again<a class="headerlink" href="#e-stationary-again" title="Link to this heading">#</a></h3>
 <p>🦉Do the same thing as <strong>d.</strong> for the parameters you found above which give you a stationary point. Don’t forget to change <span class="math notranslate nohighlight">\(D=0.001\)</span> For this, go out to <span class="math notranslate nohighlight">\(T=1000\)</span></p>
 <p><strong>Q:</strong> Do the number of bunnies change as a function of time?</p>
 <p><strong>Q:</strong> Qualitatively what do you feel is the effect of running the simulation at the stationary point?</p>
@@ -743,7 +740,7 @@ and make sure to keep track of <span class="math notranslate nohighlight">\(\alp
 <p>A:</p>
 </section>
 <section id="e-extinction">
-<h3>e. Extinction<a class="headerlink" href="#e-extinction" title="Permalink to this heading">#</a></h3>
+<h3>e. Extinction<a class="headerlink" href="#e-extinction" title="Link to this heading">#</a></h3>
 <p>In this part we are going to determine the amount of time until one of the two species goes extinct given the initial number of prey/predators. Let’s call this an extinction event.</p>
 <p>Use parameters</p>
 <ul class="simple">
@@ -765,7 +762,7 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 <section id="f-window-averaging-cleaning-data">
-<h3>f. Window Averaging (cleaning data)<a class="headerlink" href="#f-window-averaging-cleaning-data" title="Permalink to this heading">#</a></h3>
+<h3>f. Window Averaging (cleaning data)<a class="headerlink" href="#f-window-averaging-cleaning-data" title="Link to this heading">#</a></h3>
 <p>This data is going to look noisy. 🦉To make it look nicer do a running mean of your data with a window-size of 20 and plot it. This will be smoother.</p>
 <p>What value is your largest time to extinction (post window-averaging)? I find my results are around 160-190</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
@@ -780,7 +777,7 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
 </section>
 </section>
 <section id="exercise-3-agent-based-predator-prey-simulation">
-<h2>Exercise 3:  Agent Based Predator-Prey Simulation<a class="headerlink" href="#exercise-3-agent-based-predator-prey-simulation" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 3:  Agent Based Predator-Prey Simulation<a class="headerlink" href="#exercise-3-agent-based-predator-prey-simulation" title="Link to this heading">#</a></h2>
 <p><em>This problem is worth 20/100 of the points with problem 1 and problem 2 being worth 40/100 each of this assignment</em>
 <strong>Correctly completing this problem is also worth an additional 20 points Extra Credit!</strong></p>
 <ul class="simple">
@@ -1017,7 +1014,7 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1045,7 +1042,9 @@ Because of the randomness involved, this may take a while to run (~5 minutes). F
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1120,8 +1119,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

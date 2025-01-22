@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Orbital Dynamics &#8212; Physics 246</title>
   
@@ -15,53 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'OrbitalDynamics';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Dynamics" href="Dynamics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -143,6 +134,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -156,11 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="_static/FD.png" class="logo__image only-light" alt="Physics 246 - Home"/>
-    <script>document.write(`<img src="_static/FD.png" class="logo__image only-dark" alt="Physics 246 - Home"/>`);</script>
+    <img src="_static/FD.png" class="logo__image only-dark pst-js-only" alt="Physics 246 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -241,14 +246,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/bkclark/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/OrbitalDynamics.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -323,27 +328,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -400,17 +397,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="orbital-dynamics">
-<h1>Orbital Dynamics<a class="headerlink" href="#orbital-dynamics" title="Permalink to this heading">#</a></h1>
+<h1>Orbital Dynamics<a class="headerlink" href="#orbital-dynamics" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Author:</strong></p></li>
 <li><p><strong>Date:</strong></p></li>
 <li><p><strong>Time spent on this assignment:</strong></p></li>
 </ul>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>In this assignment we will learn how to simulate the orbital dynamics of a planet going around the sun (which we assume to be fixed).  We will then proceed to use simulation to test two of the most important physics results in the last 400 years.</p>
 <p>First, we will numerically validate Kepler’s Second Law: a planet sweeps out the same area of its orbit in equal time.  Kepler’s first law (all planets 🪐 orbit in ellipses) and Kepler’s third law (the square of the orbital period of a planet is directly proportional to the cube of the semi-major axis of its orbit) will be left as extra credit.</p>
 <p>Then we will see that general relativity alters the Newtonian law of gravitation in such a way that the planets no longer move in ellipses.  Instead, their closest approach to the sun (the perihelion) changes its location slightly as you go around the Sun.  Mesuring this effect in Mercury was one of the key original validations of general relativity.</p>
@@ -443,7 +440,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 8, 21, 17, 49, 759567)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 22, 20, 10, 58, 979512)
 </pre></div>
 </div>
 </div>
@@ -451,9 +448,9 @@ document.write(`
 </div>
 </section>
 <section id="warmups">
-<h2>Warmups<a class="headerlink" href="#warmups" title="Permalink to this heading">#</a></h2>
+<h2>Warmups<a class="headerlink" href="#warmups" title="Link to this heading">#</a></h2>
 <section id="planetary-parameters">
-<h3>Planetary Parameters<a class="headerlink" href="#planetary-parameters" title="Permalink to this heading">#</a></h3>
+<h3>Planetary Parameters<a class="headerlink" href="#planetary-parameters" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#resetMe()</span>
@@ -479,19 +476,19 @@ document.write(`
 </div>
 </section>
 <section id="using-dictionaries">
-<h3>Using Dictionaries<a class="headerlink" href="#using-dictionaries" title="Permalink to this heading">#</a></h3>
+<h3>Using Dictionaries<a class="headerlink" href="#using-dictionaries" title="Link to this heading">#</a></h3>
 <p>We’ve defined some planetary parameters for you.  Use these parameters to plot a model of our solar system which includes the Sun, Earth and Mercury assuming that the planets orbit in circular motion.  (this doesn’t involve any simulations just plotting things to scale.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="exercise-1-orbital-dynamics">
-<h2>Exercise 1. Orbital Dynamics<a class="headerlink" href="#exercise-1-orbital-dynamics" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 1. Orbital Dynamics<a class="headerlink" href="#exercise-1-orbital-dynamics" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
 <section id="a-modify-your-code-to-include-the-force-of-gravity">
-<h3>a. Modify your code to include the force of gravity<a class="headerlink" href="#a-modify-your-code-to-include-the-force-of-gravity" title="Permalink to this heading">#</a></h3>
+<h3>a. Modify your code to include the force of gravity<a class="headerlink" href="#a-modify-your-code-to-include-the-force-of-gravity" title="Link to this heading">#</a></h3>
 <p>In Newton’s model the earth’s gravity is a central force that exerts an attractive pull</p>
 <div class="math notranslate nohighlight">
 \[\vec{F}(\vec{r}) = m\vec{a}(\vec{r}) = -\frac{Gm_\textrm{earth}m}{r^2}\hat{r}\]</div>
@@ -513,7 +510,7 @@ document.write(`
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-earth-orbiting-the-sun">
-<h3>b.  Earth Orbiting the Sun<a class="headerlink" href="#b-earth-orbiting-the-sun" title="Permalink to this heading">#</a></h3>
+<h3>b.  Earth Orbiting the Sun<a class="headerlink" href="#b-earth-orbiting-the-sun" title="Link to this heading">#</a></h3>
 <p>Write some code to set up the parameters of the Earth orbiting the sun and then plot it.  Use a dt of 3600 seconds.  This will involve calling your functions from above. You will want to build a dictionary of <code class="docutils literal notranslate"><span class="pre">params</span></code>  which involve things like your initial positions (use Earth’s orbital radius), your initial velocity, the time step <code class="docutils literal notranslate"><span class="pre">dt</span></code>, etc.  You should be able to plot it as <code class="docutils literal notranslate"><span class="pre">plt.plot(positions[:,0],positions[:,1])</span></code>
 `</p>
 <!--
@@ -547,7 +544,7 @@ fig.gca().add_artist(earth_disk)
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-animation">
-<h3>c. Animation<a class="headerlink" href="#c-animation" title="Permalink to this heading">#</a></h3>
+<h3>c. Animation<a class="headerlink" href="#c-animation" title="Link to this heading">#</a></h3>
 <p>Run the code below to plot an animation of your orbit.  Your coordinates have to be in positions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">animation</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
@@ -604,7 +601,7 @@ fig.gca().add_artist(earth_disk)
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="d-geosyncronous-orbit-extra-credit-5-points">
-<h3>d. Geosyncronous Orbit (Extra Credit: 5 Points)<a class="headerlink" href="#d-geosyncronous-orbit-extra-credit-5-points" title="Permalink to this heading">#</a></h3>
+<h3>d. Geosyncronous Orbit (Extra Credit: 5 Points)<a class="headerlink" href="#d-geosyncronous-orbit-extra-credit-5-points" title="Link to this heading">#</a></h3>
 <p>🦉Determine the height a spaceship needs to be above the surface of the Earth to be in circular Geosynchronous orbit. A geosynchronous orbit is one that stays over the same point of Earth for the entire orbit.   To determine this, we need to set up our orbit simulation to run for an Earth/Satellite simulation.</p>
 <p>A useful thing to know is that the velocity that you need to apply tangeant to a circular orbit to stay in a circular orbit of radius <span class="math notranslate nohighlight">\(r\)</span> is</p>
 <div class="math notranslate nohighlight">
@@ -621,7 +618,7 @@ fig.gca().add_artist(earth_disk)
 </section>
 <hr class="docutils" />
 <section id="exercise-2-kepler-s-laws">
-<h2>Exercise 2. Kepler’s Laws<a class="headerlink" href="#exercise-2-kepler-s-laws" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 2. Kepler’s Laws<a class="headerlink" href="#exercise-2-kepler-s-laws" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
@@ -632,7 +629,7 @@ fig.gca().add_artist(earth_disk)
 <p>(2) A line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time.</p>
 <p>(3) The square of the orbital period of a planet is directly proportional to the cube of the semi-major axis of its orbit.</p>
 <section id="a-law-2">
-<h3>a. Law 2<a class="headerlink" href="#a-law-2" title="Permalink to this heading">#</a></h3>
+<h3>a. Law 2<a class="headerlink" href="#a-law-2" title="Link to this heading">#</a></h3>
 <p>Kepler’s second law tells us that the planet sweeps out the same “area” of the ellipse in a fixed amount of time.<br />
 🦉Verify this by computing (and plotting) the area swept out in these two regions:</p>
 <ul class="simple">
@@ -652,7 +649,7 @@ fig.gca().add_artist(earth_disk)
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-law-1-extra-credit-10-points">
-<h3>b. Law 1 (Extra Credit: 10 points)<a class="headerlink" href="#b-law-1-extra-credit-10-points" title="Permalink to this heading">#</a></h3>
+<h3>b. Law 1 (Extra Credit: 10 points)<a class="headerlink" href="#b-law-1-extra-credit-10-points" title="Link to this heading">#</a></h3>
 <p>The first law tells us that the orbit is an ellipse and the sun is at a foci.  🦉To check this,</p>
 <ul class="simple">
 <li><p>Modify the constants in your code to emulate planets (i.e. let <code class="docutils literal notranslate"><span class="pre">M</span></code> be the mass of the sun, <span class="math notranslate nohighlight">\(M_\textrm{sun} = 1.989 \times 10^{30}\)</span> kg)</p></li>
@@ -684,7 +681,7 @@ fig.gca().add_artist(earth_disk)
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-law-3-extra-credit-10-points">
-<h3>c. Law 3: (Extra Credit: 10 points)<a class="headerlink" href="#c-law-3-extra-credit-10-points" title="Permalink to this heading">#</a></h3>
+<h3>c. Law 3: (Extra Credit: 10 points)<a class="headerlink" href="#c-law-3-extra-credit-10-points" title="Link to this heading">#</a></h3>
 <p>Kepler’s third law tells us that the square of the orbital period of a planet is directly proportional to the cube of the semi-major axis of its orbit.</p>
 <p>In other words, <span class="math notranslate nohighlight">\(T^2 \propto a^3\)</span>.</p>
 <p><em>From Wikipedia quoting Kepler on finding the third law:</em></p>
@@ -714,18 +711,18 @@ fig.gca().add_artist(earth_disk)
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
 <section id="background-just-information-no-work-on-this-problem">
-<h2>Background (just information…no work on this problem)<a class="headerlink" href="#background-just-information-no-work-on-this-problem" title="Permalink to this heading">#</a></h2>
+<h2>Background (just information…no work on this problem)<a class="headerlink" href="#background-just-information-no-work-on-this-problem" title="Link to this heading">#</a></h2>
 <p><strong>Post-Newtonian gravitational orbits</strong></p>
 <p>Trajectories in <span class="math notranslate nohighlight">\(1/r^2\)</span> central force fields are conic sections: hyperbolas or parabolas for unbound objects, and ellipses for objects in bound orbits. A special property of an inverse-square force is that bound orbits close on themselves—the orientation in space of the ellipse remains fixed. But if gravity were to deviate from a purely inverse-square force law, bound orbits would not close (unless they were perfectly circular), and could not strictly be described as ellipses.</p>
 <p>One of the earliest tests of general relativity was its prediction for the rate at which Mercury’s orbit would change its orientation over time. Mercury’s distance from (the center of) the sun varies from 46,001,200 km at perihelion (the point at which Mercury is closest to the sun) to 69,816,900 km at aphelion, so it samples the strength of the sun’s gravitational pull over a significant range of distance.</p>
-<p>The orbit’s long axis precesses 574.1 seconds of arc per century. <span class="xref myst"><sup>1</sup></span>. (There are 3,600 seconds of arc in one degree.) Most of this is due to the perturbing effects of the other planets, but there is a measurable contribution of 43 seconds of arc per century from the small differences between the (approximately correct) Newtonian and (extraordinarily accurate) Einsteinian descriptions of gravity. The force law, according to general relativity, isn’t quite an inverse square relation. <span class="xref myst"><sup>2</sup></span></p>
+<p>The orbit’s long axis precesses 574.1 seconds of arc per century. <a class="reference internal" href="#fn1"><span class="xref myst"><sup>1</sup></span></a>. (There are 3,600 seconds of arc in one degree.) Most of this is due to the perturbing effects of the other planets, but there is a measurable contribution of 43 seconds of arc per century from the small differences between the (approximately correct) Newtonian and (extraordinarily accurate) Einsteinian descriptions of gravity. The force law, according to general relativity, isn’t quite an inverse square relation. <a class="reference internal" href="#fn2"><span class="xref myst"><sup>2</sup></span></a></p>
 <p>The precession rate is small. During the course of one orbit of 87.969 days, the perihelion will shift by <span class="math notranslate nohighlight">\((5.022 \pm 0.005) \times 10^{-7}\)</span> radians due to general relativistic effects. This corresponds to a displacement in space of about 23 km for one orbit’s perihelion relative to the previous orbit’s, added to the much larger Newtonian perturbations from the other planets.</p>
-<p>In weak gravitational fields we can accommodate the effects of general relativity as a slight modification <span class="xref myst"><sup>3</sup></span> to the acceleration of a mass <span class="math notranslate nohighlight">\(m\)</span> in an almost-elliptical orbit around the sun:</p>
+<p>In weak gravitational fields we can accommodate the effects of general relativity as a slight modification <a class="reference internal" href="#fn3"><span class="xref myst"><sup>3</sup></span></a> to the acceleration of a mass <span class="math notranslate nohighlight">\(m\)</span> in an almost-elliptical orbit around the sun:</p>
 <div class="math notranslate nohighlight">
 \[ \frac{F(r)}{m} = -\frac{GM_\odot}{r^2} + -\frac{3r_s\left(v_\textrm{perihelion}r_\textrm{perihelion}\right)^2}{2r^4}\]</div>
-<p>where <span class="math notranslate nohighlight">\(M_\odot=1.98855 \times 10^{30}\)</span> kg is the mass of the sun.<span class="xref myst"><sup>4</sup></span>.  You may recall that the Schwarzschild radius <span class="math notranslate nohighlight">\(r_s\)</span> of an object of mass <span class="math notranslate nohighlight">\(M\)</span> is <span class="math notranslate nohighlight">\(2GM/c^2\)</span>, and that the sun’s <span class="math notranslate nohighlight">\(r_s\)</span> is 2,953.36 meters.  For Mercury <span class="math notranslate nohighlight">\(v_\textrm{perihelion}=58,980\)</span> m/s while <span class="math notranslate nohighlight">\(r_\textrm{perihelion} = 46,001,200\)</span> km.  (Note that the formula requires the perihelion radius to be expressed in meters.)<span class="xref myst"><sup>5</sup></span></p>
-<p>Just for your information, here is a table of contributions to the Newtonian precession of Mercury’s perihelion from the other planets. The largest come from Venus (because it is so close to Mercury) and Jupiter (because it is so massive). These are taken from the work of the 19th century astronomer Urban LeVerrier.<span class="xref myst"><sup>6</sup></span>.  I think they’re probably reasonable approximations to the exact values.</p>
-<table class="table">
+<p>where <span class="math notranslate nohighlight">\(M_\odot=1.98855 \times 10^{30}\)</span> kg is the mass of the sun.<a class="reference internal" href="#fn4"><span class="xref myst"><sup>4</sup></span></a>.  You may recall that the Schwarzschild radius <span class="math notranslate nohighlight">\(r_s\)</span> of an object of mass <span class="math notranslate nohighlight">\(M\)</span> is <span class="math notranslate nohighlight">\(2GM/c^2\)</span>, and that the sun’s <span class="math notranslate nohighlight">\(r_s\)</span> is 2,953.36 meters.  For Mercury <span class="math notranslate nohighlight">\(v_\textrm{perihelion}=58,980\)</span> m/s while <span class="math notranslate nohighlight">\(r_\textrm{perihelion} = 46,001,200\)</span> km.  (Note that the formula requires the perihelion radius to be expressed in meters.)<a class="reference internal" href="#fn5"><span class="xref myst"><sup>5</sup></span></a></p>
+<p>Just for your information, here is a table of contributions to the Newtonian precession of Mercury’s perihelion from the other planets. The largest come from Venus (because it is so close to Mercury) and Jupiter (because it is so massive). These are taken from the work of the 19th century astronomer Urban LeVerrier.<a class="reference internal" href="#fn6"><span class="xref myst"><sup>6</sup></span></a>.  I think they’re probably reasonable approximations to the exact values.</p>
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>planet</p></th>
 <th class="head"><p>arc-seconds per century</p></th>
@@ -775,9 +772,10 @@ fig.gca().add_artist(earth_disk)
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="exercise-3-mercury-precession">
-<h2>Exercise 3: Mercury Precession<a class="headerlink" href="#exercise-3-mercury-precession" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 3: Mercury Precession<a class="headerlink" href="#exercise-3-mercury-precession" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
@@ -800,7 +798,7 @@ fig.gca().add_artist(earth_disk)
 </ul>
 <p>It will probably help you if you write a function perihelion that takes the positions array and generates the angle of precision.</p>
 <section id="a-mercury-without-general-relativity">
-<h3>a.  Mercury without general relativity<a class="headerlink" href="#a-mercury-without-general-relativity" title="Permalink to this heading">#</a></h3>
+<h3>a.  Mercury without general relativity<a class="headerlink" href="#a-mercury-without-general-relativity" title="Link to this heading">#</a></h3>
 <p>For our first step, we will compute the precession when we don’t have the relativistic term on.  If our integration was perfect, we should get zero. As we recall from earlier assignments, we know that that there is some time-step errors associated with our integration.  So instead of getting zero, we would expect to get something very close to zero.</p>
 <p>You are going to base your Mercury perihelion code on your orbital code from previous units. Let’s start by setting up your code for simulating Mercury’s orbit:</p>
 <ul class="simple">
@@ -837,7 +835,7 @@ You should find a minimum distance of 46001200000.517811935.</p>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 <section id="b-interpolating-to-find-the-precession">
-<h3>b. Interpolating to find the  precession<a class="headerlink" href="#b-interpolating-to-find-the-precession" title="Permalink to this heading">#</a></h3>
+<h3>b. Interpolating to find the  precession<a class="headerlink" href="#b-interpolating-to-find-the-precession" title="Link to this heading">#</a></h3>
 <p>Now we need to take our data of those 6 points above and interpolate between them.  (Use your actual orbital data not the copied numbers above - you need higher precision then is being printed out.)</p>
 <p>Put the 6 points in an array <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> respectively.  You may have to do something like  <code class="docutils literal notranslate"><span class="pre">x=np.float64(pos[closest_loc-3:closest_loc+3,0])</span></code> to get it to be low enough precision for the polyfit (next step) to work.</p>
 <p>Now interpolate between them using <code class="docutils literal notranslate"><span class="pre">line=np.polyfit(x,y,2)</span></code>.</p>
@@ -856,7 +854,7 @@ I get that it is -0.017013797776581767923 microradians (but because this is very
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-mercury-with-general-relativity">
-<h3>c.  Mercury with general relativity<a class="headerlink" href="#c-mercury-with-general-relativity" title="Permalink to this heading">#</a></h3>
+<h3>c.  Mercury with general relativity<a class="headerlink" href="#c-mercury-with-general-relativity" title="Link to this heading">#</a></h3>
 <p>Now turn on the effects of general relativity (by modifying your force) and do the same computation.</p>
 <p>The post-Newtonian modification to the gravitational acceleration experienced by Mercury adds an extra term after the inverse-square Newtonian term:</p>
 <div class="math notranslate nohighlight">
@@ -893,7 +891,7 @@ I get that it is -0.017013797776581767923 microradians (but because this is very
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div></section>
 </section>
 <section id="exercise-4-transfer-orbits-extra-credit-5-points">
-<h2>Exercise 4. Transfer Orbits (Extra Credit: 5 points)<a class="headerlink" href="#exercise-4-transfer-orbits-extra-credit-5-points" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 4. Transfer Orbits (Extra Credit: 5 points)<a class="headerlink" href="#exercise-4-transfer-orbits-extra-credit-5-points" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
@@ -936,7 +934,7 @@ I get that it is -0.017013797776581767923 microradians (but because this is very
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -964,7 +962,9 @@ I get that it is -0.017013797776581767923 microradians (but because this is very
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1047,8 +1047,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

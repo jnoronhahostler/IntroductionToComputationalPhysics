@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Climate Dynamics &#8212; Physics 246</title>
   
@@ -15,53 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Climate';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Predator-Prey" href="Predator-Prey.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -143,6 +134,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -156,11 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="_static/FD.png" class="logo__image only-light" alt="Physics 246 - Home"/>
-    <script>document.write(`<img src="_static/FD.png" class="logo__image only-dark" alt="Physics 246 - Home"/>`);</script>
+    <img src="_static/FD.png" class="logo__image only-dark pst-js-only" alt="Physics 246 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -193,14 +193,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -241,14 +246,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/bkclark/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Climate.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -323,27 +328,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -392,10 +389,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="climate-dynamics">
-<h1>Climate Dynamics<a class="headerlink" href="#climate-dynamics" title="Permalink to this heading">#</a></h1>
+<h1>Climate Dynamics<a class="headerlink" href="#climate-dynamics" title="Link to this heading">#</a></h1>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -410,11 +407,13 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting climlab
-  Downloading climlab-0.8.2.tar.gz (3.1 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading climlab-0.8.2.tar.gz (3.1 MB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/3.1 MB</span> <span class=" -Color -Color-Red">52.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/3.1 MB</span> <span class=" -Color -Color-Red">118.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -443,42 +442,51 @@ document.write(`
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25hRequirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from climlab) (1.24.4)
-Collecting xarray (from climlab)
-  Downloading xarray-2023.1.0-py3-none-any.whl.metadata (6.2 kB)
+?25hRequirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from climlab) (2.2.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting xarray (from climlab)
+  Downloading xarray-2025.1.1-py3-none-any.whl.metadata (11 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scipy (from climlab)
-  Downloading scipy-1.10.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (58 kB)
+  Downloading scipy-1.15.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+Requirement already satisfied: packaging&gt;=23.2 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from xarray-&gt;climlab) (24.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandas&gt;=1.3 (from xarray-&gt;climlab)
-  Downloading pandas-2.0.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandas&gt;=2.1 (from xarray-&gt;climlab)
+  Downloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging&gt;=21.3 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from xarray-&gt;climlab) (24.2)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.3-&gt;xarray-&gt;climlab) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from pandas&gt;=1.3-&gt;xarray-&gt;climlab) (2024.2)
-Collecting tzdata&gt;=2022.1 (from pandas&gt;=1.3-&gt;xarray-&gt;climlab)
-  Downloading tzdata-2024.2-py2.py3-none-any.whl.metadata (1.4 kB)
-Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=1.3-&gt;xarray-&gt;climlab) (1.17.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from pandas&gt;=2.1-&gt;xarray-&gt;climlab) (2.9.0.post0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading scipy-1.10.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.5 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/34.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pytz&gt;=2020.1 (from pandas&gt;=2.1-&gt;xarray-&gt;climlab)
+  Downloading pytz-2024.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata&gt;=2022.7 (from pandas&gt;=2.1-&gt;xarray-&gt;climlab)
+  Downloading tzdata-2025.1-py2.py3-none-any.whl.metadata (1.4 kB)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=2.1-&gt;xarray-&gt;climlab) (1.17.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.3/34.5 MB</span> <span class=" -Color -Color-Red">248.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">34.5/34.5 MB</span> <span class=" -Color -Color-Red">159.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading xarray-2023.1.0-py3-none-any.whl (973 kB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/973.1 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">973.1/973.1 kB</span> <span class=" -Color -Color-Red">99.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading pandas-2.0.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.4 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/12.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading scipy-1.15.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (40.6 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/40.6 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.4/12.4 MB</span> <span class=" -Color -Color-Red">172.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading tzdata-2024.2-py2.py3-none-any.whl (346 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">40.6/40.6 MB</span> <span class=" -Color -Color-Red">216.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading xarray-2025.1.1-py3-none-any.whl (1.2 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/1.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.2/1.2 MB</span> <span class=" -Color -Color-Red">116.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/13.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.1/13.1 MB</span> <span class=" -Color -Color-Red">166.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading pytz-2024.2-py2.py3-none-any.whl (508 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading tzdata-2025.1-py2.py3-none-any.whl (346 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Building wheels for collected packages: climlab
@@ -488,18 +496,20 @@ Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.18
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for climlab: filename=climlab-0.8.2-py3-none-any.whl size=171439 sha256=63f8bfd93ea6cae09667e12dfc6715916f98f88ba33b02e7dc35ea9b10822a68
-  Stored in directory: /home/runner/.cache/pip/wheels/bd/07/56/ff3ce2e43c85c96acebbda20e5d72cdb0506dbee6ffad49364
-Successfully built climlab
+?25h  Created wheel for climlab: filename=climlab-0.8.2-py3-none-any.whl size=171484 sha256=5c582d0f4b597ca471fe5f1682636d8cd960524791dbb491dd6058fc40e84d82
+  Stored in directory: /home/runner/.cache/pip/wheels/b8/de/bb/3a39e440567925a2df52134308d3cc424f69bbe4e854a3de35
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: tzdata, scipy, pandas, xarray, climlab
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully built climlab
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed climlab-0.8.2 pandas-2.0.3 scipy-1.10.1 tzdata-2024.2 xarray-2023.1.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: pytz, tzdata, scipy, pandas, xarray, climlab
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-08 21:17:33--  https://clark.physics.illinois.edu/temp.data
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed climlab-0.8.2 pandas-2.2.3 pytz-2024.2 scipy-1.15.1 tzdata-2025.1 xarray-2025.1.1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-01-22 20:10:44--  https://clark.physics.illinois.edu/temp.data
 Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 
 </pre></div>
 </div>
@@ -521,7 +531,7 @@ temp.data             0%[                    ]       0  --.-KB/s
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>temp.data           100%[===================&gt;]  17.18K  --.-KB/s    in 0.02s   
 
-2025-01-08 21:17:34 (810 KB/s) - ‘temp.data’ saved [17595/17595]
+2025-01-22 20:10:44 (778 KB/s) - ‘temp.data’ saved [17595/17595]
 </pre></div>
 </div>
 </div>
@@ -569,34 +579,34 @@ temp.data             0%[                    ]       0  --.-KB/s
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab.solar.insolation</span><span class="w"> </span><span class="kn">import</span> <span class="n">daily_insolation</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">legendre</span>
 
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.18</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">climlab</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">20</span>
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.10.16</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">climlab</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">20</span>
 <span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span><span class="p">,</span> <span class="n">thermo</span><span class="p">,</span> <span class="n">legendre</span>
 <span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1"># some more useful shorcuts</span>
 <span class="ne">---&gt; </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.model.column</span><span class="w"> </span><span class="kn">import</span> <span class="n">GreyRadiationModel</span><span class="p">,</span> <span class="n">RadiativeConvectiveModel</span><span class="p">,</span> <span class="n">BandRCModel</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.model.ebm</span><span class="w"> </span><span class="kn">import</span> <span class="n">EBM</span><span class="p">,</span> <span class="n">EBM_annual</span><span class="p">,</span> <span class="n">EBM_seasonal</span>
 <span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.domain.field</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">global_mean</span>
 
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.18</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">climlab</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">column</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">43</span>
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.10.16</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">climlab</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">column</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">43</span>
 <span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab.domain.initial</span><span class="w"> </span><span class="kn">import</span> <span class="n">column_state</span>
 <span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab.domain.field</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span>
 <span class="ne">---&gt; </span><span class="mi">43</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab.radiation.insolation</span><span class="w"> </span><span class="kn">import</span> <span class="n">FixedInsolation</span>
 <span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab.radiation.greygas</span><span class="w"> </span><span class="kn">import</span> <span class="n">GreyGas</span><span class="p">,</span> <span class="n">GreyGasSW</span>
 <span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab.convection.convadj</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConvectiveAdjustment</span>
 
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.18</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">climlab</span><span class="o">/</span><span class="n">radiation</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">15</span>
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.10.16</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">climlab</span><span class="o">/</span><span class="n">radiation</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">15</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.water_vapor</span><span class="w"> </span><span class="kn">import</span> <span class="n">ManabeWaterVapor</span>
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1">#from radiation import Radiation, Radiation_SW, Radiation_LW</span>
 <span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.cam3</span><span class="w"> </span><span class="kn">import</span> <span class="n">CAM3</span><span class="p">,</span> <span class="n">CAM3_LW</span><span class="p">,</span> <span class="n">CAM3_SW</span>
 <span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.rrtm</span><span class="w"> </span><span class="kn">import</span> <span class="n">RRTMG</span><span class="p">,</span> <span class="n">RRTMG_LW</span><span class="p">,</span> <span class="n">RRTMG_SW</span>
 
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.18</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">climlab</span><span class="o">/</span><span class="n">radiation</span><span class="o">/</span><span class="n">cam3</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">39</span>
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.10.16</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">climlab</span><span class="o">/</span><span class="n">radiation</span><span class="o">/</span><span class="n">cam3</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">39</span>
 <span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
 <span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab.utils.thermo</span><span class="w"> </span><span class="kn">import</span> <span class="n">vmr_to_mmr</span>
 <span class="ne">---&gt; </span><span class="mi">39</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab.radiation.radiation</span><span class="w"> </span><span class="kn">import</span> <span class="n">_Radiation_SW</span><span class="p">,</span> <span class="n">_Radiation_LW</span>
 <span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="c1">#  Wrapping these imports in try/except to avoid failures during documentation building on readthedocs</span>
 
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.18</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">climlab</span><span class="o">/</span><span class="n">radiation</span><span class="o">/</span><span class="n">radiation</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">86</span>
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.10.16</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">climlab</span><span class="o">/</span><span class="n">radiation</span><span class="o">/</span><span class="n">radiation</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">86</span>
 <span class="g g-Whitespace">     </span><span class="mi">84</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
 <span class="g g-Whitespace">     </span><span class="mi">85</span> <span class="kn">from</span><span class="w"> </span><span class="nn">climlab.domain.field</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span>
 <span class="ne">---&gt; </span><span class="mi">86</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">warnings</span><span class="o">,</span><span class="w"> </span><span class="nn">pooch</span>
@@ -610,9 +620,9 @@ temp.data             0%[                    ]       0  --.-KB/s
 </details>
 </div>
 <section id="exercise-1-climate-and-global-warming">
-<h2>Exercise 1: Climate and Global Warming<a class="headerlink" href="#exercise-1-climate-and-global-warming" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 1: Climate and Global Warming<a class="headerlink" href="#exercise-1-climate-and-global-warming" title="Link to this heading">#</a></h2>
 <section id="a-the-temperature-of-the-dark-airless-earth">
-<h3>a. The temperature of the dark airless Earth<a class="headerlink" href="#a-the-temperature-of-the-dark-airless-earth" title="Permalink to this heading">#</a></h3>
+<h3>a. The temperature of the dark airless Earth<a class="headerlink" href="#a-the-temperature-of-the-dark-airless-earth" title="Link to this heading">#</a></h3>
 <p>Our goal is to start understanding something about the climate.  We first want two functions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">IncomingRadiationPerSquareMeter</span><span class="p">():</span>
   <span class="o">...</span>
@@ -669,7 +679,7 @@ temp.data             0%[                    ]       0  --.-KB/s
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-the-temperature-of-earth-with-air-and-clouds">
-<h3>b. The temperature of Earth with air and clouds<a class="headerlink" href="#b-the-temperature-of-earth-with-air-and-clouds" title="Permalink to this heading">#</a></h3>
+<h3>b. The temperature of Earth with air and clouds<a class="headerlink" href="#b-the-temperature-of-earth-with-air-and-clouds" title="Link to this heading">#</a></h3>
 <p>It turns out that we didn’t find the correct temperature.  We have ignored two important effects.</p>
 <p><strong>Albedo</strong></p>
 <p>Some fraction of the radiation that is incoming to the Earth simply gets reflected back immediately from things like clouds and ice.  This fraction is approximately <span class="math notranslate nohighlight">\(\alpha=0.3\)</span>.  The incoming radiation per square meter is then instead <span class="math notranslate nohighlight">\(\frac{S}{4}( 1-\alpha)\)</span>.</p>
@@ -685,7 +695,7 @@ temp.data             0%[                    ]       0  --.-KB/s
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="c-linearizing-around-the-equilibrium">
-<h3>c. Linearizing around the equilibrium<a class="headerlink" href="#c-linearizing-around-the-equilibrium" title="Permalink to this heading">#</a></h3>
+<h3>c. Linearizing around the equilibrium<a class="headerlink" href="#c-linearizing-around-the-equilibrium" title="Link to this heading">#</a></h3>
 <p>We will find it convenient to linearize are outgoing radiation around zero degrees celsius.  This should give us</p>
 <div class="math notranslate nohighlight">
 \[\epsilon \sigma (T_0 + T_c)^4 \approx \epsilon \sigma(T_0^4 + 4 T_0^3 T_c) = A + BT_c\]</div>
@@ -715,7 +725,7 @@ temp.data             0%[                    ]       0  --.-KB/s
 </div>
 </section>
 <section id="d-global-warming">
-<h3>d. Global Warming<a class="headerlink" href="#d-global-warming" title="Permalink to this heading">#</a></h3>
+<h3>d. Global Warming<a class="headerlink" href="#d-global-warming" title="Link to this heading">#</a></h3>
 <p>We know that putting carbon dioxide in the atmosphere increases the temperature of the Earth.  We would like to quantify this.  It is known that Carbox dioxide essentially contributes to decreasing the radiation which is emitted from the Earth in a way which is logarithmic to its concentration.  In other words, it corrects our emitted radiation by a term
 $<span class="math notranslate nohighlight">\( r \log \left(\frac{CO_{2;current}}{CO_{2;old}}\right) \)</span><span class="math notranslate nohighlight">\(
 where \)</span>r=-5$ is a proportionality constant.</p>
@@ -806,9 +816,9 @@ where \)</span>r=-5$ is a proportionality constant.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
 <section id="exercise-2-snowball-earth">
-<h2>Exercise 2: Snowball Earth<a class="headerlink" href="#exercise-2-snowball-earth" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 2: Snowball Earth<a class="headerlink" href="#exercise-2-snowball-earth" title="Link to this heading">#</a></h2>
 <section id="a-climate-dynamics">
-<h3>a. Climate Dynamics<a class="headerlink" href="#a-climate-dynamics" title="Permalink to this heading">#</a></h3>
+<h3>a. Climate Dynamics<a class="headerlink" href="#a-climate-dynamics" title="Link to this heading">#</a></h3>
 <p>So far we’ve mainly figured out what the equilibrium temperature of the Earth has to be - i.e. the Sun shines on the Earth for a long period of time and eventually it heats the Earth up so that the radiation the Earth is radiating back to space is equivalent to the radiation that is being absorbed.</p>
 <p>In this exercise, we are going to start by dealing with the word eventually.  We’d like to understand how long it takes the temperature to approach to equilibrium temperature - this, of course, depends on what we mean by heating up the Earth to that temperature.</p>
 <p>It shouldn’t surprise us that we to answer this question, we should start by writing down a differential equation that tells us <span class="math notranslate nohighlight">\(\partial T / \partial t\)</span> where <span class="math notranslate nohighlight">\(T\)</span> is the temperature and <span class="math notranslate nohighlight">\(t\)</span> is the time.</p>
@@ -843,7 +853,7 @@ where \)</span>r=-5$ is a proportionality constant.</p>
 <p>It is interesting to ask how long it would take to relax back to the equilibrium temperature if you start 100 degrees Celsius away.</p>
 </section>
 <section id="b-snowball-earth">
-<h3>b. Snowball Earth<a class="headerlink" href="#b-snowball-earth" title="Permalink to this heading">#</a></h3>
+<h3>b. Snowball Earth<a class="headerlink" href="#b-snowball-earth" title="Link to this heading">#</a></h3>
 <p>We have seen that the Earth is very stable and largely independent of the initial temperature. But we are missing some important qualitiative physics.  In particular, once water gets cold enough it freezes into ice.  This ice is actually much more reflective of the Sun and so the albedo is therefore much higher.  This tells us that we should have the albedo (and hence the radiation entering the planet) depend on temperature.</p>
 <ul class="simple">
 <li><p>If the temperature <span class="math notranslate nohighlight">\(T&lt;-10\)</span> degrees celsius, then we should have the albedo be <span class="math notranslate nohighlight">\(\alpha_i = 0.5\)</span></p></li>
@@ -876,7 +886,7 @@ where \)</span>r=-5$ is a proportionality constant.</p>
 <p>This model gives a mechanism for how such a thing might happen. Consider a scenario where you have a temperature fluctuation for various reasons for a decade;  maybe there is anomolous volcanic activity which puts dust in the atmosphere temporarily raising the albedo or maybe there is a change in the solar insolation because of some orbital oscillation.  Within a decade you might be in a situation which is very hard to recover from.</p>
 </section>
 <section id="c-hysteresis">
-<h3>c. Hysteresis<a class="headerlink" href="#c-hysteresis" title="Permalink to this heading">#</a></h3>
+<h3>c. Hysteresis<a class="headerlink" href="#c-hysteresis" title="Link to this heading">#</a></h3>
 <p>This phenomena is essentially one of Hysteresis.  Let’s see this explicitly.  Let’s start with a warm planet (10 degrees Celsisus) and the current solar insolation. Now let’s do the following:</p>
 <ul class="simple">
 <li><p>for step in range(0,10):</p>
@@ -899,13 +909,13 @@ where \)</span>r=-5$ is a proportionality constant.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
 <section id="exercise-3-one-dimensional-ebm">
-<h2>Exercise 3: One-dimensional EBM<a class="headerlink" href="#exercise-3-one-dimensional-ebm" title="Permalink to this heading">#</a></h2>
+<h2>Exercise 3: One-dimensional EBM<a class="headerlink" href="#exercise-3-one-dimensional-ebm" title="Link to this heading">#</a></h2>
 <p>We want to implement a more accurate climate model.  Previously, we had worked on a zero-dimensional model.  To add some realism to this model, we are going to add an additional dimension splitting up the world into different latititudes.  This is the most important effect that we are missing as these different latitudes get significantly different sunlight.</p>
 <p>The energy balance model that we will work with will be</p>
 <div class="math notranslate nohighlight">
 \[ C \frac{dT_s(\phi)}{dt} = (1-\alpha(\phi;T)) Q(\phi) - (A+B T_s(\phi)) + \frac{D}{\cos⁡\phi } \frac{\partial }{\partial \phi} \left(   \cos⁡\phi  ~ \frac{\partial T}{\partial \phi} \right)\]</div>
 <section id="a-latitude-dependence-of-solar-isolation-and-albedo">
-<h3>a. Latitude dependence of solar isolation and albedo<a class="headerlink" href="#a-latitude-dependence-of-solar-isolation-and-albedo" title="Permalink to this heading">#</a></h3>
+<h3>a. Latitude dependence of solar isolation and albedo<a class="headerlink" href="#a-latitude-dependence-of-solar-isolation-and-albedo" title="Link to this heading">#</a></h3>
 <p>The first thing you should notice is that there are now a lot of different terms that depend on the latitude.</p>
 <p>To do that you need to discretize the Earth into a number of different latitude zones.  You could just discretize your own latitudes but because we need to sync our functions with yours, we will give you the latitude zones that you are going to use.  You can get them by calling the following function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">GetLatitudes</span><span class="p">():</span>
@@ -972,7 +982,7 @@ where \)</span>r=-5$ is a proportionality constant.</p>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-a-diffusion-less-planet">
-<h3>b. A diffusion-less planet<a class="headerlink" href="#b-a-diffusion-less-planet" title="Permalink to this heading">#</a></h3>
+<h3>b. A diffusion-less planet<a class="headerlink" href="#b-a-diffusion-less-planet" title="Link to this heading">#</a></h3>
 <p>We are now in a position to deal with the incoming and outgoing radiation (but not yet the diffusion).  This is implementing the same energy balance that you had previously except that now you are going to simultaneously deal with all the latititudes. Write a function to time evolve this for 100 years.</p>
 <ul class="simple">
 <li><p>Plot the average temperature vs time (getting a point once a year)</p></li>
@@ -990,7 +1000,7 @@ where \)</span>r=-5$ is a proportionality constant.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p>You should get a pretty crazy result in this case. Essentially every latitude is doing its own thing (there are no independent because there is no talking between latitudes).  Thereroe, you’re going to see some pretty sharp jumps in the temperature as you change latitudes.  In addition, there is a large (~117 degrees) difference between the poles and the equator.</p>
 </section>
 <section id="c-diffusion">
-<h3>c. Diffusion<a class="headerlink" href="#c-diffusion" title="Permalink to this heading">#</a></h3>
+<h3>c. Diffusion<a class="headerlink" href="#c-diffusion" title="Link to this heading">#</a></h3>
 <p>We are missing an important piece of the physics once we’ve moved to 1D.  The temperature at different latitudes can interact with each other.  Temperature can move both by diffusion and advection.  Here we are going to concern ourself primarily with diffusion.  We’ve seen diffusion before in this class but typically as <span class="math notranslate nohighlight">\(\partial^2/ \partial x^2\)</span>.  In our case though we are on a sphere and need to do something different essentially writing our gradient in spherical coordinates - see the last term of our energy balance model.</p>
 <p>We’d like to go ahead and implement the diffusion just like we’ve done in previous cases using a finite difference stencil. Unfortunately, this won’t work here (we run into numerical instabilities at the poles). What we need to do is use an implicit solver of our differential equations.  This is out of scope for this assignment, so instead we will give you a function you can call</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Diffuse</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">params</span><span class="p">):</span>
@@ -1054,7 +1064,7 @@ where \)</span>r=-5$ is a proportionality constant.</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1082,7 +1092,9 @@ where \)</span>r=-5$ is a proportionality constant.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1157,8 +1169,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
