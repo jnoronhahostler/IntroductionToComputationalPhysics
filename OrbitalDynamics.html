@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -69,7 +66,6 @@
     <link rel="prev" title="Dynamics" href="Dynamics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="_static/FD.png" class="logo__image only-light" alt="Physics 246 - Home"/>
-    <img src="_static/FD.png" class="logo__image only-dark pst-js-only" alt="Physics 246 - Home"/>
+    <script>document.write(`<img src="_static/FD.png" class="logo__image only-dark" alt="Physics 246 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -175,6 +186,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Orbital Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exoplanets_short.html">Exoplanets – shorter version</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ParticlePhysics.html">Particle Physics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MachineLearningGalaxies.html">Classifying Galaxies</a></li>
@@ -193,14 +205,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -328,16 +335,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -440,7 +455,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 22, 20, 10, 58, 979512)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 7, 2, 22, 15, 47, 104970)
 </pre></div>
 </div>
 </div>
@@ -462,7 +477,7 @@
 <span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;EarthRadius&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">6.371e6</span> <span class="c1">#meters</span>
 <span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;EarthRotatingVelocity&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">444.444</span> <span class="c1"># meters per second</span>
 <span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;EarthOrbitRadius&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">149.6e9</span> <span class="c1"># meters</span>
-<span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;EarthOrbitVelocity&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">30e3</span> <span class="c1"># meters per secon</span>
+<span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;EarthOrbitVelocity&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">29.8e3</span> <span class="c1"># meters per second</span>
 <span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;EarthMass&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">5.972e24</span> <span class="c1"># kg</span>
 <span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;MoonOrbitRadius&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">363228.9e3</span>
 <span class="n">SolarSystemParameters</span><span class="p">[</span><span class="s2">&quot;MoonMass&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">7.34e22</span> <span class="c1"># kg</span>
@@ -500,7 +515,7 @@
 <div class="math notranslate nohighlight">
 \[a_y = -\frac{Gm_\textrm{sun} }{x^2+y^2}\sin \phi = - \frac{Gm_\textrm{sun} y }{(x^2+y^2)^{3/2}}\]</div>
 <p>🦉Modify your code to correctly incorporate gravity.</p>
-<p>Copy over your previous work for an integrator (we recommend the midpoint method).  Assuming the sun is at (0,0) modify your Modify your force function to implement the gravitational force.  Use the parameters in your force function. Also modify your <code class="docutils literal notranslate"><span class="pre">Orbit</span></code> function to run for a time <code class="docutils literal notranslate"><span class="pre">params[&quot;T&quot;]</span></code> instead of when it hits the ground. In my code, I also put in a <code class="docutils literal notranslate"><span class="pre">param['CrashRadius']</span></code> that terminated my code in addition to <code class="docutils literal notranslate"><span class="pre">param[&quot;T&quot;]</span></code>.  Btw, if you use the “tab” button it will tell you what’s in your SolarSystemParameters dictionary.  There will be nothing to run here just the functions (you will make plots below)</p>
+<p>Copy over your previous work for an integrator (we recommend the midpoint method).  Assuming the sun is at (0,0) modify your force function to implement the gravitational force.  Use the parameters in your force function. Also modify your <code class="docutils literal notranslate"><span class="pre">Orbit</span></code> function to run for a time <code class="docutils literal notranslate"><span class="pre">params[&quot;T&quot;]</span></code> instead of when it hits the ground. In my code, I also put in a <code class="docutils literal notranslate"><span class="pre">param['CrashRadius']</span></code> that terminated my code in addition to <code class="docutils literal notranslate"><span class="pre">param[&quot;T&quot;]</span></code>.  Btw, if you use the “tab” button it will tell you what’s in your SolarSystemParameters dictionary.  There will be nothing to run here just the functions (you will make plots below)</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ANSWER HERE</span>
@@ -650,12 +665,12 @@ fig.gca().add_artist(earth_disk)
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-law-1-extra-credit-10-points">
 <h3>b. Law 1 (Extra Credit: 10 points)<a class="headerlink" href="#b-law-1-extra-credit-10-points" title="Link to this heading">#</a></h3>
-<p>The first law tells us that the orbit is an ellipse and the sun is at a foci.  🦉To check this,</p>
+<p>The first law tells us that the orbit is an ellipse and the sun is at a focus.  🦉To check this,</p>
 <ul class="simple">
 <li><p>Modify the constants in your code to emulate planets (i.e. let <code class="docutils literal notranslate"><span class="pre">M</span></code> be the mass of the sun, <span class="math notranslate nohighlight">\(M_\textrm{sun} = 1.989 \times 10^{30}\)</span> kg)</p></li>
 <li><p>Let <code class="docutils literal notranslate"><span class="pre">dt</span></code> be an hour</p></li>
 <li><p>Emulate some eccentric orbits.  To do this, change the initial velocity by a little bit.  This will give you some eccentric orbits.</p></li>
-<li><p>Check that the orbit you get is an ellipse with the sun is a foci.</p></li>
+<li><p>Check that the orbit you get is an ellipse with the sun is a focus.</p></li>
 </ul>
 <p>The latter is a little subtle.  To check that you have an ellipse, we should verify that the points (<code class="docutils literal notranslate"><span class="pre">orbit.xs</span></code>) satisfy the general equation for an ellipse.</p>
 <p>The general equation for an ellipse (<a class="reference external" href="https://math.stackexchange.com/questions/426150/what-is-the-general-equation-of-the-ellipse-that-is-not-in-the-origin-and-rotate">stackexchange</a>) is</p>
@@ -781,7 +796,6 @@ fig.gca().add_artist(earth_disk)
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
 <p>Our goal in this exercise is to determine how general relativity affects the precision of Mercury.  We know from Kepler’s laws that objects orbiting around a central body orbit in an ellipse.  That means the second time around their orbit they come back to the same place that they started.  If you have more then two bodies (like above) or if there are corrections to gravity from general relativity (which there are), then you aren’t going to come back exactly to the same place.  Instead the orbit precesses around.  There’s a good picture <a class="reference external" href="https://aether.lbl.gov/www/classes/p10/gr/PrecessionperihelionMercury.htm">here</a>.</p>
-<p>In this assignment, it will be important to work with all your arrays being <em><strong>long doubles</strong></em>.   You should be able to accomplish this mainly by setting the initial conditions of your array to long double.</p>
 <p>To measure the precision you want measure the angle between two consecutive perihelions (the closest distance on ellipse of the orbit). The most sensible thing is to start at the perihelion and then measure its closest distance when it comes around again.  This is not too hard to do but a bit tricky to get correct.  Here is a good prescription:</p>
 <ul class="simple">
 <li><p>Start at the perihelion.</p></li>
@@ -790,13 +804,13 @@ fig.gca().add_artist(earth_disk)
 <li><p>Now, because you are taking discrete time steps, the closest location you find might not actually be the closest location (because maybe it got closer somewhere between the steps you took).  This will matter for this measurement.  To fix this, let’s interpolate between around this part of the orbit.</p>
 <ul>
 <li><p>Take the three points before and after the position you found in the orbit</p></li>
-<li><p>Fit a quadratic curve around this part of the orbit: <code class="docutils literal notranslate"><span class="pre">line=np.polyfit(x,y,2)</span></code></p></li>
+<li><p>Fit a quadratic curve around this part of the orbit: <code class="docutils literal notranslate"><span class="pre">line=np.polyfit(x,y,2)</span></code>. You can evaluate the line using <code class="docutils literal notranslate"><span class="pre">np.polyval(line,</span> <span class="pre">x_interp)</span></code></p></li>
 <li><p>Find the closest location of this curve by producing a new array with 100000 points which goes from the three points before and after the position you found <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code></p></li>
 <li><p>Get the angle between the lines (sun,original perihelion) and (sun, new perihelion)</p></li>
 </ul>
 </li>
 </ul>
-<p>It will probably help you if you write a function perihelion that takes the positions array and generates the angle of precision.</p>
+<p>It will probably help you if you write a function <code class="docutils literal notranslate"><span class="pre">perihelion</span></code> that takes the positions array and generates the angle of precision.</p>
 <section id="a-mercury-without-general-relativity">
 <h3>a.  Mercury without general relativity<a class="headerlink" href="#a-mercury-without-general-relativity" title="Link to this heading">#</a></h3>
 <p>For our first step, we will compute the precession when we don’t have the relativistic term on.  If our integration was perfect, we should get zero. As we recall from earlier assignments, we know that that there is some time-step errors associated with our integration.  So instead of getting zero, we would expect to get something very close to zero.</p>
@@ -807,11 +821,14 @@ fig.gca().add_artist(earth_disk)
 <li><p><span class="math notranslate nohighlight">\(T=60 \times 60 \times 24 \times 88 \times 1.1\)</span> sec  (1.1 Mercury Years)</p></li>
 <li><p><span class="math notranslate nohighlight">\(dt=60\)</span>  sec.</p></li>
 </ul>
-<p>You need to make sure that all of your parameters are long doubles.  To do this I do</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-  <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">longdouble</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
-</pre></div>
-</div>
+<details>
+You may need to make sure to make all your parameters long doubles.  To do this I do 
+```
+for key in params.keys():
+  params[key]=np.longdouble(params[key])
+```
+However, I have found that this is not necessary.
+</details>
 <p>Plot the orbit of the eccentric Mercury and  report the closest and furthest distance your simulation gets from the sun.
 You should find a minimum distance of 46001200000.517811935.</p>
 <p>Then find the closest distance and nearby 5 points the second time around the orbit <em>not</em> where you started.  You should get</p>
@@ -962,8 +979,7 @@ I get that it is -0.017013797776581767923 microradians (but because this is very
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1047,8 +1063,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

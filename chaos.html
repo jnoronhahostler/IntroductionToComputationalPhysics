@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -66,10 +63,9 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Particle Physics" href="ParticlePhysics.html" />
-    <link rel="prev" title="Exoplanets" href="Exoplanets.html" />
+    <link rel="prev" title="Exoplanets – shorter version" href="Exoplanets_short.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="_static/FD.png" class="logo__image only-light" alt="Physics 246 - Home"/>
-    <img src="_static/FD.png" class="logo__image only-dark pst-js-only" alt="Physics 246 - Home"/>
+    <script>document.write(`<img src="_static/FD.png" class="logo__image only-dark" alt="Physics 246 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -175,6 +186,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics.html">Orbital Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exoplanets_short.html">Exoplanets – shorter version</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ParticlePhysics.html">Particle Physics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MachineLearningGalaxies.html">Classifying Galaxies</a></li>
@@ -193,14 +205,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -328,16 +335,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -362,8 +377,8 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-single-pendulum">Exercise 1. Single Pendulum</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-a-single-pendula">a. A Single Pendula</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-pendula-and-the-different-starting-positions">b. Pendula and the different starting positions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-a-single-pendulum">a. A Single pendulum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-pendula-and-different-starting-positions">b. Pendula and different starting positions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-damped-and-driven-and-phase-plots">c. Damped and Driven and phase plots</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-simple-pendulum-phase-space-trajectory">d. Simple pendulum phase space trajectory</a></li>
 </ul>
@@ -412,7 +427,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
-    <span class="n">keepList</span><span class="o">=</span><span class="n">keepList</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;resetMe&#39;</span><span class="p">,</span><span class="s1">&#39;np&#39;</span><span class="p">,</span><span class="s1">&#39;plt&#39;</span><span class="p">,</span><span class="s1">&#39;math&#39;</span><span class="p">,</span><span class="s1">&#39;jax&#39;</span><span class="p">,</span><span class="s1">&#39;jnp&#39;</span><span class="p">,</span><span class="s1">&#39;jit&#39;</span><span class="p">,</span><span class="s1">&#39;grad&#39;</span><span class="p">,</span><span class="s1">&#39;HTML&#39;</span><span class="p">,</span><span class="s1">&#39;animation&#39;</span><span class="p">,</span><span class="s1">&#39;animateMe_singlePendula&#39;</span><span class="p">]</span>
+    <span class="n">keepList</span><span class="o">=</span><span class="n">keepList</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;resetMe&#39;</span><span class="p">,</span><span class="s1">&#39;np&#39;</span><span class="p">,</span><span class="s1">&#39;plt&#39;</span><span class="p">,</span><span class="s1">&#39;math&#39;</span><span class="p">,</span><span class="s1">&#39;jax&#39;</span><span class="p">,</span><span class="s1">&#39;jnp&#39;</span><span class="p">,</span><span class="s1">&#39;jit&#39;</span><span class="p">,</span><span class="s1">&#39;grad&#39;</span><span class="p">,</span><span class="s1">&#39;HTML&#39;</span><span class="p">,</span><span class="s1">&#39;animation&#39;</span><span class="p">,</span><span class="s1">&#39;animateMe_singlependulum&#39;</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">iiii</span> <span class="ow">in</span> <span class="n">keepList</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">iiii</span> <span class="ow">in</span> <span class="n">ll</span><span class="p">:</span>
             <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">iiii</span><span class="p">)</span>
@@ -428,13 +443,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 22, 20, 11, 26, 936415)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 7, 2, 22, 16, 25, 827549)
 </pre></div>
 </div>
 </div>
 </details>
 </div>
-<p>In this project we are going to learn about pendula and chaos.  We will start with a single pendulum, examining phase space diagrams and animating trajectories, and moving toward a double pendulum. Then we’ll wrap up by using automatic differentiation to look at the same problem, recast in a different form, to write a more general solution to the double pendulum problem.</p>
+<p>In this project we are going to learn about pendulum and chaos.  We will start with a single pendulum, examining phase space diagrams and animating trajectories, and moving toward a double pendulum. Then we’ll wrap up by using automatic differentiation to look at the same problem, recast in a different form, to write a more general solution to the double pendulum problem.</p>
 <section id="exercise-1-single-pendulum">
 <h2>Exercise 1. Single Pendulum<a class="headerlink" href="#exercise-1-single-pendulum" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -449,7 +464,7 @@
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">animateMe_singlePendula</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">animateMe_single_pendulum</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span> 
     <span class="n">positionArray</span><span class="o">=</span><span class="p">[]</span>
     <span class="k">for</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
         <span class="n">theta1</span><span class="o">=</span><span class="n">position</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
@@ -480,7 +495,7 @@
 
     <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">positionArray</span><span class="p">,</span><span class="n">lines</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">positions</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">positionArray</span><span class="p">):</span>
-            <span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">idx</span><span class="o">+</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">idx</span><span class="o">+</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">([</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]],[</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
             <span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]],[</span><span class="mi">0</span><span class="p">,</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
         <span class="k">return</span> <span class="n">lines</span>
     <span class="n">ll</span><span class="o">=</span><span class="mi">1</span>
@@ -493,8 +508,8 @@
 </div>
 </details>
 </div>
-<section id="a-a-single-pendula">
-<h3>a. A Single Pendula<a class="headerlink" href="#a-a-single-pendula" title="Link to this heading">#</a></h3>
+<section id="a-a-single-pendulum">
+<h3>a. A Single pendulum<a class="headerlink" href="#a-a-single-pendulum" title="Link to this heading">#</a></h3>
 <p>When working with pendula, instead of keeping track of the position <span class="math notranslate nohighlight">\((x,y)\)</span>, we instead are going to keep track of the angle <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/pendula.png" width=400  alt="Answer (start)"></img><br></div><p>In this exercise, we are going to simulate a pendulum with a rigid rod <span class="math notranslate nohighlight">\(L\)</span> and a fixed mass <span class="math notranslate nohighlight">\(m\)</span> at the end of it.  We can define the position of the pendulum by the angle it makes with respect to hanging down (at <span class="math notranslate nohighlight">\(\theta=0\)</span>).</p>
 <p>You can force your code to use theta simply by giving initial conditions and velocities for a single dimension (i.e. <code class="docutils literal notranslate"><span class="pre">params['initPos']=np.array([0.1])</span></code> would start you pendulum at 0.1 radians.</p>
@@ -505,7 +520,7 @@
 <li><p><span class="math notranslate nohighlight">\(\theta\)</span> vs. <span class="math notranslate nohighlight">\(t\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span>  (include the origin on this plot, and equalize the axes scale)</p></li>
 <li><p>a <em>phase space diagram</em> (<span class="math notranslate nohighlight">\(\omega\)</span> vs <span class="math notranslate nohighlight">\(\theta\)</span>)</p></li>
-<li><p>and animate the pendula.</p></li>
+<li><p>and animate the pendulum.</p></li>
 </ul>
 <p>A phase space diagram is a graph displaying the position and velocity of an object on the abscissa (x axis) and ordinate (y axis). Since an undamped, undriven harmonic oscillator moves with</p>
 <div class="math notranslate nohighlight">
@@ -532,7 +547,7 @@
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#RUN ME TO ANIMATE YOUR CODE</span>
-<span class="n">ani</span><span class="o">=</span><span class="n">animateMe_singlePendula</span><span class="p">([</span><span class="n">positions</span><span class="p">])</span>
+<span class="n">ani</span><span class="o">=</span><span class="n">animateMe_single_pendulum</span><span class="p">([</span><span class="n">positions</span><span class="p">],</span> <span class="n">params</span><span class="p">)</span>
 <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -542,7 +557,7 @@
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#RUN ME TO ANIMATE YOUR CODE</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ani</span><span class="o">=</span><span class="n">animateMe_singlePendula</span><span class="p">([</span><span class="n">positions</span><span class="p">])</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ani</span><span class="o">=</span><span class="n">animateMe_single_pendulum</span><span class="p">([</span><span class="n">positions</span><span class="p">],</span> <span class="n">params</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
 
 <span class="ne">NameError</span>: name &#39;positions&#39; is not defined
@@ -554,8 +569,8 @@
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><strong>Q:</strong> Does the phase space diagram match your expectations? Explain</p>
 <p><strong>A:</strong></p>
 </section>
-<section id="b-pendula-and-the-different-starting-positions">
-<h3>b. Pendula and the different starting positions<a class="headerlink" href="#b-pendula-and-the-different-starting-positions" title="Link to this heading">#</a></h3>
+<section id="b-pendula-and-different-starting-positions">
+<h3>b. Pendula and different starting positions<a class="headerlink" href="#b-pendula-and-different-starting-positions" title="Link to this heading">#</a></h3>
 <p>Recall in your intro mechanics class (Physics 211/etc) that you know the analytic solution for a pendulum is
 $<span class="math notranslate nohighlight">\(
 \theta(t) = \theta_0 \cos(\Omega t)
@@ -577,7 +592,7 @@ However, that solution only works for <em>small angles</em>.</p>
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ani</span><span class="o">=</span><span class="n">animateMe_singlePendula</span><span class="p">([</span><span class="n">positions</span><span class="p">,</span><span class="n">positions2</span><span class="p">,</span><span class="n">positions3</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ani</span><span class="o">=</span><span class="n">animateMe_single_pendulum</span><span class="p">([</span><span class="n">positions</span><span class="p">,</span><span class="n">positions2</span><span class="p">,</span><span class="n">positions3</span><span class="p">],</span> <span class="n">params</span><span class="p">)</span>
 <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -768,7 +783,7 @@ However, that solution only works for <em>small angles</em>.</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">positions2</span><span class="p">)</span>
-<span class="n">ani</span><span class="o">=</span><span class="n">animateMe_singlePendula</span><span class="p">([</span><span class="n">positions2</span><span class="p">[::</span><span class="n">l</span><span class="o">//</span><span class="mi">1000</span><span class="p">]])</span>
+<span class="n">ani</span><span class="o">=</span><span class="n">animateMe_single_pendulum</span><span class="p">([</span><span class="n">positions2</span><span class="p">[::</span><span class="n">l</span><span class="o">//</span><span class="mi">1000</span><span class="p">]],</span> <span class="n">params</span><span class="p">)</span>
 <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -795,7 +810,7 @@ However, that solution only works for <em>small angles</em>.</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">positions4</span><span class="p">)</span>
-<span class="n">ani</span><span class="o">=</span><span class="n">animateMe_singlePendula</span><span class="p">([</span><span class="n">positions4</span><span class="p">[::</span><span class="n">l</span><span class="o">//</span><span class="mi">5000</span><span class="p">]])</span>
+<span class="n">ani</span><span class="o">=</span><span class="n">animateMe_single_pendulum</span><span class="p">([</span><span class="n">positions4</span><span class="p">[::</span><span class="n">l</span><span class="o">//</span><span class="mi">5000</span><span class="p">]],</span> <span class="n">params</span><span class="p">)</span>
 <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -822,7 +837,7 @@ However, that solution only works for <em>small angles</em>.</p>
 <li><p><strong>List of collaborators:</strong></p></li>
 <li><p><strong>References you used in developing your code:</strong></p></li>
 </ul>
-<p>Single (rigid) Pendula are somewhat boring.  We can compute most things about them analytically. Double pendula on the other hand are much more exotic.  In this exercise you are going to simulate a double pendula.</p>
+<p>Single (rigid) Pendula are somewhat boring.  We can compute most things about them analytically. A double pendulum on the other hand has a much richer behavior.  In this exercise you are going to simulate a double pendulum.</p>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -830,7 +845,7 @@ However, that solution only works for <em>small angles</em>.</p>
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">animateMe_doublePendula</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">animateMe_double_pendulum</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span> 
     <span class="n">positionArray</span><span class="o">=</span><span class="p">[]</span>
     <span class="k">for</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
         <span class="n">theta1</span><span class="o">=</span><span class="n">position</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
@@ -869,9 +884,9 @@ However, that solution only works for <em>small angles</em>.</p>
         
     <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">positionArray</span><span class="p">,</span><span class="n">lines</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">positions</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">positionArray</span><span class="p">):</span>
-            <span class="n">lines</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">idx</span><span class="o">+</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">lines</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">idx</span><span class="o">+</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">([</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]],[</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
             <span class="n">lines</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]],[</span><span class="mi">0</span><span class="p">,</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-            <span class="n">lines</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">idx</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+            <span class="n">lines</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">idx</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">([</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]],[</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
             <span class="n">lines</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">idx</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">([</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]],[</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
         <span class="k">return</span> <span class="n">lines</span>
     <span class="n">ll</span><span class="o">=</span><span class="mi">1</span>
@@ -886,7 +901,7 @@ However, that solution only works for <em>small angles</em>.</p>
 </div>
 <section id="a-simulating-double-pendula">
 <h3>a. Simulating double pendula<a class="headerlink" href="#a-simulating-double-pendula" title="Link to this heading">#</a></h3>
-<div><img src="https://clark.physics.illinois.edu/246img/doublePendula.png" width=600 alt="double pendula"></img><br></div><p>Modify your code to simulate a double pendula. Now instead of representing the location of your pendula with one <span class="math notranslate nohighlight">\(\theta\)</span> you need to use two <span class="math notranslate nohighlight">\(\theta\)</span>.  (Be careful you are dealing with the mass correctly).  Again, this can be mainly accomplished by playing with your initial conditions.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/doublePendula.png" width=600 alt="double pendula"></img><br></div><p>Modify your code to simulate a double pendulum. Now instead of representing the location of your pendulum with one <span class="math notranslate nohighlight">\(\theta\)</span> you need to use two <span class="math notranslate nohighlight">\(\theta\)</span>.  (Be careful you are dealing with the mass correctly).  Again, this can be mainly accomplished by playing with your initial conditions.</p>
 <p>Now, you need to get the force to work.  The force for a double pendulum is somewhat complicated.   To compute the force you either need to:</p>
 <ul class="simple">
 <li><p>derive the force carefully</p>
@@ -939,7 +954,7 @@ However, that solution only works for <em>small angles</em>.</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
-<span class="n">ani</span><span class="o">=</span><span class="n">animateMe_doublePendula</span><span class="p">([</span><span class="n">pos</span><span class="p">[::</span><span class="n">l</span><span class="o">//</span><span class="mi">100</span><span class="p">]])</span>
+<span class="n">ani</span><span class="o">=</span><span class="n">animateMe_double_pendulum</span><span class="p">([</span><span class="n">pos</span><span class="p">[::</span><span class="n">l</span><span class="o">//</span><span class="mi">100</span><span class="p">]])</span>
 <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -965,7 +980,7 @@ However, that solution only works for <em>small angles</em>.</p>
 </section>
 <section id="b-chaos">
 <h3>b. Chaos<a class="headerlink" href="#b-chaos" title="Link to this heading">#</a></h3>
-<p>Our goal now is to see that this double pendula is chaotic.  Chaos means that if the system starts with very similar initial conditions, that the result will look very different in the future (long times).   Go ahead and run a series of 10 initial conditions except that each one differs from the previous one by an initial angle on the second pendula of <span class="math notranslate nohighlight">\(10^{-4}\)</span>, i.e. <code class="docutils literal notranslate"><span class="pre">params['initPos'][1]+i*1e-4,params['initPos'][1]+(i+1)*1e-4</span></code>
+<p>Our goal now is to see that this double pendulum is chaotic.  Chaos means that if the system starts with very similar initial conditions, that the result will look very different in the future (long times).   Go ahead and run a series of 10 initial conditions except that each one differs from the previous one by an initial angle on the second pendulum of <span class="math notranslate nohighlight">\(10^{-4}\)</span>, i.e. <code class="docutils literal notranslate"><span class="pre">params['initPos'][1]+i*1e-4,params['initPos'][1]+(i+1)*1e-4</span></code>
 Animate them all simultaneously to see what happens.</p>
 <p>Hint: Your code should have something like this</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">params</span><span class="o">=</span><span class="p">{</span> <span class="s1">&#39;m1&#39;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
@@ -998,7 +1013,7 @@ Animate them all simultaneously to see what happens.</p>
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ani</span><span class="o">=</span><span class="n">animateMe_doublePendula</span><span class="p">(</span><span class="n">allPositions</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ani</span><span class="o">=</span><span class="n">animateMe_double_pendulum</span><span class="p">(</span><span class="n">allPositions</span><span class="p">)</span>
 <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -1057,12 +1072,12 @@ Animate them all simultaneously to see what happens.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Exoplanets.html"
+       href="Exoplanets_short.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exoplanets</p>
+        <p class="prev-next-title">Exoplanets – shorter version</p>
       </div>
     </a>
     <a class="right-next"
@@ -1081,8 +1096,7 @@ Animate them all simultaneously to see what happens.</p>
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1092,8 +1106,8 @@ Animate them all simultaneously to see what happens.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-single-pendulum">Exercise 1. Single Pendulum</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-a-single-pendula">a. A Single Pendula</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-pendula-and-the-different-starting-positions">b. Pendula and the different starting positions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-a-single-pendulum">a. A Single pendulum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-pendula-and-different-starting-positions">b. Pendula and different starting positions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-damped-and-driven-and-phase-plots">c. Damped and Driven and phase plots</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-simple-pendulum-phase-space-trajectory">d. Simple pendulum phase space trajectory</a></li>
 </ul>
@@ -1151,8 +1165,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

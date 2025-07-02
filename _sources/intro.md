@@ -77,9 +77,16 @@ The heart of this course will be a series of computational assignments.
 
 (instructions-for-submitting-your-assignments)=
 ##### Instructions for submitting your assignments
-Once you are finished working on an assignment, first make sure that it is shared with the course staff by clicking "Share" in the upper right hand corner in the Colab window and adding us via email address (bkclark@illinois.edu, mt24@illinois.edu, and cychow2@illinois.edu). Then, at the bottom of that same "Share" menu, click "Copy Link" to get the sharing link to your Colab document. Next, save a .pdf printout copy of your Colab document. This can be done by clicking "File" and then "Print," and then saving the printout as a .pdf via your operating system.
+Once you are finished working on an assignment, first make sure that it is shared with the course staff by clicking "Share" in the upper right hand corner in the Colab window and adding us via email address. Then, at the bottom of that same "Share" menu, click "Copy Link" to get the sharing link to your Colab document. Next, save a .pdf printout copy of your Colab document. This can be done by the following code
+```
+from google.colab import drive
+drive.mount('/content/drive')
+!cp /content/drive/MyDrive/Colab\ Notebooks/Dynamics.ipynb ./
+!jupyter nbconvert --to HTML "Dynamics.ipynb"
+```
+where you replace your filenames above with the appropriate ones for your assignment. Then open the HTML file in your web browser and print from there.
 
-Assignments are submitted via Canvas, which requires two simple steps. Each week, there will be two assignment submission pages availale in Canvas, one titled "[Assigment Title] (Colab link)" and one titled "[Assigment Title] (PDF file)." First, paste the aforementioned sharing link into the "... (Colab link)" assignment and then submit that assignment. Second, upload your printout .pdf file into the "... (PDF file)" assignment and then submit that assignment. 
+Assignments are submitted via Canvas, which requires two simple steps.  First, paste the aforementioned sharing link into the "... (Colab link)" section. Second, upload your printout .pdf file into the "... (PDF file)" section and then submit that assignment. 
 
 We will review both the printout and Colab code while grading your assignment, so please refrain from editing the Colab document after the submission deadline.
 
@@ -128,7 +135,7 @@ Sometimes there are typos in the assignment (although we are working hard to rem
 There is no attendance required for class (although we believe that coming to class will be helpful!)  That said, **please do not attend class if you are sick**.  In such a case, we will work with you to make sure you get caught up.  No notes for sickness, etc are required. 
 
 #### About using code you find on the web
-The quickest way to deal with the arcana of programing is to ask Google for examples of what you are seeking to accomplish. But you will need to use your judgment in doing this: the Google search “how do I use color maps in python?” is fine, while “show me a script that calculates pi” is not. And you should always credit the original source of code that you paste into your own programs in a comment that includes the URL for the original code. If an author says that his/her code is not to be copied or incorporated into your programs, then DON’T.
+The quickest way to deal with the arcana of programing is to ask Google for examples of what you are seeking to accomplish. But you will need to use your judgment in doing this: the Google search “how do I use color maps in python?” is fine, while “show me a script that calculates pi” is not. And you should always credit the original source of code that you paste into your own programs in a comment that includes the URL for the original code. If an author says that his/her code is not to be copied or incorporated into your programs, then DON'T.
 
 The goal of this course is for you to deeply understand this material. For this to work, you’ll need to write your own code.
 

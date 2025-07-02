@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -69,7 +66,6 @@
     <link rel="prev" title="Classifying Galaxies" href="MachineLearningGalaxies.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="_static/FD.png" class="logo__image only-light" alt="Physics 246 - Home"/>
-    <img src="_static/FD.png" class="logo__image only-dark pst-js-only" alt="Physics 246 - Home"/>
+    <script>document.write(`<img src="_static/FD.png" class="logo__image only-dark" alt="Physics 246 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -175,6 +186,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrbitalDynamics.html">Orbital Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Exoplanets.html">Exoplanets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exoplanets_short.html">Exoplanets – shorter version</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chaos.html">Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ParticlePhysics.html">Particle Physics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MachineLearningGalaxies.html">Classifying Galaxies</a></li>
@@ -193,14 +205,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -328,16 +335,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -444,7 +459,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 1, 22, 20, 11, 25, 490063)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 7, 2, 22, 16, 24, 216940)
 </pre></div>
 </div>
 </div>
@@ -554,22 +569,21 @@ Lots of different physical processes could be modelled by random walks:</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-random-walk-averages">
 <h3>b. Random Walk Averages<a class="headerlink" href="#b-random-walk-averages" title="Link to this heading">#</a></h3>
-<p>Since each random walk is different, it is useful to look at properties of the distribution over walks.  We are going to start by computing averages over a large number of walks.   The properites we will focus on is</p>
+<p>Since each random walk is different, it is useful to look at properties of the <em>distribution</em> over walks.  We are going to start by computing averages over a large number of walks.   The properites we will focus on is</p>
 <p>(1) The average <span class="math notranslate nohighlight">\(\langle x_t\rangle\)</span> over the walks at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>(2) The mean absolute deviation (MAD) <span class="math notranslate nohighlight">\(\langle |x_t| \rangle\)</span> over the walks at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>(3) The standard deviations <span class="math notranslate nohighlight">\(\sqrt{\langle x_t^2 \rangle - \langle x_t \rangle^2}\)</span> over the walks.</p>
 <p>For a random walk of 1000 steps each of these three quantities should be arrays of lengths 1001 (because you start at zero).<br />
-Like when you plotted the walks, you could generate all the walks and then produce these curves.  We will want to compute these quantities over 10,000 walks though so this is inefficient in terms of RAM used.  Instead, you can loop over the 10,000 walks and add each walk to a running average.</p>
-<p>Make a plot of these three curves all on the same plot.  Things of note:</p>
+To get good statistics, we will average the above quantities over 10,000 walks. Depending on how you implement this, 1001<span class="math notranslate nohighlight">\(\times\)</span>10000 floating point numbers might take up too much memory, so I’d recommend instead keeping a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array of length 10,000, stepping them all together, and taking the averages 1-3 at each timestep. (that is, invert the loops from above)</p>
+<p>Make a plot of the average position, mean absolute deviation, and standard deviation all on the same plot.  Things of note:</p>
 <ul class="simple">
 <li><p>The average is essentially zero. With a little thought you can convince yourself that (being statistically equal to) zero is the expected answer.  Since it’s just as likely that you go left as right, on average you don’t go anywhere.</p></li>
-<li><p>The farthest distance you could expect to get from the origin (i.e. as seen by the MAD or the standard deviation) would be linear in time.  This is what happens when you just always step right.  This is called ballistic motion.</p></li>
-<li><p>The average distance of the distribution over walks is significantly slower then this (as might be expected since half the time you’re heading back toward the origin).   In fact it goes as <span class="math notranslate nohighlight">\(\sqrt{t}\)</span>.  This is called diffusive motion.  <strong>Verify that your standard deviation scales this way by making a log-log plot of the standard deviation</strong>.  You should find that</p>
-<ul>
+<li><p>If you were to move in the +x direction every time, you’d expect the standard deviation to increase linearly with time. You should see a different dependence for a random walk.</p></li>
+</ul>
+<p>The average distance of the distribution over walks is significantly slower than linear, as might be expected since half the time you’re heading back toward the origin.   In fact it goes as <span class="math notranslate nohighlight">\(\sqrt{t}\)</span>.  This is called diffusive motion.  <strong>Verify that your standard deviation scales this way by making a log-log plot of the standard deviation</strong>.</p>
+<ul class="simple">
 <li><p>On a log-log plot the standard deviation is linear (which means that <span class="math notranslate nohighlight">\(\sigma \propto t^\alpha\)</span>).  Don’t graph the t=0 point at the origin.</p></li>
 <li><p>Find the value of <span class="math notranslate nohighlight">\(\alpha\)</span> by computing the slope of your (log-log) plot using <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code>.  Show it goes as <span class="math notranslate nohighlight">\(t^{-1/2}\)</span></p></li>
-</ul>
-</li>
 </ul>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -603,7 +617,7 @@ Like when you plotted the walks, you could generate all the walks and then produ
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">walks_step100</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;t=200&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Do this for 100,000 walks.  As earlier, it makes sense to loop over each walk but not simultaneously store all 100,000 walks at once.</p>
+<p>Do this for 100,000 walks. Use your large number of walkers method from above to plot the histogram.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Answer Here</span>
@@ -618,7 +632,7 @@ Like when you plotted the walks, you could generate all the walks and then produ
 <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="mf">2.</span>
 </pre></div>
 </div>
-<p>which should give us the (normalized) values of the histogram and the centers of the bins.  From the variables <code class="docutils literal notranslate"><span class="pre">values</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_x</span></code> and  <code class="docutils literal notranslate"><span class="pre">center</span></code> compute <span class="math notranslate nohighlight">\(\sigma_{100}\)</span> and verify that it is (essentially) the same value that you discovered above. To do this you will need to take an integral.  Think about how to get that integral from this information.</p>
+<p>which gives us the (normalized) values of the histogram and the centers of the bins.  From the variables <code class="docutils literal notranslate"><span class="pre">values</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_x</span></code> and  <code class="docutils literal notranslate"><span class="pre">center</span></code> compute <span class="math notranslate nohighlight">\(\sigma_{100}\)</span> and verify that it is (essentially) the same value that you discovered above. To do this you will need to take an integral.  Think about how to get that integral from this information.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Answer Here</span>
@@ -635,11 +649,11 @@ Like when you plotted the walks, you could generate all the walks and then produ
 <h3>a. Representing the initial distribution<a class="headerlink" href="#a-representing-the-initial-distribution" title="Link to this heading">#</a></h3>
 <p>In this exercise, we’d like to deterministically model how the distribution over random walks changes in time.  What this means is that we want to have some equation of motion that starts with the histogram at step <span class="math notranslate nohighlight">\(t=1\)</span> and then generates the histogram at other time step <span class="math notranslate nohighlight">\(t\)</span>.  In the dynamics section, we stored the position and velocity of a planet at a moment in time. Now, we have to store a vector which stores the entire histogram or distribution at a moment in time.</p>
 <p>Start with a vector in the initial condition  <span class="math notranslate nohighlight">\(\rho(t=1)=\exp[-x^2/2\sigma^2]\)</span> where <span class="math notranslate nohighlight">\(\sigma=6\)</span> which we can represent on a grid with <span class="math notranslate nohighlight">\(dx=1\)</span> as</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">size</span><span class="o">=</span><span class="mi">4000</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span> <span class="o">=</span> <span class="mi">400</span>
 <span class="n">dx</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
-<span class="n">xs</span> <span class="o">=</span> <span class="n">dx</span> <span class="o">*</span> <span class="p">(</span><span class="n">points</span> <span class="o">-</span> <span class="n">size</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">xs</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="nb">range</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">xs</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Go ahead and plot this as</p>
@@ -663,7 +677,7 @@ Like when you plotted the walks, you could generate all the walks and then produ
 <p>Here <span class="math notranslate nohighlight">\(D=a^2/2\)</span> is the diffusion constant where <span class="math notranslate nohighlight">\(a\)</span> is our step size (in this case 6).</p>
 <p>To time-step with this differential equation, we need to figure out how to take <span class="math notranslate nohighlight">\(\rho\)</span> and  apply <span class="math notranslate nohighlight">\(\frac{\partial^2 \rho}{\partial x^2}\)</span>.  We will assume that <span class="math notranslate nohighlight">\(\rho=0\)</span> at the boundary at all time so we don’t have to worry about the boundary conditions.  To apply this partial derivative what we should do is use the finite-difference stencil that</p>
 <div class="math notranslate nohighlight">
-\[ \frac{\partial^2 \rho}{\partial x^2} = \frac{\rho(x+dx) - + \rho(x-dx) -2 \rho(x)}{dx^2}\]</div>
+\[ \frac{\partial^2 \rho}{\partial x^2} = \frac{\rho(x+dx) + \rho(x-dx) -2 \rho(x)}{dx^2}\]</div>
 <p>Again we have that <span class="math notranslate nohighlight">\(dx=1\)</span> and we will use <span class="math notranslate nohighlight">\(dt=dx^2/100\)</span>.  Using this, write a function</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Step</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">dx</span><span class="p">):</span>
    <span class="c1"># compute d^2rho/dx^2</span>
@@ -732,22 +746,23 @@ Make a random walk of 128,000 steps.  Then plot (on separate plots)</p>
 </section>
 <section id="exercise-3-diffusion-limited-aggregation">
 <h2>Exercise 3: Diffusion Limited Aggregation<a class="headerlink" href="#exercise-3-diffusion-limited-aggregation" title="Link to this heading">#</a></h2>
-<p>In the previous exercises we learned some properties of random walks.  In this exercise, we will apply random walks to the application of deposition.  This will be done by modeling it with diffusion limited aggregation (DLA).</p>
+<p>In the previous exercises we learned some properties of random walks.  It turns out that some crystal formation can be modeled accurately using random walks. You can see some beautiful pictures of this <a class="reference external" href="https://en.wikipedia.org/wiki/Diffusion-limited_aggregation">here</a></p>
+<p>The simplest model of these systems is the following: A single particle (be that an atom or a cluster of atoms) is initially stuck to a substrate. Particles in the environment randomly move around until they find that first particle, at which point they stick to it and stop moving.</p>
 <section id="a-dla-onto-a-core-point-at-the-origin">
 <h3>a. DLA onto a core point at the origin<a class="headerlink" href="#a-dla-onto-a-core-point-at-the-origin" title="Link to this heading">#</a></h3>
 <p>In DLA, we do the following:</p>
 <ul class="simple">
-<li><p>Start with a particle at some fixed point (say the center of a box).</p></li>
+<li><p>Start with a particle at some fixed point (say the center of a box). This is the first stuck particle.</p></li>
 <li><p>Repeat the following:</p>
 <ul>
 <li><p>Add a new particle someplace on the boundary (anywhere on the four walls).</p></li>
-<li><p>Move this particle using a discrete random walk (left, right, up, down).  If it tries to move in the direction of one of the walls, it shouldn’t stick (but also shouldn’t go anywhere).</p></li>
-<li><p>Once it is touching (up or down or left or right) a currently stuck particle, it should stick.</p></li>
+<li><p>Move this particle using a discrete random walk (left, right, up, down).  If it tries to move in the direction of one of the walls, just reject that move.</p></li>
+<li><p>Once it is adjacent to (up or down or left or right) a currently stuck particle, it becomes a stuck particle and you create a new particle.</p></li>
 </ul>
 </li>
 </ul>
 <p>To accomplish this, I kept a two-dimensional numpy array which kept track of the location of the stuck particles and the currently moving particle.</p>
-<p>At the end, you want to go ahead and plot the location of your stuck particles.  To do this, use</p>
+<p>At the end, plot the location of your stuck particles.  To do this, use</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -773,7 +788,7 @@ Use 1000 different particles.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-dla-onto-a-surface-extra-credit-5-points">
 <h3>b. DLA onto a surface (extra credit: 5 points)<a class="headerlink" href="#b-dla-onto-a-surface-extra-credit-5-points" title="Link to this heading">#</a></h3>
-<p>In the previous section you did DLA onto a core point.  If you are interested in understanding deposition onto a surface, you want to modify your DLA to come in at the top and stick either at the bottom or if they hit any previously stuck point.  Implement this.</p>
+<p>In the previous section you did DLA onto a core point.  For crystal growth like MBE, there is an environment of particles which stick to a surface at the bottom (the substrate). Modify your DLA to come in at the top and stick either at the bottom or if they hit any previously stuck point.  Plot the resulting figures.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Answer Here</span>
@@ -817,9 +832,9 @@ Use 1000 different particles.</p>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-rotational-invariance-in-2d">
 <h3>b. Rotational Invariance in 2D<a class="headerlink" href="#b-rotational-invariance-in-2d" title="Link to this heading">#</a></h3>
-<p>Now we are going to show that in the 2D case, the discrete walks restore the rotational invariance of the gaussian walk.</p>
-<p>To do this, we want to put the location of the 2000 2d coordinates at t=1000 steps.</p>
-<p>Do this for both the discrete and guassian walks.</p>
+<p>Now we are going to show that in the 2D case, the discrete walks restore the rotational invariance of the gaussian walk. By this we mean that the distribution does not depend on the angle we look at.</p>
+<p>To do this, plot the location of the 2000 2d coordinates at t=1000 steps.</p>
+<p>Do this for both the discrete and Gaussian (continous) walks.</p>
 <p>You should see that</p>
 <p>(1) They look the same and</p>
 <p>(2) More interestingly, the discrete case looks rotationally invariant (like a circle) even though it can only go up, down, left, right.   This is an  emergent rotational symmetry.</p>
@@ -895,8 +910,7 @@ Use 1000 different particles.</p>
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -981,8 +995,8 @@ By Bryan Clark; George Gollin; Ryan Levy
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
