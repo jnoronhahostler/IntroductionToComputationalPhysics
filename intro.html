@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -351,12 +351,15 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calendar">Calendar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coursework">Coursework</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-assignments">Computational Assignments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-assignments">Computational Assignments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-coding-practices">Good Coding Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readable-plots">Readable plots</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-submitting-your-assignments">Instructions for submitting your assignments</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project">Final Project</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-credit">Extra Credit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-and-research">Coding and Research</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
@@ -387,9 +390,9 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="an-introduction-to-modern-computational-physics">
 <h1>An Introduction to Modern Computational Physics<a class="headerlink" href="#an-introduction-to-modern-computational-physics" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Physics 246, Fall 2024</p></li>
+<li><p>Physics 246, Fall 2025</p></li>
 <li><p>Thursday 4:00-5:50pm CST</p></li>
-<li><p>Room: Loomis 222</p></li>
+<li><p>Room: Loomis 158</p></li>
 <li><p>2 credit hours</p></li>
 <li><p>Course Texts: This one!</p></li>
 </ul>
@@ -399,27 +402,24 @@ document.write(`
 <section id="course-logistics">
 <h2>Course Logistics<a class="headerlink" href="#course-logistics" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Lectures:</strong> R 4:00-5:50, 222 Loomis</p></li>
-<li><p><strong>Professor:</strong> Bryan Clark</p>
+<li><p><strong>Lectures:</strong> Thursday 4:00-5:50, 276 Loomis</p></li>
+<li><p><strong>Professor:</strong> Jacquelyn Noronha-Hostler</p>
 <ul>
-<li><p>email: bkclark&#64;illinois.edu</p></li>
-<li><p>Office Hours: 1PM Thursday, outside ESB 2111</p></li>
+<li><p>email: jnorhos&#64;illinois.edu</p></li>
+<li><p>Office Hours: Tuesday 1:15-2 PM  Loomis 427</p></li>
 </ul>
 </li>
-<li><p><strong>TA(s):</strong></p>
+<li><p><strong>TA(s):</strong></p></li>
+<li><p>Surkhab Kaur</p>
 <ul>
-<li><p>Matthew Thibodeau</p>
-<ul>
-<li><p>email: mt24&#64;illinois.edu</p></li>
-<li><p>Office Hours: 3pm Monday, ESB 3110</p></li>
+<li><p>email: surkhab2&#64;illinois.edu</p></li>
+<li><p>Office Hours: TBD</p></li>
 </ul>
 </li>
-<li><p>Chun Yu Chow</p>
+<li><p>Maxwell Rizzo</p>
 <ul>
-<li><p>email: cychow2&#64;illinois.edu</p></li>
-<li><p>Office Hours, 2pm Tuesday, ESB 3137</p></li>
-</ul>
-</li>
+<li><p>email: marizzo2&#64;illinois.edu</p></li>
+<li><p>Office Hours: TBD</p></li>
 </ul>
 </li>
 </ul>
@@ -428,15 +428,14 @@ document.write(`
 <ul class="simple">
 <li><p><strong>Campuswire</strong>:  We will use campuswire as a class forum;  a way to message the course staff and each other; and to submit your attendance question.</p></li>
 <li><p><strong>Google Colab</strong>: On <a class="reference internal" href="#colab.google.com"><span class="xref myst">Google Colab</span></a>  you will be able to program your code in a jupyter notebook and submit it for us to grade. Please sign in to your Illinois account.  While working on the assignment, you will share each of your colab assignments with the professor and the TA (but no one else).  You can load things in google colab just by clicking on the relevant button in the notebook (looks like a shuttle).  You must then save to your google drive and it will be there later when you go to google colab!</p></li>
-<li><p><strong>Canvas</strong>: You will submit your projcts via Canvas, which will also contain your grades and your returned assignments. There will be two Canvas assignments per course project: one where you must submit the “Sharing” link for your Colab document containing your project solution, and another where you must submit a printout of your Colab document in .pdf format. Both submissions are required for each project to obtain credit. <a class="reference internal" href="#instructions-for-submitting-your-assignments"><span class="std std-ref">Detailed submission instructions can be found here.</span></a></p></li>
-<li><p><strong>my.physics gradebook</strong>: Assignment grades will also be entered here.</p></li>
+<li><p><strong>Gradescope</strong>: You will submit your projcts via Gradescope, which will also contain your grades and your returned assignments.  You must submit the “Sharing” link for your Colab document containing your project solution, and you must submit a printout of your Colab document in .pdf format. Both submissions are required for each project to obtain credit. <a class="reference internal" href="#instructions-for-submitting-your-assignments"><span class="std std-ref">Detailed submission instructions can be found here.</span></a></p></li>
 </ul>
 <hr class="docutils" />
 </section>
 </section>
 <section id="calendar">
 <h2>Calendar<a class="headerlink" href="#calendar" title="Link to this heading">#</a></h2>
-<p>(Some of these projects might swap around)</p>
+<p>(These are the dates that we work on the assignment in class; the assignments are due one week later)</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Date</p></th>
@@ -444,47 +443,47 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>August 29</p></td>
+<tr class="row-even"><td><p>Jan 23</p></td>
 <td><p>N Ways to Measure PI</p></td>
 </tr>
-<tr class="row-odd"><td><p>September 5</p></td>
+<tr class="row-odd"><td><p>Jan 30</p></td>
 <td><p>Dynamics</p></td>
 </tr>
-<tr class="row-even"><td><p>September 12</p></td>
+<tr class="row-even"><td><p>Feb 6</p></td>
 <td><p>Orbital Dynamics</p></td>
 </tr>
-<tr class="row-odd"><td><p>September 19</p></td>
+<tr class="row-odd"><td><p>Feb 13</p></td>
 <td><p>Exoplanets</p></td>
 </tr>
-<tr class="row-even"><td><p>September 26</p></td>
+<tr class="row-even"><td><p>Feb 20</p></td>
 <td><p>Chaos</p></td>
 </tr>
-<tr class="row-odd"><td><p>October 3</p></td>
-<td><p>Many-Body Simulations</p></td>
-</tr>
-<tr class="row-even"><td><p>October 10</p></td>
+<tr class="row-odd"><td><p>Feb 27</p></td>
 <td><p>Particle Physics</p></td>
 </tr>
-<tr class="row-odd"><td><p>October 17</p></td>
-<td><p>Random Walks</p></td>
-</tr>
-<tr class="row-even"><td><p>October 24</p></td>
-<td><p>Markov Chains</p></td>
-</tr>
-<tr class="row-odd"><td><p>October 31</p></td>
-<td><p>Predator-Prey</p></td>
-</tr>
-<tr class="row-even"><td><p>November 7</p></td>
-<td><p>Fluid Dynamics</p></td>
-</tr>
-<tr class="row-odd"><td><p>November 14</p></td>
+<tr class="row-even"><td><p>Mar 6</p></td>
 <td><p>Classifying Galaxies</p></td>
 </tr>
-<tr class="row-even"><td><p>November 21</p></td>
-<td><p>Fluxonium Qubits</p></td>
+<tr class="row-odd"><td><p>Mar 13</p></td>
+<td><p>Random Walks</p></td>
 </tr>
-<tr class="row-odd"><td><p>December 5</p></td>
+<tr class="row-even"><td><p>Mar 27</p></td>
+<td><p>Markov Chains</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apr 3</p></td>
+<td><p>Predator-Prey</p></td>
+</tr>
+<tr class="row-even"><td><p>Apr 10</p></td>
+<td><p>Climate Dynamics</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apr 17</p></td>
+<td><p>Fluid Dynamics</p></td>
+</tr>
+<tr class="row-even"><td><p>Apr 24</p></td>
 <td><p>Quantum Computing</p></td>
+</tr>
+<tr class="row-odd"><td><p>May 1</p></td>
+<td><p>Building a Physical Qbit</p></td>
 </tr>
 </tbody>
 </table>
@@ -498,18 +497,38 @@ document.write(`
 <p>The heart of this course will be a series of computational assignments.</p>
 <ul class="simple">
 <li><p>You will work on the assignments both during class and as homework.</p></li>
-<li><p>Each assignment is due at the beginning of the next class unless otherwise noted. If you need an extension on an assignment, please post to campuswire (only to the course staff).  We will then respond on campuswire if the extension has been given.   The following information:</p>
+<li><p>Homework will be graded on the follwing criteria:</p>
 <ul>
-<li><p>broadly why you need the extension (sick, interview, major exam in another course, etc)</p></li>
+<li><p>60% Working code that solves the problem</p></li>
+<li><p>10% Documented code (comments explaining your work)</p></li>
+<li><p>10% Cleanliness of code (removed any faulty code - no side quests!)</p></li>
+<li><p>10% Well-named variables (e.g. the mass of a star is called “Mass” not “paramter1”)</p></li>
+<li><p>10% Readable plots - when applicable (axes labeled, reasonable color scheme, visible and distinguishable lines, reasonable range etc)</p></li>
+</ul>
+</li>
+<li><p>The assignments consist of 95% of your grade.</p></li>
+<li><p>You must BOTH share your code (see below) AND turn in the PDF on time into Gradescope. If we only have one or not the other, we will not grade your assignment (and it will be counted late if the other part is turned in after the due date).</p></li>
+<li><p>Each assignment is due at the beginning of the next class unless otherwise noted. Extension may possibly be granted under extreme situations, please email Surkhab and Max.  We will then respond if the extension has been granted.   The following information:</p>
+<ul>
+<li><p>broadly why you need the extension (illness, family emergency, etc)</p></li>
 <li><p>when you will be able to submit the assignment by (this is the new official due date if the extension is granted.)</p></li>
 </ul>
 </li>
 <li><p>Solutions to the homeworks will not be given.</p></li>
-<li><p>The assignments consist of 95% of your grade.</p></li>
 <li><p>Partial credit exists but will be limited.</p></li>
 <li><p>You may collaborate on assignments but must submit your own work.</p></li>
 <li><p>You may not use generative AI, LLM’s, etc.  <strong>You must turn this off in google colab</strong>.</p></li>
 </ul>
+</section>
+<section id="good-coding-practices">
+<h3>Good Coding Practices<a class="headerlink" href="#good-coding-practices" title="Link to this heading">#</a></h3>
+<p>Codes generally have a lifetime beyond whatever they were originallized designed for. Maybe in your early days of physics you write a code to solve an integral pretaining to something in Newtonian mechanics. Then you get a bit older and you take Quantum Mechanics and you want to reuse that code so you change it a bit for the new problem. A year or two later you go onto grad school and once again reuse that code in a General Relativity class. Over time your code must adapt to all these changes and depending on how well you wrote your original code those changes may be a lot easier (or harder) to make. Imagine that you “hard coded” your unit scale in the original code to be in kilometers - that would be very challenging once you switched to Quantum Mechanics because you’d need to cary around a bunch of extra orders of magnitude!  Changing your code would be even harder if you haven’t documented what you did in the original code, especially if all your parameters are named “paramater1, parameter2, etc”. Thus, we will be working on not just writing code in this class but on good coding practices. In this class we want to built good coding practices and habits from day one.  Thus, this will also be a component of your grade.</p>
+</section>
+<section id="readable-plots">
+<h3>Readable plots<a class="headerlink" href="#readable-plots" title="Link to this heading">#</a></h3>
+<p>Plots should be labeled, visual appealing, readable
+<a href="https://colab.research.google.com/drive/11SCZM2pl7I0ebLtUUwFVUHs6rnD5F22S?usp=sharing">Here’s a quick tutorial of what is a bad vs good plot</a> (feel free to steal this code!).</p>
+<p>For futher resources, see <a href="https://www.geeksforgeeks.org/data-visualization/data-visualization-using-matplotlib/">Data Visualization using Matplotlib (and the links within)</a>.</p>
 <section id="instructions-for-submitting-your-assignments">
 <span id="id1"></span><h4>Instructions for submitting your assignments<a class="headerlink" href="#instructions-for-submitting-your-assignments" title="Link to this heading">#</a></h4>
 <p>Once you are finished working on an assignment, first make sure that it is shared with the course staff by clicking “Share” in the upper right hand corner in the Colab window and adding us via email address. Then, at the bottom of that same “Share” menu, click “Copy Link” to get the sharing link to your Colab document. Next, save a .pdf printout copy of your Colab document. This can be done by the following code</p>
@@ -520,7 +539,7 @@ drive.mount(&#39;/content/drive&#39;)
 </pre></div>
 </div>
 <p>where you replace your filenames above with the appropriate ones for your assignment. Then open the HTML file in your web browser and print from there.</p>
-<p>Assignments are submitted via Canvas, which requires two simple steps.  First, paste the aforementioned sharing link into the “… (Colab link)” section. Second, upload your printout .pdf file into the “… (PDF file)” section and then submit that assignment.</p>
+<p>Assignments are submitted via Gradescope, which requires two simple steps.  First, paste the aforementioned sharing link into the “… (Colab link)” section. Second, upload your printout .pdf file into the “… (PDF file)” section and then submit that assignment.</p>
 <p>We will review both the printout and Colab code while grading your assignment, so please refrain from editing the Colab document after the submission deadline.</p>
 </section>
 </section>
@@ -533,6 +552,10 @@ drive.mount(&#39;/content/drive&#39;)
 <p>There will be occassional opportunities to get extra credit. To zeroth order these exist because I think they are cool and useful for understanding computational physics but I can’t justify within the 2 credit hours of the course.</p>
 <p>Extra credit assignments will often be described poorly (maybe even something like, `get a full solar system simulation working’). If you have questions about it, please ask before you spend too much time on it. Also, we have no obligation to make extra credit typo-free. Please try to answer the question we mean to be asking.</p>
 <p>For the extra credit, per exercise, the grading is all or nothing. We aren’t going to hunt for typos and give partial credit for sortof working code. The amount of extra credit per exercise/etc is listed on the assignment.</p>
+</section>
+<section id="coding-and-research">
+<h3>Coding and Research<a class="headerlink" href="#coding-and-research" title="Link to this heading">#</a></h3>
+<p>I have had a few students request research opportunities. If I know of any, I’ll try to announce them in class. However, if there are students who are already well-aquainted with c++ then shoot me an email.</p>
 <hr class="docutils" />
 </section>
 </section>
@@ -567,7 +590,8 @@ All problem sets count for the same amount.  Unless otherwise noted, every exerc
 <h2>Policies<a class="headerlink" href="#policies" title="Link to this heading">#</a></h2>
 <section id="attendance">
 <h3>Attendance<a class="headerlink" href="#attendance" title="Link to this heading">#</a></h3>
-<p>There is no attendance required for class (although we believe that coming to class will be helpful!)  That said, <strong>please do not attend class if you are sick</strong>.  In such a case, we will work with you to make sure you get caught up.  No notes for sickness, etc are required.</p>
+<p>Students are strongly enoucarged to attend class, participate in lectures, and make use of office hours. While no explicit attendance requirements are in place, participation is factored in at the end of the semester if a student has a boarderline grade as well as for when students ask for homework extensions.  Thus, it is in the student’s best interest to regularly attend class.</p>
+<p>If a major event occurs e.g. death in the family, major illness etc, it is best</p>
 </section>
 <section id="about-using-code-you-find-on-the-web">
 <h3>About using code you find on the web<a class="headerlink" href="#about-using-code-you-find-on-the-web" title="Link to this heading">#</a></h3>
@@ -612,7 +636,7 @@ The technical foundation for physics majors includes material in physics, mathem
 </section>
 <section id="acknowledgements">
 <h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
-<p>The current version of this course is developed by Bryan Clark.  An earlier version of <a class="reference external" href="https://courses.physics.illinois.edu/phys298owl/fa2018/">this course</a> was developed and run by <a class="reference external" href="https://physics.illinois.edu/people/directory/profile/g-gollin">George Gollin</a> and this current version has non-trival overlapping units and problems.  The classifying galaxy assignment closely follows a tutorial at the Galaxy Zoo. The fluid dynamics assignment was originally inspired to get you to develop lattice Boltzmann code similar to that from flowkit.com.  The jupyter-ization of the course was done by Ryan Levy and Bryan Clark.</p>
+<p>The current version of this course is developed by Bryan Clark with updates by Lucas Wagner.  An earlier version of <a class="reference external" href="https://courses.physics.illinois.edu/phys298owl/fa2018/">this course</a> was developed and run by <a class="reference external" href="https://physics.illinois.edu/people/directory/profile/g-gollin">George Gollin</a> and this current version has non-trival overlapping units and problems.  The classifying galaxy assignment closely follows a tutorial at the Galaxy Zoo. The fluid dynamics assignment was originally inspired to get you to develop lattice Boltzmann code similar to that from flowkit.com.  The jupyter-ization of the course was done by Ryan Levy and Bryan Clark.</p>
 </section>
 <section id="related-courses">
 <h2>Related Courses<a class="headerlink" href="#related-courses" title="Link to this heading">#</a></h2>
@@ -685,12 +709,15 @@ The technical foundation for physics majors includes material in physics, mathem
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calendar">Calendar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coursework">Coursework</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-assignments">Computational Assignments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-assignments">Computational Assignments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-coding-practices">Good Coding Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readable-plots">Readable plots</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-submitting-your-assignments">Instructions for submitting your assignments</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project">Final Project</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-credit">Extra Credit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-and-research">Coding and Research</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
