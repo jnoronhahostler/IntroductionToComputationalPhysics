@@ -423,7 +423,7 @@ document.write(`
 <p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-08-27 21:04:52--  https://clark.physics.illinois.edu/particle_helper.py
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-08-28 20:22:00--  https://clark.physics.illinois.edu/particle_helper.py
 Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 
 </pre></div>
 </div>
@@ -431,7 +431,21 @@ Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)...
 Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>failed: Connection refused.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+Length: 9503 (9.3K)
+Saving to: ‘particle_helper.py’
+
+
+particle_helper.py    0%[                    ]       0  --.-KB/s               
+particle_helper.py  100%[===================&gt;]   9.28K  --.-KB/s    in 0s      
+
+2025-08-28 20:22:00 (162 MB/s) - ‘particle_helper.py’ saved [9503/9503]
 </pre></div>
 </div>
 </div>
@@ -464,16 +478,7 @@ Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149
 <p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">particle_helper</span><span class="w"> </span><span class="kn">import</span> <span class="n">Kdecay</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span><span class="w"> </span><span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">ll</span><span class="o">=</span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;who_ls&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;particle_helper&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 8, 28, 20, 22, 1, 162791)
 </pre></div>
 </div>
 </div>
