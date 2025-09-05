@@ -408,6 +408,31 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="n-ways-to-measure-pi">
 <h1>N ways to measure <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#n-ways-to-measure-pi" title="Link to this heading">#</a></h1>
+<p>Run this code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;FILE_NAME_GOES_HERE&quot;</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/Colab Notebooks/&quot;</span> <span class="o">+</span> <span class="n">filename</span>
+<span class="o">!</span>cp<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$filepath</span><span class="s2">&quot;</span><span class="w"> </span>./
+<span class="o">!</span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>HTML<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$filename</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;FILE_NAME_GOES_HERE&quot;</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;google&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
 <li><p><strong>Author:</strong></p></li>
 <li><p><strong>Date:</strong></p></li>
@@ -558,7 +583,7 @@ myList is length 5
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b726d3899d445debb59e068f3f684a393783cf40885206685be5c2fbd9614c63.png" src="_images/b726d3899d445debb59e068f3f684a393783cf40885206685be5c2fbd9614c63.png" />
+<img alt="_images/7dcf558cf1c7d05d19b8263a170f02937b7d11c2b9b69206f02585d2978349d9.png" src="_images/7dcf558cf1c7d05d19b8263a170f02937b7d11c2b9b69206f02585d2978349d9.png" />
 </div>
 </div>
 <p>🦉  Make a list <code class="docutils literal notranslate"><span class="pre">piList</span></code> which contains the terms</p>
@@ -726,15 +751,15 @@ You can have a function that generates all the <code class="docutils literal not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6735948551350754
-0.5154694489360376
--0.6207593915143466
-0.7794404921890294
--0.8890284437709826
--0.11881003531574108
-0.37442354865095373
--0.7196132352671503
-0.3704289436292141
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.32931741813947224
+0.4784576204741495
+-0.9746819748640876
+0.727196442125869
+0.734004020824748
+0.5982655730860895
+0.13885528834208083
+-0.10596569756829677
+0.49525217884422146
 </pre></div>
 </div>
 </div>
