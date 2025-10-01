@@ -423,26 +423,26 @@ document.write(`
 <p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-10-01 18:31:43--  https://clark.physics.illinois.edu/particle_helper.py
-Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-10-01 21:58:08--  https://clark.physics.illinois.edu/particle_helper.py
+Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 18.220.149.166
+Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.220.149.166
-Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... connected.
-HTTP request sent, awaiting response... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Length: 9503 (9.3K)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving to: ‘particle_helper.py’
+Saving to: ‘particle_helper.py’
 
 
 particle_helper.py    0%[                    ]       0  --.-KB/s               
 particle_helper.py  100%[===================&gt;]   9.28K  --.-KB/s    in 0s      
 
-2025-10-01 18:31:43 (150 MB/s) - ‘particle_helper.py’ saved [9503/9503]
+2025-10-01 21:58:09 (156 MB/s) - ‘particle_helper.py’ saved [9503/9503]
 </pre></div>
 </div>
 </div>
@@ -475,7 +475,7 @@ particle_helper.py  100%[===================&gt;]   9.28K  --.-KB/s    in 0s
 <p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 10, 1, 18, 31, 44, 400393)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 10, 1, 21, 58, 9, 556655)
 </pre></div>
 </div>
 </div>
@@ -491,14 +491,19 @@ Some years after the Christenson result George Gollin proposed a new experiment 
 While you might not be familiar with the rules of particle decays yet, if you have not yet taken Subatomic physics, that’s ok. The only ones that are relevant to this assignement are:</p>
 <ol class="arabic simple">
 <li><p>Every time a particle decays, electric charge must be conserved  before and after the decay</p></li>
-<li></li>
-</ol>
-<p>The idea was to study the decay rates of neutral K mesons into neutral and charged pions:
+<li><p>Particles like to decay into just 2 children particles (although some rare exceptions exist)
+Based on these two constraints we have two different decay channels that can appear:
 $<span class="math notranslate nohighlight">\(
 K \rightarrow \pi^0\pi^0;\quad K\rightarrow\pi^+\pi^-
 \)</span>$
-in a pair of specially prepared beams. The apparatus would measure the momenta of charged pions using a spectrometer comprising four tracking chambers and a large dipole magnet. The experiment required a hole near the center through which a beam of kaons that hadn’t decayed in flight would pass, rather than smacking into the apparatus.</p>
+where both decays conserve charge (the net-electric charge is 0 before and after the decay).</p></li>
+</ol>
+<p>What do we actually measure in the experiments? These are insanely tiny particles so we cannot visualy “see” them. Rather, we can measure their momenta in both space and time. Additionally, we can use very large magnets that can bend charged particles so that we know if they are either positively or negatively charge (as well as how much charge they carry).</p>
 <div><img src="https://clark.physics.illinois.edu/246img/particle1.png" width=600 alt="Answer (start)"></img><br></div>
+<p>Let’s take a step back. How do we even measures kaons and learn their most basic properties? If we know kaons’ energies E and momenta p, we can use the definition of energy within a relativistic system:
+<span class="math notranslate nohighlight">\(E=\sqrt{m_K^2c^4+p^2c^2}\)</span>
+to extract the mass of kaons <span class="math notranslate nohighlight">\(m_K\)</span>.
+We should be clear, once particles move relativitically the definition of “mass” becomes fuzy since it is no longer a conserved quantity. However, rest mass (the mass of a kaon when <span class="math notranslate nohighlight">\(p=0\)</span>) IS a conserved quantity.</p>
 <p><span class="math notranslate nohighlight">\(K\)</span> mesons can be measured in the data by seeing that the “invariant mass” <span class="math notranslate nohighlight">\((E^2/c^2 - p^2)^{1/2}\)</span> of the parent particle that had yielded the pions was consistent with the kaon mass of 498 MeV/<span class="math notranslate nohighlight">\(c^2\)</span>. Because of the manner in which the kaon beams were prepared before they arrived at the experiment, we would extract physics from our data by measuring the double ratio
 <span class="math notranslate nohighlight">\(
 R \equiv \frac{\Gamma_{beam1}(K\rightarrow\pi^0\pi^0)}{\Gamma_{beam2}(K\rightarrow\pi^0\pi^0)} {\Large /} \frac{\Gamma_{beam1}(K\rightarrow\pi^+\pi^-)}{\Gamma_{beam2}(K\rightarrow\pi^+\pi^-)}
