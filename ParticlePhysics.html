@@ -423,24 +423,26 @@ document.write(`
 <p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-09-30 22:42:07--  https://clark.physics.illinois.edu/particle_helper.py
-Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 18.220.149.166
-Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-10-01 18:31:43--  https://clark.physics.illinois.edu/particle_helper.py
+Resolving clark.physics.illinois.edu (clark.physics.illinois.edu)... 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.220.149.166
+Connecting to clark.physics.illinois.edu (clark.physics.illinois.edu)|18.220.149.166|:443... connected.
 HTTP request sent, awaiting response... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Length: 9503 (9.3K)
-Saving to: ‘particle_helper.py’
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving to: ‘particle_helper.py’
 
 
 particle_helper.py    0%[                    ]       0  --.-KB/s               
 particle_helper.py  100%[===================&gt;]   9.28K  --.-KB/s    in 0s      
 
-2025-09-30 22:42:07 (163 MB/s) - ‘particle_helper.py’ saved [9503/9503]
+2025-10-01 18:31:43 (150 MB/s) - ‘particle_helper.py’ saved [9503/9503]
 </pre></div>
 </div>
 </div>
@@ -473,7 +475,7 @@ particle_helper.py  100%[===================&gt;]   9.28K  --.-KB/s    in 0s
 <p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 9, 30, 22, 42, 8, 320167)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 10, 1, 18, 31, 44, 400393)
 </pre></div>
 </div>
 </div>
@@ -483,8 +485,14 @@ particle_helper.py  100%[===================&gt;]   9.28K  --.-KB/s    in 0s
 <h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
 <section id="some-particle-physics-history">
 <h3>Some particle physics history<a class="headerlink" href="#some-particle-physics-history" title="Link to this heading">#</a></h3>
-<p>In 1979 a particle physics experiment led by Jim Christenson published a report<a class="reference internal" href="#fn1"><span class="xref myst"><sup>1</sup></span></a>  describing a small anomaly in the behavior of K mesons that suggested a breakdown in causality at subnuclear distance scales. The effect—seen at two standard deviations or <span class="math notranslate nohighlight">\(2\sigma\)</span> above background (<span class="math notranslate nohighlight">\(5\sigma\)</span> is requried for discovery)—deserved further investigation. Surely it must have been a matter of bad luck, or unforeseen systematic errors. But confirmation of Christenson’s result would show that the laws of nature were, at small distances, non-local (a string theory, perhaps), or else that physical law could no longer be formulated in mathematical language. Our world would be properly described by string theory, or by magic.</p>
-<p>Some years after the Christenson result George Gollin proposed a new experiment using a different technique to look for the same effect. He planned to do it at Fermilab, with much better precision and greatly reduced systematic uncertainties, and a few of us set about designing the apparatus for the measurement<a class="reference internal" href="#fn2"><span class="xref myst"><sup>2</sup></span></a>.</p>
+<p>In 1979 a particle physics experiment led by Jim Christenson published a report<a class="reference internal" href="#fn1"><span class="xref myst"><sup>1</sup></span></a>  describing a small anomaly in the behavior of K mesons that suggested a breakdown in causality at subnuclear distance scales. The effect—seen at two standard deviations or <span class="math notranslate nohighlight">\(2\sigma\)</span> above background (<span class="math notranslate nohighlight">\(5\sigma\)</span> is requried for discovery)—deserved further investigation. Surely it must have been a matter of bad luck, or unforeseen systematic errors. But confirmation of Christenson’s result would show that the laws of nature were, at small distances, non-local (a string theory, perhaps), or else that physical law could no longer be formulated in mathematical language. Our world would be properly described by string theory, or by magic.<br />
+Some years after the Christenson result George Gollin proposed a new experiment using a different technique to look for the same effect. He planned to do it at Fermilab, with better precision and reduced systematic uncertainties. If you’re interested, you can find the apparatus design at the end of this<a class="reference internal" href="#fn2"><span class="xref myst"><sup>2</sup></span></a>.</p>
+<p>In particle physics, “parent” particles can spontaneously decay (split apart) into “children” particles. Kaon (<span class="math notranslate nohighlight">\(K\)</span>) is an unstable particle that eventually decays into lighter particles called pions (<span class="math notranslate nohighlight">\(\pi\)</span>).  There are different types of kaons that each have a different electric charge, but here we’ll just focus on neutral kaons <span class="math notranslate nohighlight">\(K^0\)</span> who have no electric charge i.e. <span class="math notranslate nohighlight">\(Q_{K^0}=0\)</span>.
+While you might not be familiar with the rules of particle decays yet, if you have not yet taken Subatomic physics, that’s ok. The only ones that are relevant to this assignement are:</p>
+<ol class="arabic simple">
+<li><p>Every time a particle decays, electric charge must be conserved  before and after the decay</p></li>
+<li></li>
+</ol>
 <p>The idea was to study the decay rates of neutral K mesons into neutral and charged pions:
 $<span class="math notranslate nohighlight">\(
 K \rightarrow \pi^0\pi^0;\quad K\rightarrow\pi^+\pi^-
