@@ -707,7 +707,7 @@ In addition to the cross-entropy, we care whether the winning labelling is corre
 <ul class="simple">
 <li><p>choose a random image in the <strong>training</strong> set.</p></li>
 <li><p>compute the gradient</p></li>
-<li><p>change the parameters by 0.1% of the gradient (called the <em>learning rate</em> <span class="math notranslate nohighlight">\(\eta\)</span>)</p></li>
+<li><p>change the parameters (W1,W2,b1,b2) by 0.1% of the gradient (called the <em>learning rate</em> <span class="math notranslate nohighlight">\(\eta\)</span>)</p></li>
 </ul>
 <p>This will make your result on this image marginally better.</p>
 <p>Every 2000 steps you might want to check the fraction of your test set that is now correct. Print it out as well as push it to a list.  You should find that your accuracy rises from 30% beyond 66%.  Plot your accuracy as a function of step for at least 50*2000, and if patient out to 100*2000.</p>
