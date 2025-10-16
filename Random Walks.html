@@ -458,7 +458,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 10, 16, 21, 34, 50, 284228)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 10, 16, 22, 6, 21, 226609)
 </pre></div>
 </div>
 </div>
@@ -582,7 +582,7 @@ To get good statistics, we will average the above quantities over 10,000 walks. 
 <p>The average distance of the distribution over walks is significantly slower than linear, as might be expected since half the time you’re heading back toward the origin.   In fact it goes as <span class="math notranslate nohighlight">\(\sqrt{t}\)</span>.  This is called diffusive motion.  <strong>Verify that your standard deviation scales this way by making a log-log plot of the standard deviation</strong>.</p>
 <ul class="simple">
 <li><p>On a log-log plot the standard deviation is linear (which means that <span class="math notranslate nohighlight">\(\sigma \propto t^\alpha\)</span>).  Don’t graph the t=0 point at the origin.</p></li>
-<li><p>Find the value of <span class="math notranslate nohighlight">\(\alpha\)</span> by computing the slope of your (log-log) plot using <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code>.  Show it goes as <span class="math notranslate nohighlight">\(t^{-1/2}\)</span></p></li>
+<li><p>Find the value of <span class="math notranslate nohighlight">\(\alpha\)</span> by computing the slope of your (log-log) plot using <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code>.  Show it goes as <span class="math notranslate nohighlight">\(t^{1/2}\)</span></p></li>
 </ul>
  <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
