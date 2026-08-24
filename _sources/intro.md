@@ -1,6 +1,6 @@
 # An Introduction to Modern Computational Physics 
 
-* Physics 246, Fall 2025
+* Physics 246, Fall 2026
 * Thursday 4:00-5:50pm CST
 * Room: Loomis 158
 * 2 credit hours
@@ -16,18 +16,18 @@ Welcome!  Computation is powerful. In this course, you are going to learn how to
 ---
 
 ### Course Logistics
- - **Lectures:** Thursday 4:00-5:50, 276 Loomis
+ - **Lectures:** Thursday 4:00-5:50, 158 Loomis
  - **Professor:** Jacquelyn Noronha-Hostler
     - email: jnorhos@illinois.edu
     - Office Hours: Tuesday 1:15-2 PM  Loomis 427
 
   - **TA(s):**
-  - Surkhab Kaur
-      - email: surkhab2@illinois.edu
-      - Office Hours: Wedsnesday 11:00am-noon Loomis 451
-  - Maxwell Rizzo
-      - email: marizzo2@illinois.edu
-      - Office Hours: Thursday 11:00am-noon Loomis 243
+  - Nikolas Cruz Camacho
+      - email: cnc6@illinois.edu
+      - Office Hours: Monday 4pm Loomis TBD
+  - Kaitlyn Rose Prokup 
+      - email: kprokup2@illinois.edu
+      - Office Hours: Wedsnesday 3pm Loomis TBD
     
         
 #### Online Tools
@@ -43,21 +43,22 @@ Welcome!  Computation is powerful. In this course, you are going to learn how to
 
 |Date   |Assignment   |
 |---|---|
-|Aug 28	| N Ways to Measure PI  <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture1.pdf">Lecture 1</a> |
-|Sep 4	|Dynamics <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture2.pdf">Lecture 2</a>  |
-|Sep 11	|Orbital Dynamics (Jaki traveling)  <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture3.pdf">Lecture 3</a> |
-|Sep 18	|Exoplanets <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture4.pdf">Lecture 4</a>  |
-|Sep 25	|Chaos <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture5.pdf">Lecture 5</a>  |
-|Oct 2 |Particle Physics <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture6.pdf">Lecture 6</a>|
-|Oct 9	|Classifying Galaxies <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture7.pdf">Lecture 7</a>   |
-|Oct 16	|Random Walks <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture8.pdf">Lecture 8</a> |
-|Oct 23	|Markov Chains <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture9.pdf">Lecture 9</a>  |
-|Oct 30 	|Predator-Prey <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture10.pdf">Lecture 10</a> |
-|Nov 6 	|Climate Dynamics <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture11.pdf">Lecture 11</a>|
-|Nov 13| Fluid Dynamics (Jaki probably traveling) <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture12.pdf">Lecture 12</a>|
-|Nov 20	|Quantum Computing <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture13.pdf">Lecture 13</a>|
-|Nov 27	| No class! Fall Break |
-|Dec 4| Building a Physical Qbit <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture14.pdf">Lecture 14</a> |
+|Aug 27	| N Ways to Measure PI  <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture1.pdf">Lecture 1</a> |
+|Sep 3	|Dynamics <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture2.pdf">Lecture 2</a>  |
+|Sep 10	|Orbital Dynamics (Jaki traveling)  <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture3.pdf">Lecture 3</a> |
+|Sep 17	|Exoplanets <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture4.pdf">Lecture 4</a>  |
+|Sep 24	|Chaos <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture5.pdf">Lecture 5</a>  |
+|Oct 1 |Particle Physics <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture6.pdf">Lecture 6</a>|
+|Oct 8	|Classifying Galaxies <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture7.pdf">Lecture 7</a>   |
+|Oct 15	|Random Walks <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture8.pdf">Lecture 8</a> |
+|Oct 22	|Markov Chains <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture9.pdf">Lecture 9</a>  |
+|Oct 29 	|Predator-Prey <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture10.pdf">Lecture 10</a> |
+|Nov 5 	|Climate Dynamics <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture11.pdf">Lecture 11</a>|
+|Nov 12 | Fluid Dynamics (Jaki probably traveling) <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture12.pdf">Lecture 12</a>|
+|Nov 19	|Quantum Computing <a href="https://github.com/jnoronhahostler/IntroductionToComputationalPhysics/blob/main/IntroductionToComputationalPhysics/Lecture13.pdf">Lecture 13</a>|
+|Nov 26	| No class! Fall Break |
+|Dec 3 | Final Exam Part 1 |
+|Dec 16? | Final Exam Part 2 |
 
 
 ---
@@ -65,26 +66,26 @@ Welcome!  Computation is powerful. In this course, you are going to learn how to
 ### Coursework
 
 #### Computational Assignments
-The heart of this course will be a series of computational assignments.
+The heart of this course will be a series of computational assignments and quizzes the following week.
 * You will work on the assignments both during class and as homework.
-* Homework will be graded on the follwing criteria:
-   * 60% Working code that solves the problem 
+* Homework will be graded on the following criteria:
+   * 60% Code completion 
    * 10% Documented code (comments explaining your work)
    * 10% Cleanliness of code (removed any faulty code - no side quests!)
    * 10% Well-named variables (e.g. the mass of a star is called "Mass" not "paramter1")
    * 10% Readable plots - when applicable (axes labeled, reasonable color scheme, visible and distinguishable lines, reasonable range etc)
-* The assignments consist of 80% of your grade.
+* The assignments consist of 33% of your grade, the quizzes on the homeworks are another 33% of your grade.
 * You must BOTH share your code (see below) AND turn in the PDF on time into Gradescope. If we only have one or not the other, we will not grade your assignment (and it will be counted late if the other part is turned in after the due date). 
-* Each assignment is due at the beginning of the next class unless otherwise noted. Extension may possibly be granted under extreme situations, please email Surkhab and Max.  We will then respond if the extension has been granted.   The following information:
+* Each assignment is due at the *beginning*  of the next class unless otherwise noted. Extension may possibly be granted under extreme situations, please email Nikolas and Kaitlyn.  We will then respond if the extension has been granted.   The following information:
    * broadly why you need the extension (illness, family emergency, etc)
    * when you will be able to submit the assignment by (this is the new official due date if the extension is granted.)
 *  Solutions to the homeworks will not be given.
 * Partial credit exists but will be limited.  
 * You may collaborate on assignments but must submit your own work.
-* You may not use generative AI, LLM's, etc.  **You must turn this off in google colab**.
+* We strongly encourage you to do these assignments yourself without the help from LLMs/AI
 
 #### Good Coding Practices
-Codes generally have a lifetime beyond whatever they were originallized designed for. Maybe in your early days of physics you write a code to solve an integral pretaining to something in Newtonian mechanics. Then you get a bit older and you take Quantum Mechanics and you want to reuse that code so you change it a bit for the new problem. A year or two later you go onto grad school and once again reuse that code in a General Relativity class. Over time your code must adapt to all these changes and depending on how well you wrote your original code those changes may be a lot easier (or harder) to make. Imagine that you "hard coded" your unit scale in the original code to be in kilometers - that would be very challenging once you switched to Quantum Mechanics because you'd need to cary around a bunch of extra orders of magnitude!  Changing your code would be even harder if you haven't documented what you did in the original code, especially if all your parameters are named "paramater1, parameter2, etc". Thus, we will be working on not just writing code in this class but on good coding practices. In this class we want to built good coding practices and habits from day one.  Thus, this will also be a component of your grade. 
+Codes generally have a lifetime beyond whatever they were originally designed for. Maybe in your early days of physics you write a code to solve an integral pertaining to something in Newtonian mechanics. Then you get a bit older and you take Quantum Mechanics and you want to reuse that code so you change it a bit for the new problem. A year or two later you go onto grad school and once again reuse that code in a General Relativity class. Over time your code must adapt to all these changes and depending on how well you wrote your original code those changes may be a lot easier (or harder) to make. Imagine that you "hard coded" your unit scale in the original code to be in kilometers - that would be very challenging once you switched to Quantum Mechanics because you'd need to cary around a bunch of extra orders of magnitude!  Changing your code would be even harder if you haven't documented what you did in the original code, especially if all your parameters are named "paramater1, parameter2, etc". Thus, we will be working on not just writing code in this class but on good coding practices. In this class we want to built good coding practices and habits from day one.  Thus, this will also be a component of your grade. 
 
 #### Readable plots
 Plots should be labeled, visual appealing, readable 
@@ -107,11 +108,11 @@ Assignments are submitted via Gradescope, which requires two simple steps.  Firs
 
 We will review both the printout and Colab code while grading your assignment, so please refrain from editing the Colab document after the submission deadline.
 
-#### Final Project (20% of the grade)
+#### Final Project (33% of the grade)
 During the final period, you will put together a project that demonstrates something in computational physics.  It can be an extension of some of the work that you did in class or something new.  This project can be done in small groups (2-4 people).  Projects have to be approved by course staff.  For your project you will submit a jupyter notebook (in the spirit of what you've done in class but expository) as well as give a 5 minute presentation during the finals period for the course. 
 
 #### Extra Credit
-There will be occassional opportunities to get extra credit. To zeroth order these exist because I think they are cool and useful for understanding computational physics but I can't justify within the 2 credit hours of the course.
+There will be occasional opportunities to get extra credit. To zeroth order these exist because I think they are cool and useful for understanding computational physics but I can't justify within the 2 credit hours of the course.
 
 Extra credit assignments will often be described poorly (maybe even something like, `get a full solar system simulation working'). If you have questions about it, please ask before you spend too much time on it. Also, we have no obligation to make extra credit typo-free. Please try to answer the question we mean to be asking.
 
@@ -122,11 +123,12 @@ I have had a few students request research opportunities. If I know of any, I'll
 
 ----
 ### Grading
-* Computational Assignments: 80%
-* Final Project: 20%
+* Computational Assignments: 33%
+* Quizzes on the Assignments: 33%
+* Final Project: 33%
 
 Your final numerical score is computed as
-100 x (0.80 x (Homework Points + Extra Credit Ponts)/(Total Homework Points) + 0.20 x Final)
+100 x (0.667 x (Homework Points + Extra Credit Points)/(Total Homework Points) + 0.333 x Final)
 
 The final breakdown of how your grade depends on your numerical score goes as:
 * 100+: A+
@@ -152,11 +154,9 @@ Sometimes there are typos in the assignment (although we are working hard to rem
 
 #### Attendance  
 
-Students are strongly enoucarged to attend class, participate in lectures, and make use of office hours. While no explicit attendance requirements are in place, participation is factored in at the end of the semester if a student has a boarderline grade as well as for when students ask for homework extensions.  Thus, it is in the student's best interest to regularly attend class. 
+We will start every class with a quiz about last weeks assignment. Thus, if a student misses class they will miss the oppotunity to take this particular quiz (there will be no retakes).  Please make sure to be on time to take the quiz, because I will begin teaching immediately afterwards. If someone has a DRES accommodation, please get in touch with me ASAP to discuss it. 
 
-The first half of class includes a lecture/overview of the problem. The second half of class provides you with time to work on the problem (in small groups and with the instructuor and TAs available for help). The first half of class is invaluable to introduce the problem, the second half can help you get started. 
-
-If a major event occurs e.g. death in the family, major illness etc, it is best 
+I will drop the lowest 2 quizzes. This is precisely to avoid receiving emails if you are sick or traveling for whatever reason. Thus, I do not want a request to drop or replace a quiz due to illness unless it is a significant illness that lasts 3 weeks or more. Then I would require some documentation that the illness lasted at least 3 weeks. 
 
 #### About using code you find on the web
 The quickest way to deal with the arcana of programing is to ask Google for examples of what you are seeking to accomplish. But you will need to use your judgment in doing this: the Google search “how do I use color maps in python?” is fine, while “show me a script that calculates pi” is not. And you should always credit the original source of code that you paste into your own programs in a comment that includes the URL for the original code. If an author says that his/her code is not to be copied or incorporated into your programs, then DON'T.
@@ -164,7 +164,7 @@ The quickest way to deal with the arcana of programing is to ask Google for exam
 The goal of this course is for you to deeply understand this material. For this to work, you’ll need to write your own code.
 
 #### About Large Langauge Models
-In a similar vein, you aren't allowed to use LLM for help.  This includes chatGPT, google bard/gemini, claude, etc. **You must turn off the generative AI in colab if you have it on (which it might be by default)**. 
+In a similar vein, at this point in learning coding in your studies most LLMs will do more harm than good.  This includes chatGPT, google bard/gemini, claude, etc. It is important to learn the basic before using LLMs, so that you know how to debug, how to talk to the LLM etc. In full disclosure, I definitely use LLMs and ML in my work, so we will discuss regularly the role that they play in class. Given the developments here, this is an ongoing discussion and changes class to class (as in my advice this semester might not be the same as in previous semesters).  
 
 #### Academic Integrity
 You must never submit the work of someone else as your own. We understand that many of you will find it helpful to work with other students to master Physics 246. But when you collaborate with your study group on homework assignments, you must be a full, active participant in developing the solutions that you submit for credit.
@@ -202,7 +202,7 @@ Recently we have now added two new undergraduate courses in computational physic
 
 
 ### Acknowledgements
-The current version of this course is developed by Bryan Clark with updates by Lucas Wagner.  An earlier version of [this course](https://courses.physics.illinois.edu/phys298owl/fa2018/) was developed and run by [George Gollin](https://physics.illinois.edu/people/directory/profile/g-gollin) and this current version has non-trival overlapping units and problems.  The classifying galaxy assignment closely follows a tutorial at the Galaxy Zoo. The fluid dynamics assignment was originally inspired to get you to develop lattice Boltzmann code similar to that from flowkit.com.  The jupyter-ization of the course was done by Ryan Levy and Bryan Clark.
+The current version of this course is developed by Bryan Clark with updates (including the development of all the slides) by Lucas Wagner and Jaki Noronha-Hostler. An earlier version of [this course](https://courses.physics.illinois.edu/phys298owl/fa2018/) was developed and run by [George Gollin](https://physics.illinois.edu/people/directory/profile/g-gollin) and this current version has non-trival overlapping units and problems.  The classifying galaxy assignment closely follows a tutorial at the Galaxy Zoo. The fluid dynamics assignment was originally inspired to get you to develop lattice Boltzmann code similar to that from flowkit.com.  The jupyter-ization of the course was done by Ryan Levy and Bryan Clark.
 
 
 ### Related Courses
