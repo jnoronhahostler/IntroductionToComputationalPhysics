@@ -65,7 +65,7 @@ Welcome!  Computation is powerful. In this course, you are going to learn how to
 
 ### Coursework
 
-#### Computational Assignments
+#### Computational Assignments (33%) and Quizzes (33%)
 The heart of this course will be a series of computational assignments and quizzes the following week.
 * You will work on the assignments both during class and as homework.
 * Homework will be graded on the following criteria:
